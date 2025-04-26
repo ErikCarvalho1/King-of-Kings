@@ -1,6 +1,6 @@
 ﻿namespace KingOfKingsFrms
 {
-    partial class Form1
+    partial class FormPrincipal
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,25 +29,38 @@
         private void InitializeComponent()
         {
             label1 = new Label();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(342, 194);
+            label1.Location = new Point(318, 56);
             label1.Name = "label1";
             label1.Size = new Size(77, 15);
             label1.TabIndex = 0;
             label1.Text = "King of Kings";
             // 
-            // Form1
+            // button1
+            // 
+            button1.Location = new Point(320, 264);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 1;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(label1);
-            Name = "Form1";
+            Name = "FormPrincipal";
             Text = "Form1";
+            Load += FormPrincipal_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -55,5 +68,6 @@
         #endregion
 
         private Label label1;
+        private Button button1;
     }
 }

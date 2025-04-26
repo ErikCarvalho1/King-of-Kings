@@ -1,6 +1,7 @@
 ﻿namespace KingoOfKingsClass
 {
-    public class Class1
+    public class Usuario
+
     {
 
     }
