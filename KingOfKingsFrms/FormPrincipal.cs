@@ -16,7 +16,8 @@ namespace KingOfKingsFrms
         {
             FormLogin formLogin = new FormLogin();
             formLogin.Show();
-            
+            this.Hide();
+
         }
     }
 }

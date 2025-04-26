@@ -83,6 +83,16 @@ namespace KingOfKingsFrms.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Acessar__3_ {
+            get {
+                object obj = ResourceManager.GetObject("Acessar (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap acesso {
             get {
                 object obj = ResourceManager.GetObject("acesso", resourceCulture);
@@ -106,6 +116,16 @@ namespace KingOfKingsFrms.Properties {
         internal static System.Drawing.Bitmap acesso2 {
             get {
                 object obj = ResourceManager.GetObject("acesso2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CADASTRAR {
+            get {
+                object obj = ResourceManager.GetObject("CADASTRAR", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,6 +163,16 @@ namespace KingOfKingsFrms.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap kingLeaoLogin {
+            get {
+                object obj = ResourceManager.GetObject("kingLeaoLogin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LeaoLogin {
             get {
                 object obj = ResourceManager.GetObject("LeaoLogin", resourceCulture);
@@ -156,6 +186,36 @@ namespace KingOfKingsFrms.Properties {
         internal static System.Drawing.Bitmap sair {
             get {
                 object obj = ResourceManager.GetObject("sair", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usuario_login_ {
+            get {
+                object obj = ResourceManager.GetObject("usuario login ", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usuario_login___1_ {
+            get {
+                object obj = ResourceManager.GetObject("usuario login  (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usuario_senha {
+            get {
+                object obj = ResourceManager.GetObject("usuario senha", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

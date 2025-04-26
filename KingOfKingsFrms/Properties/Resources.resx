@@ -121,8 +121,17 @@
   <data name="LeaoLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LeaoLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="king of kings login (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\king of kings login (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usuario senha" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usuario senha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="king of kings login (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\king of kings login (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Acesso1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Acesso1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="acesso" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\acesso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,22 +139,31 @@
   <data name="acessar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\acessar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="king of kings login (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\king of kings login (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CADASTRAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CADASTRAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usuario login " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usuario login .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="acesso2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acesso2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="king of kings login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\king of kings login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="kingLeaoLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kingLeaoLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="acessar (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\acessar (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="king of kings login (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\king of kings login (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Acesso1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Acesso1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="usuario login  (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usuario login  (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="acesso2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\acesso2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Acessar (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Acessar (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
