@@ -7,8 +7,9 @@ namespace KingoOfKingsClass
         public static MySqlCommand Abrir()
         {
 
+
             MySqlCommand cmd = new();
-            string strConn = @"server=Localhost;database=KingOfKing;user=root;password=";
+            string strConn = @"server=Localhost;database=kingofkings;user=root;password=";
             MySqlConnection cn = new(strConn);
             try
             {

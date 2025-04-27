@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KingoOfKingsClass;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -58,9 +59,29 @@ namespace KingOfKingsFrms
 
         private void bntAcessar_Click(object sender, EventArgs e)
         {
-            FormPrincipal formPrincipal = new FormPrincipal();
-            formPrincipal.Show();   
-            this.Hide();
+            var usuario = Usuario.EfetuarLogin(txtNomeUsuario.Text, txtSenha.Text);
+            if (usuario != null && usuario.Ativo)
+            {
+                if (usuario.Id > 0)
+                {
+                    if (usuario.Ativo)
+                    {
+                     
+                       
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sua conta está inativa.\nProcure o administrador.", "Conta inativa");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Email ou senha incorretos ou inexistentes!", "Erro de Login");
+                }
+            }
+           FormPrincipal formPrincipal = new FormPrincipal();
+                     formPrincipal.Show();   
+                     this.Hide();        
         }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            txtUsuario = new TextBox();
+            txtNomeUsuario = new TextBox();
             txtSenha = new TextBox();
             bntAcessar = new Button();
             bntCadastrar = new Button();
@@ -47,12 +47,12 @@
             panel1.Size = new Size(84, 77);
             panel1.TabIndex = 0;
             // 
-            // txtUsuario
+            // txtNomeUsuario
             // 
-            txtUsuario.Location = new Point(157, 124);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(237, 23);
-            txtUsuario.TabIndex = 1;
+            txtNomeUsuario.Location = new Point(157, 124);
+            txtNomeUsuario.Name = "txtNomeUsuario";
+            txtNomeUsuario.Size = new Size(237, 23);
+            txtNomeUsuario.TabIndex = 1;
             // 
             // txtSenha
             // 
@@ -132,7 +132,7 @@
             Controls.Add(bntCadastrar);
             Controls.Add(bntAcessar);
             Controls.Add(txtSenha);
-            Controls.Add(txtUsuario);
+            Controls.Add(txtNomeUsuario);
             Controls.Add(panel1);
             MaximizeBox = false;
             MinimizeBox = false;
@@ -146,7 +146,7 @@
         #endregion
 
         private Panel panel1;
-        private TextBox txtUsuario;
+        private TextBox txtNomeUsuario;
         private TextBox txtSenha;
         private Button bntAcessar;
         private Button bntCadastrar;
