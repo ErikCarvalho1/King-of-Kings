@@ -55,9 +55,9 @@
             // panel3
             // 
             panel3.BackgroundImage = Properties.Resources.linha_em_pe_dorada;
-            panel3.Location = new Point(787, 201);
+            panel3.Location = new Point(789, 201);
             panel3.Name = "panel3";
-            panel3.Size = new Size(73, 358);
+            panel3.Size = new Size(71, 358);
             panel3.TabIndex = 4;
             // 
             // panel4
@@ -116,5 +116,6 @@
         private Panel panel4;
         private Button bntHistorico;
         private Button button1;
+        private Panel panel5;
     }
 }
