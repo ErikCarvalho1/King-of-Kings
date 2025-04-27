@@ -19,5 +19,10 @@ namespace KingOfKingsFrms
             this.Hide();
 
         }
+
+        private void bntHistorico_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

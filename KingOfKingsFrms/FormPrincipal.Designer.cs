@@ -28,46 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            bntHistorico = new Button();
             button1 = new Button();
             SuspendLayout();
             // 
-            // label1
+            // panel1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(318, 56);
-            label1.Name = "label1";
-            label1.Size = new Size(77, 15);
-            label1.TabIndex = 0;
-            label1.Text = "King of Kings";
+            panel1.BackgroundImage = Properties.Resources.linha_dorada__2_;
+            panel1.Location = new Point(78, 83);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(676, 10);
+            panel1.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            panel2.BackgroundImage = Properties.Resources.linha_em_pe_dorada;
+            panel2.Location = new Point(3, 201);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(73, 358);
+            panel2.TabIndex = 3;
+            // 
+            // panel3
+            // 
+            panel3.BackgroundImage = Properties.Resources.linha_em_pe_dorada;
+            panel3.Location = new Point(787, 201);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(73, 358);
+            panel3.TabIndex = 4;
+            // 
+            // panel4
+            // 
+            panel4.BackgroundImage = Properties.Resources.kingLeaoLogin;
+            panel4.Location = new Point(39, 121);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(83, 74);
+            panel4.TabIndex = 5;
+            // 
+            // bntHistorico
+            // 
+            bntHistorico.BackgroundImage = Properties.Resources.historico__1_;
+            bntHistorico.FlatStyle = FlatStyle.Popup;
+            bntHistorico.Location = new Point(96, 25);
+            bntHistorico.Name = "bntHistorico";
+            bntHistorico.Size = new Size(62, 41);
+            bntHistorico.TabIndex = 6;
+            bntHistorico.UseVisualStyleBackColor = true;
+            bntHistorico.Click += bntHistorico_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(320, 164);
+            button1.BackgroundImage = Properties.Resources.Ajuda;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.Location = new Point(164, 25);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
+            button1.Size = new Size(57, 41);
+            button1.TabIndex = 7;
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.Black;
+            BackgroundImage = Properties.Resources.kingofkings;
+            ClientSize = new Size(999, 611);
             Controls.Add(button1);
-            Controls.Add(label1);
+            Controls.Add(bntHistorico);
+            Controls.Add(panel4);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Name = "FormPrincipal";
+            ShowIcon = false;
             Text = "Form1";
             Load += FormPrincipal_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
+        private Panel panel1;
+        private Panel panel2;
+        private Panel panel3;
+        private Panel panel4;
+        private Button bntHistorico;
         private Button button1;
     }
 }
