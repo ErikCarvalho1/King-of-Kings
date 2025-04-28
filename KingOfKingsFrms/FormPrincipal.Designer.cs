@@ -125,10 +125,11 @@
             // 
             // panel6
             // 
-            panel6.Location = new Point(82, 87);
+            panel6.Location = new Point(78, 113);
             panel6.Name = "panel6";
             panel6.Size = new Size(753, 457);
             panel6.TabIndex = 10;
+            panel6.Paint += panel6_Paint;
             // 
             // FormPrincipal
             // 

@@ -40,7 +40,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(443, 284);
+            button1.Location = new Point(383, 268);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 0;
@@ -50,28 +50,28 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(298, 150);
+            textBox1.Location = new Point(238, 134);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(100, 23);
             textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(298, 200);
+            textBox2.Location = new Point(238, 184);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(100, 23);
             textBox2.TabIndex = 2;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(298, 241);
+            textBox3.Location = new Point(238, 225);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(100, 23);
             textBox3.TabIndex = 3;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(298, 284);
+            textBox4.Location = new Point(238, 268);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(100, 23);
             textBox4.TabIndex = 4;
@@ -79,14 +79,14 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(427, 150);
+            comboBox1.Location = new Point(367, 134);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 5;
             // 
             // bntCadastrar
             // 
-            bntCadastrar.Location = new Point(443, 200);
+            bntCadastrar.Location = new Point(383, 184);
             bntCadastrar.Name = "bntCadastrar";
             bntCadastrar.Size = new Size(75, 23);
             bntCadastrar.TabIndex = 6;
@@ -95,7 +95,7 @@
             // 
             // bntVoltar
             // 
-            bntVoltar.Location = new Point(443, 241);
+            bntVoltar.Location = new Point(383, 225);
             bntVoltar.Name = "bntVoltar";
             bntVoltar.Size = new Size(75, 23);
             bntVoltar.TabIndex = 7;
@@ -108,7 +108,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
-            ClientSize = new Size(946, 513);
+            ClientSize = new Size(737, 418);
             Controls.Add(bntVoltar);
             Controls.Add(bntCadastrar);
             Controls.Add(comboBox1);

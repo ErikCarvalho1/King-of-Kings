@@ -5,7 +5,7 @@ CREATE TABLE Usuarios (
     Cpf_cnpj VARCHAR(20), 
 	Email VARCHAR(150) NOT NULL UNIQUE,
     Tipo_usuario ENUM('Administrador', 'Funcionário', 'Cliente') NOT NULL,
-    Senha VARCHAR(30) NOT NULL,
+    Senha VARCHAR(32) NOT NULL,
     Ativo BIT DEFAULT 1,
     criado_em DATETIME DEFAULT CURRENT_TIMESTAMP
 );
