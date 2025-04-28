@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 using MySql.Data.MySqlClient;
 using KingoOfKingsClass;
+using System.ComponentModel.DataAnnotations;
 
 namespace KingoOfKingsClass
 {
@@ -49,23 +50,26 @@ namespace KingoOfKingsClass
             Ativo = ativo;
         }
 
-        public static Usuario EfetuarLogin(string nome, string senha) // Método para efetuar login
+        public static Usuario EfetuarLogin(string email, string senha) // Método para efetuar login
         {
             Usuario usuario = new Usuario();
-            string sql = "SELECT * FROM usuarios WHERE nome = @Nome AND senha = MD5(@senha)";
+            string sql = $"SELECT * FROM usuarios WHERE email = '{email}' AND senha = MD5('{senha}')";
 
             var cn = Banco.Abrir();
             cn.CommandText = sql;
-            cn.Parameters.AddWithValue("@Nome", nome);
-            cn.Parameters.AddWithValue("@senha", senha);
+            //cn.Parameters.AddWithValue("@Email", email);
+            //cn.Parameters.AddWithValue("@senha", senha);
 
             var dr = cn.ExecuteReader();
             if (dr.Read())
             {
-                dr.GetInt32(0);
-                dr.GetString(1);
-                dr.GetString(2);
-                dr.GetBoolean(3);
+                usuario = new(
+                dr.GetInt32(0),
+                dr.GetString(1),
+                dr.GetString(5),
+                dr.GetBoolean(6)
+                    );
+               
 
             }
             return usuario;

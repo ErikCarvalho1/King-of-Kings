@@ -24,5 +24,12 @@ namespace KingOfKingsFrms
         {
 
         }
+
+        private void bntCadastrar_Click(object sender, EventArgs e)
+        {
+            FormCadastrar formcadastrar = new();
+            formcadastrar.Show();
+            this.Hide();
+        }
     }
 }

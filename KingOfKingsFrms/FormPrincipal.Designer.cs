@@ -31,9 +31,14 @@
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
-            panel4 = new Panel();
             bntHistorico = new Button();
             button1 = new Button();
+            button2 = new Button();
+            menuStrip1 = new MenuStrip();
+            eddeToolStripMenuItem = new ToolStripMenuItem();
+            bntCadastrar = new Button();
+            panel6 = new Panel();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -60,19 +65,11 @@
             panel3.Size = new Size(71, 358);
             panel3.TabIndex = 4;
             // 
-            // panel4
-            // 
-            panel4.BackgroundImage = Properties.Resources.kingLeaoLogin;
-            panel4.Location = new Point(39, 121);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(83, 74);
-            panel4.TabIndex = 5;
-            // 
             // bntHistorico
             // 
             bntHistorico.BackgroundImage = Properties.Resources.historico__1_;
             bntHistorico.FlatStyle = FlatStyle.Popup;
-            bntHistorico.Location = new Point(96, 25);
+            bntHistorico.Location = new Point(78, 32);
             bntHistorico.Name = "bntHistorico";
             bntHistorico.Size = new Size(62, 41);
             bntHistorico.TabIndex = 6;
@@ -83,11 +80,55 @@
             // 
             button1.BackgroundImage = Properties.Resources.Ajuda;
             button1.FlatStyle = FlatStyle.Popup;
-            button1.Location = new Point(164, 25);
+            button1.Location = new Point(146, 36);
             button1.Name = "button1";
             button1.Size = new Size(57, 41);
             button1.TabIndex = 7;
             button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.BackgroundImage = Properties.Resources.Ajuda;
+            button2.Location = new Point(209, 32);
+            button2.Name = "button2";
+            button2.Size = new Size(60, 49);
+            button2.TabIndex = 0;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.BackColor = Color.Black;
+            menuStrip1.Items.AddRange(new ToolStripItem[] { eddeToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(999, 24);
+            menuStrip1.TabIndex = 8;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // eddeToolStripMenuItem
+            // 
+            eddeToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
+            eddeToolStripMenuItem.Name = "eddeToolStripMenuItem";
+            eddeToolStripMenuItem.Size = new Size(45, 20);
+            eddeToolStripMenuItem.Text = "edde";
+            // 
+            // bntCadastrar
+            // 
+            bntCadastrar.Location = new Point(305, 45);
+            bntCadastrar.Name = "bntCadastrar";
+            bntCadastrar.Size = new Size(75, 23);
+            bntCadastrar.TabIndex = 9;
+            bntCadastrar.Text = "cadastrar";
+            bntCadastrar.UseVisualStyleBackColor = true;
+            bntCadastrar.Click += bntCadastrar_Click;
+            // 
+            // panel6
+            // 
+            panel6.Location = new Point(82, 87);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(753, 457);
+            panel6.TabIndex = 10;
             // 
             // FormPrincipal
             // 
@@ -96,26 +137,37 @@
             BackColor = Color.Black;
             BackgroundImage = Properties.Resources.kingofkings;
             ClientSize = new Size(999, 611);
+            Controls.Add(panel6);
+            Controls.Add(bntCadastrar);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(bntHistorico);
-            Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "FormPrincipal";
             ShowIcon = false;
             Text = "Form1";
             Load += FormPrincipal_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
-        private Panel panel4;
         private Button bntHistorico;
         private Button button1;
         private Panel panel5;
+        private Button button2;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem eddeToolStripMenuItem;
+        private Button bntCadastrar;
+        private Panel panel6;
     }
 }

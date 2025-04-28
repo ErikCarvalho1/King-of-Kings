@@ -32,11 +32,11 @@
             txtNomeUsuario = new TextBox();
             txtSenha = new TextBox();
             bntAcessar = new Button();
-            bntCadastrar = new Button();
             panel2 = new Panel();
             linkLabel1 = new LinkLabel();
             panel3 = new Panel();
             panel4 = new Panel();
+            bntSair = new Button();
             SuspendLayout();
             // 
             // panel1
@@ -72,17 +72,6 @@
             bntAcessar.UseVisualStyleBackColor = true;
             bntAcessar.Click += bntAcessar_Click;
             // 
-            // bntCadastrar
-            // 
-            bntCadastrar.BackgroundImage = Properties.Resources.CADASTRAR;
-            bntCadastrar.FlatStyle = FlatStyle.Flat;
-            bntCadastrar.Location = new Point(285, 195);
-            bntCadastrar.Name = "bntCadastrar";
-            bntCadastrar.Size = new Size(100, 38);
-            bntCadastrar.TabIndex = 4;
-            bntCadastrar.UseVisualStyleBackColor = true;
-            bntCadastrar.Click += button2_Click;
-            // 
             // panel2
             // 
             panel2.BackgroundImage = Properties.Resources.acesso2;
@@ -95,7 +84,7 @@
             // 
             linkLabel1.AutoSize = true;
             linkLabel1.LinkColor = Color.FromArgb(192, 192, 0);
-            linkLabel1.Location = new Point(475, 313);
+            linkLabel1.Location = new Point(494, 313);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(26, 15);
             linkLabel1.TabIndex = 7;
@@ -119,6 +108,18 @@
             panel4.Size = new Size(28, 29);
             panel4.TabIndex = 9;
             // 
+            // bntSair
+            // 
+            bntSair.BackgroundImage = Properties.Resources.sair;
+            bntSair.FlatStyle = FlatStyle.Flat;
+            bntSair.ForeColor = SystemColors.ControlText;
+            bntSair.Location = new Point(273, 195);
+            bntSair.Name = "bntSair";
+            bntSair.Size = new Size(100, 38);
+            bntSair.TabIndex = 4;
+            bntSair.UseVisualStyleBackColor = true;
+            bntSair.Click += button2_Click;
+            // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -129,7 +130,7 @@
             Controls.Add(panel3);
             Controls.Add(linkLabel1);
             Controls.Add(panel2);
-            Controls.Add(bntCadastrar);
+            Controls.Add(bntSair);
             Controls.Add(bntAcessar);
             Controls.Add(txtSenha);
             Controls.Add(txtNomeUsuario);
@@ -149,10 +150,10 @@
         private TextBox txtNomeUsuario;
         private TextBox txtSenha;
         private Button bntAcessar;
-        private Button bntCadastrar;
         private Panel panel2;
         private LinkLabel linkLabel1;
         private Panel panel3;
         private Panel panel4;
+        private Button bntSair;
     }
 }

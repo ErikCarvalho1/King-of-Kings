@@ -36,9 +36,7 @@ namespace KingOfKingsFrms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormCadastrar formCadastrar = new FormCadastrar();
-            formCadastrar.Show();
-            this.Hide();
+            Application.Exit(); ;
         }
 
 
@@ -60,14 +58,15 @@ namespace KingOfKingsFrms
         private void bntAcessar_Click(object sender, EventArgs e)
         {
             var usuario = Usuario.EfetuarLogin(txtNomeUsuario.Text, txtSenha.Text);
-            if (usuario != null && usuario.Ativo)
-            {
+           
                 if (usuario.Id > 0)
                 {
                     if (usuario.Ativo)
                     {
-                     
-                       
+                        FormPrincipal formPrincipal = new FormPrincipal();
+                        formPrincipal.Show();
+                        this.Hide();
+
                     }
                     else
                     {
@@ -78,10 +77,8 @@ namespace KingOfKingsFrms
                 {
                     MessageBox.Show("Email ou senha incorretos ou inexistentes!", "Erro de Login");
                 }
-            }
-           FormPrincipal formPrincipal = new FormPrincipal();
-                     formPrincipal.Show();   
-                     this.Hide();        
+            
+                  
         }
     }
 }
