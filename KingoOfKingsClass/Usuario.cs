@@ -18,23 +18,27 @@ namespace KingoOfKingsClass
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public string Cpf { get; set; }
+        public string Cpf_cnpj { get; set; }
         public string Email { get; set; }
         public string Tipo_Usuario { get; set; }
         public string Senha { get; set; }
         public bool Ativo { get; set; }
         public DateTime Criado_em { get; set; }
-
+        public string Text1 { get; }
+        public string Text2 { get; }
+        public string Text3 { get; }
+        public string Text4 { get; }
+        public string Text5 { get; }
 
         public Usuario() { }
 
         
-        public Usuario(int id, string nome, string cpf, string email,
+        public Usuario(int id, string nome, string cpf_cnpj, string email,
             string tipo_Usuario, string senha, bool ativo, DateTime criado_em) // Construtor para Cadastro
         {
             Id = id;
             Nome = nome;
-            Cpf = cpf;
+            Cpf_cnpj = cpf_cnpj;
             Email = email;
             Tipo_Usuario = tipo_Usuario;
             Senha = senha;
@@ -49,6 +53,34 @@ namespace KingoOfKingsClass
             Senha = senha;
             Ativo = ativo;
         }
+
+        public Usuario(int id, string nome,string cpf_cnpj, string email,string tipo_Usuario, string senha, bool ativo)// Cadastro
+        {
+            Id = id;
+            Nome = nome; ;
+            Cpf_cnpj = cpf_cnpj;
+            Email = email;
+            Tipo_Usuario = tipo_Usuario;
+            Senha = senha;
+            Ativo = ativo;
+           
+           
+
+        }
+        public Usuario( string nome, string cpf_cnpj, string email, string tipo_Usuario, string senha)// Cadastro
+        {
+           
+            Nome = nome; ;
+            Cpf_cnpj = cpf_cnpj;
+            Email = email;
+            Tipo_Usuario = tipo_Usuario;
+            Senha = senha;
+         
+
+
+
+        }
+
 
         public static Usuario EfetuarLogin(string email, string senha) // Método para efetuar login
         {
@@ -75,6 +107,19 @@ namespace KingoOfKingsClass
             return usuario;
 
 
+        }
+        public void inserir() // metodo para inserir Usuario 
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+
+            cmd.CommandText = $"INSERT INTO usuarios (id, nome, cpf_cnpj, email, tipo_Usuario, senha, ativo) " +
+                   $"VALUES (0,'{Nome}', '{Cpf_cnpj}', '{Email}', '{Tipo_Usuario}', MD5('{Senha}'), 1)";
+
+            cmd.ExecuteNonQuery();
+
+            cmd.CommandText = "SELECT  LAST_INSERT_ID()";
+            Id = Convert.ToInt32(cmd.ExecuteScalar());
         }
     }
 

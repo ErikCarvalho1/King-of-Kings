@@ -121,10 +121,10 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="panel6.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pnlPrincipal.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAvEAAAHJCAYAAAAM+Wa8AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAYNVJREFUeF7t3edW48wSheEzBOecc87E+7+5Omu3LFtWmzQfAzK8P54F0xgn5sdW
+        wQAADsEBuJFr7QAAYNVJREFUeF7t3edW48wSheEzBOecc87E+7+5Omu3LFtWmzQfAzK8P54F0xgn5sdW
         ubr6f//73/8MAAAAwEXxFgAAAAAkm7cAAAAAINm8BQAAAADJ5i0AAAAASDZvAQAAAECyeQsAAAAAks1b
         AAAAAJBs3gIAAACAZPMWAAAAACSbtwAAAAAg2bwFAAAAAMnmLQAAAABINm8BAAAAQLJ5CwAAAACSzVsA
         AAAAkGzeAgAAAIBk8xYAAAAAJJu3AAAAACDZvAUAAAAAyeYtAAAAAEg2bwEAAABAsnkLAAAAAJLNWwAA

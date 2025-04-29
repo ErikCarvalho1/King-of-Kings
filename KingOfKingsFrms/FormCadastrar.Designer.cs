@@ -29,56 +29,63 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastrar));
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            comboBox1 = new ComboBox();
+            txtId = new TextBox();
+            txtNome = new TextBox();
+            txtCpf = new TextBox();
+            txtEmail = new TextBox();
+            cmbTipo_usuario = new ComboBox();
             bntVoltar = new Button();
             bntCadastrar = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            txtSenha = new TextBox();
+            label4 = new Label();
             SuspendLayout();
             // 
-            // textBox1
+            // txtId
             // 
-            textBox1.Location = new Point(215, 104);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 1;
+            txtId.Location = new Point(173, 150);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(47, 23);
+            txtId.TabIndex = 1;
             // 
-            // textBox2
+            // txtNome
             // 
-            textBox2.Location = new Point(215, 154);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 2;
+            txtNome.Location = new Point(240, 150);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(100, 23);
+            txtNome.TabIndex = 2;
             // 
-            // textBox3
+            // txtCpf
             // 
-            textBox3.Location = new Point(215, 195);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 3;
+            txtCpf.Location = new Point(359, 150);
+            txtCpf.Name = "txtCpf";
+            txtCpf.Size = new Size(100, 23);
+            txtCpf.TabIndex = 3;
             // 
-            // textBox4
+            // txtEmail
             // 
-            textBox4.Location = new Point(215, 238);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 4;
+            txtEmail.Location = new Point(240, 179);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(307, 23);
+            txtEmail.TabIndex = 4;
             // 
-            // comboBox1
+            // cmbTipo_usuario
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(344, 104);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 5;
+            cmbTipo_usuario.FormattingEnabled = true;
+            cmbTipo_usuario.Items.AddRange(new object[] { "Administrador", "Funcionário", "Cliente" });
+            cmbTipo_usuario.Location = new Point(465, 150);
+            cmbTipo_usuario.Name = "cmbTipo_usuario";
+            cmbTipo_usuario.Size = new Size(82, 23);
+            cmbTipo_usuario.TabIndex = 5;
+            cmbTipo_usuario.SelectedIndexChanged += cmbTipo_usuario_SelectedIndexChanged;
             // 
             // bntVoltar
             // 
-            bntVoltar.Location = new Point(344, 225);
+            bntVoltar.Location = new Point(256, 236);
             bntVoltar.Name = "bntVoltar";
-            bntVoltar.Size = new Size(75, 23);
+            bntVoltar.Size = new Size(84, 27);
             bntVoltar.TabIndex = 7;
             bntVoltar.Text = "Voltar";
             bntVoltar.UseVisualStyleBackColor = true;
@@ -88,11 +95,72 @@
             // 
             bntCadastrar.BackgroundImage = Properties.Resources.Acessar__3_;
             bntCadastrar.FlatStyle = FlatStyle.Flat;
-            bntCadastrar.Location = new Point(324, 173);
+            bntCadastrar.Location = new Point(451, 236);
             bntCadastrar.Name = "bntCadastrar";
-            bntCadastrar.Size = new Size(101, 32);
+            bntCadastrar.Size = new Size(96, 33);
             bntCadastrar.TabIndex = 8;
             bntCadastrar.UseVisualStyleBackColor = true;
+            bntCadastrar.Click += bntCadastrar_Click_1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Black;
+            label1.FlatStyle = FlatStyle.Popup;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(219, 179, 91);
+            label1.Location = new Point(240, 126);
+            label1.Name = "label1";
+            label1.Size = new Size(57, 21);
+            label1.TabIndex = 9;
+            label1.Text = "Nome";
+            label1.Click += label1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Black;
+            label2.FlatStyle = FlatStyle.Popup;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(219, 179, 91);
+            label2.Location = new Point(359, 126);
+            label2.Name = "label2";
+            label2.Size = new Size(36, 21);
+            label2.TabIndex = 10;
+            label2.Text = "Cpf";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Black;
+            label3.FlatStyle = FlatStyle.Popup;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(219, 179, 91);
+            label3.Location = new Point(167, 184);
+            label3.Name = "label3";
+            label3.Size = new Size(53, 21);
+            label3.TabIndex = 11;
+            label3.Text = "Email";
+            // 
+            // txtSenha
+            // 
+            txtSenha.Location = new Point(241, 207);
+            txtSenha.Name = "txtSenha";
+            txtSenha.Size = new Size(306, 23);
+            txtSenha.TabIndex = 12;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Black;
+            label4.FlatStyle = FlatStyle.Popup;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.FromArgb(219, 179, 91);
+            label4.Location = new Point(167, 205);
+            label4.Name = "label4";
+            label4.Size = new Size(67, 21);
+            label4.TabIndex = 13;
+            label4.Text = "Senhha";
             // 
             // FormCadastrar
             // 
@@ -101,27 +169,39 @@
             BackColor = SystemColors.ActiveCaptionText;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(737, 418);
+            Controls.Add(label4);
+            Controls.Add(txtSenha);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(bntCadastrar);
             Controls.Add(bntVoltar);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(cmbTipo_usuario);
+            Controls.Add(txtEmail);
+            Controls.Add(txtCpf);
+            Controls.Add(txtNome);
+            Controls.Add(txtId);
+            MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormCadastrar";
             Text = "FormCadastrar";
+            Load += FormCadastrar_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private ComboBox comboBox1;
+        private TextBox txtId;
+        private TextBox txtNome;
+        private TextBox txtCpf;
+        private TextBox txtEmail;
+        private ComboBox cmbTipo_usuario;
         private Button bntVoltar;
         private Button bntCadastrar;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private TextBox txtSenha;
+        private Label label4;
     }
 }

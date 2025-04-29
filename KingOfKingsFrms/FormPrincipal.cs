@@ -16,7 +16,7 @@ namespace KingOfKingsFrms
             ActiveFormClose();
             frmaAtivo = frm;
             frm.TopLevel = false;
-            panel6.Controls.Add(frm);
+            pnlPrincipal.Controls.Add(frm);
             frm.BringToFront();
             frm.Show();
         }
@@ -55,5 +55,7 @@ namespace KingOfKingsFrms
         private void panel6_Paint(object sender, PaintEventArgs e)
         {   
         }
+
+     
     }
 }

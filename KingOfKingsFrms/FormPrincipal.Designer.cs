@@ -37,7 +37,7 @@
             menuStrip1 = new MenuStrip();
             eddeToolStripMenuItem = new ToolStripMenuItem();
             bntCadastrar = new Button();
-            panel6 = new Panel();
+            pnlPrincipal = new Panel();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -105,7 +105,7 @@
             // 
             // bntCadastrar
             // 
-            bntCadastrar.Location = new Point(288, 41);
+            bntCadastrar.Location = new Point(322, 46);
             bntCadastrar.Name = "bntCadastrar";
             bntCadastrar.Size = new Size(75, 23);
             bntCadastrar.TabIndex = 9;
@@ -113,14 +113,14 @@
             bntCadastrar.UseVisualStyleBackColor = true;
             bntCadastrar.Click += bntCadastrar_Click;
             // 
-            // panel6
+            // pnlPrincipal
             // 
-            panel6.BackgroundImage = (Image)resources.GetObject("panel6.BackgroundImage");
-            panel6.Location = new Point(124, 109);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(753, 457);
-            panel6.TabIndex = 10;
-            panel6.Paint += panel6_Paint;
+            pnlPrincipal.BackgroundImage = (Image)resources.GetObject("pnlPrincipal.BackgroundImage");
+            pnlPrincipal.Location = new Point(124, 98);
+            pnlPrincipal.Name = "pnlPrincipal";
+            pnlPrincipal.Size = new Size(753, 457);
+            pnlPrincipal.TabIndex = 10;
+            pnlPrincipal.Paint += panel6_Paint;
             // 
             // FormPrincipal
             // 
@@ -128,7 +128,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(999, 611);
-            Controls.Add(panel6);
+            Controls.Add(pnlPrincipal);
             Controls.Add(bntCadastrar);
             Controls.Add(button1);
             Controls.Add(bntHistorico);
@@ -157,6 +157,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem eddeToolStripMenuItem;
         private Button bntCadastrar;
-        private Panel panel6;
+        private Panel pnlPrincipal;
     }
 }

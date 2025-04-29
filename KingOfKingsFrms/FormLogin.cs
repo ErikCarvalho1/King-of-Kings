@@ -63,9 +63,9 @@ namespace KingOfKingsFrms
                 {
                     if (usuario.Ativo)
                     {
-                        FormPrincipal formPrincipal = new FormPrincipal();
-                        formPrincipal.Show();
-                        this.Hide();
+                       FormPrincipal formPrincipal = new FormPrincipal();
+            formPrincipal.Show();
+            this.Hide();
 
                     }
                     else
@@ -78,7 +78,8 @@ namespace KingOfKingsFrms
                     MessageBox.Show("Email ou senha incorretos ou inexistentes!", "Erro de Login");
                 }
             
-                  
+
+
         }
     }
 }
