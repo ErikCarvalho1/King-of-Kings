@@ -105,7 +105,7 @@
             // 
             // bntCadastrar
             // 
-            bntCadastrar.Location = new Point(351, 41);
+            bntCadastrar.Location = new Point(288, 41);
             bntCadastrar.Name = "bntCadastrar";
             bntCadastrar.Size = new Size(75, 23);
             bntCadastrar.TabIndex = 9;
