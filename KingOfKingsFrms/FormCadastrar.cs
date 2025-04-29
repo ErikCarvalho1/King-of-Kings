@@ -28,5 +28,10 @@ namespace KingOfKingsFrms
             formLogin.Show();
             this.Hide();
         }
+
+        private void bntCadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace KingOfKingsFrms
         {
             InitializeComponent();
         }
-        private void FormPainel(Form frm) //
+        private void FormPainel(Form frm) // método para abrir o form no painel
         {
             ActiveFormClose();
             frmaAtivo = frm;
@@ -20,20 +20,14 @@ namespace KingOfKingsFrms
             frm.BringToFront();
             frm.Show();
         }
-        private void ActiveFormClose()
+        private void ActiveFormClose() // método para fechar o form ativo
         {
             if (frmaAtivo != null)
             {
                 frmaAtivo.Close();
             }
         }  
-        private void ActiveFormClose(object sender, EventArgs e)
-        {
-            if (frmaAtivo != null)
-            {
-                frmaAtivo.Close();
-            }
-        }
+        
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
@@ -53,10 +47,9 @@ namespace KingOfKingsFrms
 
         }
 
-        private void bntCadastrar_Click(object sender, EventArgs e)
+        private void bntCadastrar_Click(object sender, EventArgs e) // método para abrir o form de cadastro 
         {
-          
-            FormPainel(new FormCadastrar());
+             FormPainel(new FormCadastrar());
         }
 
         private void panel6_Paint(object sender, PaintEventArgs e)
