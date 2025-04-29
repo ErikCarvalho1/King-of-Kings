@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KingoOfKingsClass;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,12 +25,36 @@ namespace KingOfKingsFrms
 
         private void bntVoltar_Click(object sender, EventArgs e)
         {
-            FormLogin formLogin = new FormLogin();
-            formLogin.Show();
+            FormPrincipal formPrincipal = new();
+            formPrincipal.Show();
             this.Hide();
         }
 
         private void bntCadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormCadastrar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bntCadastrar_Click_1(object sender, EventArgs e)
+        {
+            Usuario usuario = new(txtNome.Text, txtCpf.Text, txtEmail.Text, cmbTipo_usuario.Text, txtSenha.Text);
+            usuario.inserir();
+            txtId.Text = usuario.Id.ToString();
+            MessageBox.Show($"Usuário {usuario.Nome} gravado com sucesso com o ID {usuario.Id}");
+            FormCadastrar_Load(sender, e);
+        }
+
+        private void cmbTipo_usuario_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
