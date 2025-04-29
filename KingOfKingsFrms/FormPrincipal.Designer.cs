@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
             bntHistorico = new Button();
             button1 = new Button();
-            button2 = new Button();
             menuStrip1 = new MenuStrip();
             eddeToolStripMenuItem = new ToolStripMenuItem();
             bntCadastrar = new Button();
@@ -44,7 +44,7 @@
             // panel1
             // 
             panel1.BackgroundImage = Properties.Resources.linha_dorada__2_;
-            panel1.Location = new Point(78, 83);
+            panel1.Location = new Point(124, 79);
             panel1.Name = "panel1";
             panel1.Size = new Size(676, 10);
             panel1.TabIndex = 2;
@@ -52,7 +52,7 @@
             // panel2
             // 
             panel2.BackgroundImage = Properties.Resources.linha_em_pe_dorada;
-            panel2.Location = new Point(3, 201);
+            panel2.Location = new Point(49, 197);
             panel2.Name = "panel2";
             panel2.Size = new Size(73, 358);
             panel2.TabIndex = 3;
@@ -60,7 +60,7 @@
             // panel3
             // 
             panel3.BackgroundImage = Properties.Resources.linha_em_pe_dorada;
-            panel3.Location = new Point(789, 201);
+            panel3.Location = new Point(835, 197);
             panel3.Name = "panel3";
             panel3.Size = new Size(71, 358);
             panel3.TabIndex = 4;
@@ -69,7 +69,7 @@
             // 
             bntHistorico.BackgroundImage = Properties.Resources.historico__1_;
             bntHistorico.FlatStyle = FlatStyle.Popup;
-            bntHistorico.Location = new Point(78, 32);
+            bntHistorico.Location = new Point(124, 28);
             bntHistorico.Name = "bntHistorico";
             bntHistorico.Size = new Size(62, 41);
             bntHistorico.TabIndex = 6;
@@ -80,21 +80,11 @@
             // 
             button1.BackgroundImage = Properties.Resources.Ajuda;
             button1.FlatStyle = FlatStyle.Popup;
-            button1.Location = new Point(146, 36);
+            button1.Location = new Point(192, 32);
             button1.Name = "button1";
             button1.Size = new Size(57, 41);
             button1.TabIndex = 7;
             button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.BackgroundImage = Properties.Resources.Ajuda;
-            button2.Location = new Point(209, 32);
-            button2.Name = "button2";
-            button2.Size = new Size(60, 49);
-            button2.TabIndex = 0;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -115,7 +105,7 @@
             // 
             // bntCadastrar
             // 
-            bntCadastrar.Location = new Point(305, 45);
+            bntCadastrar.Location = new Point(351, 41);
             bntCadastrar.Name = "bntCadastrar";
             bntCadastrar.Size = new Size(75, 23);
             bntCadastrar.TabIndex = 9;
@@ -125,7 +115,8 @@
             // 
             // panel6
             // 
-            panel6.Location = new Point(82, 87);
+            panel6.BackgroundImage = (Image)resources.GetObject("panel6.BackgroundImage");
+            panel6.Location = new Point(124, 109);
             panel6.Name = "panel6";
             panel6.Size = new Size(753, 457);
             panel6.TabIndex = 10;
@@ -136,11 +127,9 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            BackgroundImage = Properties.Resources.kingofkings;
             ClientSize = new Size(999, 611);
             Controls.Add(panel6);
             Controls.Add(bntCadastrar);
-            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(bntHistorico);
             Controls.Add(panel3);
@@ -165,7 +154,6 @@
         private Button bntHistorico;
         private Button button1;
         private Panel panel5;
-        private Button button2;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem eddeToolStripMenuItem;
         private Button bntCadastrar;
