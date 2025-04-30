@@ -63,66 +63,6 @@ namespace KingOfKingsFrms.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap acessar {
-            get {
-                object obj = ResourceManager.GetObject("acessar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap acessar__1_ {
-            get {
-                object obj = ResourceManager.GetObject("acessar (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Acessar__3_ {
-            get {
-                object obj = ResourceManager.GetObject("Acessar (3)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap acesso {
-            get {
-                object obj = ResourceManager.GetObject("acesso", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Acesso1 {
-            get {
-                object obj = ResourceManager.GetObject("Acesso1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap acesso2 {
-            get {
-                object obj = ResourceManager.GetObject("acesso2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Ajuda {
             get {
                 object obj = ResourceManager.GetObject("Ajuda", resourceCulture);
@@ -133,9 +73,19 @@ namespace KingOfKingsFrms.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CADASTRAR {
+        internal static System.Drawing.Bitmap bntAcessar {
             get {
-                object obj = ResourceManager.GetObject("CADASTRAR", resourceCulture);
+                object obj = ResourceManager.GetObject("bntAcessar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exibirSenha {
+            get {
+                object obj = ResourceManager.GetObject("exibirSenha", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -256,6 +206,26 @@ namespace KingOfKingsFrms.Properties {
         internal static System.Drawing.Bitmap linha_em_pe_dorada {
             get {
                 object obj = ResourceManager.GetObject("linha em pe dorada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Login {
+            get {
+                object obj = ResourceManager.GetObject("Login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ocultarSenha {
+            get {
+                object obj = ResourceManager.GetObject("ocultarSenha", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
