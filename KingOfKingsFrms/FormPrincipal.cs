@@ -26,12 +26,12 @@ namespace KingOfKingsFrms
             {
                 frmaAtivo.Close();
             }
-        }  
-        
+        }
+
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-         
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,13 +49,16 @@ namespace KingOfKingsFrms
 
         private void bntCadastrar_Click(object sender, EventArgs e) // método para abrir o form de cadastro 
         {
-             FormPainel(new FormCadastrar());
+            FormPainel(new FormCadastrar());
         }
 
         private void panel6_Paint(object sender, PaintEventArgs e)
-        {   
+        {
         }
 
-     
+        private void bntUsuarios_Click(object sender, EventArgs e)
+        {
+            FormPainel(new FormUsuarios());
+        }
     }
 }

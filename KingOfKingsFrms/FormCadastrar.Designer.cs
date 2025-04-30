@@ -95,7 +95,7 @@
             // 
             bntCadastrar.BackgroundImage = Properties.Resources.Acessar__3_;
             bntCadastrar.FlatStyle = FlatStyle.Flat;
-            bntCadastrar.Location = new Point(451, 236);
+            bntCadastrar.Location = new Point(440, 236);
             bntCadastrar.Name = "bntCadastrar";
             bntCadastrar.Size = new Size(96, 33);
             bntCadastrar.TabIndex = 8;
@@ -181,6 +181,7 @@
             Controls.Add(txtCpf);
             Controls.Add(txtNome);
             Controls.Add(txtId);
+            FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormCadastrar";
