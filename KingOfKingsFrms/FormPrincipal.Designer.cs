@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             panel1 = new Panel();
+            panel4 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
             bntHistorico = new Button();
@@ -38,23 +39,35 @@
             eddeToolStripMenuItem = new ToolStripMenuItem();
             bntCadastrar = new Button();
             pnlPrincipal = new Panel();
+            bntUsuarios = new Button();
+            panel6 = new Panel();
+            panel1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackgroundImage = Properties.Resources.linha_dorada__2_;
-            panel1.Location = new Point(124, 79);
+            panel1.Controls.Add(panel4);
+            panel1.Location = new Point(124, 82);
             panel1.Name = "panel1";
-            panel1.Size = new Size(676, 10);
+            panel1.Size = new Size(446, 10);
             panel1.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            panel4.BackgroundImage = Properties.Resources.linha_dorada__2_;
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(403, 10);
+            panel4.TabIndex = 3;
             // 
             // panel2
             // 
             panel2.BackgroundImage = Properties.Resources.linha_em_pe_dorada;
-            panel2.Location = new Point(49, 197);
+            panel2.Location = new Point(45, 122);
             panel2.Name = "panel2";
-            panel2.Size = new Size(73, 358);
+            panel2.Size = new Size(73, 433);
             panel2.TabIndex = 3;
             // 
             // panel3
@@ -62,7 +75,7 @@
             panel3.BackgroundImage = Properties.Resources.linha_em_pe_dorada;
             panel3.Location = new Point(835, 197);
             panel3.Name = "panel3";
-            panel3.Size = new Size(71, 358);
+            panel3.Size = new Size(71, 355);
             panel3.TabIndex = 4;
             // 
             // bntHistorico
@@ -105,7 +118,7 @@
             // 
             // bntCadastrar
             // 
-            bntCadastrar.Location = new Point(322, 46);
+            bntCadastrar.Location = new Point(696, 41);
             bntCadastrar.Name = "bntCadastrar";
             bntCadastrar.Size = new Size(75, 23);
             bntCadastrar.TabIndex = 9;
@@ -122,12 +135,32 @@
             pnlPrincipal.TabIndex = 10;
             pnlPrincipal.Paint += panel6_Paint;
             // 
+            // bntUsuarios
+            // 
+            bntUsuarios.Location = new Point(615, 41);
+            bntUsuarios.Name = "bntUsuarios";
+            bntUsuarios.Size = new Size(75, 23);
+            bntUsuarios.TabIndex = 11;
+            bntUsuarios.Text = "Usuarios";
+            bntUsuarios.UseVisualStyleBackColor = true;
+            bntUsuarios.Click += bntUsuarios_Click;
+            // 
+            // panel6
+            // 
+            panel6.BackgroundImage = Properties.Resources.linha_dorada__2_;
+            panel6.Location = new Point(405, 564);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(458, 10);
+            panel6.TabIndex = 3;
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(999, 611);
+            Controls.Add(panel6);
+            Controls.Add(bntUsuarios);
             Controls.Add(pnlPrincipal);
             Controls.Add(bntCadastrar);
             Controls.Add(button1);
@@ -141,6 +174,7 @@
             ShowIcon = false;
             Text = "Form1";
             Load += FormPrincipal_Load;
+            panel1.ResumeLayout(false);
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -158,5 +192,8 @@
         private ToolStripMenuItem eddeToolStripMenuItem;
         private Button bntCadastrar;
         private Panel pnlPrincipal;
+        private Button bntUsuarios;
+        private Panel panel4;
+        private Panel panel6;
     }
 }
