@@ -93,13 +93,13 @@
             // 
             // bntCadastrar
             // 
-            bntCadastrar.BackgroundImage = Properties.Resources.Acessar__3_;
+            bntCadastrar.BackColor = SystemColors.ActiveCaption;
             bntCadastrar.FlatStyle = FlatStyle.Flat;
             bntCadastrar.Location = new Point(440, 236);
             bntCadastrar.Name = "bntCadastrar";
             bntCadastrar.Size = new Size(96, 33);
             bntCadastrar.TabIndex = 8;
-            bntCadastrar.UseVisualStyleBackColor = true;
+            bntCadastrar.UseVisualStyleBackColor = false;
             bntCadastrar.Click += bntCadastrar_Click_1;
             // 
             // label1

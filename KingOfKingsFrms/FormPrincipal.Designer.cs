@@ -169,6 +169,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStrip1;
             Name = "FormPrincipal";
             ShowIcon = false;

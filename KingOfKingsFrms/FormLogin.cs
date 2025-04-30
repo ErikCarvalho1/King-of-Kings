@@ -36,7 +36,7 @@ namespace KingOfKingsFrms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Application.Exit(); ;
+          
         }
 
 
@@ -58,28 +58,53 @@ namespace KingOfKingsFrms
         private void bntAcessar_Click(object sender, EventArgs e)
         {
             var usuario = Usuario.EfetuarLogin(txtNomeUsuario.Text, txtSenha.Text);
-           
-                if (usuario.Id > 0)
-                {
-                    if (usuario.Ativo)
-                    {
-                       FormPrincipal formPrincipal = new FormPrincipal();
-            formPrincipal.Show();
-            this.Hide();
 
-                    }
-                    else
-                    {
-                        MessageBox.Show("Sua conta está inativa.\nProcure o administrador.", "Conta inativa");
-                    }
+            if (usuario.Id > 0)
+            {
+                if (usuario.Ativo)
+                {
+                    FormPrincipal formPrincipal = new FormPrincipal();
+                    formPrincipal.Show();
+                    this.Hide();
+
                 }
                 else
                 {
-                    MessageBox.Show("Email ou senha incorretos ou inexistentes!", "Erro de Login");
+                    MessageBox.Show("Sua conta está inativa.\nProcure o administrador.", "Conta inativa");
                 }
-            
+            }
+            else
+            {
+                MessageBox.Show("Email ou senha incorretos ou inexistentes!", "Erro de Login");
+            }
 
 
+
+        }
+
+       
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtSenha.UseSystemPasswordChar = false;
+            pictureBox1.Image = Properties.Resources.exibirSenha;
+
+        }
+
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtSenha.UseSystemPasswordChar = true;
+            pictureBox1.Image = Properties.Resources.ocultarSenha;
         }
     }
 }

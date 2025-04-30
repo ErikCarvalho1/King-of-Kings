@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             panel1 = new Panel();
             txtNomeUsuario = new TextBox();
             txtSenha = new TextBox();
@@ -36,7 +37,10 @@
             linkLabel1 = new LinkLabel();
             panel3 = new Panel();
             panel4 = new Panel();
-            bntSair = new Button();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            pictureBox1 = new PictureBox();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -60,21 +64,23 @@
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(237, 23);
             txtSenha.TabIndex = 2;
+            txtSenha.UseSystemPasswordChar = true;
             // 
             // bntAcessar
             // 
-            bntAcessar.BackgroundImage = Properties.Resources.Acessar__3_;
+            bntAcessar.BackColor = SystemColors.ActiveCaption;
+            bntAcessar.BackgroundImage = Properties.Resources.bntAcessar;
             bntAcessar.FlatStyle = FlatStyle.Flat;
-            bntAcessar.Location = new Point(166, 195);
+            bntAcessar.Location = new Point(221, 195);
             bntAcessar.Name = "bntAcessar";
-            bntAcessar.Size = new Size(101, 38);
+            bntAcessar.Size = new Size(100, 38);
             bntAcessar.TabIndex = 3;
-            bntAcessar.UseVisualStyleBackColor = true;
+            bntAcessar.UseVisualStyleBackColor = false;
             bntAcessar.Click += bntAcessar_Click;
             // 
             // panel2
             // 
-            panel2.BackgroundImage = Properties.Resources.acesso2;
+            panel2.BackgroundImage = Properties.Resources.Login;
             panel2.Location = new Point(176, 73);
             panel2.Name = "panel2";
             panel2.Size = new Size(209, 45);
@@ -103,22 +109,32 @@
             // panel4
             // 
             panel4.BackgroundImage = Properties.Resources.usuario_senha;
+            panel4.Controls.Add(flowLayoutPanel1);
             panel4.Location = new Point(129, 160);
             panel4.Name = "panel4";
             panel4.Size = new Size(28, 29);
             panel4.TabIndex = 9;
             // 
-            // bntSair
+            // flowLayoutPanel1
             // 
-            bntSair.BackgroundImage = Properties.Resources.sair;
-            bntSair.FlatStyle = FlatStyle.Flat;
-            bntSair.ForeColor = SystemColors.ControlText;
-            bntSair.Location = new Point(273, 195);
-            bntSair.Name = "bntSair";
-            bntSair.Size = new Size(100, 38);
-            bntSair.TabIndex = 4;
-            bntSair.UseVisualStyleBackColor = true;
-            bntSair.Click += button2_Click;
+            flowLayoutPanel1.Location = new Point(21, 21);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(8, 8);
+            flowLayoutPanel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.Cursor = Cursors.Hand;
+            pictureBox1.Image = Properties.Resources.ocultarSenha;
+            pictureBox1.Location = new Point(390, 160);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(39, 38);
+            pictureBox1.TabIndex = 11;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click_1;
+            pictureBox1.MouseDown += pictureBox1_MouseDown;
+            pictureBox1.MouseUp += pictureBox1_MouseUp;
             // 
             // FormLogin
             // 
@@ -126,20 +142,23 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(532, 337);
+            Controls.Add(pictureBox1);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(linkLabel1);
             Controls.Add(panel2);
-            Controls.Add(bntSair);
             Controls.Add(bntAcessar);
             Controls.Add(txtSenha);
             Controls.Add(txtNomeUsuario);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormLogin";
             ShowIcon = false;
             Load += FormLogin_Load;
+            panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -154,6 +173,7 @@
         private LinkLabel linkLabel1;
         private Panel panel3;
         private Panel panel4;
-        private Button bntSair;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private PictureBox pictureBox1;
     }
 }
