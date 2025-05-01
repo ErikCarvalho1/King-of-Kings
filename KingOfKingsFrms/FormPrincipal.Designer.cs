@@ -41,6 +41,7 @@
             pnlPrincipal = new Panel();
             bntUsuarios = new Button();
             panel6 = new Panel();
+            bntSair = new Button();
             panel1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -153,12 +154,23 @@
             panel6.Size = new Size(458, 10);
             panel6.TabIndex = 3;
             // 
+            // bntSair
+            // 
+            bntSair.Location = new Point(777, 41);
+            bntSair.Name = "bntSair";
+            bntSair.Size = new Size(75, 23);
+            bntSair.TabIndex = 12;
+            bntSair.Text = "Sair";
+            bntSair.UseVisualStyleBackColor = true;
+            bntSair.Click += bntSair_Click;
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(999, 611);
+            Controls.Add(bntSair);
             Controls.Add(panel6);
             Controls.Add(bntUsuarios);
             Controls.Add(pnlPrincipal);
@@ -196,5 +208,6 @@
         private Button bntUsuarios;
         private Panel panel4;
         private Panel panel6;
+        private Button bntSair;
     }
 }

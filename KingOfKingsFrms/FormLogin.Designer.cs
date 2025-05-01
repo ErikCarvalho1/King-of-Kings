@@ -68,8 +68,9 @@
             // 
             // bntAcessar
             // 
-            bntAcessar.BackColor = SystemColors.ActiveCaption;
+            bntAcessar.BackColor = SystemColors.ActiveCaptionText;
             bntAcessar.BackgroundImage = Properties.Resources.bntAcessar;
+            bntAcessar.Cursor = Cursors.Hand;
             bntAcessar.FlatStyle = FlatStyle.Flat;
             bntAcessar.Location = new Point(221, 195);
             bntAcessar.Name = "bntAcessar";
@@ -127,7 +128,7 @@
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = Properties.Resources.ocultarSenha;
-            pictureBox1.Location = new Point(390, 160);
+            pictureBox1.Location = new Point(391, 160);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(39, 38);
             pictureBox1.TabIndex = 11;

@@ -23,7 +23,7 @@ namespace KingOfKingsFrms
             Application.Exit();
         }
 
-        private void bntVoltar_Click(object sender, EventArgs e)
+        private void bntVoltar_Click(object sender, EventArgs e) // método para voltar para o form de login
         {
             FormPrincipal formPrincipal = new();
             formPrincipal.Show();
@@ -45,7 +45,7 @@ namespace KingOfKingsFrms
 
         }
 
-        private void bntCadastrar_Click_1(object sender, EventArgs e)
+        private void bntCadastrar_Click_1(object sender, EventArgs e) // método para cadastrar o usuário
         {
             Usuario usuario = new(txtNome.Text, txtCpf.Text, txtEmail.Text, cmbTipo_usuario.Text, txtSenha.Text);
             usuario.inserir();
@@ -55,6 +55,11 @@ namespace KingOfKingsFrms
         }
 
         private void cmbTipo_usuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

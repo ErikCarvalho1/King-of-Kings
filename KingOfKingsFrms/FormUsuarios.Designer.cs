@@ -50,6 +50,8 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
+            txtSaida = new TextBox();
+            txtEntrada = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             SuspendLayout();
             // 
@@ -59,9 +61,9 @@
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { clnId, clnNome, clnCpf, clnEmail, clnAtivo });
             dgvUsuarios.GridColor = Color.Black;
-            dgvUsuarios.Location = new Point(99, 224);
+            dgvUsuarios.Location = new Point(90, 264);
             dgvUsuarios.Name = "dgvUsuarios";
-            dgvUsuarios.Size = new Size(543, 182);
+            dgvUsuarios.Size = new Size(543, 363);
             dgvUsuarios.TabIndex = 0;
             dgvUsuarios.CellContentClick += dgvUsuario_CellContentClick;
             // 
@@ -97,7 +99,7 @@
             // 
             // bntBuscar
             // 
-            bntBuscar.Location = new Point(441, 93);
+            bntBuscar.Location = new Point(372, 188);
             bntBuscar.Name = "bntBuscar";
             bntBuscar.Size = new Size(75, 23);
             bntBuscar.TabIndex = 1;
@@ -107,16 +109,17 @@
             // 
             // bntAlterar
             // 
-            bntAlterar.Location = new Point(441, 122);
+            bntAlterar.Location = new Point(158, 188);
             bntAlterar.Name = "bntAlterar";
             bntAlterar.Size = new Size(75, 24);
             bntAlterar.TabIndex = 2;
             bntAlterar.Text = "Alterar";
             bntAlterar.UseVisualStyleBackColor = true;
+            bntAlterar.Click += bntAlterar_Click;
             // 
             // btnVoltar
             // 
-            btnVoltar.Location = new Point(441, 153);
+            btnVoltar.Location = new Point(265, 188);
             btnVoltar.Name = "btnVoltar";
             btnVoltar.Size = new Size(75, 24);
             btnVoltar.TabIndex = 3;
@@ -126,28 +129,28 @@
             // 
             // txtId
             // 
-            txtId.Location = new Point(239, 65);
+            txtId.Location = new Point(185, 62);
             txtId.Name = "txtId";
             txtId.Size = new Size(39, 23);
             txtId.TabIndex = 4;
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(239, 95);
+            txtNome.Location = new Point(230, 62);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(181, 23);
+            txtNome.Size = new Size(136, 23);
             txtNome.TabIndex = 5;
             // 
             // txtCpf
             // 
-            txtCpf.Location = new Point(239, 124);
+            txtCpf.Location = new Point(185, 91);
             txtCpf.Name = "txtCpf";
             txtCpf.Size = new Size(181, 23);
             txtCpf.TabIndex = 6;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(239, 153);
+            txtEmail.Location = new Point(185, 121);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(181, 23);
             txtEmail.TabIndex = 7;
@@ -155,14 +158,15 @@
             // cmbTipo_usuario
             // 
             cmbTipo_usuario.FormattingEnabled = true;
-            cmbTipo_usuario.Location = new Point(284, 66);
+            cmbTipo_usuario.Items.AddRange(new object[] { "Administrador", "Funcionário", "Cliente " });
+            cmbTipo_usuario.Location = new Point(386, 62);
             cmbTipo_usuario.Name = "cmbTipo_usuario";
             cmbTipo_usuario.Size = new Size(136, 23);
             cmbTipo_usuario.TabIndex = 8;
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(239, 182);
+            txtSenha.Location = new Point(185, 156);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(181, 23);
             txtSenha.TabIndex = 9;
@@ -172,7 +176,7 @@
             chkAtivo.AutoSize = true;
             chkAtivo.BackColor = Color.Black;
             chkAtivo.ForeColor = Color.FromArgb(219, 179, 91);
-            chkAtivo.Location = new Point(462, 183);
+            chkAtivo.Location = new Point(393, 163);
             chkAtivo.Name = "chkAtivo";
             chkAtivo.Size = new Size(54, 19);
             chkAtivo.TabIndex = 10;
@@ -184,7 +188,7 @@
             label1.AutoSize = true;
             label1.BackColor = SystemColors.ActiveCaptionText;
             label1.ForeColor = Color.FromArgb(219, 179, 91);
-            label1.Location = new Point(197, 68);
+            label1.Location = new Point(143, 65);
             label1.Name = "label1";
             label1.Size = new Size(20, 15);
             label1.TabIndex = 11;
@@ -195,7 +199,7 @@
             label2.AutoSize = true;
             label2.BackColor = SystemColors.ActiveCaptionText;
             label2.ForeColor = Color.FromArgb(219, 179, 91);
-            label2.Location = new Point(197, 97);
+            label2.Location = new Point(230, 44);
             label2.Name = "label2";
             label2.Size = new Size(40, 15);
             label2.TabIndex = 12;
@@ -206,7 +210,7 @@
             label3.AutoSize = true;
             label3.BackColor = SystemColors.ActiveCaptionText;
             label3.ForeColor = Color.FromArgb(219, 179, 91);
-            label3.Location = new Point(197, 127);
+            label3.Location = new Point(143, 99);
             label3.Name = "label3";
             label3.Size = new Size(26, 15);
             label3.TabIndex = 13;
@@ -217,7 +221,7 @@
             label4.AutoSize = true;
             label4.BackColor = SystemColors.ActiveCaptionText;
             label4.ForeColor = Color.FromArgb(219, 179, 91);
-            label4.Location = new Point(197, 156);
+            label4.Location = new Point(143, 128);
             label4.Name = "label4";
             label4.Size = new Size(36, 15);
             label4.TabIndex = 14;
@@ -228,11 +232,25 @@
             label5.AutoSize = true;
             label5.BackColor = SystemColors.ActiveCaptionText;
             label5.ForeColor = Color.FromArgb(219, 179, 91);
-            label5.Location = new Point(197, 187);
+            label5.Location = new Point(143, 159);
             label5.Name = "label5";
             label5.Size = new Size(39, 15);
             label5.TabIndex = 15;
             label5.Text = "Senha";
+            // 
+            // txtSaida
+            // 
+            txtSaida.Location = new Point(386, 128);
+            txtSaida.Name = "txtSaida";
+            txtSaida.Size = new Size(136, 23);
+            txtSaida.TabIndex = 16;
+            // 
+            // txtEntrada
+            // 
+            txtEntrada.Location = new Point(386, 99);
+            txtEntrada.Name = "txtEntrada";
+            txtEntrada.Size = new Size(136, 23);
+            txtEntrada.TabIndex = 17;
             // 
             // FormUsuarios
             // 
@@ -240,6 +258,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(737, 418);
+            Controls.Add(txtEntrada);
+            Controls.Add(txtSaida);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -289,5 +309,7 @@
         private DataGridViewTextBoxColumn clnCpf;
         private DataGridViewTextBoxColumn clnEmail;
         private DataGridViewTextBoxColumn clnAtivo;
+        private TextBox txtSaida;
+        private TextBox txtEntrada;
     }
 }

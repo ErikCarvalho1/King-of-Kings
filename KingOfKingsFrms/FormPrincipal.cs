@@ -1,4 +1,6 @@
 
+using KingoOfKingsClass;
+using KingOfKingsclass;
 namespace KingOfKingsFrms
     
 
@@ -35,6 +37,7 @@ namespace KingOfKingsFrms
         }
 
         private void button1_Click(object sender, EventArgs e)
+
         {
             FormLogin formLogin = new FormLogin();
             formLogin.Show();
@@ -56,9 +59,17 @@ namespace KingOfKingsFrms
         {
         }
 
-        private void bntUsuarios_Click(object sender, EventArgs e)
+        private void bntUsuarios_Click(object sender, EventArgs e) // método para abrir o form de usuários
         {
             FormPainel(new FormUsuarios());
+        }
+
+        private void bntSair_Click(object sender, EventArgs e)
+        {
+            var registro = new ResgistroDeAcesso();
+            registro.RegistrarSaida();
+               Application.Exit();
+
         }
     }
 }

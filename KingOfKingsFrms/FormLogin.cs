@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KingOfKingsclass;
 
 namespace KingOfKingsFrms
 {
@@ -55,12 +56,14 @@ namespace KingOfKingsFrms
 
         }
 
-        private void bntAcessar_Click(object sender, EventArgs e)
+        private void bntAcessar_Click(object sender, EventArgs e) // método para acessar o sistema
         {
+            var registroDeAcesso = new ResgistroDeAcesso();
             var usuario = Usuario.EfetuarLogin(txtNomeUsuario.Text, txtSenha.Text);
 
             if (usuario.Id > 0)
             {
+               registroDeAcesso.RegistrarAcesso();
                 if (usuario.Ativo)
                 {
                     FormPrincipal formPrincipal = new FormPrincipal();
@@ -94,14 +97,15 @@ namespace KingOfKingsFrms
 
         }
 
-        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e) // método para mostrar a senha
+       
         {
             txtSenha.UseSystemPasswordChar = false;
             pictureBox1.Image = Properties.Resources.exibirSenha;
 
         }
 
-        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e) // método para esconder a senha
         {
             txtSenha.UseSystemPasswordChar = true;
             pictureBox1.Image = Properties.Resources.ocultarSenha;
