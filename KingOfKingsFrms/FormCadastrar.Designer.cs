@@ -45,30 +45,30 @@
             // 
             // txtId
             // 
-            txtId.Location = new Point(173, 150);
+            txtId.Location = new Point(146, 150);
             txtId.Name = "txtId";
             txtId.Size = new Size(47, 23);
             txtId.TabIndex = 1;
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(240, 150);
+            txtNome.Location = new Point(215, 150);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(100, 23);
             txtNome.TabIndex = 2;
             // 
             // txtCpf
             // 
-            txtCpf.Location = new Point(359, 150);
+            txtCpf.Location = new Point(321, 150);
             txtCpf.Name = "txtCpf";
-            txtCpf.Size = new Size(100, 23);
+            txtCpf.Size = new Size(138, 23);
             txtCpf.TabIndex = 3;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(240, 179);
+            txtEmail.Location = new Point(215, 179);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(307, 23);
+            txtEmail.Size = new Size(332, 23);
             txtEmail.TabIndex = 4;
             // 
             // cmbTipo_usuario
@@ -83,21 +83,23 @@
             // 
             // bntVoltar
             // 
-            bntVoltar.Location = new Point(256, 236);
+            bntVoltar.BackgroundImage = Properties.Resources.bntVoltar;
+            bntVoltar.FlatStyle = FlatStyle.Flat;
+            bntVoltar.Location = new Point(215, 236);
             bntVoltar.Name = "bntVoltar";
-            bntVoltar.Size = new Size(84, 27);
+            bntVoltar.Size = new Size(100, 36);
             bntVoltar.TabIndex = 7;
-            bntVoltar.Text = "Voltar";
             bntVoltar.UseVisualStyleBackColor = true;
             bntVoltar.Click += bntVoltar_Click;
             // 
             // bntCadastrar
             // 
             bntCadastrar.BackColor = SystemColors.ActiveCaption;
+            bntCadastrar.BackgroundImage = Properties.Resources.bntCadastrar;
             bntCadastrar.FlatStyle = FlatStyle.Flat;
-            bntCadastrar.Location = new Point(440, 236);
+            bntCadastrar.Location = new Point(445, 236);
             bntCadastrar.Name = "bntCadastrar";
-            bntCadastrar.Size = new Size(96, 33);
+            bntCadastrar.Size = new Size(102, 33);
             bntCadastrar.TabIndex = 8;
             bntCadastrar.UseVisualStyleBackColor = false;
             bntCadastrar.Click += bntCadastrar_Click_1;
@@ -136,7 +138,7 @@
             label3.FlatStyle = FlatStyle.Popup;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(219, 179, 91);
-            label3.Location = new Point(167, 184);
+            label3.Location = new Point(140, 184);
             label3.Name = "label3";
             label3.Size = new Size(53, 21);
             label3.TabIndex = 11;
@@ -144,9 +146,9 @@
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(241, 207);
+            txtSenha.Location = new Point(215, 207);
             txtSenha.Name = "txtSenha";
-            txtSenha.Size = new Size(306, 23);
+            txtSenha.Size = new Size(332, 23);
             txtSenha.TabIndex = 12;
             // 
             // label4
@@ -156,11 +158,12 @@
             label4.FlatStyle = FlatStyle.Popup;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(219, 179, 91);
-            label4.Location = new Point(167, 205);
+            label4.Location = new Point(140, 205);
             label4.Name = "label4";
             label4.Size = new Size(67, 21);
             label4.TabIndex = 13;
             label4.Text = "Senhha";
+            label4.Click += label4_Click;
             // 
             // FormCadastrar
             // 

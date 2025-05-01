@@ -67,7 +67,7 @@ namespace KingoOfKingsClass
 
 
         }
-        public Usuario(string nome, string cpf_cnpj, string email, string tipo_Usuario, string senha)// Cadastro
+        public Usuario(string nome, string cpf_cnpj, string email, string tipo_Usuario, string senha)
         {
 
             Nome = nome; ;
@@ -81,7 +81,7 @@ namespace KingoOfKingsClass
 
         }
 
-        public Usuario(int id , string nome, string cpf_cnpj, string email, string tipo_Usuario, bool ativo)
+        public Usuario(int id , string nome, string cpf_cnpj, string email, string tipo_Usuario, bool ativo) 
         {
             Id = id;
             Nome = nome; ;
@@ -100,9 +100,7 @@ namespace KingoOfKingsClass
             string sql = $"SELECT * FROM usuarios WHERE email = '{email}' AND senha = MD5('{senha}')";
 
             var cn = Banco.Abrir();
-            cn.CommandText = sql;
-            //cn.Parameters.AddWithValue("@Email", email);
-            //cn.Parameters.AddWithValue("@senha", senha);
+            cn.CommandText = sql;       
 
             var dr = cn.ExecuteReader();
             if (dr.Read())
@@ -183,7 +181,7 @@ namespace KingoOfKingsClass
 
             return usuario;
         }
-        public static Usuario ObterPorNome(string nome)
+        public static Usuario ObterPorNome(string nome)// metodo para obter Usuario por Nome
         {
             Usuario usuario = null;
             var cmd = Banco.Abrir();
@@ -209,6 +207,7 @@ namespace KingoOfKingsClass
             return usuario;
         }
 
+
         public void Atualizar() // metodo para atualizar Usuario
         {
             var cmd = Banco.Abrir();
@@ -216,6 +215,6 @@ namespace KingoOfKingsClass
             cmd.CommandText = $"UPDATE usuarios SET nome = '{Nome}', cpf_cnpj = '{Cpf_cnpj}', email = '{Email}', tipo_Usuario = '{Tipo_Usuario}', senha = MD5('{Senha}'), ativo = {Ativo} WHERE id = {Id}";
             cmd.ExecuteNonQuery();
         }
-
+        
     } 
 }
