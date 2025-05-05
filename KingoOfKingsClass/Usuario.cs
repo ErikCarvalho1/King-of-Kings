@@ -215,7 +215,7 @@ namespace KingoOfKingsClass
             cmd.CommandText = $"UPDATE usuarios SET nome = '{Nome}', cpf_cnpj = '{Cpf_cnpj}', email = '{Email}', tipo_Usuario = '{Tipo_Usuario}', senha = MD5('{Senha}'), ativo = {Ativo} WHERE id = {Id}";
             cmd.ExecuteNonQuery();
         }
-        
+        //sssss
     } 
 }
 //teste
