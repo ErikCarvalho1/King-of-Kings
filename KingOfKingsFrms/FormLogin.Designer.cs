@@ -53,18 +53,17 @@
             // 
             // txtNomeUsuario
             // 
-            txtNomeUsuario.Location = new Point(157, 124);
+            txtNomeUsuario.Location = new Point(163, 124);
             txtNomeUsuario.Name = "txtNomeUsuario";
             txtNomeUsuario.Size = new Size(237, 23);
             txtNomeUsuario.TabIndex = 1;
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(157, 166);
+            txtSenha.Location = new Point(163, 166);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(237, 23);
             txtSenha.TabIndex = 2;
-            txtSenha.UseSystemPasswordChar = true;
             // 
             // bntAcessar
             // 
@@ -128,7 +127,7 @@
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = Properties.Resources.ocultarSenha;
-            pictureBox1.Location = new Point(391, 160);
+            pictureBox1.Location = new Point(397, 160);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(39, 38);
             pictureBox1.TabIndex = 11;
