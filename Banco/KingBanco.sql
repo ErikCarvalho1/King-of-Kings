@@ -48,3 +48,10 @@ FOREIGN KEY (Usuario_Id) REFERENCES registrodeacesso(Id);
 
 INSERT INTO usuarios(Id, Entrada)
 VALUES ('1', now() );
+
+
+INSERT INTO RegistroDeAcesso (Usuario_Id)
+VALUES (1);
+
+INSERT INTO RegistroDeAcesso (Usuario_Id, Saida)
+VALUES (1, NOW());
