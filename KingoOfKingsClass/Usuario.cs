@@ -216,6 +216,8 @@ namespace KingoOfKingsClass
             cmd.ExecuteNonQuery();
         }
         //sssss
+
+        
     } 
 }
 //teste Figueiró

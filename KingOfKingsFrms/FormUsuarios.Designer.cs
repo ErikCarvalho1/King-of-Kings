@@ -58,12 +58,14 @@
             // dgvUsuarios
             // 
             dgvUsuarios.BackgroundColor = SystemColors.ActiveCaptionText;
+            dgvUsuarios.BorderStyle = BorderStyle.Fixed3D;
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { clnId, clnNome, clnCpf, clnEmail, clnAtivo });
             dgvUsuarios.GridColor = Color.Black;
-            dgvUsuarios.Location = new Point(90, 264);
+            dgvUsuarios.Location = new Point(133, 233);
             dgvUsuarios.Name = "dgvUsuarios";
-            dgvUsuarios.Size = new Size(543, 363);
+            dgvUsuarios.RowHeadersVisible = false;
+            dgvUsuarios.Size = new Size(502, 173);
             dgvUsuarios.TabIndex = 0;
             dgvUsuarios.CellContentClick += dgvUsuario_CellContentClick;
             // 
