@@ -50,25 +50,37 @@ namespace KingOfKingsFrms
 
         }
 
-        private void bntCadastrar_Click(object sender, EventArgs e) // método para abrir o form de cadastro 
-        {
-            FormPainel(new FormCadastrar());
-        }
-
+       
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
         }
 
-        private void bntUsuarios_Click(object sender, EventArgs e) // método para abrir o form de usuários
+
+
+
+
+        private void eddeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormPainel(new FormUsuarios());
+
         }
 
-        private void bntSair_Click(object sender, EventArgs e)
+        private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var registro = new ResgistroDeAcesso();
-            registro.RegistrarSaida();
-               Application.Exit();
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
 
         }
     }

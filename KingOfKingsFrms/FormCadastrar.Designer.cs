@@ -185,6 +185,7 @@
             Controls.Add(txtNome);
             Controls.Add(txtId);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormCadastrar";
