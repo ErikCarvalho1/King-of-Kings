@@ -71,7 +71,7 @@
             bntAcessar.BackgroundImage = Properties.Resources.bntAcessar;
             bntAcessar.Cursor = Cursors.Hand;
             bntAcessar.FlatStyle = FlatStyle.Flat;
-            bntAcessar.Location = new Point(221, 195);
+            bntAcessar.Location = new Point(220, 195);
             bntAcessar.Name = "bntAcessar";
             bntAcessar.Size = new Size(100, 38);
             bntAcessar.TabIndex = 3;

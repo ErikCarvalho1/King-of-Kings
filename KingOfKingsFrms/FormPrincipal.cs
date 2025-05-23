@@ -52,7 +52,7 @@ namespace KingOfKingsFrms
 
         private void bntCadastrar_Click(object sender, EventArgs e) // método para abrir o form de cadastro 
         {
-            FormPainel(new FormCadastrar());
+            FormPainel(new FormCadastrarUsuario());
         }
 
         private void panel6_Paint(object sender, PaintEventArgs e)
@@ -68,7 +68,12 @@ namespace KingOfKingsFrms
         {
             var registro = new ResgistroDeAcesso();
             registro.RegistrarSaida();
-               Application.Exit();
+            Application.Exit();
+
+        }
+
+        private void eddeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
     }
