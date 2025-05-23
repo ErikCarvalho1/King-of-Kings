@@ -62,10 +62,17 @@
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { clnId, clnNome, clnCpf, clnEmail, clnAtivo });
             dgvUsuarios.GridColor = Color.Black;
+<<<<<<< HEAD
+            dgvUsuarios.Location = new Point(132, 220);
+            dgvUsuarios.Name = "dgvUsuarios";
+            dgvUsuarios.RowHeadersVisible = false;
+            dgvUsuarios.Size = new Size(501, 363);
+=======
             dgvUsuarios.Location = new Point(133, 233);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.RowHeadersVisible = false;
             dgvUsuarios.Size = new Size(502, 173);
+>>>>>>> b5dd16715191cb6d73c6b375d87fa5cf0e914dec
             dgvUsuarios.TabIndex = 0;
             dgvUsuarios.CellContentClick += dgvUsuario_CellContentClick;
             // 
@@ -101,7 +108,7 @@
             // 
             // bntBuscar
             // 
-            bntBuscar.Location = new Point(372, 188);
+            bntBuscar.Location = new Point(313, 191);
             bntBuscar.Name = "bntBuscar";
             bntBuscar.Size = new Size(75, 23);
             bntBuscar.TabIndex = 1;
@@ -111,7 +118,7 @@
             // 
             // bntAlterar
             // 
-            bntAlterar.Location = new Point(158, 188);
+            bntAlterar.Location = new Point(217, 191);
             bntAlterar.Name = "bntAlterar";
             bntAlterar.Size = new Size(75, 24);
             bntAlterar.TabIndex = 2;
@@ -121,7 +128,7 @@
             // 
             // btnVoltar
             // 
-            btnVoltar.Location = new Point(265, 188);
+            btnVoltar.Location = new Point(408, 190);
             btnVoltar.Name = "btnVoltar";
             btnVoltar.Size = new Size(75, 24);
             btnVoltar.TabIndex = 3;
@@ -131,28 +138,28 @@
             // 
             // txtId
             // 
-            txtId.Location = new Point(185, 62);
+            txtId.Location = new Point(207, 65);
             txtId.Name = "txtId";
             txtId.Size = new Size(39, 23);
             txtId.TabIndex = 4;
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(230, 62);
+            txtNome.Location = new Point(252, 65);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(136, 23);
             txtNome.TabIndex = 5;
             // 
             // txtCpf
             // 
-            txtCpf.Location = new Point(185, 91);
+            txtCpf.Location = new Point(207, 94);
             txtCpf.Name = "txtCpf";
             txtCpf.Size = new Size(181, 23);
             txtCpf.TabIndex = 6;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(185, 121);
+            txtEmail.Location = new Point(207, 124);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(181, 23);
             txtEmail.TabIndex = 7;
@@ -161,14 +168,14 @@
             // 
             cmbTipo_usuario.FormattingEnabled = true;
             cmbTipo_usuario.Items.AddRange(new object[] { "Administrador", "Funcionário", "Cliente " });
-            cmbTipo_usuario.Location = new Point(386, 62);
+            cmbTipo_usuario.Location = new Point(408, 65);
             cmbTipo_usuario.Name = "cmbTipo_usuario";
             cmbTipo_usuario.Size = new Size(136, 23);
             cmbTipo_usuario.TabIndex = 8;
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(185, 156);
+            txtSenha.Location = new Point(207, 159);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(181, 23);
             txtSenha.TabIndex = 9;
@@ -178,19 +185,20 @@
             chkAtivo.AutoSize = true;
             chkAtivo.BackColor = Color.Black;
             chkAtivo.ForeColor = Color.FromArgb(219, 179, 91);
-            chkAtivo.Location = new Point(393, 163);
+            chkAtivo.Location = new Point(415, 166);
             chkAtivo.Name = "chkAtivo";
             chkAtivo.Size = new Size(54, 19);
             chkAtivo.TabIndex = 10;
             chkAtivo.Text = "Ativo";
             chkAtivo.UseVisualStyleBackColor = false;
+            chkAtivo.CheckedChanged += chkAtivo_CheckedChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = SystemColors.ActiveCaptionText;
             label1.ForeColor = Color.FromArgb(219, 179, 91);
-            label1.Location = new Point(143, 65);
+            label1.Location = new Point(165, 68);
             label1.Name = "label1";
             label1.Size = new Size(20, 15);
             label1.TabIndex = 11;
@@ -201,7 +209,7 @@
             label2.AutoSize = true;
             label2.BackColor = SystemColors.ActiveCaptionText;
             label2.ForeColor = Color.FromArgb(219, 179, 91);
-            label2.Location = new Point(230, 44);
+            label2.Location = new Point(252, 47);
             label2.Name = "label2";
             label2.Size = new Size(40, 15);
             label2.TabIndex = 12;
@@ -212,7 +220,7 @@
             label3.AutoSize = true;
             label3.BackColor = SystemColors.ActiveCaptionText;
             label3.ForeColor = Color.FromArgb(219, 179, 91);
-            label3.Location = new Point(143, 99);
+            label3.Location = new Point(165, 102);
             label3.Name = "label3";
             label3.Size = new Size(26, 15);
             label3.TabIndex = 13;
@@ -223,7 +231,7 @@
             label4.AutoSize = true;
             label4.BackColor = SystemColors.ActiveCaptionText;
             label4.ForeColor = Color.FromArgb(219, 179, 91);
-            label4.Location = new Point(143, 128);
+            label4.Location = new Point(165, 131);
             label4.Name = "label4";
             label4.Size = new Size(36, 15);
             label4.TabIndex = 14;
@@ -234,7 +242,7 @@
             label5.AutoSize = true;
             label5.BackColor = SystemColors.ActiveCaptionText;
             label5.ForeColor = Color.FromArgb(219, 179, 91);
-            label5.Location = new Point(143, 159);
+            label5.Location = new Point(165, 162);
             label5.Name = "label5";
             label5.Size = new Size(39, 15);
             label5.TabIndex = 15;
@@ -242,14 +250,14 @@
             // 
             // txtSaida
             // 
-            txtSaida.Location = new Point(386, 128);
+            txtSaida.Location = new Point(408, 131);
             txtSaida.Name = "txtSaida";
             txtSaida.Size = new Size(136, 23);
             txtSaida.TabIndex = 16;
             // 
             // txtEntrada
             // 
-            txtEntrada.Location = new Point(386, 99);
+            txtEntrada.Location = new Point(408, 102);
             txtEntrada.Name = "txtEntrada";
             txtEntrada.Size = new Size(136, 23);
             txtEntrada.TabIndex = 17;

@@ -87,5 +87,10 @@ namespace KingOfKingsFrms
             MessageBox.Show($"Usuário {usuario.Nome} alterado com sucesso com o ID {usuario.Id}");
             FormUsuarios_Load(sender, e);
         }
+
+        private void chkAtivo_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

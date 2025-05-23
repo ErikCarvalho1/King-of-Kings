@@ -1,6 +1,6 @@
 ﻿namespace KingOfKingsFrms
 {
-    partial class FormCadastrar
+    partial class FormCadastrarUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastrar));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastrarUsuario));
             txtId = new TextBox();
             txtNome = new TextBox();
             txtCpf = new TextBox();
@@ -41,6 +41,7 @@
             label3 = new Label();
             txtSenha = new TextBox();
             label4 = new Label();
+            Tipo = new Label();
             SuspendLayout();
             // 
             // txtId
@@ -49,6 +50,7 @@
             txtId.Name = "txtId";
             txtId.Size = new Size(47, 23);
             txtId.TabIndex = 1;
+            txtId.Visible = false;
             // 
             // txtNome
             // 
@@ -160,10 +162,23 @@
             label4.ForeColor = Color.FromArgb(219, 179, 91);
             label4.Location = new Point(140, 205);
             label4.Name = "label4";
-            label4.Size = new Size(67, 21);
+            label4.Size = new Size(57, 21);
             label4.TabIndex = 13;
-            label4.Text = "Senhha";
+            label4.Text = "Senha";
             label4.Click += label4_Click;
+            // 
+            // Tipo
+            // 
+            Tipo.AutoSize = true;
+            Tipo.BackColor = Color.Black;
+            Tipo.FlatStyle = FlatStyle.Popup;
+            Tipo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Tipo.ForeColor = Color.FromArgb(219, 179, 91);
+            Tipo.Location = new Point(486, 126);
+            Tipo.Name = "Tipo";
+            Tipo.Size = new Size(44, 21);
+            Tipo.TabIndex = 14;
+            Tipo.Text = "Tipo";
             // 
             // FormCadastrar
             // 
@@ -172,6 +187,7 @@
             BackColor = SystemColors.ActiveCaptionText;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(737, 418);
+            Controls.Add(Tipo);
             Controls.Add(label4);
             Controls.Add(txtSenha);
             Controls.Add(label3);
@@ -207,5 +223,6 @@
         private Label label3;
         private TextBox txtSenha;
         private Label label4;
+        private Label Tipo;
     }
 }

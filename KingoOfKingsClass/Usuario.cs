@@ -24,11 +24,6 @@ namespace KingoOfKingsClass
         public string Senha { get; set; }
         public bool Ativo { get; set; }
         public DateTime Criado_em { get; set; }
-        public string Text1 { get; }
-        public string Text2 { get; }
-        public string Text3 { get; }
-        public string Text4 { get; }
-        public string Text5 { get; }
 
         public Usuario() { }
 

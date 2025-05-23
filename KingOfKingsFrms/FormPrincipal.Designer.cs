@@ -114,8 +114,9 @@
             // 
             eddeToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
             eddeToolStripMenuItem.Name = "eddeToolStripMenuItem";
-            eddeToolStripMenuItem.Size = new Size(45, 20);
-            eddeToolStripMenuItem.Text = "edde";
+            eddeToolStripMenuItem.Size = new Size(66, 20);
+            eddeToolStripMenuItem.Text = "Cadastro";
+            eddeToolStripMenuItem.Click += eddeToolStripMenuItem_Click;
             // 
             // bntCadastrar
             // 

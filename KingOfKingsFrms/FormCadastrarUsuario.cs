@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace KingOfKingsFrms
 {
-    public partial class FormCadastrar : Form
+    public partial class FormCadastrarUsuario : Form
     {
-        public FormCadastrar()
+        public FormCadastrarUsuario()
         {
             InitializeComponent();
         }

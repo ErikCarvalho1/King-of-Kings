@@ -124,7 +124,7 @@
   <data name="pnlPrincipal.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAvEAAAHJCAYAAAAM+Wa8AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAYsFJREFUeF7t3WlX4kwXheG3W2UQUGRGZpBBnPr//7l6z65QEOlyfGwNevda10KL
+        vAAADrwBlbxySQAAYsFJREFUeF7t3WlX4kwXheG3W2UQUGRGZpBBnPr//7l6z65QEOlyfGwNevda10KL
         EELsDzvFqZP/2T8HAAAA4KBEBwEAAABkV3QQAAAAQHZFBwEAAABkV3QQAAAAQHZFBwEAAABkV3QQAAAA
         QHZFBwEAAABkV3QQAAAAQHZFBwEAAABkV3QQAAAAQHZFBwEAAABkV3QQAAAAQHZFBwEAAABkV3QQAAAA
         QHZFBwEAAABkV3QQAAAAQHZFBwEAAABkV3QQAAAAQHZFBwEAAABkV3QQAAAAQHZFBwEAAABkV3QQAAAA
@@ -548,4 +548,7 @@
         7IoOAgAAAMiu6CAAAACA7IoOAgAAAMiu6CAAAACATPqf+z/qYJuf1bMGWgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>84</value>
+  </metadata>
 </root>
