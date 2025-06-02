@@ -33,12 +33,12 @@
             txtNomeUsuario = new TextBox();
             txtSenha = new TextBox();
             bntAcessar = new Button();
-            panel2 = new Panel();
             linkLabel1 = new LinkLabel();
             panel3 = new Panel();
             panel4 = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
+            label1 = new Label();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -77,14 +77,6 @@
             bntAcessar.TabIndex = 3;
             bntAcessar.UseVisualStyleBackColor = false;
             bntAcessar.Click += bntAcessar_Click;
-            // 
-            // panel2
-            // 
-            panel2.BackgroundImage = Properties.Resources.Login;
-            panel2.Location = new Point(176, 73);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(209, 45);
-            panel2.TabIndex = 5;
             // 
             // linkLabel1
             // 
@@ -136,17 +128,27 @@
             pictureBox1.MouseDown += pictureBox1_MouseDown;
             pictureBox1.MouseUp += pictureBox1_MouseUp;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.ForeColor = Color.FromArgb(219, 179, 91);
+            label1.Location = new Point(239, 99);
+            label1.Name = "label1";
+            label1.Size = new Size(37, 15);
+            label1.TabIndex = 12;
+            label1.Text = "Login";
+            // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(532, 337);
+            Controls.Add(label1);
             Controls.Add(pictureBox1);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(linkLabel1);
-            Controls.Add(panel2);
             Controls.Add(bntAcessar);
             Controls.Add(txtSenha);
             Controls.Add(txtNomeUsuario);
@@ -169,11 +171,11 @@
         private TextBox txtNomeUsuario;
         private TextBox txtSenha;
         private Button bntAcessar;
-        private Panel panel2;
         private LinkLabel linkLabel1;
         private Panel panel3;
         private Panel panel4;
         private FlowLayoutPanel flowLayoutPanel1;
         private PictureBox pictureBox1;
+        private Label label1;
     }
 }
