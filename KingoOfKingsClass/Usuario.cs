@@ -91,7 +91,7 @@ namespace KingoOfKingsClass
         }
         public static Usuario EfetuarLogin(string email, string senha) // Método para efetuar login
         {
-            Usuario usuario = new Usuario();
+            Usuario usuario = new();
             string sql = $"SELECT * FROM usuarios WHERE email = '{email}' AND senha = MD5('{senha}')";
 
             var cn = Banco.Abrir();
@@ -113,7 +113,7 @@ namespace KingoOfKingsClass
 
 
         }
-        public void inserir() // metodo para inserir Usuario 
+        public void Inserir() // metodo para inserir Usuario 
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;

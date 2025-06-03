@@ -57,6 +57,17 @@
             button2 = new Button();
             button1 = new Button();
             bntHistorico = new Button();
+            lançamentosToolStripMenuItem = new ToolStripMenuItem();
+            cadastroDeProdutosToolStripMenuItem = new ToolStripMenuItem();
+            cadastroDeClientesToolStripMenuItem = new ToolStripMenuItem();
+            cadastroFornecedoresToolStripMenuItem = new ToolStripMenuItem();
+            cadastroTipoDeProdutoToolStripMenuItem = new ToolStripMenuItem();
+            cadastroDeMoedaToolStripMenuItem = new ToolStripMenuItem();
+            cadastroDeCEPToolStripMenuItem = new ToolStripMenuItem();
+            cadastroFiscaisToolStripMenuItem = new ToolStripMenuItem();
+            lançamentosEAcertosNoEstoqueToolStripMenuItem = new ToolStripMenuItem();
+            cadastroDeUsuáriosEVendedoresToolStripMenuItem = new ToolStripMenuItem();
+            cadastroDeInformaçõesDaEmpresaToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -97,7 +108,7 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.Black;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { eddeToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { eddeToolStripMenuItem, lançamentosToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(999, 24);
@@ -106,6 +117,7 @@
             // 
             // eddeToolStripMenuItem
             // 
+            eddeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroDeProdutosToolStripMenuItem, cadastroDeClientesToolStripMenuItem, cadastroFornecedoresToolStripMenuItem, cadastroTipoDeProdutoToolStripMenuItem, cadastroDeMoedaToolStripMenuItem, cadastroDeCEPToolStripMenuItem, cadastroFiscaisToolStripMenuItem, lançamentosEAcertosNoEstoqueToolStripMenuItem, cadastroDeUsuáriosEVendedoresToolStripMenuItem, cadastroDeInformaçõesDaEmpresaToolStripMenuItem });
             eddeToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
             eddeToolStripMenuItem.Name = "eddeToolStripMenuItem";
             eddeToolStripMenuItem.Size = new Size(66, 20);
@@ -329,6 +341,82 @@
             bntHistorico.TabIndex = 34;
             bntHistorico.UseVisualStyleBackColor = true;
             // 
+            // lançamentosToolStripMenuItem
+            // 
+            lançamentosToolStripMenuItem.Name = "lançamentosToolStripMenuItem";
+            lançamentosToolStripMenuItem.Size = new Size(90, 20);
+            lançamentosToolStripMenuItem.Text = "Lançamentos";
+            // 
+            // cadastroDeProdutosToolStripMenuItem
+            // 
+            cadastroDeProdutosToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
+            cadastroDeProdutosToolStripMenuItem.Name = "cadastroDeProdutosToolStripMenuItem";
+            cadastroDeProdutosToolStripMenuItem.Size = new Size(260, 22);
+            cadastroDeProdutosToolStripMenuItem.Text = "Cadastro de produtos";
+            // 
+            // cadastroDeClientesToolStripMenuItem
+            // 
+            cadastroDeClientesToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
+            cadastroDeClientesToolStripMenuItem.Name = "cadastroDeClientesToolStripMenuItem";
+            cadastroDeClientesToolStripMenuItem.Size = new Size(260, 22);
+            cadastroDeClientesToolStripMenuItem.Text = "Cadastro de Clientes";
+            // 
+            // cadastroFornecedoresToolStripMenuItem
+            // 
+            cadastroFornecedoresToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
+            cadastroFornecedoresToolStripMenuItem.Name = "cadastroFornecedoresToolStripMenuItem";
+            cadastroFornecedoresToolStripMenuItem.Size = new Size(270, 22);
+            cadastroFornecedoresToolStripMenuItem.Text = "Cadastro Fornecedores";
+            // 
+            // cadastroTipoDeProdutoToolStripMenuItem
+            // 
+            cadastroTipoDeProdutoToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
+            cadastroTipoDeProdutoToolStripMenuItem.Name = "cadastroTipoDeProdutoToolStripMenuItem";
+            cadastroTipoDeProdutoToolStripMenuItem.Size = new Size(270, 22);
+            cadastroTipoDeProdutoToolStripMenuItem.Text = "Cadastro tipo de produto";
+            // 
+            // cadastroDeMoedaToolStripMenuItem
+            // 
+            cadastroDeMoedaToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
+            cadastroDeMoedaToolStripMenuItem.Name = "cadastroDeMoedaToolStripMenuItem";
+            cadastroDeMoedaToolStripMenuItem.Size = new Size(270, 22);
+            cadastroDeMoedaToolStripMenuItem.Text = "Cadastro de moeda ";
+            // 
+            // cadastroDeCEPToolStripMenuItem
+            // 
+            cadastroDeCEPToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
+            cadastroDeCEPToolStripMenuItem.Name = "cadastroDeCEPToolStripMenuItem";
+            cadastroDeCEPToolStripMenuItem.Size = new Size(270, 22);
+            cadastroDeCEPToolStripMenuItem.Text = "Cadastro de CEP";
+            // 
+            // cadastroFiscaisToolStripMenuItem
+            // 
+            cadastroFiscaisToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
+            cadastroFiscaisToolStripMenuItem.Name = "cadastroFiscaisToolStripMenuItem";
+            cadastroFiscaisToolStripMenuItem.Size = new Size(270, 22);
+            cadastroFiscaisToolStripMenuItem.Text = "Cadastro Fiscais";
+            // 
+            // lançamentosEAcertosNoEstoqueToolStripMenuItem
+            // 
+            lançamentosEAcertosNoEstoqueToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
+            lançamentosEAcertosNoEstoqueToolStripMenuItem.Name = "lançamentosEAcertosNoEstoqueToolStripMenuItem";
+            lançamentosEAcertosNoEstoqueToolStripMenuItem.Size = new Size(270, 22);
+            lançamentosEAcertosNoEstoqueToolStripMenuItem.Text = "Lançamentos e acertos no estoque ";
+            // 
+            // cadastroDeUsuáriosEVendedoresToolStripMenuItem
+            // 
+            cadastroDeUsuáriosEVendedoresToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
+            cadastroDeUsuáriosEVendedoresToolStripMenuItem.Name = "cadastroDeUsuáriosEVendedoresToolStripMenuItem";
+            cadastroDeUsuáriosEVendedoresToolStripMenuItem.Size = new Size(270, 22);
+            cadastroDeUsuáriosEVendedoresToolStripMenuItem.Text = "Cadastro de usuários e vendedores";
+            // 
+            // cadastroDeInformaçõesDaEmpresaToolStripMenuItem
+            // 
+            cadastroDeInformaçõesDaEmpresaToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
+            cadastroDeInformaçõesDaEmpresaToolStripMenuItem.Name = "cadastroDeInformaçõesDaEmpresaToolStripMenuItem";
+            cadastroDeInformaçõesDaEmpresaToolStripMenuItem.Size = new Size(270, 22);
+            cadastroDeInformaçõesDaEmpresaToolStripMenuItem.Text = "Cadastro de informações da empresa";
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -404,5 +492,16 @@
         private Button button2;
         private Button button1;
         private Button bntHistorico;
+        private ToolStripMenuItem cadastroDeProdutosToolStripMenuItem;
+        private ToolStripMenuItem cadastroDeClientesToolStripMenuItem;
+        private ToolStripMenuItem cadastroFornecedoresToolStripMenuItem;
+        private ToolStripMenuItem cadastroTipoDeProdutoToolStripMenuItem;
+        private ToolStripMenuItem cadastroDeMoedaToolStripMenuItem;
+        private ToolStripMenuItem cadastroDeCEPToolStripMenuItem;
+        private ToolStripMenuItem cadastroFiscaisToolStripMenuItem;
+        private ToolStripMenuItem lançamentosEAcertosNoEstoqueToolStripMenuItem;
+        private ToolStripMenuItem lançamentosToolStripMenuItem;
+        private ToolStripMenuItem cadastroDeUsuáriosEVendedoresToolStripMenuItem;
+        private ToolStripMenuItem cadastroDeInformaçõesDaEmpresaToolStripMenuItem;
     }
 }

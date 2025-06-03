@@ -48,7 +48,7 @@ namespace KingOfKingsFrms
         private void bntCadastrar_Click_1(object sender, EventArgs e) // método para cadastrar o usuário
         {
             Usuario usuario = new(txtNome.Text, txtCpf.Text, txtEmail.Text, cmbTipo_usuario.Text, txtSenha.Text);
-            usuario.inserir();
+            usuario.Inserir();
             txtId.Text = usuario.Id.ToString();
             MessageBox.Show($"Usuário {usuario.Nome} gravado com sucesso com o ID {usuario.Id}");
             FormCadastrar_Load(sender, e);
