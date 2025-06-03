@@ -61,7 +61,7 @@ namespace KingOfKingsFrms
 
         private void bntUsuarios_Click(object sender, EventArgs e) // método para abrir o form de usuários
         {
-            FormPainel(new FormUsuarios());
+            //FormPainel(new FormUsuarios());
         }
 
         private void bntSair_Click(object sender, EventArgs e)
