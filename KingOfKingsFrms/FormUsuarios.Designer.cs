@@ -62,17 +62,10 @@
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { clnId, clnNome, clnCpf, clnEmail, clnAtivo });
             dgvUsuarios.GridColor = Color.Black;
-<<<<<<< HEAD
             dgvUsuarios.Location = new Point(132, 220);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.RowHeadersVisible = false;
             dgvUsuarios.Size = new Size(501, 363);
-=======
-            dgvUsuarios.Location = new Point(133, 233);
-            dgvUsuarios.Name = "dgvUsuarios";
-            dgvUsuarios.RowHeadersVisible = false;
-            dgvUsuarios.Size = new Size(502, 173);
->>>>>>> b5dd16715191cb6d73c6b375d87fa5cf0e914dec
             dgvUsuarios.TabIndex = 0;
             dgvUsuarios.CellContentClick += dgvUsuario_CellContentClick;
             // 
