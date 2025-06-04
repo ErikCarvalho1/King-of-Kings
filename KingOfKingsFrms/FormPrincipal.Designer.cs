@@ -92,6 +92,7 @@
             button2 = new Button();
             button1 = new Button();
             bntHistorico = new Button();
+            testeToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -316,7 +317,7 @@
             // 
             // relatóriosToolStripMenuItem
             // 
-            relatóriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { historicoDeCompraDoClienteToolStripMenuItem, relatórioGERALDeMovimentaçãoEmVendasToolStripMenuItem, toolStripSeparator4, cálculoDeComissãoDoVendedorProdutosVendidosToolStripMenuItem, produtoEmConsignaçãoEnvioParaFornecedorToolStripMenuItem, toolStripSeparator5, depositoToolStripMenuItem, pagamentosPendentesdaEmpresaToolStripMenuItem, recebimentosPendentesDebitosClientesToolStripMenuItem, balançoFinanceiroToolStripMenuItem, toolStripSeparator6, históricoAcessoAoSistemaToolStripMenuItem, toolStripMenuItem2 });
+            relatóriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { historicoDeCompraDoClienteToolStripMenuItem, relatórioGERALDeMovimentaçãoEmVendasToolStripMenuItem, toolStripSeparator4, cálculoDeComissãoDoVendedorProdutosVendidosToolStripMenuItem, produtoEmConsignaçãoEnvioParaFornecedorToolStripMenuItem, toolStripSeparator5, depositoToolStripMenuItem, pagamentosPendentesdaEmpresaToolStripMenuItem, recebimentosPendentesDebitosClientesToolStripMenuItem, balançoFinanceiroToolStripMenuItem, toolStripSeparator6, históricoAcessoAoSistemaToolStripMenuItem, toolStripMenuItem2, testeToolStripMenuItem });
             relatóriosToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
             relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
             relatóriosToolStripMenuItem.Size = new Size(71, 20);
@@ -641,6 +642,12 @@
             bntHistorico.TabIndex = 34;
             bntHistorico.UseVisualStyleBackColor = true;
             // 
+            // testeToolStripMenuItem
+            // 
+            testeToolStripMenuItem.Name = "testeToolStripMenuItem";
+            testeToolStripMenuItem.Size = new Size(358, 22);
+            testeToolStripMenuItem.Text = "teste";
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -751,5 +758,6 @@
         private ToolStripSeparator toolStripSeparator6;
         private ToolStripMenuItem históricoAcessoAoSistemaToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem2;
+        private ToolStripMenuItem testeToolStripMenuItem;
     }
 }
