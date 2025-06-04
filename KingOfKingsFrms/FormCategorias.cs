@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace KingOfKingsFrms
 {
-    public partial class FormVenda: Form
+    public partial class FormCategorias : Form
     {
-        public FormVenda()
+        public FormCategorias()
         {
             InitializeComponent();
+        }
+
+        private void FormCategorias_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

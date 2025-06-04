@@ -39,6 +39,7 @@
             ClientSize = new Size(737, 418);
             Name = "FormProdutos";
             Text = "FormProdutos";
+            Load += FormProdutos_Load;
             ResumeLayout(false);
         }
 
