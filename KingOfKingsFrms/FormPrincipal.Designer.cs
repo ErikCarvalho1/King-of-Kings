@@ -756,7 +756,7 @@
             // 
             button8.BackgroundImage = (Image)resources.GetObject("button8.BackgroundImage");
             button8.FlatStyle = FlatStyle.Popup;
-            button8.Location = new Point(715, 35);
+            button8.Location = new Point(633, 23);
             button8.Name = "button8";
             button8.Size = new Size(59, 44);
             button8.TabIndex = 53;
@@ -766,7 +766,7 @@
             // 
             button7.BackgroundImage = (Image)resources.GetObject("button7.BackgroundImage");
             button7.FlatStyle = FlatStyle.Popup;
-            button7.Location = new Point(636, 35);
+            button7.Location = new Point(557, 23);
             button7.Name = "button7";
             button7.Size = new Size(59, 44);
             button7.TabIndex = 52;
@@ -776,7 +776,7 @@
             // 
             label6.AutoSize = true;
             label6.ForeColor = Color.FromArgb(219, 179, 91);
-            label6.Location = new Point(275, 72);
+            label6.Location = new Point(210, 72);
             label6.Name = "label6";
             label6.Size = new Size(47, 15);
             label6.TabIndex = 46;
@@ -786,7 +786,7 @@
             // 
             button5.BackgroundImage = (Image)resources.GetObject("button5.BackgroundImage");
             button5.FlatStyle = FlatStyle.Popup;
-            button5.Location = new Point(268, 34);
+            button5.Location = new Point(206, 26);
             button5.Name = "button5";
             button5.Size = new Size(57, 51);
             button5.TabIndex = 51;
@@ -796,7 +796,7 @@
             // 
             label10.AutoSize = true;
             label10.ForeColor = Color.FromArgb(219, 179, 91);
-            label10.Location = new Point(719, 74);
+            label10.Location = new Point(639, 74);
             label10.Name = "label10";
             label10.Size = new Size(54, 15);
             label10.TabIndex = 50;
@@ -806,7 +806,7 @@
             // 
             label9.AutoSize = true;
             label9.ForeColor = Color.FromArgb(219, 179, 91);
-            label9.Location = new Point(640, 74);
+            label9.Location = new Point(564, 74);
             label9.Name = "label9";
             label9.Size = new Size(54, 15);
             label9.TabIndex = 49;
@@ -816,7 +816,7 @@
             // 
             label8.AutoSize = true;
             label8.ForeColor = Color.FromArgb(219, 179, 91);
-            label8.Location = new Point(150, 74);
+            label8.Location = new Point(85, 74);
             label8.Name = "label8";
             label8.Size = new Size(38, 15);
             label8.TabIndex = 48;
@@ -826,7 +826,7 @@
             // 
             label7.AutoSize = true;
             label7.ForeColor = Color.FromArgb(219, 179, 91);
-            label7.Location = new Point(205, 72);
+            label7.Location = new Point(139, 72);
             label7.Name = "label7";
             label7.Size = new Size(55, 15);
             label7.TabIndex = 47;
@@ -836,7 +836,7 @@
             // 
             label5.AutoSize = true;
             label5.ForeColor = Color.FromArgb(219, 179, 91);
-            label5.Location = new Point(329, 71);
+            label5.Location = new Point(267, 71);
             label5.Name = "label5";
             label5.Size = new Size(68, 15);
             label5.TabIndex = 45;
@@ -846,7 +846,7 @@
             // 
             label4.AutoSize = true;
             label4.ForeColor = Color.FromArgb(219, 179, 91);
-            label4.Location = new Point(400, 71);
+            label4.Location = new Point(336, 71);
             label4.Name = "label4";
             label4.Size = new Size(60, 15);
             label4.TabIndex = 44;
@@ -856,7 +856,7 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.FromArgb(219, 179, 91);
-            label3.Location = new Point(564, 72);
+            label3.Location = new Point(493, 72);
             label3.Name = "label3";
             label3.Size = new Size(50, 15);
             label3.TabIndex = 43;
@@ -866,7 +866,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.FromArgb(219, 179, 91);
-            label2.Location = new Point(470, 74);
+            label2.Location = new Point(398, 73);
             label2.Name = "label2";
             label2.Size = new Size(88, 15);
             label2.TabIndex = 42;
@@ -876,17 +876,18 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = Color.FromArgb(219, 179, 91);
-            label1.Location = new Point(95, 74);
+            label1.Location = new Point(22, 75);
             label1.Name = "label1";
             label1.Size = new Size(39, 15);
             label1.TabIndex = 41;
             label1.Text = "&Venda";
+            label1.Click += label1_Click;
             // 
             // button9
             // 
             button9.BackgroundImage = (Image)resources.GetObject("button9.BackgroundImage");
             button9.FlatStyle = FlatStyle.Popup;
-            button9.Location = new Point(556, 38);
+            button9.Location = new Point(482, 24);
             button9.Name = "button9";
             button9.Size = new Size(59, 44);
             button9.TabIndex = 40;
@@ -896,7 +897,7 @@
             // 
             button6.BackgroundImage = (Image)resources.GetObject("button6.BackgroundImage");
             button6.FlatStyle = FlatStyle.Popup;
-            button6.Location = new Point(480, 38);
+            button6.Location = new Point(402, 26);
             button6.Name = "button6";
             button6.Size = new Size(57, 41);
             button6.TabIndex = 39;
@@ -906,7 +907,7 @@
             // 
             button4.BackgroundImage = (Image)resources.GetObject("button4.BackgroundImage");
             button4.FlatStyle = FlatStyle.Popup;
-            button4.Location = new Point(401, 38);
+            button4.Location = new Point(338, 26);
             button4.Name = "button4";
             button4.Size = new Size(57, 41);
             button4.TabIndex = 38;
@@ -916,7 +917,7 @@
             // 
             button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
             button3.FlatStyle = FlatStyle.Popup;
-            button3.Location = new Point(332, 39);
+            button3.Location = new Point(270, 28);
             button3.Name = "button3";
             button3.Size = new Size(57, 41);
             button3.TabIndex = 37;
@@ -926,7 +927,7 @@
             // 
             button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
             button2.FlatStyle = FlatStyle.Popup;
-            button2.Location = new Point(69, 31);
+            button2.Location = new Point(3, 26);
             button2.Name = "button2";
             button2.Size = new Size(79, 48);
             button2.TabIndex = 36;
@@ -937,7 +938,7 @@
             // 
             button1.BackgroundImage = Properties.Resources.Ajuda;
             button1.FlatStyle = FlatStyle.Popup;
-            button1.Location = new Point(140, 41);
+            button1.Location = new Point(76, 29);
             button1.Name = "button1";
             button1.Size = new Size(57, 41);
             button1.TabIndex = 35;
@@ -947,7 +948,7 @@
             // 
             bntHistorico.BackgroundImage = (Image)resources.GetObject("bntHistorico.BackgroundImage");
             bntHistorico.FlatStyle = FlatStyle.Popup;
-            bntHistorico.Location = new Point(206, 39);
+            bntHistorico.Location = new Point(139, 28);
             bntHistorico.Name = "bntHistorico";
             bntHistorico.Size = new Size(62, 54);
             bntHistorico.TabIndex = 34;

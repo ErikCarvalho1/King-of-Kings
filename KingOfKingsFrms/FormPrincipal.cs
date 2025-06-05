@@ -91,5 +91,10 @@ namespace KingOfKingsFrms
         {
             FormPainel(new FormCategorias());
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            FormPainel(new FormCategorias());
+        }
     }
 }
