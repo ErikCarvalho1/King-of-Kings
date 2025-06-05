@@ -61,13 +61,11 @@
             cadastroDeProdutosToolStripMenuItem = new ToolStripMenuItem();
             cadastroFornecedoresToolStripMenuItem = new ToolStripMenuItem();
             cadastroTipoDeProdutoToolStripMenuItem = new ToolStripMenuItem();
-
             cadastroDeMoedaToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeCEPToolStripMenuItem = new ToolStripMenuItem();
             cadastroFiscaisToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeTransportadoraToolStripMenuItem = new ToolStripMenuItem();
             lançamentosEAcertosNoEstoqueToolStripMenuItem = new ToolStripMenuItem();
-
             cadastroDeUsuáriosEVendedoresToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeInformaçõesDaEmpresaToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeClientesToolStripMenuItem = new ToolStripMenuItem();
@@ -93,23 +91,21 @@
             button2 = new Button();
             button1 = new Button();
             bntHistorico = new Button();
-            panel1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackgroundImage = Properties.Resources.linha_dorada__2_;
-            panel1.Controls.Add(panel4);
-            panel1.Location = new Point(124, 82);
+            panel1.Location = new Point(124, 98);
             panel1.Name = "panel1";
-            panel1.Size = new Size(446, 10);
+            panel1.Size = new Size(580, 10);
             panel1.TabIndex = 2;
             // 
             // panel4
             // 
             panel4.BackgroundImage = Properties.Resources.linha_dorada__2_;
-            panel4.Location = new Point(0, 0);
+            panel4.Location = new Point(124, 98);
             panel4.Name = "panel4";
             panel4.Size = new Size(403, 10);
             panel4.TabIndex = 3;
@@ -322,7 +318,6 @@
             // 
             // eddeToolStripMenuItem
             // 
-
             eddeToolStripMenuItem.Name = "eddeToolStripMenuItem";
             eddeToolStripMenuItem.Size = new Size(66, 20);
             eddeToolStripMenuItem.Text = "Cadastro";
@@ -352,7 +347,6 @@
             cadastroTipoDeProdutoToolStripMenuItem.Size = new Size(270, 22);
             cadastroTipoDeProdutoToolStripMenuItem.Text = "Cadastro tipo de produto";
             // 
-
             // cadastroDeMoedaToolStripMenuItem
             // 
             cadastroDeMoedaToolStripMenuItem.BackColor = Color.Black;
@@ -371,12 +365,16 @@
             // 
             // cadastroFiscaisToolStripMenuItem
             // 
-
             cadastroFiscaisToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
             cadastroFiscaisToolStripMenuItem.Name = "cadastroFiscaisToolStripMenuItem";
             cadastroFiscaisToolStripMenuItem.Size = new Size(270, 22);
             cadastroFiscaisToolStripMenuItem.Text = "Cadastro Fiscais";
-
+            // 
+            // cadastroDeTransportadoraToolStripMenuItem
+            // 
+            cadastroDeTransportadoraToolStripMenuItem.Name = "cadastroDeTransportadoraToolStripMenuItem";
+            cadastroDeTransportadoraToolStripMenuItem.Size = new Size(32, 19);
+            // 
             // lançamentosEAcertosNoEstoqueToolStripMenuItem
             // 
             lançamentosEAcertosNoEstoqueToolStripMenuItem.BackColor = Color.Black;
@@ -385,7 +383,6 @@
             lançamentosEAcertosNoEstoqueToolStripMenuItem.Size = new Size(270, 22);
             lançamentosEAcertosNoEstoqueToolStripMenuItem.Text = "Lançamentos e acertos no estoque ";
             // 
-
             // cadastroDeUsuáriosEVendedoresToolStripMenuItem
             // 
             cadastroDeUsuáriosEVendedoresToolStripMenuItem.BackColor = Color.Black;
@@ -431,7 +428,7 @@
             // 
             button8.BackgroundImage = (Image)resources.GetObject("button8.BackgroundImage");
             button8.FlatStyle = FlatStyle.Popup;
-            button8.Location = new Point(726, 21);
+            button8.Location = new Point(715, 35);
             button8.Name = "button8";
             button8.Size = new Size(59, 44);
             button8.TabIndex = 53;
@@ -441,7 +438,7 @@
             // 
             button7.BackgroundImage = (Image)resources.GetObject("button7.BackgroundImage");
             button7.FlatStyle = FlatStyle.Popup;
-            button7.Location = new Point(647, 21);
+            button7.Location = new Point(636, 35);
             button7.Name = "button7";
             button7.Size = new Size(59, 44);
             button7.TabIndex = 52;
@@ -451,7 +448,7 @@
             // 
             label6.AutoSize = true;
             label6.ForeColor = Color.FromArgb(219, 179, 91);
-            label6.Location = new Point(286, 58);
+            label6.Location = new Point(275, 72);
             label6.Name = "label6";
             label6.Size = new Size(47, 15);
             label6.TabIndex = 46;
@@ -461,7 +458,7 @@
             // 
             button5.BackgroundImage = (Image)resources.GetObject("button5.BackgroundImage");
             button5.FlatStyle = FlatStyle.Popup;
-            button5.Location = new Point(279, 20);
+            button5.Location = new Point(268, 34);
             button5.Name = "button5";
             button5.Size = new Size(57, 51);
             button5.TabIndex = 51;
@@ -471,7 +468,7 @@
             // 
             label10.AutoSize = true;
             label10.ForeColor = Color.FromArgb(219, 179, 91);
-            label10.Location = new Point(730, 60);
+            label10.Location = new Point(719, 74);
             label10.Name = "label10";
             label10.Size = new Size(53, 15);
             label10.TabIndex = 50;
@@ -481,7 +478,7 @@
             // 
             label9.AutoSize = true;
             label9.ForeColor = Color.FromArgb(219, 179, 91);
-            label9.Location = new Point(651, 60);
+            label9.Location = new Point(640, 74);
             label9.Name = "label9";
             label9.Size = new Size(54, 15);
             label9.TabIndex = 49;
@@ -491,7 +488,7 @@
             // 
             label8.AutoSize = true;
             label8.ForeColor = Color.FromArgb(219, 179, 91);
-            label8.Location = new Point(161, 60);
+            label8.Location = new Point(150, 74);
             label8.Name = "label8";
             label8.Size = new Size(38, 15);
             label8.TabIndex = 48;
@@ -501,7 +498,7 @@
             // 
             label7.AutoSize = true;
             label7.ForeColor = Color.FromArgb(219, 179, 91);
-            label7.Location = new Point(216, 58);
+            label7.Location = new Point(205, 72);
             label7.Name = "label7";
             label7.Size = new Size(55, 15);
             label7.TabIndex = 47;
@@ -511,7 +508,7 @@
             // 
             label5.AutoSize = true;
             label5.ForeColor = Color.FromArgb(219, 179, 91);
-            label5.Location = new Point(340, 57);
+            label5.Location = new Point(329, 71);
             label5.Name = "label5";
             label5.Size = new Size(69, 15);
             label5.TabIndex = 45;
@@ -521,7 +518,7 @@
             // 
             label4.AutoSize = true;
             label4.ForeColor = Color.FromArgb(219, 179, 91);
-            label4.Location = new Point(411, 57);
+            label4.Location = new Point(400, 71);
             label4.Name = "label4";
             label4.Size = new Size(60, 15);
             label4.TabIndex = 44;
@@ -531,7 +528,7 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.FromArgb(219, 179, 91);
-            label3.Location = new Point(575, 58);
+            label3.Location = new Point(564, 72);
             label3.Name = "label3";
             label3.Size = new Size(50, 15);
             label3.TabIndex = 43;
@@ -541,7 +538,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.FromArgb(219, 179, 91);
-            label2.Location = new Point(481, 60);
+            label2.Location = new Point(470, 74);
             label2.Name = "label2";
             label2.Size = new Size(88, 15);
             label2.TabIndex = 42;
@@ -551,7 +548,7 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = Color.FromArgb(219, 179, 91);
-            label1.Location = new Point(106, 60);
+            label1.Location = new Point(95, 74);
             label1.Name = "label1";
             label1.Size = new Size(39, 15);
             label1.TabIndex = 41;
@@ -561,7 +558,7 @@
             // 
             button9.BackgroundImage = (Image)resources.GetObject("button9.BackgroundImage");
             button9.FlatStyle = FlatStyle.Popup;
-            button9.Location = new Point(567, 24);
+            button9.Location = new Point(556, 38);
             button9.Name = "button9";
             button9.Size = new Size(59, 44);
             button9.TabIndex = 40;
@@ -571,7 +568,7 @@
             // 
             button6.BackgroundImage = (Image)resources.GetObject("button6.BackgroundImage");
             button6.FlatStyle = FlatStyle.Popup;
-            button6.Location = new Point(491, 24);
+            button6.Location = new Point(480, 38);
             button6.Name = "button6";
             button6.Size = new Size(57, 41);
             button6.TabIndex = 39;
@@ -581,7 +578,7 @@
             // 
             button4.BackgroundImage = (Image)resources.GetObject("button4.BackgroundImage");
             button4.FlatStyle = FlatStyle.Popup;
-            button4.Location = new Point(412, 24);
+            button4.Location = new Point(401, 38);
             button4.Name = "button4";
             button4.Size = new Size(57, 41);
             button4.TabIndex = 38;
@@ -591,7 +588,7 @@
             // 
             button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
             button3.FlatStyle = FlatStyle.Popup;
-            button3.Location = new Point(343, 25);
+            button3.Location = new Point(332, 39);
             button3.Name = "button3";
             button3.Size = new Size(57, 41);
             button3.TabIndex = 37;
@@ -601,7 +598,7 @@
             // 
             button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
             button2.FlatStyle = FlatStyle.Popup;
-            button2.Location = new Point(80, 17);
+            button2.Location = new Point(69, 31);
             button2.Name = "button2";
             button2.Size = new Size(79, 48);
             button2.TabIndex = 36;
@@ -612,7 +609,7 @@
             // 
             button1.BackgroundImage = Properties.Resources.Ajuda;
             button1.FlatStyle = FlatStyle.Popup;
-            button1.Location = new Point(151, 27);
+            button1.Location = new Point(140, 41);
             button1.Name = "button1";
             button1.Size = new Size(57, 41);
             button1.TabIndex = 35;
@@ -622,7 +619,7 @@
             // 
             bntHistorico.BackgroundImage = (Image)resources.GetObject("bntHistorico.BackgroundImage");
             bntHistorico.FlatStyle = FlatStyle.Popup;
-            bntHistorico.Location = new Point(217, 25);
+            bntHistorico.Location = new Point(206, 39);
             bntHistorico.Name = "bntHistorico";
             bntHistorico.Size = new Size(62, 54);
             bntHistorico.TabIndex = 34;
@@ -634,6 +631,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(999, 611);
+            Controls.Add(panel4);
             Controls.Add(label2);
             Controls.Add(button8);
             Controls.Add(button7);
@@ -666,7 +664,6 @@
             ShowIcon = false;
             Text = "Form1";
             Load += FormPrincipal_Load;
-            panel1.ResumeLayout(false);
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
