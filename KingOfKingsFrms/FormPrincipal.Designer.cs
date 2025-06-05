@@ -38,7 +38,6 @@
             lançamentoDePedidosDeVendaToolStripMenuItem = new ToolStripMenuItem();
             lançamentoDeContasAPagarEAReceberToolStripMenuItem = new ToolStripMenuItem();
             lançamentosDiversosNoCaixaDoDiaToolStripMenuItem = new ToolStripMenuItem();
-            toolStripSeparator3 = new ToolStripSeparator();
             emitirNotaFiscalDeSaidaToolStripMenuItem = new ToolStripMenuItem();
             imprimir2ViaReciboVendaToolStripMenuItem = new ToolStripMenuItem();
             cancelarVendaRealizadaToolStripMenuItem = new ToolStripMenuItem();
@@ -62,12 +61,13 @@
             cadastroDeProdutosToolStripMenuItem = new ToolStripMenuItem();
             cadastroFornecedoresToolStripMenuItem = new ToolStripMenuItem();
             cadastroTipoDeProdutoToolStripMenuItem = new ToolStripMenuItem();
-            toolStripSeparator1 = new ToolStripSeparator();
+
             cadastroDeMoedaToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeCEPToolStripMenuItem = new ToolStripMenuItem();
             cadastroFiscaisToolStripMenuItem = new ToolStripMenuItem();
+            cadastroDeTransportadoraToolStripMenuItem = new ToolStripMenuItem();
             lançamentosEAcertosNoEstoqueToolStripMenuItem = new ToolStripMenuItem();
-            toolStripSeparator2 = new ToolStripSeparator();
+
             cadastroDeUsuáriosEVendedoresToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeInformaçõesDaEmpresaToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeClientesToolStripMenuItem = new ToolStripMenuItem();
@@ -142,7 +142,7 @@
             // 
             // lançamentosToolStripMenuItem
             // 
-            lançamentosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { lançamentoDePedidosDeVendaToolStripMenuItem, lançamentoDeContasAPagarEAReceberToolStripMenuItem, lançamentosDiversosNoCaixaDoDiaToolStripMenuItem, toolStripSeparator3, emitirNotaFiscalDeSaidaToolStripMenuItem, imprimir2ViaReciboVendaToolStripMenuItem, cancelarVendaRealizadaToolStripMenuItem, movimentaçãoDeCaixaToolStripMenuItem });
+            lançamentosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { lançamentoDePedidosDeVendaToolStripMenuItem, lançamentoDeContasAPagarEAReceberToolStripMenuItem, lançamentosDiversosNoCaixaDoDiaToolStripMenuItem, emitirNotaFiscalDeSaidaToolStripMenuItem, imprimir2ViaReciboVendaToolStripMenuItem, cancelarVendaRealizadaToolStripMenuItem, movimentaçãoDeCaixaToolStripMenuItem });
             lançamentosToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
             lançamentosToolStripMenuItem.Name = "lançamentosToolStripMenuItem";
             lançamentosToolStripMenuItem.Size = new Size(90, 20);
@@ -171,13 +171,6 @@
             lançamentosDiversosNoCaixaDoDiaToolStripMenuItem.Name = "lançamentosDiversosNoCaixaDoDiaToolStripMenuItem";
             lançamentosDiversosNoCaixaDoDiaToolStripMenuItem.Size = new Size(298, 22);
             lançamentosDiversosNoCaixaDoDiaToolStripMenuItem.Text = "Lançamentos diversos no caixa do dia";
-            // 
-            // toolStripSeparator3
-            // 
-            toolStripSeparator3.BackColor = Color.Black;
-            toolStripSeparator3.ForeColor = Color.FromArgb(219, 179, 91);
-            toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(295, 6);
             // 
             // emitirNotaFiscalDeSaidaToolStripMenuItem
             // 
@@ -329,8 +322,7 @@
             // 
             // eddeToolStripMenuItem
             // 
-            eddeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroDeProdutosToolStripMenuItem, cadastroFornecedoresToolStripMenuItem, cadastroTipoDeProdutoToolStripMenuItem, toolStripSeparator1, cadastroDeMoedaToolStripMenuItem, cadastroDeCEPToolStripMenuItem, cadastroFiscaisToolStripMenuItem, lançamentosEAcertosNoEstoqueToolStripMenuItem, toolStripSeparator2, cadastroDeUsuáriosEVendedoresToolStripMenuItem, cadastroDeInformaçõesDaEmpresaToolStripMenuItem, cadastroDeClientesToolStripMenuItem });
-            eddeToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
+
             eddeToolStripMenuItem.Name = "eddeToolStripMenuItem";
             eddeToolStripMenuItem.Size = new Size(66, 20);
             eddeToolStripMenuItem.Text = "Cadastro";
@@ -360,14 +352,7 @@
             cadastroTipoDeProdutoToolStripMenuItem.Size = new Size(270, 22);
             cadastroTipoDeProdutoToolStripMenuItem.Text = "Cadastro tipo de produto";
             // 
-            // toolStripSeparator1
-            // 
-            toolStripSeparator1.BackColor = Color.Black;
-            toolStripSeparator1.ForeColor = Color.FromArgb(219, 179, 91);
-            toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(267, 6);
-            toolStripSeparator1.Click += toolStripSeparator1_Click;
-            // 
+
             // cadastroDeMoedaToolStripMenuItem
             // 
             cadastroDeMoedaToolStripMenuItem.BackColor = Color.Black;
@@ -386,12 +371,12 @@
             // 
             // cadastroFiscaisToolStripMenuItem
             // 
-            cadastroFiscaisToolStripMenuItem.BackColor = Color.Black;
+
             cadastroFiscaisToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
             cadastroFiscaisToolStripMenuItem.Name = "cadastroFiscaisToolStripMenuItem";
             cadastroFiscaisToolStripMenuItem.Size = new Size(270, 22);
             cadastroFiscaisToolStripMenuItem.Text = "Cadastro Fiscais";
-            // 
+
             // lançamentosEAcertosNoEstoqueToolStripMenuItem
             // 
             lançamentosEAcertosNoEstoqueToolStripMenuItem.BackColor = Color.Black;
@@ -400,13 +385,7 @@
             lançamentosEAcertosNoEstoqueToolStripMenuItem.Size = new Size(270, 22);
             lançamentosEAcertosNoEstoqueToolStripMenuItem.Text = "Lançamentos e acertos no estoque ";
             // 
-            // toolStripSeparator2
-            // 
-            toolStripSeparator2.BackColor = Color.Black;
-            toolStripSeparator2.ForeColor = Color.FromArgb(219, 179, 91);
-            toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(267, 6);
-            // 
+
             // cadastroDeUsuáriosEVendedoresToolStripMenuItem
             // 
             cadastroDeUsuáriosEVendedoresToolStripMenuItem.BackColor = Color.Black;
@@ -735,12 +714,9 @@
         private ToolStripMenuItem lançamentosToolStripMenuItem;
         private ToolStripMenuItem cadastroDeUsuáriosEVendedoresToolStripMenuItem;
         private ToolStripMenuItem cadastroDeInformaçõesDaEmpresaToolStripMenuItem;
-        private ToolStripSeparator toolStripSeparator1;
-        private ToolStripSeparator toolStripSeparator2;
         private ToolStripMenuItem lançamentoDePedidosDeVendaToolStripMenuItem;
         private ToolStripMenuItem lançamentoDeContasAPagarEAReceberToolStripMenuItem;
         private ToolStripMenuItem lançamentosDiversosNoCaixaDoDiaToolStripMenuItem;
-        private ToolStripSeparator toolStripSeparator3;
         private ToolStripMenuItem emitirNotaFiscalDeSaidaToolStripMenuItem;
         private ToolStripMenuItem imprimir2ViaReciboVendaToolStripMenuItem;
         private ToolStripMenuItem cancelarVendaRealizadaToolStripMenuItem;
@@ -760,5 +736,6 @@
         private ToolStripMenuItem históricoAcessoAoSistemaToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem2;
         private ToolStripMenuItem testeToolStripMenuItem;
+        private ToolStripMenuItem cadastroDeTransportadoraToolStripMenuItem;
     }
 }
