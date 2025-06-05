@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace KingOfKingsFrms
 {
-    public partial class FormProdutos: Form
+    public partial class FormProdutos : Form
     {
         public FormProdutos()
         {
             InitializeComponent();
+        }
+
+        private void FormProdutos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
