@@ -59,11 +59,11 @@ namespace KingOfKingsFrms
         private void bntAcessar_Click(object sender, EventArgs e) // método para acessar o sistema
         {
             var registroDeAcesso = new ResgistroDeAcesso();
-            var usuario = Usuario.EfetuarLogin(txtNomeUsuario.Text, txtSenha.Text);
+            var usuario = Usuario.EfetuarLogin(txtEmail.Text, txtSenha.Text);
 
             if (usuario.Id > 0)
             {
-               registroDeAcesso.RegistrarAcesso();
+             //  registroDeAcesso.RegistrarAcesso();
                 if (usuario.Ativo)
                 {
                     FormPrincipal formPrincipal = new FormPrincipal();

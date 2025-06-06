@@ -33,7 +33,7 @@
             txtNome = new TextBox();
             txtCpf = new TextBox();
             txtEmail = new TextBox();
-            cmbTipo_usuario = new ComboBox();
+            cmbNivel = new ComboBox();
             bntVoltar = new Button();
             bntCadastrar = new Button();
             label1 = new Label();
@@ -73,15 +73,15 @@
             txtEmail.Size = new Size(332, 23);
             txtEmail.TabIndex = 4;
             // 
-            // cmbTipo_usuario
+            // cmbNivel
             // 
-            cmbTipo_usuario.FormattingEnabled = true;
-            cmbTipo_usuario.Items.AddRange(new object[] { "Administrador", "Funcionário", "Cliente" });
-            cmbTipo_usuario.Location = new Point(465, 150);
-            cmbTipo_usuario.Name = "cmbTipo_usuario";
-            cmbTipo_usuario.Size = new Size(82, 23);
-            cmbTipo_usuario.TabIndex = 5;
-            cmbTipo_usuario.SelectedIndexChanged += cmbTipo_usuario_SelectedIndexChanged;
+            cmbNivel.FormattingEnabled = true;
+            cmbNivel.Items.AddRange(new object[] { "Administrador", "Funcionário", "Cliente" });
+            cmbNivel.Location = new Point(465, 150);
+            cmbNivel.Name = "cmbNivel";
+            cmbNivel.Size = new Size(82, 23);
+            cmbNivel.TabIndex = 5;
+            cmbNivel.SelectedIndexChanged += cmbTipo_usuario_SelectedIndexChanged;
             // 
             // bntVoltar
             // 
@@ -180,7 +180,7 @@
             Tipo.TabIndex = 14;
             Tipo.Text = "Tipo";
             // 
-            // FormCadastrar
+            // FormCadastrarUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -195,7 +195,7 @@
             Controls.Add(label1);
             Controls.Add(bntCadastrar);
             Controls.Add(bntVoltar);
-            Controls.Add(cmbTipo_usuario);
+            Controls.Add(cmbNivel);
             Controls.Add(txtEmail);
             Controls.Add(txtCpf);
             Controls.Add(txtNome);
@@ -203,7 +203,7 @@
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "FormCadastrar";
+            Name = "FormCadastrarUsuario";
             Text = "FormCadastrar";
             Load += FormCadastrar_Load;
             ResumeLayout(false);
@@ -215,7 +215,7 @@
         private TextBox txtNome;
         private TextBox txtCpf;
         private TextBox txtEmail;
-        private ComboBox cmbTipo_usuario;
+        private ComboBox cmbNivel;
         private Button bntVoltar;
         private Button bntCadastrar;
         private Label label1;

@@ -10,209 +10,185 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using KingoOfKingsClass;
 using System.ComponentModel.DataAnnotations;
-
+using KingOfKingsClass;
+using static Mysqlx.Notice.Warning.Types;
 namespace KingoOfKingsClass
 {
     public class Usuario
 
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Cpf_cnpj { get; set; }
-        public string Email { get; set; }
-        public string Tipo_Usuario { get; set; }
-        public string Senha { get; set; }
+        public string? Nome { get; set; }
+        public string? Email { get; set; }
+        public string? Senha { get; set; }
+        public Nivel? Nivel { get; set; }
         public bool Ativo { get; set; }
-        public DateTime Criado_em { get; set; }
+     
 
-        public Usuario() { }
+        public Usuario() 
+        {
+            Nivel = new();// composiçãp UML
+        }
 
 
-        public Usuario(int id, string nome, string cpf_cnpj, string email,
-            string tipo_Usuario, string senha, bool ativo, DateTime criado_em) // Construtor para Cadastro
+        public Usuario(int id, string? nome, string? email, string? senha, Nivel? nivel, bool ativo) // Geral
         {
             Id = id;
             Nome = nome;
-            Cpf_cnpj = cpf_cnpj;
             Email = email;
-            Tipo_Usuario = tipo_Usuario;
+            Senha = senha;
+            Nivel = nivel;
+            Ativo = ativo;
+        }
+        public Usuario(string? nome, string? email, string? senha, Nivel nivel, bool ativo)
+        {
+
+            Nome = nome;
+            Email = email;
             Senha = senha;
             Ativo = ativo;
-            Criado_em = criado_em;
+            Nivel = nivel;
+        }
+        public Usuario(string? nome, string? email, string? senha, Nivel? nivel)
+        {
+
+            Nome = nome;
+            Email = email;
+            Senha = senha;
+            Nivel = nivel;
+
         }
 
-        public Usuario(int id, string nome, string senha, bool ativo)// Construtor para Login
+        public Usuario(int id, string? senha)
         {
             Id = id;
-            Nome = nome; ;
             Senha = senha;
-            Ativo = ativo;
         }
-
-        public Usuario(int id, string nome, string cpf_cnpj, string email, string tipo_Usuario, string senha, bool ativo)// Cadastro
+        public Usuario(int id, string? nome, string? email, Nivel? nivel, bool ativo)
         {
             Id = id;
-            Nome = nome; ;
-            Cpf_cnpj = cpf_cnpj;
+            Nome = nome;
             Email = email;
-            Tipo_Usuario = tipo_Usuario;
-            Senha = senha;
+            Nivel = nivel;
             Ativo = ativo;
-
-
-
         }
-        public Usuario(string nome, string cpf_cnpj, string email, string tipo_Usuario, string senha)
+        public void Inserir()
         {
-
-            Nome = nome; ;
-            Cpf_cnpj = cpf_cnpj;
-            Email = email;
-            Tipo_Usuario = tipo_Usuario;
-            Senha = senha;
-
-
-
-
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_usuario_insert";
+            cmd.Parameters.AddWithValue("spnome", Nome);
+            cmd.Parameters.AddWithValue("spemail", Email);
+            cmd.Parameters.AddWithValue("spsenha", Senha);
+            cmd.Parameters.AddWithValue("spnivel", Nivel.Id);
+            Id = Convert.ToInt32(cmd.ExecuteScalar());
+            cmd.Connection.Close();
         }
 
-        public Usuario(int id , string nome, string cpf_cnpj, string email, string tipo_Usuario, bool ativo) 
+
+
+
+        public bool Atualizar()
         {
-            Id = id;
-            Nome = nome; ;
-            Cpf_cnpj = cpf_cnpj;
-            Email = email;
-            Tipo_Usuario = tipo_Usuario;
-            Ativo = ativo;
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_usuario_altera";
+
+            cmd.Parameters.AddWithValue("spid", Id);
+            cmd.Parameters.AddWithValue("spnome", Nome);
+            cmd.Parameters.AddWithValue("spsenha", Senha);
+            cmd.Parameters.AddWithValue("spnivel", Nivel.Id);
+            if (string.IsNullOrEmpty(Senha))
+                throw new ArgumentException("Senha cannot be null or empty.");
 
 
-
-
+            return cmd.ExecuteNonQuery() > 0;
         }
-        public static Usuario EfetuarLogin(string email, string senha) // Método para efetuar login
+        //usuando if ternario, sem fechar conexao 
+
+        //usando if/else e fechado a conexao
+        //if (cmd.ExecuteNonQuery() > 0)
+        //{
+        //    cmd.Connection.Close();
+        //    return true;
+        //}
+        //else
+        //return false;     
+
+        public static Usuario ObterporId(int id)
         {
             Usuario usuario = new();
-            string sql = $"SELECT * FROM usuarios WHERE email = '{email}' AND senha = MD5('{senha}')";
 
-            var cn = Banco.Abrir();
-            cn.CommandText = sql;       
-
-            var dr = cn.ExecuteReader();
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select * from usuarios where id = '{id}'";
+            var dr = cmd.ExecuteReader();
             if (dr.Read())
             {
                 usuario = new(
-                dr.GetInt32(0),
-                dr.GetString(1),
-                dr.GetString(5),
-                dr.GetBoolean(6)
-                    );
-
+                                dr.GetInt32(0),
+                                dr.GetString(1),
+                                dr.GetString(2),
+                                dr.GetString(3),
+                                Nivel.ObterPorId(dr.GetInt32(4)),
+                                dr.GetBoolean(5)
+                              );
 
             }
+            dr.Close();
+            cmd.Connection.Close();
             return usuario;
-
-
-        }
-        public void Inserir() // metodo para inserir Usuario 
-        {
-            var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
-
-            cmd.CommandText = $"INSERT INTO usuarios (id, nome, cpf_cnpj, email, tipo_Usuario, senha, ativo) " +
-                   $"VALUES (0,'{Nome}', '{Cpf_cnpj}', '{Email}', '{Tipo_Usuario}', MD5('{Senha}'), 1)";
-
-            cmd.ExecuteNonQuery();
-
-            cmd.CommandText = "SELECT  LAST_INSERT_ID()";
-            Id = Convert.ToInt32(cmd.ExecuteScalar());
         }
         public static List<Usuario> ObterLista()
         {
-            List<Usuario> lista = new();
+            List<Usuario> usuarios = new();
             var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from usuarios order by nome";
+            cmd.CommandText = $"select * from usuarios order by nome";
             var dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                lista.Add(new(
-                    dr.GetInt32("id"),
-                    dr.GetString("nome"),
-                    dr.GetString("cpf_cnpj"),
-                    dr.GetString("email"),
-                    dr.GetString("tipo_Usuario"),
-                    dr.GetBoolean("ativo")
-
-
-
-
-                    )
-                );
-            }
-            return lista;
-        }
-        public static Usuario ObterPorId(int id) // metodo para obter Usuario por ID
-        {
-            Usuario usuario = null;
-            var cmd = Banco.Abrir();
-            cmd.CommandText = "SELECT * FROM usuarios WHERE id = @id";
-            cmd.Parameters.AddWithValue("@id", id);
-            var dr = cmd.ExecuteReader();
-
             if (dr.Read())
             {
-                usuario = new Usuario
-                {
-                    Id = dr.GetInt32("id"),
-                    Nome = dr.GetString("nome"),
-                    Cpf_cnpj = dr.GetString("cpf_cnpj"),
-                    Email = dr.GetString("email"),
-                    Tipo_Usuario = dr.GetString("tipo_usuario"),
-                    Senha = dr.GetString("senha"),
-                    Ativo = dr.GetBoolean("ativo"),
-                    Criado_em = dr.GetDateTime("criado_em")
-                };
+                usuarios.Add(new(
+                                dr.GetInt32(0),
+                                dr.GetString(1),
+                                dr.GetString(2),
+                                dr.GetString(3),
+                                Nivel.ObterPorId(dr.GetInt32(4)),
+                                dr.GetBoolean(5)
+                              )
+                   );
+
             }
-
-            return usuario;
+            dr.Close();
+            cmd.Connection.Close();
+            return usuarios;
         }
-        public static Usuario ObterPorNome(string nome)// metodo para obter Usuario por Nome
+        public static Usuario EfetuarLogin(string email, string senha)
         {
-            Usuario usuario = null;
+            Usuario usuario = new();
             var cmd = Banco.Abrir();
-            cmd.CommandText = "SELECT * FROM usuarios WHERE nome = @nome";
-            cmd.Parameters.AddWithValue("@nome", nome);
+            cmd.CommandText = $"select * from usuarios where email = '{email}' and senha = md5('{senha}') ";
             var dr = cmd.ExecuteReader();
-
             if (dr.Read())
             {
-                usuario = new Usuario
-                {
-                    Id = dr.GetInt32("id"),
-                    Nome = dr.GetString("nome"),
-                    Cpf_cnpj = dr.GetString("cpf_cnpj"),
-                    Email = dr.GetString("email"),
-                    Tipo_Usuario = dr.GetString("tipo_usuario"),
-                    Senha = dr.GetString("senha"),
-                    Ativo = dr.GetBoolean("ativo"),
-                    Criado_em = dr.GetDateTime("criado_em")
-                };
+                usuario = new(
+                            dr.GetInt32(0),
+                            dr.GetString(1),
+                            dr.GetString(2),
+                            dr.GetString(3),
+                            Nivel.ObterPorId(dr.GetInt32(4)),
+                            dr.GetBoolean(5)
+                        );
             }
-
+            dr.Close();
+            cmd.Connection.Close();
             return usuario;
         }
-
-
-        public void Atualizar() // metodo para atualizar Usuario
+        public static bool AlterarSenha(string email, string senha)
         {
             var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"UPDATE usuarios SET nome = '{Nome}', cpf_cnpj = '{Cpf_cnpj}', email = '{Email}', tipo_Usuario = '{Tipo_Usuario}', senha = MD5('{Senha}'), ativo = {Ativo} WHERE id = {Id}";
-            cmd.ExecuteNonQuery();
+            cmd.CommandText = $"update set senha = md5('{senha}') where email = '{email}'";
+            return cmd.ExecuteNonQuery() > 0 ? true : false;
         }
-        //sssss
 
-        
-    } 
+    }
 }
-//teste Figueiró
+// if (txtcodbarras.text.Length >6){}

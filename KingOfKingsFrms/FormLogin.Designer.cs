@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             panel1 = new Panel();
-            txtNomeUsuario = new TextBox();
+            txtEmail = new TextBox();
             txtSenha = new TextBox();
             bntAcessar = new Button();
             linkLabel1 = new LinkLabel();
@@ -51,16 +51,16 @@
             panel1.Size = new Size(84, 77);
             panel1.TabIndex = 0;
             // 
-            // txtNomeUsuario
+            // txtEmail
             // 
-            txtNomeUsuario.Location = new Point(163, 124);
-            txtNomeUsuario.Name = "txtNomeUsuario";
-            txtNomeUsuario.Size = new Size(237, 23);
-            txtNomeUsuario.TabIndex = 1;
+            txtEmail.Location = new Point(163, 124);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(237, 23);
+            txtEmail.TabIndex = 1;
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(163, 166);
+            txtSenha.Location = new Point(164, 160);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(237, 23);
             txtSenha.TabIndex = 2;
@@ -151,7 +151,7 @@
             Controls.Add(linkLabel1);
             Controls.Add(bntAcessar);
             Controls.Add(txtSenha);
-            Controls.Add(txtNomeUsuario);
+            Controls.Add(txtEmail);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
@@ -168,7 +168,7 @@
         #endregion
 
         private Panel panel1;
-        private TextBox txtNomeUsuario;
+        private TextBox txtEmail;
         private TextBox txtSenha;
         private Button bntAcessar;
         private LinkLabel linkLabel1;
