@@ -1,4 +1,5 @@
-﻿using KingoOfKingsClass;
+﻿using KingOfKingsClass;
+using KingoOfKingsClass;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,11 +48,49 @@ namespace KingOfKingsFrms
 
         private void bntCadastrar_Click_1(object sender, EventArgs e) // método para cadastrar o usuário
         {
-            Usuario usuario = new(txtNome.Text, txtCpf.Text, txtEmail.Text, cmbTipo_usuario.Text, txtSenha.Text);
-            usuario.Inserir();
-            txtId.Text = usuario.Id.ToString();
-            MessageBox.Show($"Usuário {usuario.Nome} gravado com sucesso com o ID {usuario.Id}");
-            FormCadastrar_Load(sender, e);
+            if (txtId.Text == string.Empty)
+            {
+                // INSERIR
+                if (txtNome.Text != string.Empty && txtEmail.Text != string.Empty && txtSenha.Text != string.Empty && cmbNivel.SelectedItem != null)
+                {
+                    Nivel nivelSelecionado = (Nivel)cmbNivel.SelectedItem;
+
+                    Usuario usuario = new(txtNome.Text, txtEmail.Text, txtSenha.Text, nivelSelecionado, true);
+                    usuario.Inserir();
+
+                    if (usuario.Id > 0)
+                    {
+                        MessageBox.Show("Usuário cadastrado com sucesso!");
+                        //btnGravar.Enabled = false;
+                    }
+                }
+
+                //CarregaGrid();     // Método que você deve ter para atualizar a grade
+                //LimpaControles();  // Método para limpar os campos
+            }
+            else
+            {
+                // ATUALIZAR
+                if (cmbNivel.SelectedItem != null)
+                {
+                    Nivel nivelSelecionado = (Nivel)cmbNivel.SelectedItem;
+
+                    Usuario usuario = new(
+                                int.Parse(txtId.Text),
+                                txtNome.Text,
+                                txtEmail.Text,
+                                txtSenha.Text,
+                                nivelSelecionado,
+                                true
+                            );
+
+                    if (usuario.Atualizar())
+                    {
+                        MessageBox.Show("Usuário atualizado com sucesso!");
+                        //btnGravar.Enabled = false;
+                    }
+                }
+            }
         }
 
         private void cmbTipo_usuario_SelectedIndexChanged(object sender, EventArgs e)
