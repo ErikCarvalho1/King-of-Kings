@@ -1,25 +1,25 @@
-<<<<<<< HEAD
+
 ﻿using System;
 using System.Collections.Generic;
-=======
+
 ﻿using KingoOfKingsClass;
 using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
 using System.Data;
->>>>>>> bae7aba93558a5d2a82f39d8e3fcc6406b5962cb
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace KingOfKingsClass
 {
-<<<<<<< HEAD
+
     public class Cliente
     {
-=======
-    class Cliente
-    {
+
+  
+    
         public int Id { get; set; }
         public string? Nome { get; set; }
         public string? Cpf { get; set; }
@@ -145,6 +145,6 @@ namespace KingOfKingsClass
             return clientes;
         }
 
->>>>>>> bae7aba93558a5d2a82f39d8e3fcc6406b5962cb
+
     }
 }
