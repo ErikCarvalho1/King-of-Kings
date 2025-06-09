@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KingOfKingsClass
 {
-    class Clientes
+    public class Cliente
     {
     }
 }

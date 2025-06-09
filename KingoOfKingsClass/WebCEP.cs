@@ -5,8 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KingOfKingsClass
-{
     public class WebCEP
     {
         #region "Váriavies"  
@@ -65,7 +63,7 @@ namespace KingOfKingsClass
             _resultato_txt = "CEP não encontrado";
 
             //Cria um DataSet  baseado no retorno do XML  
-            DataSet ds = new();
+            DataSet ds = new DataSet();
             ds.ReadXml("http://cep.republicavirtual.com.br/web_cep.php?cep=" + CEP.Replace("-", "").Trim() + "&formato=xml");
 
             if (ds != null)
@@ -116,4 +114,3 @@ namespace KingOfKingsClass
         }
         #endregion
     }
-}
