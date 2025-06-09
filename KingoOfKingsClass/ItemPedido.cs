@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 
 namespace KingOfKingsClass
 {
-<<<<<<< HEAD
+
     public class ItemPedido
-=======
-  public class ItemPedido
->>>>>>> 9eef2dbe0211092b13f0aca2964f414c39efc84c
+
     {
 
 

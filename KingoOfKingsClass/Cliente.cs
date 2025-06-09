@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 9eef2dbe0211092b13f0aca2964f414c39efc84c
 ﻿using System;
 using System.Collections.Generic;
 
@@ -17,17 +14,9 @@ using System.Threading.Tasks;
 
 namespace KingOfKingsClass
 {
-<<<<<<< HEAD
-
-    public class Cliente
-    {
-
-  
-    
-=======
      public class Cliente
     {
->>>>>>> 9eef2dbe0211092b13f0aca2964f414c39efc84c
+
         public int Id { get; set; }
         public string? Nome { get; set; }
         public string? Cpf { get; set; }

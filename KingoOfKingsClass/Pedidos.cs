@@ -1,71 +1,73 @@
-﻿using KingoOfKingsClass;
-using Microsoft.VisualBasic;
+﻿using KingOfKingsClass;
+using KingoOfKingsClass;
+using Org.BouncyCastle.Bcpg;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KingOfKingsClass
+namespace ComercialTDSClass
 {
-    public class Pedidos
+    public class Pedido
     {
 
-
         public int Id { get; set; }
-        public Usuario UsuarioId { get; set; }
+        public Usuario Usuario { get; set; }
         public Cliente Cliente { get; set; }
-        public DateTime DataPedido { get; set; }
-        public string? Status { get; set; }
+        public DateTime Data { get; set; }
+        public string Status { get; set; }
         public double Desconto { get; set; }
         public List<ItemPedido> Items { get; set; }
-        public Pedidos() { }
+        public Pedido() { }
 
-        public Pedidos(int id, Usuario usuarioId, Cliente cliente, DateTime dataPedido, string status, int desconto)
+        public Pedido(int id, Usuario usuario, Cliente cliente, DateTime data, string status, double desconto)
         {
             Id = id;
-            UsuarioId = usuarioId;
+            Usuario = usuario;
             Cliente = cliente;
-            DataPedido = dataPedido;
+            Data = data;
             Status = status;
             Desconto = desconto;
         }
-        public Pedidos(Usuario usuarioId, Cliente cliente)// inserir CLiente
+        public Pedido(Usuario usuario, Cliente cliente)
         {
 
-            UsuarioId = usuarioId;
+            Usuario = usuario;
             Cliente = cliente;
 
         }
-        public Pedidos(int id, string status, int desconto) //atualizar
+        public Pedido(int id, DateTime data, string status, double desconto)
         {
             Id = id;
             Status = status;
             Desconto = desconto;
         }
-        public Pedidos(int id, Usuario usuarioId, Cliente cliente, string status, DateTime dataPedido, double desconto, List<ItemPedido> items) // listar pedido
+
+        public Pedido(int id, Usuario usuario, Cliente cliente,
+            DateTime data, string status, double desconto, List<ItemPedido> items)
         {
             Id = id;
-            UsuarioId = usuarioId;
+            Usuario = usuario;
             Cliente = cliente;
-            DataPedido = dataPedido;
-            Desconto = desconto;
+            Data = data;
             Status = status;
-            List<ItemPedido> Items = new List<ItemPedido>();
-
-
+            Desconto = desconto;
+            Items = items;
         }
-        public void inserir()
+
+        public void Inserir()
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.CommandText = "sp_pedido_insert";
-            cmd.Parameters.AddWithValue("spusuarioid", UsuarioId.Id);
-            cmd.Parameters.AddWithValue("spclienteid", Cliente.Id);
+            cmd.Parameters.AddWithValue("spusario_id", Usuario.Id);
+            cmd.Parameters.AddWithValue("spcliente_id", Cliente.Id);
             Id = Convert.ToInt32(cmd.ExecuteScalar());
             cmd.Connection.Close();
-
         }
+
         public bool Atualizar()
         {
             var cmd = Banco.Abrir();
@@ -78,34 +80,50 @@ namespace KingOfKingsClass
             cmd.Connection.Close();
             return atualizado;
         }
-        public static Pedidos ObterPorId(int id)
+        public static Pedido ObterPorId(int id)
         {
-            Pedidos pedidos = new();
+            Pedido pedido = new();
             var cmd = Banco.Abrir();
-            cmd.CommandText = $"seletc * from pedidos where id = {id}";
+            cmd.CommandText = $"select * from pedidos where id = {id}";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                pedidos = new(
+                pedido = new(
                     dr.GetInt32(0),
                     Usuario.ObterporId(dr.GetInt32(1)),
                     Cliente.ObterPorId(dr.GetInt32(2)),
                     dr.GetDateTime(3),
                     dr.GetString(4),
-                   
-                    dr.GetDouble(5),
-                    ItemPedido.ObterListaPorPedidoId(dr.GetInt32(0))
-                    
+                dr.GetDouble(5),
+                    ItemPedido.ObterlistaPorPedidoId(dr.GetInt32(0))
                     );
-                dr.Close();
-                cmd.Connection.Close();
-
-                return pedidos;
             }
+            dr.Close();
+            cmd.Connection.Close();
+            return pedido;
+        }
+        public static List<Pedido> obterLista()
+        {
+            List<Pedido> pedidos = new();
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select * from pedidos";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                pedidos.Add(new(
+                    dr.GetInt32(0),
+                    Usuario.ObterporId(dr.GetInt32(1)),
+                    Cliente.ObterPorId(dr.GetInt32(2)),
+                    dr.GetDateTime(3),
+                    dr.GetString(4),
+                dr.GetDouble(5),
+                    ItemPedido.ObterlistaPorPedidoId(dr.GetInt32(0))
+                    )
+                    );
+            }
+            dr.Close();
+            cmd.Connection.Close();
+            return pedidos;
         }
     }
 }
-
-
-
-
