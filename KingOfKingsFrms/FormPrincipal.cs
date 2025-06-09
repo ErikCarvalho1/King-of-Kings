@@ -67,7 +67,7 @@ namespace KingOfKingsFrms
         private void bntSair_Click(object sender, EventArgs e)
         {
             var registro = new ResgistroDeAcesso();
-           // registro.RegistrarSaida();
+            // registro.RegistrarSaida();
             Application.Exit();
 
         }
@@ -95,6 +95,11 @@ namespace KingOfKingsFrms
         private void label1_Click(object sender, EventArgs e)
         {
             FormPainel(new FormCategorias());
+        }
+
+        private void cadastroDeUsuariosEVendedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPainel(new FormCadastrarUsuario());
         }
     }
 }

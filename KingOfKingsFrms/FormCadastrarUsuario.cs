@@ -74,6 +74,9 @@ namespace KingOfKingsFrms
                 if (cmbNivel.SelectedItem != null)
                 {
                     Nivel nivelSelecionado = (Nivel)cmbNivel.SelectedItem;
+                    cmbNivel.DataSource = Nivel.ObterLista();
+                    cmbNivel.DisplayMember = "Nome";
+                    cmbNivel.ValueMember = "Id";
 
                     Usuario usuario = new(
                                 int.Parse(txtId.Text),
