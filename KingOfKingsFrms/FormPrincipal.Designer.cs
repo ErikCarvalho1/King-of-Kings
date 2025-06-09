@@ -227,14 +227,14 @@
             // cadastroDeTransportadoraToolStripMenuItem1
             // 
             cadastroDeTransportadoraToolStripMenuItem1.Name = "cadastroDeTransportadoraToolStripMenuItem1";
-            cadastroDeTransportadoraToolStripMenuItem1.Size = new Size(219, 22);
+            cadastroDeTransportadoraToolStripMenuItem1.Size = new Size(220, 22);
             cadastroDeTransportadoraToolStripMenuItem1.Text = "Cadastro de Transportadora";
             // 
             // cadastroDeClassificaçãoFiscalToolStripMenuItem
             // 
             cadastroDeClassificaçãoFiscalToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { entradaToolStripMenuItem, saidaToolStripMenuItem, notaTransporteToolStripMenuItem });
             cadastroDeClassificaçãoFiscalToolStripMenuItem.Name = "cadastroDeClassificaçãoFiscalToolStripMenuItem";
-            cadastroDeClassificaçãoFiscalToolStripMenuItem.Size = new Size(219, 22);
+            cadastroDeClassificaçãoFiscalToolStripMenuItem.Size = new Size(220, 22);
             cadastroDeClassificaçãoFiscalToolStripMenuItem.Text = "Cadastro de nota fiscal ";
             // 
             // entradaToolStripMenuItem
@@ -258,7 +258,7 @@
             // cadastroDeAlíquotasToolStripMenuItem
             // 
             cadastroDeAlíquotasToolStripMenuItem.Name = "cadastroDeAlíquotasToolStripMenuItem";
-            cadastroDeAlíquotasToolStripMenuItem.Size = new Size(219, 22);
+            cadastroDeAlíquotasToolStripMenuItem.Size = new Size(220, 22);
             cadastroDeAlíquotasToolStripMenuItem.Text = "Cadastro de alíquotas";
             // 
             // cadastroDeUsuariosEVendedoresToolStripMenuItem
@@ -268,6 +268,7 @@
             cadastroDeUsuariosEVendedoresToolStripMenuItem.Name = "cadastroDeUsuariosEVendedoresToolStripMenuItem";
             cadastroDeUsuariosEVendedoresToolStripMenuItem.Size = new Size(270, 22);
             cadastroDeUsuariosEVendedoresToolStripMenuItem.Text = "Cadastro de Usuarios";
+            cadastroDeUsuariosEVendedoresToolStripMenuItem.Click += cadastroDeUsuariosEVendedoresToolStripMenuItem_Click;
             // 
             // cadastroDeVendedoresToolStripMenuItem
             // 
@@ -798,7 +799,7 @@
             label10.ForeColor = Color.FromArgb(219, 179, 91);
             label10.Location = new Point(639, 74);
             label10.Name = "label10";
-            label10.Size = new Size(54, 15);
+            label10.Size = new Size(53, 15);
             label10.TabIndex = 50;
             label10.Text = "Cone&xão";
             // 
@@ -838,7 +839,7 @@
             label5.ForeColor = Color.FromArgb(219, 179, 91);
             label5.Location = new Point(267, 71);
             label5.Name = "label5";
-            label5.Size = new Size(68, 15);
+            label5.Size = new Size(69, 15);
             label5.TabIndex = 45;
             label5.Text = "&Em Trânsito";
             // 
