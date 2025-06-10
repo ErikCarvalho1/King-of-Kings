@@ -38,7 +38,8 @@ namespace KingOfKingsFrms
 
         private void FormCadastrar_Load(object sender, EventArgs e)
         {
-
+            CarregaNivel();
+            CarregaGrid();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -65,8 +66,8 @@ namespace KingOfKingsFrms
                     }
                 }
 
-                //CarregaGrid();     // Método que você deve ter para atualizar a grade
-                //LimpaControles();  // Método para limpar os campos
+                CarregaGrid();     // Método que você deve ter para atualizar a grade
+                LimpaControles();  // Método para limpar os campos
             }
             else
             {
@@ -105,5 +106,82 @@ namespace KingOfKingsFrms
         {
 
         }
+
+        private void CarregaGrid()
+        {
+            var Lista = Usuario.ObterLista();
+
+            // Verifica se retornou dados
+            if (Lista == null || Lista.Count == 0)
+            {
+                MessageBox.Show("Nenhum usuário encontrado.");
+                return;
+            }
+
+            dgvUsuarios.Rows.Clear();
+
+            foreach (var item in Lista)
+            {
+                int linha = dgvUsuarios.Rows.Add();
+                dgvUsuarios.Rows[linha].Cells[0].Value = item.Id;
+                dgvUsuarios.Rows[linha].Cells[1].Value = item.Nome;
+                dgvUsuarios.Rows[linha].Cells[2].Value = item.Email;
+                dgvUsuarios.Rows[linha].Cells[3].Value = item.Nivel != null ? item.Nivel.Nome : "Sem nível";
+            }
+
+
+        }
+        public void LimpaControles()
+        {
+            txtId.Clear();
+            txtNome.Clear();
+            txtEmail.Clear();
+            txtSenha.Clear();
+            cmbNivel.SelectedIndex = -1;
+
+        }
+        private void CarregaNivel()
+        {
+            List<Nivel> lista = Nivel.ObterLista(); // Este método precisa retornar List<Nivel>
+            MessageBox.Show("Qtd usuários: " + lista.Count);
+            cmbNivel.DataSource = lista;
+            cmbNivel.DisplayMember = "Nome"; // o que aparece visualmente
+            cmbNivel.ValueMember = "Id";     // valor usado para identificação
+            cmbNivel.SelectedIndex = -1;     // nada selecionado inicialmente
+        }
+
+        private void bntEditar_Click(object sender, EventArgs e)
+        {
+            txtNome.ReadOnly = false;
+            txtEmail.ReadOnly = false;
+            txtSenha.ReadOnly = false;
+            cmbNivel.Enabled = true;
+            bntEditar.Enabled = false;
+            bntEditar.Enabled = true;
+        }
+
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // recuperando o indice da linha do gride 
+            int linha = dgvUsuarios.CurrentRow.Index;
+            // recuperando o id do nivel na coluna, oculda, ID (0)
+            int id = Convert.ToInt32(dgvUsuarios.Rows[linha].Cells[0].Value);
+            var usuario = Usuario.ObterporId(id);
+
+            // //obter  o objeto nivel
+
+            // preenche os campos com os dados do usuario
+            txtId.Text = usuario.Id.ToString();
+            txtNome.Text = usuario.Nome;
+            txtEmail.Text = usuario.Email;
+            txtSenha.Text = usuario.Senha;
+            cmbNivel.SelectedValue = usuario.Nivel.Id;
+            //desabilita os campos
+            txtNome.ReadOnly = true;
+            txtEmail.ReadOnly = true;
+            cmbNivel.Enabled = false;
+            bntEditar.Enabled = true;
+        }
     }
+
 }

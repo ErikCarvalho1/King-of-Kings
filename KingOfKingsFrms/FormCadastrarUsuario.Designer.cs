@@ -40,13 +40,13 @@
             label4 = new Label();
             Tipo = new Label();
             txtNome = new TextBox();
-            dataGridView1 = new DataGridView();
+            dgvUsuarios = new DataGridView();
             clnNome = new DataGridViewTextBoxColumn();
             clnEmail = new DataGridViewTextBoxColumn();
             clnId = new DataGridViewTextBoxColumn();
             clnTipo = new DataGridViewTextBoxColumn();
-            button1 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            bntEditar = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             SuspendLayout();
             // 
             // txtId
@@ -78,7 +78,7 @@
             // 
             bntVoltar.BackgroundImage = Properties.Resources.bntVoltar;
             bntVoltar.FlatStyle = FlatStyle.Flat;
-            bntVoltar.Location = new Point(202, 206);
+            bntVoltar.Location = new Point(596, 448);
             bntVoltar.Name = "bntVoltar";
             bntVoltar.Size = new Size(100, 36);
             bntVoltar.TabIndex = 7;
@@ -90,7 +90,7 @@
             bntCadastrar.BackColor = SystemColors.ActiveCaption;
             bntCadastrar.BackgroundImage = Properties.Resources.bntCadastrar;
             bntCadastrar.FlatStyle = FlatStyle.Flat;
-            bntCadastrar.Location = new Point(308, 206);
+            bntCadastrar.Location = new Point(202, 206);
             bntCadastrar.Name = "bntCadastrar";
             bntCadastrar.Size = new Size(102, 33);
             bntCadastrar.TabIndex = 8;
@@ -165,15 +165,16 @@
             txtNome.Size = new Size(233, 23);
             txtNome.TabIndex = 2;
             // 
-            // dataGridView1
+            // dgvUsuarios
             // 
-            dataGridView1.BackgroundColor = SystemColors.ActiveCaptionText;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { clnNome, clnEmail, clnId, clnTipo });
-            dataGridView1.Location = new Point(202, 283);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(344, 148);
-            dataGridView1.TabIndex = 15;
+            dgvUsuarios.BackgroundColor = SystemColors.ActiveCaptionText;
+            dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { clnNome, clnEmail, clnId, clnTipo });
+            dgvUsuarios.Location = new Point(202, 283);
+            dgvUsuarios.Name = "dgvUsuarios";
+            dgvUsuarios.Size = new Size(344, 148);
+            dgvUsuarios.TabIndex = 15;
+            dgvUsuarios.CellContentClick += dgvUsuarios_CellContentClick;
             // 
             // clnNome
             // 
@@ -196,16 +197,15 @@
             clnTipo.HeaderText = "Tipo";
             clnTipo.Name = "clnTipo";
             // 
-            // button1
+            // bntEditar
             // 
-            button1.BackColor = SystemColors.ActiveCaption;
-            button1.BackgroundImage = Properties.Resources.Buscar;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(433, 203);
-            button1.Name = "button1";
-            button1.Size = new Size(101, 43);
-            button1.TabIndex = 16;
-            button1.UseVisualStyleBackColor = false;
+            bntEditar.Location = new Point(310, 211);
+            bntEditar.Name = "bntEditar";
+            bntEditar.Size = new Size(75, 23);
+            bntEditar.TabIndex = 16;
+            bntEditar.Text = "Editar";
+            bntEditar.UseVisualStyleBackColor = true;
+            bntEditar.Click += bntEditar_Click;
             // 
             // FormCadastrarUsuario
             // 
@@ -214,8 +214,8 @@
             BackColor = SystemColors.ActiveCaptionText;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(774, 484);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
+            Controls.Add(bntEditar);
+            Controls.Add(dgvUsuarios);
             Controls.Add(Tipo);
             Controls.Add(label4);
             Controls.Add(txtSenha);
@@ -233,7 +233,7 @@
             Name = "FormCadastrarUsuario";
             Text = "FormCadastrar";
             Load += FormCadastrar_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -250,11 +250,11 @@
         private Label label4;
         private Label Tipo;
         private TextBox txtNome;
-        private DataGridView dataGridView1;
+        private DataGridView dgvUsuarios;
         private DataGridViewTextBoxColumn clnNome;
         private DataGridViewTextBoxColumn clnEmail;
         private DataGridViewTextBoxColumn clnId;
         private DataGridViewTextBoxColumn clnTipo;
-        private Button button1;
+        private Button bntEditar;
     }
 }
