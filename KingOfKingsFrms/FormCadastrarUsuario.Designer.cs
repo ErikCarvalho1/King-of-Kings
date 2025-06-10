@@ -201,7 +201,7 @@
             button1.BackColor = SystemColors.ActiveCaption;
             button1.BackgroundImage = Properties.Resources.Buscar;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(416, 206);
+            button1.Location = new Point(433, 203);
             button1.Name = "button1";
             button1.Size = new Size(101, 43);
             button1.TabIndex = 16;
