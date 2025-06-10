@@ -989,9 +989,9 @@
             Controls.Add(panel1);
             Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Name = "FormPrincipal";
-            ShowIcon = false;
             Text = "Form1";
             Load += FormPrincipal_Load;
             menuStrip1.ResumeLayout(false);
