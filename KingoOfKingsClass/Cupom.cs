@@ -58,7 +58,7 @@ namespace KingOfKingsClass
 
             public decimal AplicarDesconto(decimal valorOriginal)
             {
-                if (!ValidoDe())
+                if (!EstaValido())
                     throw new InvalidOperationException("Cupom expirado ou ainda não válido.");
 
                 return Tipo switch
