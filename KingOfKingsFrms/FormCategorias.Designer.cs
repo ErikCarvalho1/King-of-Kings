@@ -164,6 +164,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
+            BackgroundImage = Properties.Resources.leaoFundo;
             ClientSize = new Size(685, 440);
             Controls.Add(label3);
             Controls.Add(label2);
