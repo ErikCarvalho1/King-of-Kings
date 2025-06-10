@@ -129,6 +129,7 @@
             button2 = new Button();
             button1 = new Button();
             bntHistorico = new Button();
+            cadastroDeCupomToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -176,7 +177,7 @@
             // 
             // eddeToolStripMenuItem
             // 
-            eddeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroDeProdutosToolStripMenuItem1, cadastroDeClienteToolStripMenuItem, cadastroDeFornecedoresToolStripMenuItem, cadastroDeTipoDosProdutosToolStripMenuItem, cadastroFiscaisToolStripMenuItem1, cadastroDeUsuariosEVendedoresToolStripMenuItem, cadastroDeVendedoresToolStripMenuItem, cadastroDeImformaçõesDaEmpresaToolStripMenuItem });
+            eddeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroDeProdutosToolStripMenuItem1, cadastroDeClienteToolStripMenuItem, cadastroDeFornecedoresToolStripMenuItem, cadastroDeTipoDosProdutosToolStripMenuItem, cadastroFiscaisToolStripMenuItem1, cadastroDeUsuariosEVendedoresToolStripMenuItem, cadastroDeVendedoresToolStripMenuItem, cadastroDeImformaçõesDaEmpresaToolStripMenuItem, cadastroDeCupomToolStripMenuItem });
             eddeToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
             eddeToolStripMenuItem.Name = "eddeToolStripMenuItem";
             eddeToolStripMenuItem.Size = new Size(66, 20);
@@ -227,14 +228,14 @@
             // cadastroDeTransportadoraToolStripMenuItem1
             // 
             cadastroDeTransportadoraToolStripMenuItem1.Name = "cadastroDeTransportadoraToolStripMenuItem1";
-            cadastroDeTransportadoraToolStripMenuItem1.Size = new Size(220, 22);
+            cadastroDeTransportadoraToolStripMenuItem1.Size = new Size(219, 22);
             cadastroDeTransportadoraToolStripMenuItem1.Text = "Cadastro de Transportadora";
             // 
             // cadastroDeClassificaçãoFiscalToolStripMenuItem
             // 
             cadastroDeClassificaçãoFiscalToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { entradaToolStripMenuItem, saidaToolStripMenuItem, notaTransporteToolStripMenuItem });
             cadastroDeClassificaçãoFiscalToolStripMenuItem.Name = "cadastroDeClassificaçãoFiscalToolStripMenuItem";
-            cadastroDeClassificaçãoFiscalToolStripMenuItem.Size = new Size(220, 22);
+            cadastroDeClassificaçãoFiscalToolStripMenuItem.Size = new Size(219, 22);
             cadastroDeClassificaçãoFiscalToolStripMenuItem.Text = "Cadastro de nota fiscal ";
             // 
             // entradaToolStripMenuItem
@@ -258,7 +259,7 @@
             // cadastroDeAlíquotasToolStripMenuItem
             // 
             cadastroDeAlíquotasToolStripMenuItem.Name = "cadastroDeAlíquotasToolStripMenuItem";
-            cadastroDeAlíquotasToolStripMenuItem.Size = new Size(220, 22);
+            cadastroDeAlíquotasToolStripMenuItem.Size = new Size(219, 22);
             cadastroDeAlíquotasToolStripMenuItem.Text = "Cadastro de alíquotas";
             // 
             // cadastroDeUsuariosEVendedoresToolStripMenuItem
@@ -799,7 +800,7 @@
             label10.ForeColor = Color.FromArgb(219, 179, 91);
             label10.Location = new Point(639, 74);
             label10.Name = "label10";
-            label10.Size = new Size(53, 15);
+            label10.Size = new Size(54, 15);
             label10.TabIndex = 50;
             label10.Text = "Cone&xão";
             // 
@@ -839,7 +840,7 @@
             label5.ForeColor = Color.FromArgb(219, 179, 91);
             label5.Location = new Point(267, 71);
             label5.Name = "label5";
-            label5.Size = new Size(69, 15);
+            label5.Size = new Size(68, 15);
             label5.TabIndex = 45;
             label5.Text = "&Em Trânsito";
             // 
@@ -954,6 +955,15 @@
             bntHistorico.Size = new Size(62, 54);
             bntHistorico.TabIndex = 34;
             bntHistorico.UseVisualStyleBackColor = true;
+            // 
+            // cadastroDeCupomToolStripMenuItem
+            // 
+            cadastroDeCupomToolStripMenuItem.BackColor = Color.Black;
+            cadastroDeCupomToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
+            cadastroDeCupomToolStripMenuItem.Name = "cadastroDeCupomToolStripMenuItem";
+            cadastroDeCupomToolStripMenuItem.Size = new Size(270, 22);
+            cadastroDeCupomToolStripMenuItem.Text = "Cadastro de Cupom";
+            cadastroDeCupomToolStripMenuItem.Click += cadastroDeCupomToolStripMenuItem_Click;
             // 
             // FormPrincipal
             // 
@@ -1102,5 +1112,6 @@
         private ToolStripMenuItem informaçãoEAvisosaniversáriossugestõesDePromoçãoEstoqueERecebimentosToolStripMenuItem;
         private ToolStripMenuItem copiaERestauraçãoDeBancoDeDadosToolStripMenuItem;
         private ToolStripMenuItem manutençãoDoSistemaToolStripMenuItem;
+        private ToolStripMenuItem cadastroDeCupomToolStripMenuItem;
     }
 }

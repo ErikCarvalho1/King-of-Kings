@@ -18,17 +18,17 @@ namespace KingOfKingsClass
             public decimal Valor { get; set; }
             public DateTime ValidoDe { get; set; }
             public DateTime ValidoAte { get; set; }
-            public bool Acumulativo { get; set; }
+            public bool Ativo { get; set; }
 
 
-            public CupomDesconto(string? codigo, TipoDesconto tipo, decimal valor, DateTime validoDe, DateTime validoAte, bool acumulativo)
+            public CupomDesconto(string? codigo, TipoDesconto tipo, decimal valor, DateTime validoDe, DateTime validoAte, bool ativo)
             {
                 Codigo = codigo;
                 Tipo = tipo;
                 Valor = valor;
                 ValidoDe = validoDe;
                 ValidoAte = validoAte;
-                Acumulativo = acumulativo;
+                Ativo = ativo;
             }
 
             public CupomDesconto() // Construtor vazio
@@ -38,7 +38,7 @@ namespace KingOfKingsClass
                 Valor = 0;
                 ValidoDe = DateTime.Now;
                 ValidoAte = DateTime.Now.AddDays(30);
-                Acumulativo = false;
+                Ativo = false;
             }
 
             public enum TipoDesconto

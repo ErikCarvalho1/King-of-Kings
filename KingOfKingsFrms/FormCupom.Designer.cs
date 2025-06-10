@@ -102,7 +102,7 @@
             checkBox1.AutoSize = true;
             checkBox1.BackColor = Color.Transparent;
             checkBox1.ForeColor = Color.FromArgb(219, 179, 91);
-            checkBox1.Location = new Point(86, 324);
+            checkBox1.Location = new Point(55, 310);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(221, 19);
             checkBox1.TabIndex = 5;
@@ -116,7 +116,7 @@
             textBox1.Size = new Size(269, 23);
             textBox1.TabIndex = 6;
             // 
-            // Cupom
+            // FormCupom
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -129,7 +129,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "Cupom";
+            Name = "FormCupom";
             Text = "Cupom";
             ResumeLayout(false);
             PerformLayout();
