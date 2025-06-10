@@ -21,12 +21,9 @@ namespace KingOfKingsClass
         public string Telefone { get; set; }
         public string Email { get; set; }
         
+        public Fornecedor() { }
 
-        public Fornecedor() 
-        {
-            Fornecedor fornecedor = new();
-        }
-        
+
         public Fornecedor(int id, string razaosocial, string fantasia, string cnpj, string telefone,string contado, string email)
         {
             Id = id;
@@ -37,7 +34,7 @@ namespace KingOfKingsClass
             Telefone = telefone;
             Email = email;
         }
-        public Fornecedor( string razaosocial, string fantasia, string cnpj,string contado , string telefone, string email)// inserir
+        public Fornecedor(string razaosocial, string fantasia, string cnpj,string contado , string telefone, string email)// inserir
         {
             
             Razaosocial = razaosocial;
