@@ -112,11 +112,7 @@ namespace KingOfKingsFrms
             var Lista = Usuario.ObterLista();
 
             // Verifica se retornou dados
-            if (Lista == null || Lista.Count == 0)
-            {
-                MessageBox.Show("Nenhum usuário encontrado.");
-                return;
-            }
+
 
             dgvUsuarios.Rows.Clear();
 
@@ -181,6 +177,11 @@ namespace KingOfKingsFrms
             txtEmail.ReadOnly = true;
             cmbNivel.Enabled = false;
             bntEditar.Enabled = true;
+        }
+
+        private void bntBuscar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
