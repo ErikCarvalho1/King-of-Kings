@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 
 
-
 namespace KingOfKingsClass
 {
     public class Estoque // Métodos 
@@ -19,8 +18,12 @@ namespace KingOfKingsClass
 
 
 
+
         public Estoque() //Métodos Construtor 
-        { }
+
+    
+
+
         public Estoque(int id, int produtoId, double quantidade, DateTime dataUltimoMovimento)
         {
             Id = id;
