@@ -13,33 +13,39 @@ namespace KingOfKingsClass
 
         public class CupomDesconto
         {
+           
+
+            public string? Titulo { get; set; }
+            public string? CupomTipo { get; set; }
+            public int LimiteDeUso { get; set; }
             public string? Codigo { get; set; }
-            public TipoDesconto Tipo { get; set; }
-            public decimal Valor { get; set; }
             public DateTime ValidoDe { get; set; }
             public DateTime ValidoAte { get; set; }
+            public double ValorPedidoMinimo { get; set; } // Valor mínimo de compra para aplicar o cupom
+            public double ValorMaximoDeDesconto { get; set; } // Valor maximo de desconto do cupom
+            public double ValorDesconto { get; set; } // Valor máximo de compra para aplicar o cupom
+            public string? Descricao { get; set; } // Descrição do cupom
+            public double TpoDesconto { get; set; } // Tipo de desconto (0 = percentual, 1 = valor fixo)
+            public TipoDesconto Tipo { get; set; }
             public bool Ativo { get; set; }
 
-
-            public CupomDesconto(string? codigo, TipoDesconto tipo, decimal valor, DateTime validoDe, DateTime validoAte, bool ativo)
+            public CupomDesconto(string? titulo, string? cupomTipo, int limiteDeUso, string? codigo, DateTime validoDe, DateTime validoAte, double valorPedidoMinimo, double valorMaximoDeDesconto, double valorDesconto, string? descricao, double tpoDesconto, TipoDesconto tipo, bool ativo)
             {
+                Titulo = titulo;
+                CupomTipo = cupomTipo;
+                LimiteDeUso = limiteDeUso;
                 Codigo = codigo;
-                Tipo = tipo;
-                Valor = valor;
                 ValidoDe = validoDe;
                 ValidoAte = validoAte;
+                ValorPedidoMinimo = valorPedidoMinimo;
+                ValorMaximoDeDesconto = valorMaximoDeDesconto;
+                ValorDesconto = valorDesconto;
+                Descricao = descricao;
+                TpoDesconto = tpoDesconto;
+                Tipo = tipo;
                 Ativo = ativo;
             }
 
-            public CupomDesconto() // Construtor vazio
-            {
-                Codigo = string.Empty;
-                Tipo = TipoDesconto.Percentual;
-                Valor = 0;
-                ValidoDe = DateTime.Now;
-                ValidoAte = DateTime.Now.AddDays(30);
-                Ativo = false;
-            }
 
             public enum TipoDesconto
             {
@@ -63,7 +69,7 @@ namespace KingOfKingsClass
 
                 return Tipo switch
                 {
-                    TipoDesconto.Percentual => valorOriginal - (valorOriginal * (Valor / 100)),
+                    TipoDesconto.Percentual => valorOriginal - (valorOriginal * ( / 100)),
                     TipoDesconto.ValorFixo => Math.Max(0, valorOriginal - Valor),
                     _ => valorOriginal
                 };

@@ -65,8 +65,10 @@
             clnDataEnspiração = new DataGridViewTextBoxColumn();
             clnValorpedido = new DataGridViewTextBoxColumn();
             clnValorMaximo = new DataGridViewTextBoxColumn();
-            clnDesconto = new DataGridViewTextBoxColumn();
+            Desconto = new DataGridViewTextBoxColumn();
             clnTipoDesconto = new DataGridViewTextBoxColumn();
+            textBox7 = new TextBox();
+            label12 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -120,7 +122,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(55, 75);
+            textBox1.Location = new Point(56, 75);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(182, 23);
             textBox1.TabIndex = 6;
@@ -280,7 +282,7 @@
             checkBox1.AutoSize = true;
             checkBox1.BackColor = Color.Transparent;
             checkBox1.ForeColor = Color.FromArgb(219, 179, 91);
-            checkBox1.Location = new Point(55, 215);
+            checkBox1.Location = new Point(682, 215);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(57, 19);
             checkBox1.TabIndex = 5;
@@ -334,6 +336,9 @@
             // button5
             // 
             button5.BackColor = Color.Black;
+            button5.FlatAppearance.BorderColor = Color.FromArgb(219, 179, 91);
+            button5.FlatAppearance.MouseDownBackColor = Color.FromArgb(219, 179, 91);
+            button5.FlatAppearance.MouseOverBackColor = Color.FromArgb(219, 179, 91);
             button5.ForeColor = Color.FromArgb(219, 179, 91);
             button5.Location = new Point(410, 415);
             button5.Name = "button5";
@@ -341,12 +346,13 @@
             button5.TabIndex = 28;
             button5.Text = "&Sair";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ClnTitulo, ClnCupomTipo, clnLimiteParaMesmoUsuario, clnCodigo, clnDataInicio, clnDataEnspiração, clnValorpedido, clnValorMaximo, clnDesconto, clnTipoDesconto });
-            dataGridView1.Location = new Point(3, 240);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ClnTitulo, ClnCupomTipo, clnLimiteParaMesmoUsuario, clnCodigo, clnDataInicio, clnDataEnspiração, clnValorpedido, clnValorMaximo, Desconto, clnTipoDesconto });
+            dataGridView1.Location = new Point(2, 240);
             dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.Black;
@@ -356,7 +362,8 @@
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.Size = new Size(796, 150);
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.Size = new Size(806, 150);
             dataGridView1.TabIndex = 29;
             // 
             // ClnTitulo
@@ -399,22 +406,43 @@
             clnValorMaximo.HeaderText = "Valor Max Desconto";
             clnValorMaximo.Name = "clnValorMaximo";
             // 
-            // clnDesconto
+            // Desconto
             // 
-            clnDesconto.HeaderText = "clnDesconto";
-            clnDesconto.Name = "clnDesconto";
+            Desconto.HeaderText = "clnDesconto";
+            Desconto.Name = "Desconto";
             // 
             // clnTipoDesconto
             // 
             clnTipoDesconto.HeaderText = "Tipo Desconto";
             clnTipoDesconto.Name = "clnTipoDesconto";
             // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(115, 204);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(548, 23);
+            textBox7.TabIndex = 30;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BackColor = Color.Transparent;
+            label12.Font = new Font("Segoe UI", 9F);
+            label12.ForeColor = Color.FromArgb(219, 179, 91);
+            label12.Location = new Point(51, 207);
+            label12.Name = "label12";
+            label12.Size = new Size(58, 15);
+            label12.TabIndex = 31;
+            label12.Text = "&Descriçao";
+            // 
             // FormCupom
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.leaoFundo;
-            ClientSize = new Size(798, 441);
+            ClientSize = new Size(809, 453);
+            Controls.Add(label12);
+            Controls.Add(textBox7);
             Controls.Add(dataGridView1);
             Controls.Add(button5);
             Controls.Add(button4);
@@ -443,6 +471,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FormCupom";
             Text = "Cupom";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -488,7 +517,9 @@
         private DataGridViewTextBoxColumn clnDataEnspiração;
         private DataGridViewTextBoxColumn clnValorpedido;
         private DataGridViewTextBoxColumn clnValorMaximo;
-        private DataGridViewTextBoxColumn clnDesconto;
+        private DataGridViewTextBoxColumn Desconto;
         private DataGridViewTextBoxColumn clnTipoDesconto;
+        private TextBox textBox7;
+        private Label label12;
     }
 }
