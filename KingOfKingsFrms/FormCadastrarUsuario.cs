@@ -139,7 +139,7 @@ namespace KingOfKingsFrms
         private void CarregaNivel()
         {
             List<Nivel> lista = Nivel.ObterLista(); // Este método precisa retornar List<Nivel>
-         
+            MessageBox.Show("Qtd usuários: " + lista.Count);
             cmbNivel.DataSource = lista;
             cmbNivel.DisplayMember = "Nome"; // o que aparece visualmente
             cmbNivel.ValueMember = "Id";     // valor usado para identificação

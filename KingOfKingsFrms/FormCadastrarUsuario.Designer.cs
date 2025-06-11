@@ -51,7 +51,7 @@
             // 
             // txtId
             // 
-            txtId.Location = new Point(71, 120);
+            txtId.Location = new Point(133, 120);
             txtId.Name = "txtId";
             txtId.Size = new Size(47, 23);
             txtId.TabIndex = 1;
@@ -78,7 +78,7 @@
             // 
             bntVoltar.BackgroundImage = Properties.Resources.bntVoltar;
             bntVoltar.FlatStyle = FlatStyle.Flat;
-            bntVoltar.Location = new Point(635, 436);
+            bntVoltar.Location = new Point(596, 448);
             bntVoltar.Name = "bntVoltar";
             bntVoltar.Size = new Size(100, 36);
             bntVoltar.TabIndex = 7;
@@ -104,7 +104,7 @@
             label1.FlatStyle = FlatStyle.Popup;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(219, 179, 91);
-            label1.Location = new Point(143, 122);
+            label1.Location = new Point(227, 96);
             label1.Name = "label1";
             label1.Size = new Size(57, 21);
             label1.TabIndex = 9;
@@ -118,7 +118,7 @@
             label3.FlatStyle = FlatStyle.Popup;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(219, 179, 91);
-            label3.Location = new Point(143, 151);
+            label3.Location = new Point(127, 154);
             label3.Name = "label3";
             label3.Size = new Size(53, 21);
             label3.TabIndex = 11;
@@ -138,7 +138,7 @@
             label4.FlatStyle = FlatStyle.Popup;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(219, 179, 91);
-            label4.Location = new Point(143, 175);
+            label4.Location = new Point(127, 175);
             label4.Name = "label4";
             label4.Size = new Size(57, 21);
             label4.TabIndex = 13;

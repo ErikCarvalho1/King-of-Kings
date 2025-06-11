@@ -93,7 +93,7 @@ namespace KingoOfKingsClass
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "sp_alterar_usuario";
+            cmd.CommandText = "sp_usuario_altera";
 
             cmd.Parameters.AddWithValue("spid", Id);
             cmd.Parameters.AddWithValue("spnome", Nome);
