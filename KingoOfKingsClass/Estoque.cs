@@ -16,10 +16,14 @@ namespace KingOfKingsClass
         public double Quantidade { get; set; }
         public DateTime DataUltimoMovimento { get; set; }
 
+
+
+
+        public Estoque() //Métodos Construtor 
+
     
 
-    public Estoque() //Métodos Construtor 
-        { }
+
         public Estoque(int id, int produtoId, double quantidade, DateTime dataUltimoMovimento)
         {
             Id = id;

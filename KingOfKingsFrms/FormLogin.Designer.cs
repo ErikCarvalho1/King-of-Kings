@@ -64,6 +64,7 @@
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(237, 23);
             txtSenha.TabIndex = 2;
+            txtSenha.UseSystemPasswordChar = true;
             // 
             // bntAcessar
             // 

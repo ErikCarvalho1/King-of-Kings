@@ -103,6 +103,16 @@ namespace KingOfKingsFrms.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Buscar {
+            get {
+                object obj = ResourceManager.GetObject("Buscar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dog {
             get {
                 object obj = ResourceManager.GetObject("dog", resourceCulture);
@@ -256,6 +266,16 @@ namespace KingOfKingsFrms.Properties {
         internal static System.Drawing.Bitmap linha_em_pe_dorada {
             get {
                 object obj = ResourceManager.GetObject("linha em pe dorada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap linha_embaixo {
+            get {
+                object obj = ResourceManager.GetObject("linha embaixo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -101,5 +101,10 @@ namespace KingOfKingsFrms
         {
             FormPainel(new FormCadastrarUsuario());
         }
+
+        private void cadastroDeCupomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPainel (new FormCupom());
+        }
     }
 }
