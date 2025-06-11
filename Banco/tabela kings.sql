@@ -1,11 +1,4 @@
--- -----------------------------------------------------
-create database  kingofkings;
--- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Table `comercialtdsdb01`.`niveis`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `kingofkings`.`niveis` (
+CREATE TABLE IF NOT EXISTS `kings`.`niveis` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
   `sigla` VARCHAR(45) NOT NULL,
@@ -16,7 +9,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `comercialtdsdb01`.`usuarios`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `kingofkings`.`usuarios` (
+CREATE TABLE IF NOT EXISTS `kings`.`usuarios` (
   `id` INT(4) NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(60) NOT NULL,
   `email` VARCHAR(60) NOT NULL,
@@ -28,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `kingofkings`.`usuarios` (
   INDEX `fk_usuarios_niveis1_idx` (`nivel_id` ASC) ,
   CONSTRAINT `fk_usuarios_niveis1`
     FOREIGN KEY (`nivel_id`)
-    REFERENCES `kingofkings`.`niveis` (`id`)
+    REFERENCES `comercialtdsdb01`.`niveis` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -39,7 +32,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `comercialtdsdb01`.`caixas`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `kingofkings`.`caixas` (
+CREATE TABLE IF NOT EXISTS `kings`.`caixas` (
   `id` INT(4) NOT NULL AUTO_INCREMENT,
   `usuario_id` INT(4) NOT NULL,
   `data_abertura` DATETIME NOT NULL,
@@ -49,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `kingofkings`.`caixas` (
   INDEX `fk_Caixa_Usuarios1_idx` (`usuario_id` ASC) ,
   CONSTRAINT `fk_Caixa_Usuarios1`
     FOREIGN KEY (`usuario_id`)
-    REFERENCES `kingofkings`.`usuarios` (`id`)
+    REFERENCES `comercialtdsdb01`.`usuarios` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -59,7 +52,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `comercialtdsdb01`.`categorias`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `kingofkings`.`categorias` (
+CREATE TABLE IF NOT EXISTS `kings`.`categorias` (
   `id` INT(4) NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(255) NOT NULL,
   `sigla` CHAR(3) NULL DEFAULT NULL,
@@ -72,7 +65,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `comercialtdsdb01`.`clientes`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `kingofkings`.`clientes` (
+CREATE TABLE IF NOT EXISTS `kings`.`clientes` (
   `id` INT(4) NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
   `cpf` CHAR(11) NOT NULL,
@@ -92,7 +85,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `comercialtdsdb01`.`enderecos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `kingofkings`.`enderecos` (
+CREATE TABLE IF NOT EXISTS `kings`.`enderecos` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `cliente_id` INT(4) NOT NULL,
   `cep` CHAR(8) NOT NULL,
@@ -107,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `kingofkings`.`enderecos` (
   INDEX `fk_table1_clientes_idx` (`cliente_id` ASC) ,
   CONSTRAINT `fk_table1_clientes`
     FOREIGN KEY (`cliente_id`)
-    REFERENCES `kingofkings`.`clientes` (`id`)
+    REFERENCES `comercialtdsdb01`.`clientes` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -118,7 +111,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `comercialtdsdb01`.`produtos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `kingofkings`.`produtos` (
+CREATE TABLE IF NOT EXISTS `kings`.`produtos` (
   `id` INT(4) NOT NULL AUTO_INCREMENT,
   `cod_barras` VARCHAR(60) NOT NULL,
   `descricao` VARCHAR(60) NOT NULL,
@@ -136,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `kingofkings`.`produtos` (
   INDEX `fk_Produto_Categorias1_idx` (`categoria_id` ASC) ,
   CONSTRAINT `fk_Produto_Categorias1`
     FOREIGN KEY (`categoria_id`)
-    REFERENCES `kingofkings`.`categorias` (`id`)
+    REFERENCES `comercialtdsdb01`.`categorias` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -148,14 +141,14 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `comercialtdsdb01`.`estoques`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `kingofkings`.`estoques` (
+CREATE TABLE IF NOT EXISTS `kings`.`estoques` (
   `produto_id` INT(4) NOT NULL,
   `quantidade` DECIMAL(10,2) NOT NULL,
   `data_ultimo_movimento` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP(),
   INDEX `fk_Estoque_Produto1_idx` (`produto_id` ASC) ,
   CONSTRAINT `fk_Estoque_Produto1`
     FOREIGN KEY (`produto_id`)
-    REFERENCES `kingofkings`.`produtos` (`id`)
+    REFERENCES `comercialtdsdb01`.`produtos` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -165,7 +158,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `comercialtdsdb01`.`fornecedores`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `kingofkings`.`fornecedores` (
+CREATE TABLE IF NOT EXISTS `kings`.`fornecedores` (
   `id` INT(4) NOT NULL,
   `razao_social` VARCHAR(100) NOT NULL,
   `fantasia` VARCHAR(40) NOT NULL,
@@ -182,7 +175,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `comercialtdsdb01`.`pedidos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `kingofkings`.`pedidos` (
+CREATE TABLE IF NOT EXISTS `kings`.`pedidos` (
   `id` INT(4) NOT NULL AUTO_INCREMENT,
   `usuario_id` INT(4) NOT NULL,
   `cliente_id` INT(4) NOT NULL,
@@ -194,12 +187,12 @@ CREATE TABLE IF NOT EXISTS `kingofkings`.`pedidos` (
   INDEX `fk_Pedido_Clientes1_idx` (`cliente_id` ASC) ,
   CONSTRAINT `fk_Pedido_Clientes1`
     FOREIGN KEY (`cliente_id`)
-    REFERENCES `kingofkings`.`clientes` (`id`)
+    REFERENCES `comercialtdsdb01`.`clientes` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Pedido_Usuarios1`
     FOREIGN KEY (`usuario_id`)
-    REFERENCES `kingofkings`.`usuarios` (`id`)
+    REFERENCES `comercialtdsdb01`.`usuarios` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -210,7 +203,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `comercialtdsdb01`.`itempedido`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `kingofkings`.`itempedido` (
+CREATE TABLE IF NOT EXISTS `kings`.`itempedido` (
   `id` INT(4) NOT NULL AUTO_INCREMENT,
   `pedido_id` INT(11) NOT NULL,
   `produto_id` INT(11) NOT NULL,
@@ -222,12 +215,12 @@ CREATE TABLE IF NOT EXISTS `kingofkings`.`itempedido` (
   INDEX `fk_ItemPedido_Produto1_idx` (`produto_id` ASC) ,
   CONSTRAINT `fk_ItemPedido_Pedido1`
     FOREIGN KEY (`pedido_id`)
-    REFERENCES `kingofkings`.`pedidos` (`id`)
+    REFERENCES `comercialtdsdb01`.`pedidos` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_ItemPedido_Produto1`
     FOREIGN KEY (`produto_id`)
-    REFERENCES `kingofkings`.`produtos` (`id`)
+    REFERENCES `comercialtdsdb01`.`produtos` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -238,7 +231,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 -- Table `comercialtdsdb01`.`produtofornecedor`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `kingofkings`.`produtofornecedor` (
+CREATE TABLE IF NOT EXISTS `kings`.`produtofornecedor` (
   `produto_id` INT(4) NOT NULL,
   `fornecedores_id` INT(4) NOT NULL,
   PRIMARY KEY (`produto_id`, `fornecedores_id`),
@@ -246,14 +239,62 @@ CREATE TABLE IF NOT EXISTS `kingofkings`.`produtofornecedor` (
   INDEX `fk_Produto_has_Fornecedores_Produto1_idx` (`produto_id` ASC) ,
   CONSTRAINT `fk_Produto_has_Fornecedores_Fornecedores1`
     FOREIGN KEY (`fornecedores_id`)
-    REFERENCES `kingofkings`.`fornecedores` (`id`)
+    REFERENCES `comercialtdsdb01`.`fornecedores` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Produto_has_Fornecedores_Produto1`
     FOREIGN KEY (`produto_id`)
-    REFERENCES `kingofkings`.`produtos` (`id`)
+    REFERENCES `comercialtdsdb01`.`produtos` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
+
+CREATE TABLE IF NOT EXISTS `kings`.`revendedores` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(100) NOT NULL,
+  `cpf_cnpj` VARCHAR(18) NOT NULL,
+  `telefone` VARCHAR(20),
+  `email` VARCHAR(100),
+  `ativo` BIT(1) DEFAULT b'1',
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `cpf_cnpj_UNIQUE` (`cpf_cnpj`),
+  UNIQUE INDEX `email_UNIQUE` (`email`)
+) ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+CREATE TABLE IF NOT EXISTS `kings`.`cupons` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `codigo` VARCHAR(20) NOT NULL,
+  `descricao` VARCHAR(100),
+  `valor` DECIMAL(10,2) NOT NULL,
+  `data_criacao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `data_validade` DATE NOT NULL,
+  `cliente_id` INT(4),
+  `pedido_id` INT(4),
+  `revendedor_id` INT,
+  `ativo` BIT(1) DEFAULT b'1',
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `codigo_UNIQUE` (`codigo`),
+  INDEX `fk_cupons_clientes_idx` (`cliente_id`),
+  INDEX `fk_cupons_pedidos_idx` (`pedido_id`),
+  INDEX `fk_cupons_revendedores_idx` (`revendedor_id`),
+  CONSTRAINT `fk_cupons_clientes`
+    FOREIGN KEY (`cliente_id`)
+    REFERENCES `kings`.`clientes` (`id`)
+    ON DELETE SET NULL
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_cupons_pedidos`
+    FOREIGN KEY (`pedido_id`)
+    REFERENCES `kings`.`pedidos` (`id`)
+    ON DELETE SET NULL
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_cupons_revendedores`
+    FOREIGN KEY (`revendedor_id`)
+    REFERENCES `kings`.`revendedores` (`id`)
+    ON DELETE SET NULL
+    ON UPDATE CASCADE
+) ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
