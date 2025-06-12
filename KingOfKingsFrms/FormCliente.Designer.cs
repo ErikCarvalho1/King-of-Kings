@@ -41,13 +41,13 @@
             btnCadastrar = new Button();
             btnEditar = new Button();
             dataGridView1 = new DataGridView();
-            label7 = new Label();
-            label8 = new Label();
             Nome = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
+            label7 = new Label();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -176,31 +176,6 @@
             dataGridView1.Size = new Size(689, 149);
             dataGridView1.TabIndex = 14;
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = SystemColors.ActiveCaptionText;
-            label7.ForeColor = Color.FromArgb(219, 179, 91);
-            label7.Location = new Point(25, 413);
-            label7.Name = "label7";
-            label7.Size = new Size(37, 15);
-            label7.TabIndex = 45;
-            label7.Text = "Voltar";
-            label7.Click += label7_Click;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.Black;
-            label8.FlatStyle = FlatStyle.Popup;
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.FromArgb(219, 179, 91);
-            label8.Location = new Point(140, 60);
-            label8.Name = "label8";
-            label8.Size = new Size(57, 21);
-            label8.TabIndex = 46;
-            label8.Text = "Nome";
-            // 
             // Nome
             // 
             Nome.HeaderText = "Nome";
@@ -230,6 +205,31 @@
             Column4.Name = "Column4";
             Column4.Width = 160;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = SystemColors.ActiveCaptionText;
+            label7.ForeColor = Color.FromArgb(219, 179, 91);
+            label7.Location = new Point(25, 413);
+            label7.Name = "label7";
+            label7.Size = new Size(37, 15);
+            label7.TabIndex = 45;
+            label7.Text = "Voltar";
+            label7.Click += label7_Click;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Black;
+            label8.FlatStyle = FlatStyle.Popup;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.FromArgb(219, 179, 91);
+            label8.Location = new Point(140, 60);
+            label8.Name = "label8";
+            label8.Size = new Size(57, 21);
+            label8.TabIndex = 46;
+            label8.Text = "Nome";
+            // 
             // FormCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -251,6 +251,7 @@
             Controls.Add(txtTelefone);
             Controls.Add(txtCpf);
             Controls.Add(txtNome);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FormCliente";
             Text = "FormCliente";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
