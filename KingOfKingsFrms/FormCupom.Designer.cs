@@ -57,8 +57,6 @@
             button4 = new Button();
             button5 = new Button();
             dataGridView1 = new DataGridView();
-            textBox7 = new TextBox();
-            label12 = new Label();
             ClnTitulo = new DataGridViewTextBoxColumn();
             ClnCupomTipo = new DataGridViewTextBoxColumn();
             clnLimiteParaMesmoUsuario = new DataGridViewTextBoxColumn();
@@ -69,6 +67,8 @@
             clnValorMaximo = new DataGridViewTextBoxColumn();
             clnDesconto = new DataGridViewTextBoxColumn();
             clnTipoDesconto = new DataGridViewTextBoxColumn();
+            textBox7 = new TextBox();
+            label12 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -366,25 +366,6 @@
             dataGridView1.Size = new Size(1004, 157);
             dataGridView1.TabIndex = 29;
             // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(115, 204);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(548, 23);
-            textBox7.TabIndex = 30;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.BackColor = Color.Transparent;
-            label12.Font = new Font("Segoe UI", 9F);
-            label12.ForeColor = Color.FromArgb(219, 179, 91);
-            label12.Location = new Point(51, 207);
-            label12.Name = "label12";
-            label12.Size = new Size(58, 15);
-            label12.TabIndex = 31;
-            label12.Text = "&Descriçao";
-            // 
             // ClnTitulo
             // 
             ClnTitulo.HeaderText = "Titulo";
@@ -434,6 +415,25 @@
             // 
             clnTipoDesconto.HeaderText = "Tipo Desconto";
             clnTipoDesconto.Name = "clnTipoDesconto";
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(115, 204);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(548, 23);
+            textBox7.TabIndex = 30;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BackColor = Color.Transparent;
+            label12.Font = new Font("Segoe UI", 9F);
+            label12.ForeColor = Color.FromArgb(219, 179, 91);
+            label12.Location = new Point(51, 207);
+            label12.Name = "label12";
+            label12.Size = new Size(58, 15);
+            label12.TabIndex = 31;
+            label12.Text = "&Descriçao";
             // 
             // FormCupom
             // 
