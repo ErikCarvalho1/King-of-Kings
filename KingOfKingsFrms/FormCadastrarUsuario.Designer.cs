@@ -41,11 +41,11 @@
             Tipo = new Label();
             txtNome = new TextBox();
             dgvUsuarios = new DataGridView();
-            bntEditar = new Button();
             clnId = new DataGridViewTextBoxColumn();
             clnNome = new DataGridViewTextBoxColumn();
             clnEmail = new DataGridViewTextBoxColumn();
             clnTipo = new DataGridViewTextBoxColumn();
+            bntEditar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             SuspendLayout();
             // 
@@ -170,21 +170,12 @@
             dgvUsuarios.BackgroundColor = SystemColors.ActiveCaptionText;
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { clnId, clnNome, clnEmail, clnTipo });
-            dgvUsuarios.Location = new Point(202, 283);
+            dgvUsuarios.Location = new Point(214, 274);
             dgvUsuarios.Name = "dgvUsuarios";
-            dgvUsuarios.Size = new Size(344, 148);
+            dgvUsuarios.RowHeadersVisible = false;
+            dgvUsuarios.Size = new Size(303, 148);
             dgvUsuarios.TabIndex = 15;
             dgvUsuarios.CellContentClick += dgvUsuarios_CellContentClick;
-            // 
-            // bntEditar
-            // 
-            bntEditar.Location = new Point(310, 211);
-            bntEditar.Name = "bntEditar";
-            bntEditar.Size = new Size(75, 23);
-            bntEditar.TabIndex = 16;
-            bntEditar.Text = "Editar";
-            bntEditar.UseVisualStyleBackColor = true;
-            bntEditar.Click += bntEditar_Click;
             // 
             // clnId
             // 
@@ -206,6 +197,16 @@
             // 
             clnTipo.HeaderText = "Tipo";
             clnTipo.Name = "clnTipo";
+            // 
+            // bntEditar
+            // 
+            bntEditar.Location = new Point(310, 211);
+            bntEditar.Name = "bntEditar";
+            bntEditar.Size = new Size(75, 23);
+            bntEditar.TabIndex = 16;
+            bntEditar.Text = "Editar";
+            bntEditar.UseVisualStyleBackColor = true;
+            bntEditar.Click += bntEditar_Click;
             // 
             // FormCadastrarUsuario
             // 

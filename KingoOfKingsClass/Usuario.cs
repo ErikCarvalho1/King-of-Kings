@@ -145,7 +145,7 @@ namespace KingoOfKingsClass
             var cmd = Banco.Abrir();
             cmd.CommandText = $"select * from usuarios order by nome";
             var dr = cmd.ExecuteReader();
-            if (dr.Read())
+            while  (dr.Read())
             {
                 usuarios.Add(new(
                                 dr.GetInt32(0),
