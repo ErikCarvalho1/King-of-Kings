@@ -173,6 +173,7 @@
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nome, Column3, Column1, Column2, Column4 });
             dataGridView1.Location = new Point(59, 232);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersVisible = false;
             dataGridView1.Size = new Size(689, 149);
             dataGridView1.TabIndex = 14;
             // 
