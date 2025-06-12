@@ -751,7 +751,7 @@
             pnlPrincipal.BackgroundImage = Properties.Resources.Leao_alter;
             pnlPrincipal.Location = new Point(168, 147);
             pnlPrincipal.Name = "pnlPrincipal";
-            pnlPrincipal.Size = new Size(1022, 528);
+            pnlPrincipal.Size = new Size(1117, 528);
             pnlPrincipal.TabIndex = 10;
             pnlPrincipal.Paint += panel6_Paint;
             // 
