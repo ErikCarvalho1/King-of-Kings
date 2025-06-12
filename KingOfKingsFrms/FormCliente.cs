@@ -16,5 +16,15 @@ namespace KingOfKingsFrms
         {
             InitializeComponent();
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
