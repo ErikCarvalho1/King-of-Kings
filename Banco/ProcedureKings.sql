@@ -1,4 +1,5 @@
 
+
 -- -----------------------------------------------------
 -- Placeholder table for view `comercialtdsdb01`.`vw_pedido`
 -- -----------------------------------------------------
@@ -321,8 +322,7 @@ DELIMITER ;
 -- -----------------------------------------------------
 
 DELIMITER $$
-USE `comercialtdsdb01`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_usuario_altera`(
+create procedure `sp_alterar_usuario`(
 -- parâmetros da procedure
 spid int, spnome varchar(60), spsenha varchar(32), spnivel int)
 begin
@@ -337,8 +337,7 @@ DELIMITER ;
 -- -----------------------------------------------------
 
 DELIMITER $$
-USE `comercialtdsdb01`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_usuario_insert`(
+create procedure `sp_inserir_usuario`(
 -- parâmetros da procedure
 spnome varchar(60), spemail varchar(60), spsenha varchar(32), spnivel int)
 begin
