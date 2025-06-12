@@ -57,6 +57,8 @@
             button4 = new Button();
             button5 = new Button();
             dataGridView1 = new DataGridView();
+            textBox7 = new TextBox();
+            label12 = new Label();
             ClnTitulo = new DataGridViewTextBoxColumn();
             ClnCupomTipo = new DataGridViewTextBoxColumn();
             clnLimiteParaMesmoUsuario = new DataGridViewTextBoxColumn();
@@ -65,10 +67,8 @@
             clnDataEnspiração = new DataGridViewTextBoxColumn();
             clnValorpedido = new DataGridViewTextBoxColumn();
             clnValorMaximo = new DataGridViewTextBoxColumn();
-            Desconto = new DataGridViewTextBoxColumn();
+            clnDesconto = new DataGridViewTextBoxColumn();
             clnTipoDesconto = new DataGridViewTextBoxColumn();
-            textBox7 = new TextBox();
-            label12 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -351,8 +351,8 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ClnTitulo, ClnCupomTipo, clnLimiteParaMesmoUsuario, clnCodigo, clnDataInicio, clnDataEnspiração, clnValorpedido, clnValorMaximo, Desconto, clnTipoDesconto });
-            dataGridView1.Location = new Point(2, 240);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ClnTitulo, ClnCupomTipo, clnLimiteParaMesmoUsuario, clnCodigo, clnDataInicio, clnDataEnspiração, clnValorpedido, clnValorMaximo, clnDesconto, clnTipoDesconto });
+            dataGridView1.Location = new Point(12, 233);
             dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.Black;
@@ -363,8 +363,27 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Size = new Size(806, 150);
+            dataGridView1.Size = new Size(1004, 157);
             dataGridView1.TabIndex = 29;
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(115, 204);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(548, 23);
+            textBox7.TabIndex = 30;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BackColor = Color.Transparent;
+            label12.Font = new Font("Segoe UI", 9F);
+            label12.ForeColor = Color.FromArgb(219, 179, 91);
+            label12.Location = new Point(51, 207);
+            label12.Name = "label12";
+            label12.Size = new Size(58, 15);
+            label12.TabIndex = 31;
+            label12.Text = "&Descriçao";
             // 
             // ClnTitulo
             // 
@@ -406,41 +425,22 @@
             clnValorMaximo.HeaderText = "Valor Max Desconto";
             clnValorMaximo.Name = "clnValorMaximo";
             // 
-            // Desconto
+            // clnDesconto
             // 
-            Desconto.HeaderText = "clnDesconto";
-            Desconto.Name = "Desconto";
+            clnDesconto.HeaderText = "Desconto";
+            clnDesconto.Name = "clnDesconto";
             // 
             // clnTipoDesconto
             // 
             clnTipoDesconto.HeaderText = "Tipo Desconto";
             clnTipoDesconto.Name = "clnTipoDesconto";
             // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(115, 204);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(548, 23);
-            textBox7.TabIndex = 30;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.BackColor = Color.Transparent;
-            label12.Font = new Font("Segoe UI", 9F);
-            label12.ForeColor = Color.FromArgb(219, 179, 91);
-            label12.Location = new Point(51, 207);
-            label12.Name = "label12";
-            label12.Size = new Size(58, 15);
-            label12.TabIndex = 31;
-            label12.Text = "&Descriçao";
-            // 
             // FormCupom
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.leaoFundo;
-            ClientSize = new Size(809, 453);
+            ClientSize = new Size(1028, 503);
             Controls.Add(label12);
             Controls.Add(textBox7);
             Controls.Add(dataGridView1);
@@ -509,6 +509,8 @@
         private Button button4;
         private Button button5;
         private DataGridView dataGridView1;
+        private TextBox textBox7;
+        private Label label12;
         private DataGridViewTextBoxColumn ClnTitulo;
         private DataGridViewTextBoxColumn ClnCupomTipo;
         private DataGridViewTextBoxColumn clnLimiteParaMesmoUsuario;
@@ -517,9 +519,7 @@
         private DataGridViewTextBoxColumn clnDataEnspiração;
         private DataGridViewTextBoxColumn clnValorpedido;
         private DataGridViewTextBoxColumn clnValorMaximo;
-        private DataGridViewTextBoxColumn Desconto;
+        private DataGridViewTextBoxColumn clnDesconto;
         private DataGridViewTextBoxColumn clnTipoDesconto;
-        private TextBox textBox7;
-        private Label label12;
     }
 }

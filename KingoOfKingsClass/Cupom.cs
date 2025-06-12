@@ -9,41 +9,64 @@ namespace KingOfKingsClass
     public class Cupom
     {
 
-     
+
 
         public class CupomDesconto
         {
-           
 
+
+            public int Id { get; set; } // Identificador único do cupom
             public string? Titulo { get; set; }
-            public string? CupomTipo { get; set; }
-            public int LimiteDeUso { get; set; }
             public string? Codigo { get; set; }
-            public DateTime ValidoDe { get; set; }
-            public DateTime ValidoAte { get; set; }
-            public double ValorPedidoMinimo { get; set; } // Valor mínimo de compra para aplicar o cupom
-            public double ValorMaximoDeDesconto { get; set; } // Valor maximo de desconto do cupom
-            public double ValorDesconto { get; set; } // Valor máximo de compra para aplicar o cupom
+            public string? CupomTipo { get; set; }
+            public DateTime DataCriacao { get; set; } = DateTime.Now; // Data de criação do cupom
+            public DateTime DataValidade { get; set; }
+            public decimal ValorPedidoMinimo { get; set; } // Valor mínimo do pedido para aplicar o cupom
+            public decimal ValorMaximoDeDesconto { get; set; } // Valor máximo de desconto permitido
+            public decimal ValorMaximoPedido { get; set; } // Valor do desconto aplicado
+            public decimal ValorDesconto { get; set; } // Valor do desconto aplicado
             public string? Descricao { get; set; } // Descrição do cupom
-            public double TpoDesconto { get; set; } // Tipo de desconto (0 = percentual, 1 = valor fixo)
-            public TipoDesconto Tipo { get; set; }
-            public bool Ativo { get; set; }
+            public double TpoDesconto { get; set; } // Tipo de desconto (percentual ou valor fixo)
+            public int ClienteId { get; set; } // ID do cliente associado ao cupom
+            public int PedidoId { get; set; } // ID do pedido associado ao cupom
+            public int revendedorId { get; set; } // ID do revendedor associado ao cupom
 
-            public CupomDesconto(string? titulo, string? cupomTipo, int limiteDeUso, string? codigo, DateTime validoDe, DateTime validoAte, double valorPedidoMinimo, double valorMaximoDeDesconto, double valorDesconto, string? descricao, double tpoDesconto, TipoDesconto tipo, bool ativo)
+
+            public CupomDesconto(int id, string? titulo, string? codigo, string? cupomTipo, DateTime dataCriacao, DateTime dataValidade, decimal valorPedidoMinimo, decimal valorMaximoDeDesconto, decimal valorMaximoPedido, decimal valorDesconto, string? descricao, double tpoDesconto, int clienteId, int pedidoId, int revendedorId)
             {
+                Id = id;
                 Titulo = titulo;
-                CupomTipo = cupomTipo;
-                LimiteDeUso = limiteDeUso;
                 Codigo = codigo;
-                ValidoDe = validoDe;
-                ValidoAte = validoAte;
+                CupomTipo = cupomTipo;
+                DataCriacao = dataCriacao;
+                DataValidade = dataValidade;
                 ValorPedidoMinimo = valorPedidoMinimo;
                 ValorMaximoDeDesconto = valorMaximoDeDesconto;
+                ValorMaximoPedido = valorMaximoPedido;
                 ValorDesconto = valorDesconto;
                 Descricao = descricao;
                 TpoDesconto = tpoDesconto;
-                Tipo = tipo;
-                Ativo = ativo;
+                ClienteId = clienteId;
+                PedidoId = pedidoId;
+                this.revendedorId = revendedorId;
+            }
+            public CupomDesconto(string? titulo, string? codigo, string? cupomTipo, DateTime dataCriacao, DateTime dataValidade, decimal valorPedidoMinimo, decimal valorMaximoDeDesconto, decimal valorMaximoPedido, decimal valorDesconto, string? descricao, double tpoDesconto, int clienteId, int pedidoId, int revendedorId)
+            {
+
+                Titulo = titulo;
+                Codigo = codigo;
+                CupomTipo = cupomTipo;
+                DataCriacao = dataCriacao;
+                DataValidade = dataValidade;
+                ValorPedidoMinimo = valorPedidoMinimo;
+                ValorMaximoDeDesconto = valorMaximoDeDesconto;
+                ValorMaximoPedido = valorMaximoPedido;
+                ValorDesconto = valorDesconto;
+                Descricao = descricao;
+                TpoDesconto = tpoDesconto;
+                ClienteId = clienteId;
+                PedidoId = pedidoId;
+                this.revendedorId = revendedorId;
             }
 
 
@@ -59,7 +82,7 @@ namespace KingOfKingsClass
             public bool EstaValido()
             {
                 var agora = DateTime.Now;
-                return agora >= ValidoDe && agora <= ValidoAte;
+                return agora >= DataCriacao && agora <= DataValidade;
             }
 
             public decimal AplicarDesconto(decimal valorOriginal)
@@ -67,14 +90,22 @@ namespace KingOfKingsClass
                 if (!EstaValido())
                     throw new InvalidOperationException("Cupom expirado ou ainda não válido.");
 
-                return Tipo switch
+                if (valorOriginal < ValorPedidoMinimo)
+                    throw new InvalidOperationException("Valor do pedido abaixo do mínimo para aplicar o cupom.");
+
+                decimal descontoAplicado = CupomTipo switch
                 {
-                    TipoDesconto.Percentual => valorOriginal - (valorOriginal * ( / 100)),
-                    TipoDesconto.ValorFixo => Math.Max(0, valorOriginal - Valor),
-                    _ => valorOriginal
+                    "Percentual" => valorOriginal * ((decimal)TpoDesconto / 100),
+                    "ValorFixo" => ValorDesconto,
+                    _ => 0
                 };
+
+                // Aplicar limite máximo de desconto
+                descontoAplicado = Math.Min(descontoAplicado, ValorMaximoDeDesconto);
+
+                // Retornar o valor final com o desconto aplicado, sem ultrapassar o máximo permitido
+                return Math.Max(0, valorOriginal - descontoAplicado);
             }
         }
-
     }
 }

@@ -138,7 +138,7 @@
             panel1.BackgroundImage = Properties.Resources.linha_dorada__2_;
             panel1.Location = new Point(124, 98);
             panel1.Name = "panel1";
-            panel1.Size = new Size(580, 10);
+            panel1.Size = new Size(892, 10);
             panel1.TabIndex = 2;
             // 
             // panel4
@@ -152,15 +152,15 @@
             // panel2
             // 
             panel2.BackgroundImage = Properties.Resources.linha_em_pe_dorada;
-            panel2.Location = new Point(44, 122);
+            panel2.Location = new Point(22, 122);
             panel2.Name = "panel2";
-            panel2.Size = new Size(74, 433);
+            panel2.Size = new Size(74, 693);
             panel2.TabIndex = 3;
             // 
             // panel3
             // 
             panel3.BackgroundImage = Properties.Resources.linha_em_pe_dorada;
-            panel3.Location = new Point(835, 197);
+            panel3.Location = new Point(1308, 460);
             panel3.Name = "panel3";
             panel3.Size = new Size(71, 355);
             panel3.TabIndex = 4;
@@ -171,7 +171,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { eddeToolStripMenuItem, lançamentosToolStripMenuItem, relatóriosToolStripMenuItem, graficoToolStripMenuItem, utilitárioToolStripMenuItem, sairToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1064, 24);
+            menuStrip1.Size = new Size(1440, 24);
             menuStrip1.TabIndex = 8;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -748,20 +748,21 @@
             // 
             // pnlPrincipal
             // 
-            pnlPrincipal.BackgroundImage = (Image)resources.GetObject("pnlPrincipal.BackgroundImage");
-            pnlPrincipal.Location = new Point(144, 115);
+            pnlPrincipal.BackgroundImage = Properties.Resources.Leao_alter;
+            pnlPrincipal.Location = new Point(168, 147);
             pnlPrincipal.Name = "pnlPrincipal";
-            pnlPrincipal.Size = new Size(685, 440);
+            pnlPrincipal.Size = new Size(1022, 528);
             pnlPrincipal.TabIndex = 10;
             pnlPrincipal.Paint += panel6_Paint;
             // 
             // panel6
             // 
             panel6.BackgroundImage = Properties.Resources.linha_dorada__2_;
-            panel6.Location = new Point(405, 564);
+            panel6.Location = new Point(827, 805);
             panel6.Name = "panel6";
             panel6.Size = new Size(458, 10);
             panel6.TabIndex = 3;
+            panel6.Paint += panel6_Paint_1;
             // 
             // button8
             // 
@@ -970,7 +971,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(1064, 881);
+            ClientSize = new Size(1440, 880);
             Controls.Add(panel4);
             Controls.Add(label2);
             Controls.Add(button8);
@@ -1014,7 +1015,6 @@
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
-        private Panel panel5;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem eddeToolStripMenuItem;
         private Panel pnlPrincipal;
