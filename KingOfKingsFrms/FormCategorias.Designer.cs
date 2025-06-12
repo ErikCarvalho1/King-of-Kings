@@ -41,6 +41,7 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             label3 = new Label();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -55,7 +56,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.FromArgb(219, 179, 91);
-            label2.Location = new Point(491, 54);
+            label2.Location = new Point(499, 78);
             label2.Name = "label2";
             label2.Size = new Size(88, 15);
             label2.TabIndex = 43;
@@ -64,14 +65,14 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(560, 54);
+            label1.Location = new Point(568, 78);
             label1.Name = "label1";
             label1.Size = new Size(0, 15);
             label1.TabIndex = 42;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(491, 72);
+            textBox1.Location = new Point(499, 96);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(152, 23);
             textBox1.TabIndex = 41;
@@ -79,7 +80,7 @@
             // pictureBox8
             // 
             pictureBox8.BackgroundImage = (Image)resources.GetObject("pictureBox8.BackgroundImage");
-            pictureBox8.Location = new Point(213, 276);
+            pictureBox8.Location = new Point(221, 300);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(100, 81);
             pictureBox8.TabIndex = 40;
@@ -88,7 +89,7 @@
             // pictureBox7
             // 
             pictureBox7.BackgroundImage = (Image)resources.GetObject("pictureBox7.BackgroundImage");
-            pictureBox7.Location = new Point(89, 50);
+            pictureBox7.Location = new Point(97, 74);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(100, 81);
             pictureBox7.TabIndex = 39;
@@ -97,7 +98,7 @@
             // pictureBox6
             // 
             pictureBox6.BackgroundImage = (Image)resources.GetObject("pictureBox6.BackgroundImage");
-            pictureBox6.Location = new Point(89, 276);
+            pictureBox6.Location = new Point(97, 300);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(100, 81);
             pictureBox6.TabIndex = 38;
@@ -106,7 +107,7 @@
             // pictureBox5
             // 
             pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
-            pictureBox5.Location = new Point(334, 162);
+            pictureBox5.Location = new Point(342, 186);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(100, 81);
             pictureBox5.TabIndex = 37;
@@ -115,7 +116,7 @@
             // pictureBox4
             // 
             pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
-            pictureBox4.Location = new Point(213, 162);
+            pictureBox4.Location = new Point(221, 186);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(100, 81);
             pictureBox4.TabIndex = 36;
@@ -124,7 +125,7 @@
             // pictureBox3
             // 
             pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
-            pictureBox3.Location = new Point(89, 162);
+            pictureBox3.Location = new Point(97, 186);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(100, 81);
             pictureBox3.TabIndex = 35;
@@ -133,7 +134,7 @@
             // pictureBox2
             // 
             pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
-            pictureBox2.Location = new Point(334, 50);
+            pictureBox2.Location = new Point(342, 74);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(100, 81);
             pictureBox2.TabIndex = 34;
@@ -142,7 +143,7 @@
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.Location = new Point(213, 50);
+            pictureBox1.Location = new Point(221, 74);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(100, 81);
             pictureBox1.TabIndex = 33;
@@ -159,6 +160,18 @@
             label3.Text = "Voltar";
             label3.Click += label3_Click;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Segoe UI", 15F);
+            label6.ForeColor = Color.FromArgb(219, 179, 91);
+            label6.Location = new Point(275, 21);
+            label6.Name = "label6";
+            label6.Size = new Size(105, 28);
+            label6.TabIndex = 45;
+            label6.Text = "Categorias";
+            // 
             // FormCategorias
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -166,6 +179,7 @@
             BackColor = SystemColors.ActiveCaptionText;
             BackgroundImage = Properties.Resources.leaoFundo;
             ClientSize = new Size(685, 440);
+            Controls.Add(label6);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -208,5 +222,6 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private Label label3;
+        private Label label6;
     }
 }
