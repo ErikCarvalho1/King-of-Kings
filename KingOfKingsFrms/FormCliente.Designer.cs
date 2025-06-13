@@ -32,13 +32,11 @@
             txtCpf = new TextBox();
             txtTelefone = new TextBox();
             txtEmail = new TextBox();
-            txtDatanascimento = new TextBox();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            btnCadastrar = new Button();
             btnEditar = new Button();
             dataGridView1 = new DataGridView();
             Nome = new DataGridViewTextBoxColumn();
@@ -46,8 +44,12 @@
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
-            label7 = new Label();
             label8 = new Label();
+            btnCadastrar = new Button();
+            txtId = new TextBox();
+            dateDataNascimento = new DateTimePicker();
+            mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -78,13 +80,6 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(174, 23);
             txtEmail.TabIndex = 3;
-            // 
-            // txtDatanascimento
-            // 
-            txtDatanascimento.Location = new Point(441, 134);
-            txtDatanascimento.Name = "txtDatanascimento";
-            txtDatanascimento.Size = new Size(174, 23);
-            txtDatanascimento.TabIndex = 4;
             // 
             // label2
             // 
@@ -144,37 +139,29 @@
             label6.ForeColor = Color.FromArgb(219, 179, 91);
             label6.Location = new Point(298, 19);
             label6.Name = "label6";
-            label6.Size = new Size(160, 28);
+            label6.Size = new Size(165, 28);
             label6.TabIndex = 11;
-            label6.Text = "Cadastrar Cliente";
-            // 
-            // btnCadastrar
-            // 
-            btnCadastrar.Location = new Point(441, 184);
-            btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(75, 23);
-            btnCadastrar.TabIndex = 12;
-            btnCadastrar.Text = "Cadastrar";
-            btnCadastrar.UseVisualStyleBackColor = true;
-            btnCadastrar.Click += button1_Click;
+            label6.Text = "Cadastrar  Cliente";
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(540, 184);
+
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.Location = new Point(647, 391);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(75, 23);
+            btnEditar.Size = new Size(102, 37);
             btnEditar.TabIndex = 13;
-            btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
+          
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nome, Column3, Column1, Column2, Column4 });
-            dataGridView1.Location = new Point(59, 232);
+            dataGridView1.Location = new Point(66, 224);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Size = new Size(689, 149);
+            dataGridView1.Size = new Size(683, 149);
             dataGridView1.TabIndex = 14;
             // 
             // Nome
@@ -206,18 +193,6 @@
             Column4.Name = "Column4";
             Column4.Width = 160;
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = SystemColors.ActiveCaptionText;
-            label7.ForeColor = Color.FromArgb(219, 179, 91);
-            label7.Location = new Point(25, 413);
-            label7.Name = "label7";
-            label7.Size = new Size(37, 15);
-            label7.TabIndex = 45;
-            label7.Text = "Voltar";
-            label7.Click += label7_Click;
-            // 
             // label8
             // 
             label8.AutoSize = true;
@@ -231,14 +206,59 @@
             label8.TabIndex = 46;
             label8.Text = "Nome";
             // 
+            // btnCadastrar
+            // 
+            btnCadastrar.BackgroundImage = Properties.Resources.bntCadastrar;
+            btnCadastrar.FlatStyle = FlatStyle.Flat;
+            btnCadastrar.Location = new Point(542, 392);
+            btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.Size = new Size(99, 44);
+            btnCadastrar.TabIndex = 12;
+            btnCadastrar.UseVisualStyleBackColor = true;
+            btnCadastrar.Click += button1_Click;
+            // 
+            // txtId
+            // 
+            txtId.Location = new Point(66, 84);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(38, 23);
+            txtId.TabIndex = 47;
+            // 
+            // dateDataNascimento
+            // 
+            dateDataNascimento.Location = new Point(442, 134);
+            dateDataNascimento.Name = "dateDataNascimento";
+            dateDataNascimento.Size = new Size(173, 23);
+            dateDataNascimento.TabIndex = 48;
+            // 
+            // mySqlCommand1
+            // 
+            mySqlCommand1.CacheAge = 0;
+            mySqlCommand1.Connection = null;
+            mySqlCommand1.EnableCaching = false;
+            mySqlCommand1.Transaction = null;
+            // 
+            // button1
+            // 
+            button1.BackgroundImage = Properties.Resources.bntVoltar;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(22, 400);
+            button1.Name = "button1";
+            button1.Size = new Size(102, 38);
+            button1.TabIndex = 49;
+            button1.UseVisualStyleBackColor = true;
+            
+            // 
             // FormCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.leaoFundo;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
+            Controls.Add(dateDataNascimento);
+            Controls.Add(txtId);
             Controls.Add(label8);
-            Controls.Add(label7);
             Controls.Add(dataGridView1);
             Controls.Add(btnEditar);
             Controls.Add(btnCadastrar);
@@ -247,7 +267,6 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(txtDatanascimento);
             Controls.Add(txtEmail);
             Controls.Add(txtTelefone);
             Controls.Add(txtCpf);
@@ -266,21 +285,23 @@
         private TextBox txtCpf;
         private TextBox txtTelefone;
         private TextBox txtEmail;
-        private TextBox txtDatanascimento;
         private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
         private Label label6;
-        private Button btnCadastrar;
         private Button btnEditar;
         private DataGridView dataGridView1;
-        private Label label7;
         private Label label8;
         private DataGridViewTextBoxColumn Nome;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column4;
+        private Button btnCadastrar;
+        private TextBox txtId;
+        private DateTimePicker dateDataNascimento;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
+        private Button button1;
     }
 }

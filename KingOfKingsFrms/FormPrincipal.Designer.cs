@@ -199,6 +199,7 @@
             cadastroDeClienteToolStripMenuItem.Name = "cadastroDeClienteToolStripMenuItem";
             cadastroDeClienteToolStripMenuItem.Size = new Size(270, 22);
             cadastroDeClienteToolStripMenuItem.Text = "Cadastro de cliente";
+            cadastroDeClienteToolStripMenuItem.Click += cadastroDeClienteToolStripMenuItem_Click;
             // 
             // cadastroDeFornecedoresToolStripMenuItem
             // 
