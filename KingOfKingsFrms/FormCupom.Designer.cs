@@ -33,31 +33,31 @@
             label2 = new Label();
             label3 = new Label();
             label5 = new Label();
-            textBox1 = new TextBox();
+            txtTitulo = new TextBox();
             label6 = new Label();
-            textBox3 = new TextBox();
+            txtlimiteParaMesmoUser = new TextBox();
             label7 = new Label();
-            textBox4 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
+            txtCodigo = new TextBox();
+            dateDataInicio = new DateTimePicker();
+            dateExpiracao = new DateTimePicker();
             label8 = new Label();
             label4 = new Label();
-            comboBox1 = new ComboBox();
+            txtCupomTipo = new ComboBox();
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
-            comboBox2 = new ComboBox();
-            textBox2 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            checkBox1 = new CheckBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            dataGridView1 = new DataGridView();
+            cmbTipoDesconto = new ComboBox();
+            txtDesconto = new TextBox();
+            txtValorMaximoDesconto = new TextBox();
+            txtPedidoMinimo = new TextBox();
+            checkBoxAtivo = new CheckBox();
+            btnEditar = new Button();
+            btnCadastrar = new Button();
+            btnExcluir = new Button();
+            btnSair = new Button();
+            dgvCupom = new DataGridView();
             ClnTitulo = new DataGridViewTextBoxColumn();
+            clnId = new DataGridViewTextBoxColumn();
             ClnCupomTipo = new DataGridViewTextBoxColumn();
             clnLimiteParaMesmoUsuario = new DataGridViewTextBoxColumn();
             clnCodigo = new DataGridViewTextBoxColumn();
@@ -68,11 +68,13 @@
             clnDesconto = new DataGridViewTextBoxColumn();
             clnTipoDesconto = new DataGridViewTextBoxColumn();
             clnDescricao = new DataGridViewTextBoxColumn();
-            textBox7 = new TextBox();
+            txtDescricao = new TextBox();
             label12 = new Label();
-            textBox8 = new TextBox();
+            txtBuscar = new TextBox();
             label13 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            txtId = new TextBox();
+            btnBuscar = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvCupom).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -123,12 +125,12 @@
             label5.TabIndex = 4;
             label5.Text = "Data de &inicio";
             // 
-            // textBox1
+            // txtTitulo
             // 
-            textBox1.Location = new Point(56, 110);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(182, 23);
-            textBox1.TabIndex = 6;
+            txtTitulo.Location = new Point(56, 110);
+            txtTitulo.Name = "txtTitulo";
+            txtTitulo.Size = new Size(182, 23);
+            txtTitulo.TabIndex = 6;
             // 
             // label6
             // 
@@ -142,12 +144,12 @@
             label6.TabIndex = 8;
             label6.Text = "C&upom Tipo ";
             // 
-            // textBox3
+            // txtlimiteParaMesmoUser
             // 
-            textBox3.Location = new Point(476, 110);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(182, 23);
-            textBox3.TabIndex = 9;
+            txtlimiteParaMesmoUser.Location = new Point(476, 110);
+            txtlimiteParaMesmoUser.Name = "txtlimiteParaMesmoUser";
+            txtlimiteParaMesmoUser.Size = new Size(182, 23);
+            txtlimiteParaMesmoUser.TabIndex = 9;
             // 
             // label7
             // 
@@ -161,26 +163,26 @@
             label7.TabIndex = 10;
             label7.Text = "&Limite para mesmo usuário";
             // 
-            // textBox4
+            // txtCodigo
             // 
-            textBox4.Location = new Point(55, 154);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(182, 23);
-            textBox4.TabIndex = 11;
+            txtCodigo.Location = new Point(55, 154);
+            txtCodigo.Name = "txtCodigo";
+            txtCodigo.Size = new Size(182, 23);
+            txtCodigo.TabIndex = 11;
             // 
-            // dateTimePicker1
+            // dateDataInicio
             // 
-            dateTimePicker1.Location = new Point(254, 154);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 12;
+            dateDataInicio.Location = new Point(254, 154);
+            dateDataInicio.Name = "dateDataInicio";
+            dateDataInicio.Size = new Size(200, 23);
+            dateDataInicio.TabIndex = 12;
             // 
-            // dateTimePicker2
+            // dateExpiracao
             // 
-            dateTimePicker2.Location = new Point(476, 154);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(200, 23);
-            dateTimePicker2.TabIndex = 13;
+            dateExpiracao.Location = new Point(476, 154);
+            dateExpiracao.Name = "dateExpiracao";
+            dateExpiracao.Size = new Size(200, 23);
+            dateExpiracao.TabIndex = 13;
             // 
             // label8
             // 
@@ -206,13 +208,13 @@
             label4.TabIndex = 15;
             label4.Text = "&Valor pedido minimo";
             // 
-            // comboBox1
+            // txtCupomTipo
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(254, 110);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(200, 23);
-            comboBox1.TabIndex = 16;
+            txtCupomTipo.FormattingEnabled = true;
+            txtCupomTipo.Location = new Point(254, 110);
+            txtCupomTipo.Name = "txtCupomTipo";
+            txtCupomTipo.Size = new Size(200, 23);
+            txtCupomTipo.TabIndex = 16;
             // 
             // label9
             // 
@@ -250,113 +252,103 @@
             label11.TabIndex = 19;
             label11.Text = "&Tipo desconto";
             // 
-            // comboBox2
+            // cmbTipoDesconto
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Percentual", "Real" });
-            comboBox2.Location = new Point(580, 207);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(169, 23);
-            comboBox2.TabIndex = 20;
+            cmbTipoDesconto.FormattingEnabled = true;
+            cmbTipoDesconto.Items.AddRange(new object[] { "Percentual", "Real" });
+            cmbTipoDesconto.Location = new Point(580, 207);
+            cmbTipoDesconto.Name = "cmbTipoDesconto";
+            cmbTipoDesconto.Size = new Size(169, 23);
+            cmbTipoDesconto.TabIndex = 20;
             // 
-            // textBox2
+            // txtDesconto
             // 
-            textBox2.Location = new Point(437, 207);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(137, 23);
-            textBox2.TabIndex = 21;
+            txtDesconto.Location = new Point(437, 207);
+            txtDesconto.Name = "txtDesconto";
+            txtDesconto.Size = new Size(137, 23);
+            txtDesconto.TabIndex = 21;
             // 
-            // textBox5
+            // txtValorMaximoDesconto
             // 
-            textBox5.Location = new Point(254, 207);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(147, 23);
-            textBox5.TabIndex = 22;
+            txtValorMaximoDesconto.Location = new Point(254, 207);
+            txtValorMaximoDesconto.Name = "txtValorMaximoDesconto";
+            txtValorMaximoDesconto.Size = new Size(147, 23);
+            txtValorMaximoDesconto.TabIndex = 22;
             // 
-            // textBox6
+            // txtPedidoMinimo
             // 
-            textBox6.Location = new Point(55, 207);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(147, 23);
-            textBox6.TabIndex = 23;
+            txtPedidoMinimo.Location = new Point(55, 207);
+            txtPedidoMinimo.Name = "txtPedidoMinimo";
+            txtPedidoMinimo.Size = new Size(147, 23);
+            txtPedidoMinimo.TabIndex = 23;
             // 
-            // checkBox1
+            // checkBoxAtivo
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.BackColor = Color.Transparent;
-            checkBox1.ForeColor = Color.FromArgb(219, 179, 91);
-            checkBox1.Location = new Point(682, 250);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(57, 19);
-            checkBox1.TabIndex = 5;
-            checkBox1.Text = "Ativar";
-            checkBox1.UseVisualStyleBackColor = false;
+            checkBoxAtivo.AutoSize = true;
+            checkBoxAtivo.BackColor = Color.Transparent;
+            checkBoxAtivo.ForeColor = Color.FromArgb(219, 179, 91);
+            checkBoxAtivo.Location = new Point(682, 250);
+            checkBoxAtivo.Name = "checkBoxAtivo";
+            checkBoxAtivo.Size = new Size(57, 19);
+            checkBoxAtivo.TabIndex = 5;
+            checkBoxAtivo.Text = "Ativar";
+            checkBoxAtivo.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnEditar
             // 
-            button1.BackColor = Color.Black;
-            button1.ForeColor = Color.FromArgb(219, 179, 91);
-            button1.Location = new Point(46, 450);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 24;
-            button1.Text = "&Atualizar";
-            button1.UseVisualStyleBackColor = false;
+            btnEditar.BackColor = Color.Black;
+            btnEditar.ForeColor = Color.FromArgb(219, 179, 91);
+            btnEditar.Location = new Point(127, 450);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(75, 23);
+            btnEditar.TabIndex = 25;
+            btnEditar.Text = "&Editar";
+            btnEditar.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnCadastrar
             // 
-            button2.BackColor = Color.Black;
-            button2.ForeColor = Color.FromArgb(219, 179, 91);
-            button2.Location = new Point(127, 450);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 25;
-            button2.Text = "&Editar";
-            button2.UseVisualStyleBackColor = false;
+            btnCadastrar.BackColor = Color.Black;
+            btnCadastrar.ForeColor = Color.FromArgb(219, 179, 91);
+            btnCadastrar.Location = new Point(218, 450);
+            btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.Size = new Size(75, 23);
+            btnCadastrar.TabIndex = 26;
+            btnCadastrar.Text = "&Cadastrar";
+            btnCadastrar.UseVisualStyleBackColor = false;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
-            // button3
+            // btnExcluir
             // 
-            button3.BackColor = Color.Black;
-            button3.ForeColor = Color.FromArgb(219, 179, 91);
-            button3.Location = new Point(224, 450);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 26;
-            button3.Text = "&Salvar";
-            button3.UseVisualStyleBackColor = false;
+            btnExcluir.BackColor = Color.Black;
+            btnExcluir.ForeColor = Color.FromArgb(219, 179, 91);
+            btnExcluir.Location = new Point(317, 450);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(75, 23);
+            btnExcluir.TabIndex = 27;
+            btnExcluir.Text = "E&xcluir";
+            btnExcluir.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnSair
             // 
-            button4.BackColor = Color.Black;
-            button4.ForeColor = Color.FromArgb(219, 179, 91);
-            button4.Location = new Point(317, 450);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 27;
-            button4.Text = "&Excluir";
-            button4.UseVisualStyleBackColor = false;
+            btnSair.BackColor = Color.Black;
+            btnSair.FlatAppearance.BorderColor = Color.FromArgb(219, 179, 91);
+            btnSair.FlatAppearance.MouseDownBackColor = Color.FromArgb(219, 179, 91);
+            btnSair.FlatAppearance.MouseOverBackColor = Color.FromArgb(219, 179, 91);
+            btnSair.ForeColor = Color.FromArgb(219, 179, 91);
+            btnSair.Location = new Point(410, 450);
+            btnSair.Name = "btnSair";
+            btnSair.Size = new Size(75, 23);
+            btnSair.TabIndex = 28;
+            btnSair.Text = "&Sair";
+            btnSair.UseVisualStyleBackColor = false;
+            btnSair.Click += button5_Click;
             // 
-            // button5
+            // dgvCupom
             // 
-            button5.BackColor = Color.Black;
-            button5.FlatAppearance.BorderColor = Color.FromArgb(219, 179, 91);
-            button5.FlatAppearance.MouseDownBackColor = Color.FromArgb(219, 179, 91);
-            button5.FlatAppearance.MouseOverBackColor = Color.FromArgb(219, 179, 91);
-            button5.ForeColor = Color.FromArgb(219, 179, 91);
-            button5.Location = new Point(410, 450);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 23);
-            button5.TabIndex = 28;
-            button5.Text = "&Sair";
-            button5.UseVisualStyleBackColor = false;
-            button5.Click += button5_Click;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ClnTitulo, ClnCupomTipo, clnLimiteParaMesmoUsuario, clnCodigo, clnDataInicio, clnDataEnspiração, clnValorpedido, clnValorMaximo, clnDesconto, clnTipoDesconto, clnDescricao });
-            dataGridView1.Location = new Point(7, 268);
-            dataGridView1.Name = "dataGridView1";
+            dgvCupom.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCupom.Columns.AddRange(new DataGridViewColumn[] { ClnTitulo, clnId, ClnCupomTipo, clnLimiteParaMesmoUsuario, clnCodigo, clnDataInicio, clnDataEnspiração, clnValorpedido, clnValorMaximo, clnDesconto, clnTipoDesconto, clnDescricao });
+            dgvCupom.Location = new Point(7, 268);
+            dgvCupom.Name = "dgvCupom";
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.Black;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
@@ -364,15 +356,21 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(219, 179, 91);
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Size = new Size(1103, 157);
-            dataGridView1.TabIndex = 29;
+            dgvCupom.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvCupom.RowHeadersVisible = false;
+            dgvCupom.Size = new Size(1103, 157);
+            dgvCupom.TabIndex = 29;
             // 
             // ClnTitulo
             // 
             ClnTitulo.HeaderText = "Titulo";
             ClnTitulo.Name = "ClnTitulo";
+            // 
+            // clnId
+            // 
+            clnId.HeaderText = "ID";
+            clnId.Name = "clnId";
+            clnId.Visible = false;
             // 
             // ClnCupomTipo
             // 
@@ -424,12 +422,12 @@
             clnDescricao.HeaderText = "Descrição";
             clnDescricao.Name = "clnDescricao";
             // 
-            // textBox7
+            // txtDescricao
             // 
-            textBox7.Location = new Point(115, 239);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(548, 23);
-            textBox7.TabIndex = 30;
+            txtDescricao.Location = new Point(115, 239);
+            txtDescricao.Name = "txtDescricao";
+            txtDescricao.Size = new Size(548, 23);
+            txtDescricao.TabIndex = 30;
             // 
             // label12
             // 
@@ -443,12 +441,12 @@
             label12.TabIndex = 31;
             label12.Text = "&Descriçao";
             // 
-            // textBox8
+            // txtBuscar
             // 
-            textBox8.Location = new Point(56, 66);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(137, 23);
-            textBox8.TabIndex = 32;
+            txtBuscar.Location = new Point(56, 66);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(137, 23);
+            txtBuscar.TabIndex = 32;
             // 
             // label13
             // 
@@ -462,40 +460,60 @@
             label13.TabIndex = 33;
             label13.Text = "&Buscar";
             // 
+            // txtId
+            // 
+            txtId.Location = new Point(55, 26);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(38, 23);
+            txtId.TabIndex = 34;
+            txtId.Text = "Id";
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.BackColor = Color.Black;
+            btnBuscar.ForeColor = Color.FromArgb(219, 179, 91);
+            btnBuscar.Location = new Point(46, 450);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(75, 23);
+            btnBuscar.TabIndex = 35;
+            btnBuscar.Text = "&Buscar";
+            btnBuscar.UseVisualStyleBackColor = false;
+            // 
             // FormCupom
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Leao_alter;
             ClientSize = new Size(1169, 503);
+            Controls.Add(btnBuscar);
+            Controls.Add(txtId);
             Controls.Add(label13);
-            Controls.Add(textBox8);
+            Controls.Add(txtBuscar);
             Controls.Add(label12);
-            Controls.Add(textBox7);
-            Controls.Add(dataGridView1);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox2);
-            Controls.Add(comboBox2);
+            Controls.Add(txtDescricao);
+            Controls.Add(dgvCupom);
+            Controls.Add(btnSair);
+            Controls.Add(btnExcluir);
+            Controls.Add(btnCadastrar);
+            Controls.Add(btnEditar);
+            Controls.Add(txtPedidoMinimo);
+            Controls.Add(txtValorMaximoDesconto);
+            Controls.Add(txtDesconto);
+            Controls.Add(cmbTipoDesconto);
             Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label9);
-            Controls.Add(comboBox1);
+            Controls.Add(txtCupomTipo);
             Controls.Add(label4);
             Controls.Add(label8);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(textBox4);
+            Controls.Add(dateExpiracao);
+            Controls.Add(dateDataInicio);
+            Controls.Add(txtCodigo);
             Controls.Add(label7);
-            Controls.Add(textBox3);
+            Controls.Add(txtlimiteParaMesmoUser);
             Controls.Add(label6);
-            Controls.Add(textBox1);
-            Controls.Add(checkBox1);
+            Controls.Add(txtTitulo);
+            Controls.Add(checkBoxAtivo);
             Controls.Add(label5);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -503,7 +521,8 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormCupom";
             Text = "Cupom";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += FormCupom_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvCupom).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -514,35 +533,36 @@
         private Label label2;
         private Label label3;
         private Label label5;
-        private TextBox textBox1;
+        private TextBox txtTitulo;
         private Label label6;
-        private TextBox textBox3;
+        private TextBox txtlimiteParaMesmoUser;
         private Label label7;
-        private TextBox textBox4;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
+        private TextBox txtCodigo;
+        private DateTimePicker dateDataInicio;
+        private DateTimePicker dateExpiracao;
         private Label label8;
         private Label label4;
-        private ComboBox comboBox1;
+        private ComboBox txtCupomTipo;
         private Label label9;
         private Label label10;
         private Label label11;
-        private ComboBox comboBox2;
-        private TextBox textBox2;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private CheckBox checkBox1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private DataGridView dataGridView1;
-        private TextBox textBox7;
+        private ComboBox cmbTipoDesconto;
+        private TextBox txtDesconto;
+        private TextBox txtValorMaximoDesconto;
+        private TextBox txtPedidoMinimo;
+        private CheckBox checkBoxAtivo;
+        private Button btnAtualizar;
+        private Button btnEditar;
+        private Button btnCadastrar;
+        private Button btnExcluir;
+        private Button btnSair;
+        private DataGridView dgvCupom;
+        private TextBox txtDescricao;
         private Label label12;
-        private TextBox textBox8;
+        private TextBox txtBuscar;
         private Label label13;
         private DataGridViewTextBoxColumn ClnTitulo;
+        private DataGridViewTextBoxColumn clnId;
         private DataGridViewTextBoxColumn ClnCupomTipo;
         private DataGridViewTextBoxColumn clnLimiteParaMesmoUsuario;
         private DataGridViewTextBoxColumn clnCodigo;
@@ -553,5 +573,7 @@
         private DataGridViewTextBoxColumn clnDesconto;
         private DataGridViewTextBoxColumn clnTipoDesconto;
         private DataGridViewTextBoxColumn clnDescricao;
+        private TextBox txtId;
+        private Button btnBuscar;
     }
 }

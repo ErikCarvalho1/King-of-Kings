@@ -1,5 +1,7 @@
-﻿using System;
+﻿using KingoOfKingsClass;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,7 +70,22 @@ namespace KingOfKingsClass
                 PedidoId = pedidoId;
                 this.revendedorId = revendedorId;
             }
+            public CupomDesconto(string? titulo, string? codigo, string? cupomTipo, DateTime dataCriacao, DateTime dataValidade, decimal valorPedidoMinimo, decimal valorMaximoDeDesconto, decimal valorMaximoPedido, decimal valorDesconto, string? descricao, double tpoDesconto)
+            {
 
+                Titulo = titulo;
+                Codigo = codigo;
+                CupomTipo = cupomTipo;
+                DataCriacao = dataCriacao;
+                DataValidade = dataValidade;
+                ValorPedidoMinimo = valorPedidoMinimo;
+                ValorMaximoDeDesconto = valorMaximoDeDesconto;
+                ValorMaximoPedido = valorMaximoPedido;
+                ValorDesconto = valorDesconto;
+                Descricao = descricao;
+                TpoDesconto = tpoDesconto;
+             
+            }
 
             public enum TipoDesconto
             {
@@ -76,7 +93,32 @@ namespace KingOfKingsClass
                 ValorFixo
             }
 
+            public void Inserir()
+            {
+                var cmd = Banco.Abrir();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sp_inserir_cupom";
+                cmd.Parameters.AddWithValue("spid",Id );
+                cmd.Parameters.AddWithValue("sptitulo", Titulo);
+                cmd.Parameters.AddWithValue("spcodigo", Codigo);
+                cmd.Parameters.AddWithValue("spcupomtipo", CupomTipo);
+                cmd.Parameters.AddWithValue("spdatacriacao", DataCriacao);
+                cmd.Parameters.AddWithValue("spdatavalidade", DataValidade);
+                cmd.Parameters.AddWithValue("spvalorpedidominimo", ValorPedidoMinimo);
+                cmd.Parameters.AddWithValue("spvalormaximodesconto", ValorMaximoDeDesconto);
+                cmd.Parameters.AddWithValue("spvalormaximopedido", ValorMaximoPedido);
+                cmd.Parameters.AddWithValue("spvalordesconto", ValorDesconto);
+                cmd.Parameters.AddWithValue("spdescricao", Descricao);
+                cmd.Parameters.AddWithValue("sptipodesconto", TpoDesconto);
+                cmd.Parameters.AddWithValue("spclienteid", ClienteId);
+                cmd.Parameters.AddWithValue("sppedidoid", PedidoId);
+                cmd.Parameters.AddWithValue("sprevendedorid", revendedorId);
+                // Executa o comando e obtém o ID do cupom inserido
 
+
+                Id = Convert.ToInt32(cmd.ExecuteScalar());
+                cmd.Connection.Close();
+            }
 
 
             public bool EstaValido()
