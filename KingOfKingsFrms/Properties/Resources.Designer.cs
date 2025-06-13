@@ -133,6 +133,26 @@ namespace KingOfKingsFrms.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EditarBnt {
+            get {
+                object obj = ResourceManager.GetObject("EditarBnt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditarBntPequeno {
+            get {
+                object obj = ResourceManager.GetObject("EditarBntPequeno", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap exibirSenha {
             get {
                 object obj = ResourceManager.GetObject("exibirSenha", resourceCulture);

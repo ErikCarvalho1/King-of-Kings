@@ -78,7 +78,7 @@
             // 
             bntVoltar.BackgroundImage = Properties.Resources.bntVoltar;
             bntVoltar.FlatStyle = FlatStyle.Flat;
-            bntVoltar.Location = new Point(596, 448);
+            bntVoltar.Location = new Point(434, 211);
             bntVoltar.Name = "bntVoltar";
             bntVoltar.Size = new Size(100, 36);
             bntVoltar.TabIndex = 7;
@@ -200,11 +200,14 @@
             // 
             // bntEditar
             // 
-            bntEditar.Location = new Point(310, 211);
+            bntEditar.BackgroundImage = Properties.Resources.EditarBnt;
+            bntEditar.FlatAppearance.BorderColor = Color.Black;
+            bntEditar.FlatStyle = FlatStyle.Flat;
+            bntEditar.Location = new Point(310, 206);
             bntEditar.Name = "bntEditar";
-            bntEditar.Size = new Size(75, 23);
+            bntEditar.RightToLeft = RightToLeft.Yes;
+            bntEditar.Size = new Size(103, 41);
             bntEditar.TabIndex = 16;
-            bntEditar.Text = "Editar";
             bntEditar.UseVisualStyleBackColor = true;
             bntEditar.Click += bntEditar_Click;
             // 

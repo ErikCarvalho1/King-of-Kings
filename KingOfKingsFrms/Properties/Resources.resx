@@ -127,6 +127,9 @@
   <data name="leaoFundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\leaoFundo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="EditarBnt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditarBnt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="king of kings login (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\king of kings login (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -199,13 +202,16 @@
   <data name="bntAcessar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bntAcessar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Leao alter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Leao alter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="linha dorada (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\linha dorada (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="kingLeaoLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kingLeaoLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Leao alter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Leao alter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EditarBntPequeno" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditarBntPequeno.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
