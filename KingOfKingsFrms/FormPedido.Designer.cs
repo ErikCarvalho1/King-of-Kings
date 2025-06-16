@@ -356,6 +356,7 @@
             dgvItensPedido.BackgroundColor = Color.Black;
             dgvItensPedido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvItensPedido.Columns.AddRange(new DataGridViewColumn[] { clnSeq, clnCodBar, clnDescricao, clnValorUnit, clnQuantidade, clnDescontoItem, clnTotalItem });
+            dgvItensPedido.GridColor = Color.FromArgb(219, 179, 91);
             dgvItensPedido.Location = new Point(12, 111);
             dgvItensPedido.Name = "dgvItensPedido";
             dgvItensPedido.ReadOnly = true;
