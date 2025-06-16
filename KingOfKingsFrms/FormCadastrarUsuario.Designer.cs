@@ -46,6 +46,7 @@
             clnEmail = new DataGridViewTextBoxColumn();
             clnTipo = new DataGridViewTextBoxColumn();
             bntEditar = new Button();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             SuspendLayout();
             // 
@@ -78,7 +79,7 @@
             // 
             bntVoltar.BackgroundImage = Properties.Resources.bntVoltar;
             bntVoltar.FlatStyle = FlatStyle.Flat;
-            bntVoltar.Location = new Point(434, 211);
+            bntVoltar.Location = new Point(434, 203);
             bntVoltar.Name = "bntVoltar";
             bntVoltar.Size = new Size(100, 36);
             bntVoltar.TabIndex = 7;
@@ -102,11 +103,11 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Black;
             label1.FlatStyle = FlatStyle.Popup;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 9.75F);
             label1.ForeColor = Color.FromArgb(219, 179, 91);
-            label1.Location = new Point(139, 120);
+            label1.Location = new Point(152, 122);
             label1.Name = "label1";
-            label1.Size = new Size(57, 21);
+            label1.Size = new Size(44, 17);
             label1.TabIndex = 9;
             label1.Text = "Nome";
             label1.Click += label1_Click;
@@ -116,11 +117,11 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Black;
             label3.FlatStyle = FlatStyle.Popup;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Segoe UI", 9.75F);
             label3.ForeColor = Color.FromArgb(219, 179, 91);
-            label3.Location = new Point(139, 151);
+            label3.Location = new Point(157, 150);
             label3.Name = "label3";
-            label3.Size = new Size(53, 21);
+            label3.Size = new Size(39, 17);
             label3.TabIndex = 11;
             label3.Text = "Email";
             // 
@@ -136,11 +137,11 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Black;
             label4.FlatStyle = FlatStyle.Popup;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Segoe UI", 9.75F);
             label4.ForeColor = Color.FromArgb(219, 179, 91);
-            label4.Location = new Point(139, 175);
+            label4.Location = new Point(153, 177);
             label4.Name = "label4";
-            label4.Size = new Size(57, 21);
+            label4.Size = new Size(43, 17);
             label4.TabIndex = 13;
             label4.Text = "Senha";
             label4.Click += label4_Click;
@@ -150,11 +151,11 @@
             Tipo.AutoSize = true;
             Tipo.BackColor = Color.Black;
             Tipo.FlatStyle = FlatStyle.Popup;
-            Tipo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Tipo.Font = new Font("Segoe UI", 9.75F);
             Tipo.ForeColor = Color.FromArgb(219, 179, 91);
-            Tipo.Location = new Point(473, 96);
+            Tipo.Location = new Point(452, 96);
             Tipo.Name = "Tipo";
-            Tipo.Size = new Size(44, 21);
+            Tipo.Size = new Size(34, 17);
             Tipo.TabIndex = 14;
             Tipo.Text = "Tipo";
             // 
@@ -203,13 +204,24 @@
             bntEditar.BackgroundImage = Properties.Resources.EditarBnt;
             bntEditar.FlatAppearance.BorderColor = Color.Black;
             bntEditar.FlatStyle = FlatStyle.Flat;
-            bntEditar.Location = new Point(310, 206);
+            bntEditar.Location = new Point(325, 202);
             bntEditar.Name = "bntEditar";
             bntEditar.RightToLeft = RightToLeft.Yes;
             bntEditar.Size = new Size(103, 41);
             bntEditar.TabIndex = 16;
             bntEditar.UseVisualStyleBackColor = true;
             bntEditar.Click += bntEditar_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Stencil", 21.75F, FontStyle.Bold);
+            label2.ForeColor = Color.FromArgb(219, 179, 91);
+            label2.Location = new Point(209, 40);
+            label2.Name = "label2";
+            label2.Size = new Size(325, 34);
+            label2.TabIndex = 17;
+            label2.Text = "Cadastrar Usuario";
             // 
             // FormCadastrarUsuario
             // 
@@ -218,6 +230,7 @@
             BackColor = SystemColors.ActiveCaptionText;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(774, 484);
+            Controls.Add(label2);
             Controls.Add(bntEditar);
             Controls.Add(dgvUsuarios);
             Controls.Add(Tipo);
@@ -260,5 +273,6 @@
         private DataGridViewTextBoxColumn clnNome;
         private DataGridViewTextBoxColumn clnEmail;
         private DataGridViewTextBoxColumn clnTipo;
+        private Label label2;
     }
 }

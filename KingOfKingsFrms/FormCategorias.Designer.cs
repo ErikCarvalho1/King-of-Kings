@@ -164,11 +164,11 @@
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Segoe UI", 15F);
+            label6.Font = new Font("Stencil", 21.75F, FontStyle.Bold);
             label6.ForeColor = Color.FromArgb(219, 179, 91);
-            label6.Location = new Point(275, 21);
+            label6.Location = new Point(247, 19);
             label6.Name = "label6";
-            label6.Size = new Size(105, 28);
+            label6.Size = new Size(195, 34);
             label6.TabIndex = 45;
             label6.Text = "Categorias";
             // 

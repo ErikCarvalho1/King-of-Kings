@@ -42,6 +42,7 @@ namespace KingOfKingsFrms
                         MessageBox.Show("Cliente cadastrado com sucesso!");
                         //btnGravar.Enabled = false;
                     }
+                  
                 }
 
             }
@@ -70,6 +71,7 @@ namespace KingOfKingsFrms
         {
            
             CarregaGrid();
+            limpaControles();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -116,13 +118,28 @@ namespace KingOfKingsFrms
                 dgvClientes.Rows[linha].Cells[2].Value = item.Email;
                 dgvClientes.Rows[linha].Cells[3].Value = item.Cpf;
                 dgvClientes.Rows[linha].Cells[4].Value = item.Telefone;
-                dgvClientes.Rows[linha].Cells[4].Value = item.DataNascimento.ToShortDateString();
+                dgvClientes.Rows[linha].Cells[5].Value = item.DataNascimento.ToShortDateString();
 
 
             }
         }
+
+           public  void limpaControles()
+        {
+            txtId.Clear();
+            txtNome.Clear();
+            txtEmail.Clear();
+            txtCpf.Clear();
+            txtTelefone.Clear();
+            dateDataNascimento.Value = DateTime.Now;
+         
+
+        }
+        
     }
+    
 }
+
      
         
 

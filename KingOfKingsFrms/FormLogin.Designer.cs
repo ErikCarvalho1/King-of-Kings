@@ -132,10 +132,11 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Stencil", 21.75F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(219, 179, 91);
-            label1.Location = new Point(239, 99);
+            label1.Location = new Point(220, 70);
             label1.Name = "label1";
-            label1.Size = new Size(37, 15);
+            label1.Size = new Size(101, 34);
             label1.TabIndex = 12;
             label1.Text = "Login";
             // 

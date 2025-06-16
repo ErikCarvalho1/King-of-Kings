@@ -38,6 +38,12 @@
             label5 = new Label();
             label6 = new Label();
             dgvClientes = new DataGridView();
+            nome = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            Cpf = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
             label8 = new Label();
             btnCadastrar = new Button();
             txtId = new TextBox();
@@ -45,11 +51,6 @@
             mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             button1 = new Button();
             button2 = new Button();
-            nome = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
@@ -76,7 +77,7 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(441, 84);
+            txtEmail.Location = new Point(442, 84);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(174, 23);
             txtEmail.TabIndex = 3;
@@ -85,11 +86,11 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = SystemColors.ActiveCaptionText;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label2.Font = new Font("Microsoft Sans Serif", 9.75F);
             label2.ForeColor = Color.FromArgb(219, 179, 91);
-            label2.Location = new Point(140, 110);
+            label2.Location = new Point(140, 115);
             label2.Name = "label2";
-            label2.Size = new Size(36, 21);
+            label2.Size = new Size(27, 16);
             label2.TabIndex = 7;
             label2.Text = "Cpf";
             // 
@@ -98,12 +99,12 @@
             label3.AutoSize = true;
             label3.BackColor = SystemColors.ActiveCaptionText;
             label3.Cursor = Cursors.SizeNWSE;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label3.Font = new Font("Microsoft Sans Serif", 9.75F);
             label3.ForeColor = Color.FromArgb(219, 179, 91);
             label3.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Assertive;
-            label3.Location = new Point(140, 160);
+            label3.Location = new Point(140, 165);
             label3.Name = "label3";
-            label3.Size = new Size(76, 21);
+            label3.Size = new Size(61, 16);
             label3.TabIndex = 8;
             label3.Text = "Telefone";
             // 
@@ -111,11 +112,11 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = SystemColors.ActiveCaptionText;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label4.Font = new Font("Microsoft Sans Serif", 9.75F);
             label4.ForeColor = Color.FromArgb(219, 179, 91);
-            label4.Location = new Point(441, 60);
+            label4.Location = new Point(442, 65);
             label4.Name = "label4";
-            label4.Size = new Size(53, 21);
+            label4.Size = new Size(41, 16);
             label4.TabIndex = 9;
             label4.Text = "Email";
             // 
@@ -123,11 +124,11 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = SystemColors.ActiveCaptionText;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label5.Font = new Font("Microsoft Sans Serif", 9.75F);
             label5.ForeColor = Color.FromArgb(219, 179, 91);
-            label5.Location = new Point(441, 110);
+            label5.Location = new Point(442, 115);
             label5.Name = "label5";
-            label5.Size = new Size(162, 21);
+            label5.Size = new Size(127, 16);
             label5.TabIndex = 10;
             label5.Text = "Data de nascimento";
             // 
@@ -135,35 +136,70 @@
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Segoe UI", 15F);
+            label6.Font = new Font("Stencil", 21.75F, FontStyle.Bold);
             label6.ForeColor = Color.FromArgb(219, 179, 91);
-            label6.Location = new Point(298, 19);
+            label6.Location = new Point(243, 9);
             label6.Name = "label6";
-            label6.Size = new Size(165, 28);
+            label6.Size = new Size(323, 34);
             label6.TabIndex = 11;
             label6.Text = "Cadastrar  Cliente";
             // 
             // dgvClientes
             // 
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvClientes.Columns.AddRange(new DataGridViewColumn[] { nome, Column3, Column1, Column2, Column4 });
-            dgvClientes.Location = new Point(12, 224);
+            dgvClientes.Columns.AddRange(new DataGridViewColumn[] { nome, Column3, Column1, Cpf, Column2, Column4 });
+            dgvClientes.Location = new Point(89, 221);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.RowHeadersVisible = false;
-            dgvClientes.Size = new Size(764, 149);
+            dgvClientes.Size = new Size(616, 149);
             dgvClientes.TabIndex = 14;
             dgvClientes.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // nome
+            // 
+            nome.HeaderText = "Id";
+            nome.Name = "nome";
+            nome.Visible = false;
+            nome.Width = 160;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Nome";
+            Column3.Name = "Column3";
+            Column3.Width = 130;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Email";
+            Column1.Name = "Column1";
+            Column1.Width = 130;
+            // 
+            // Cpf
+            // 
+            Cpf.HeaderText = "Cpf";
+            Cpf.Name = "Cpf";
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Telefone";
+            Column2.Name = "Column2";
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Data de nascimento";
+            Column4.Name = "Column4";
+            Column4.Width = 160;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.BackColor = Color.Black;
             label8.FlatStyle = FlatStyle.Popup;
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Microsoft Sans Serif", 9.75F);
             label8.ForeColor = Color.FromArgb(219, 179, 91);
-            label8.Location = new Point(140, 60);
+            label8.Location = new Point(140, 65);
             label8.Name = "label8";
-            label8.Size = new Size(57, 21);
+            label8.Size = new Size(44, 16);
             label8.TabIndex = 46;
             label8.Text = "Nome";
             // 
@@ -184,6 +220,7 @@
             txtId.Name = "txtId";
             txtId.Size = new Size(38, 23);
             txtId.TabIndex = 47;
+            txtId.Visible = false;
             // 
             // dateDataNascimento
             // 
@@ -220,35 +257,6 @@
             button2.TabIndex = 50;
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
-            // 
-            // nome
-            // 
-            nome.HeaderText = "Id";
-            nome.Name = "nome";
-            nome.Width = 160;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Nome";
-            Column3.Name = "Column3";
-            Column3.Width = 130;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Email";
-            Column1.Name = "Column1";
-            Column1.Width = 130;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Telefone";
-            Column2.Name = "Column2";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Data de nascimento";
-            Column4.Name = "Column4";
-            Column4.Width = 160;
             // 
             // FormCliente
             // 
@@ -303,6 +311,7 @@
         private DataGridViewTextBoxColumn nome;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Cpf;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column4;
     }

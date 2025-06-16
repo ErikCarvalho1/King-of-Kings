@@ -81,11 +81,11 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 15F);
+            label1.Font = new Font("Stencil", 21.75F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(219, 179, 91);
-            label1.Location = new Point(288, 18);
+            label1.Location = new Point(410, 26);
             label1.Name = "label1";
-            label1.Size = new Size(191, 28);
+            label1.Size = new Size(319, 34);
             label1.TabIndex = 0;
             label1.Text = "Cupom de Desconto";
             // 
