@@ -107,6 +107,7 @@
             label3.Size = new Size(61, 16);
             label3.TabIndex = 8;
             label3.Text = "Telefone";
+            label3.Click += label3_Click;
             // 
             // label4
             // 

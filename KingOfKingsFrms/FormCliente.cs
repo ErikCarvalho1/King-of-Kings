@@ -69,7 +69,7 @@ namespace KingOfKingsFrms
 
         private void FormCliente_Load(object sender, EventArgs e)
         {
-           
+
             CarregaGrid();
             limpaControles();
         }
@@ -123,19 +123,6 @@ namespace KingOfKingsFrms
 
             }
         }
-
-           public  void limpaControles()
-        {
-            txtId.Clear();
-            txtNome.Clear();
-            txtEmail.Clear();
-            txtCpf.Clear();
-            txtTelefone.Clear();
-            dateDataNascimento.Value = DateTime.Now;
-         
-
-        }
-        
     }
     
 }
