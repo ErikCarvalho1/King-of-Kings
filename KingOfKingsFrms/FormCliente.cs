@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KingOfKingsClass;
+using KingoOfKingsClass;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +25,43 @@ namespace KingOfKingsFrms
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text == string.Empty)
+            {
+                // INSERIR
+                if (txtNome.Text != string.Empty && txtCpf.Text != string.Empty && txtTelefone.Text != string.Empty && txtEmail.Text != string.Empty);
+                {
+
+
+                    Cliente cliente = new (txtNome.Text, txtCpf.Text, txtTelefone.Text,txtEmail.Text,DateTime.Parse(dateDataNascimento.Text));
+                    cliente.Inserir();
+
+                    if (cliente.Id > 0)
+                    {
+                        MessageBox.Show("Cliente cadastrado com sucesso!");
+                        //btnGravar.Enabled = false;
+                    }
+                }
+
+            } 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormCliente_Load(object sender, EventArgs e)
         {
 
         }

@@ -37,7 +37,6 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            btnEditar = new Button();
             dataGridView1 = new DataGridView();
             Nome = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -50,6 +49,7 @@
             dateDataNascimento = new DateTimePicker();
             mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -143,17 +143,6 @@
             label6.TabIndex = 11;
             label6.Text = "Cadastrar  Cliente";
             // 
-            // btnEditar
-            // 
-
-            btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.Location = new Point(647, 391);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(102, 37);
-            btnEditar.TabIndex = 13;
-            btnEditar.UseVisualStyleBackColor = true;
-          
-            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -210,7 +199,7 @@
             // 
             btnCadastrar.BackgroundImage = Properties.Resources.bntCadastrar;
             btnCadastrar.FlatStyle = FlatStyle.Flat;
-            btnCadastrar.Location = new Point(542, 392);
+            btnCadastrar.Location = new Point(541, 376);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(99, 44);
             btnCadastrar.TabIndex = 12;
@@ -242,12 +231,23 @@
             // 
             button1.BackgroundImage = Properties.Resources.bntVoltar;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(22, 400);
+            button1.Location = new Point(12, 382);
             button1.Name = "button1";
             button1.Size = new Size(102, 38);
             button1.TabIndex = 49;
             button1.UseVisualStyleBackColor = true;
-            
+            button1.Click += button1_Click_1;
+            // 
+            // button2
+            // 
+            button2.BackgroundImage = Properties.Resources.EditarGbtn;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Location = new Point(646, 376);
+            button2.Name = "button2";
+            button2.Size = new Size(103, 38);
+            button2.TabIndex = 50;
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // FormCliente
             // 
@@ -255,12 +255,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.leaoFundo;
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(dateDataNascimento);
             Controls.Add(txtId);
             Controls.Add(label8);
             Controls.Add(dataGridView1);
-            Controls.Add(btnEditar);
             Controls.Add(btnCadastrar);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -274,6 +274,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormCliente";
             Text = "FormCliente";
+            Load += FormCliente_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -290,7 +291,6 @@
         private Label label4;
         private Label label5;
         private Label label6;
-        private Button btnEditar;
         private DataGridView dataGridView1;
         private Label label8;
         private DataGridViewTextBoxColumn Nome;
@@ -303,5 +303,6 @@
         private DateTimePicker dateDataNascimento;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private Button button1;
+        private Button button2;
     }
 }
