@@ -345,8 +345,10 @@
             // 
             // dgvCupom
             // 
+            dgvCupom.BackgroundColor = Color.Black;
             dgvCupom.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCupom.Columns.AddRange(new DataGridViewColumn[] { ClnTitulo, clnId, ClnCupomTipo, clnLimiteParaMesmoUsuario, clnCodigo, clnDataInicio, clnDataEnspiração, clnValorpedido, clnValorMaximo, clnDesconto, clnTipoDesconto, clnDescricao });
+            dgvCupom.GridColor = Color.FromArgb(219, 179, 91);
             dgvCupom.Location = new Point(7, 268);
             dgvCupom.Name = "dgvCupom";
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;

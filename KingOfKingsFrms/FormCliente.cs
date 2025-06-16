@@ -68,7 +68,7 @@ namespace KingOfKingsFrms
 
         private void FormCliente_Load(object sender, EventArgs e)
         {
-           
+
             CarregaGrid();
         }
 
@@ -120,6 +120,11 @@ namespace KingOfKingsFrms
 
 
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
