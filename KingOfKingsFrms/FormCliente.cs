@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,7 +68,8 @@ namespace KingOfKingsFrms
 
         private void FormCliente_Load(object sender, EventArgs e)
         {
-
+           
+            CarregaGrid();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -77,23 +79,57 @@ namespace KingOfKingsFrms
             int linha = dgvClientes.CurrentRow.Index;
             // recuperando o id do nivel na coluna, oculda, ID (0)
             int id = Convert.ToInt32(dgvClientes.Rows[linha].Cells[0].Value);
-            var usuario = Usuario.ObterporId(id);
+            var cliente = Cliente.ObterPorId(id);
 
             // //obter  o objeto nivel
 
             // preenche os campos com os dados do usuario
-            txtId.Text = usuario.Id.ToString();
-            txtNome.Text = usuario.Nome;
-            txtEmail.Text = usuario.Email;
-            txtCpf.Text = usuario.Cpf;
-            txtTelefone.Text = usuario.Telefone;
+            txtId.Text = cliente.Id.ToString();
+            txtNome.Text = cliente.Nome;
+            txtEmail.Text = cliente.Email;
+            txtCpf.Text = cliente.Cpf;
+            txtTelefone.Text = cliente.Telefone;
+            dateDataNascimento.Value = cliente.DataNascimento;
 
             //desabilita os campos
             txtNome.ReadOnly = true;
             txtEmail.ReadOnly = true;
             txtCpf.ReadOnly = true;
             txtTelefone.ReadOnly = true;
+            dateDataNascimento.Enabled = false;
 
+        }
+        private void CarregaGrid()
+        {
+            List<Cliente> Lista = Cliente.ObterLista(); // Este método precisa retornar List<Cliente>
+            if (Lista == null || Lista.Count == 0)
+            {
+                MessageBox.Show("Nenhum cliente encontrado.");
+                return;
+            }
+            dgvClientes.Rows.Clear();
+            foreach (var item in Lista)
+            {
+                int linha = dgvClientes.Rows.Add();
+                dgvClientes.Rows[linha].Cells[0].Value = item.Id;
+                dgvClientes.Rows[linha].Cells[1].Value = item.Nome;
+                dgvClientes.Rows[linha].Cells[2].Value = item.Email;
+                dgvClientes.Rows[linha].Cells[3].Value = item.Cpf;
+                dgvClientes.Rows[linha].Cells[4].Value = item.Telefone;
+                dgvClientes.Rows[linha].Cells[4].Value = item.DataNascimento.ToShortDateString();
+
+
+            }
         }
     }
 }
+     
+        
+
+        
+
+        
+    
+
+
+

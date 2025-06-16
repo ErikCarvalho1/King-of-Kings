@@ -17,13 +17,13 @@ namespace KingOfKingsClass
      public class Cliente
     {
 
-        public int Id { get; set; }
+        public int ? Id { get; set; }
         public string? Nome { get; set; }
         public string? Cpf { get; set; }
-        public string? Telefone { get; set; }
+        public string Telefone { get; set; }
         public string? Email { get; set; }
         public DateTime DataNascimento { get; set; }
-        public DateTime DataCadastro { get; set; }
+        public DateTime ?DataCadastro { get; set; }
         public bool Ativo { get; set; }
         public List<Endereco>? Enderecos { get; set; }
         public Cliente() { }
@@ -124,18 +124,18 @@ namespace KingOfKingsClass
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
+                bool ativo = !dr.IsDBNull(7) && dr.GetBoolean(7);
                 clientes.Add(new(
-                              dr.GetInt32(0),
-                            dr.GetString(1),
-                            dr.GetString(2),
-                            dr.GetString(3),
-                            dr.GetString(4),
-                            dr.GetDateTime(4),
-                            dr.GetDateTime(5),
-                            dr.GetBoolean(6),
-                            Endereco.ObterListaPorClienteId(dr.GetInt32(0))
-                        )
-                    );
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetString(2),
+                    dr.GetString(3),
+                    dr.GetString(4),
+                    dr.GetDateTime(5),
+                    dr.GetDateTime(6),
+                    ativo, // Use the variable here
+                    Endereco.ObterListaPorClienteId(dr.GetInt32(0))
+                ));
             }
             dr.Close();
             cmd.Connection.Close();
