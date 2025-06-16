@@ -37,7 +37,7 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvClientes = new DataGridView();
             Nome = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
@@ -50,7 +50,7 @@
             mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             button1 = new Button();
             button2 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
             // txtNome
@@ -143,15 +143,16 @@
             label6.TabIndex = 11;
             label6.Text = "Cadastrar  Cliente";
             // 
-            // dataGridView1
+            // dgvClientes
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nome, Column3, Column1, Column2, Column4 });
-            dataGridView1.Location = new Point(66, 224);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Size = new Size(683, 149);
-            dataGridView1.TabIndex = 14;
+            dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvClientes.Columns.AddRange(new DataGridViewColumn[] { Nome, Column3, Column1, Column2, Column4 });
+            dgvClientes.Location = new Point(66, 224);
+            dgvClientes.Name = "dgvClientes";
+            dgvClientes.RowHeadersVisible = false;
+            dgvClientes.Size = new Size(683, 149);
+            dgvClientes.TabIndex = 14;
+            dgvClientes.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Nome
             // 
@@ -260,7 +261,7 @@
             Controls.Add(dateDataNascimento);
             Controls.Add(txtId);
             Controls.Add(label8);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvClientes);
             Controls.Add(btnCadastrar);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -275,7 +276,7 @@
             Name = "FormCliente";
             Text = "FormCliente";
             Load += FormCliente_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -291,7 +292,7 @@
         private Label label4;
         private Label label5;
         private Label label6;
-        private DataGridView dataGridView1;
+        private DataGridView dgvClientes;
         private Label label8;
         private DataGridViewTextBoxColumn Nome;
         private DataGridViewTextBoxColumn Column3;
