@@ -38,11 +38,6 @@
             label5 = new Label();
             label6 = new Label();
             dgvClientes = new DataGridView();
-            Nome = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             label8 = new Label();
             btnCadastrar = new Button();
             txtId = new TextBox();
@@ -50,6 +45,11 @@
             mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             button1 = new Button();
             button2 = new Button();
+            nome = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
@@ -146,42 +146,13 @@
             // dgvClientes
             // 
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvClientes.Columns.AddRange(new DataGridViewColumn[] { Nome, Column3, Column1, Column2, Column4 });
-            dgvClientes.Location = new Point(66, 224);
+            dgvClientes.Columns.AddRange(new DataGridViewColumn[] { nome, Column3, Column1, Column2, Column4 });
+            dgvClientes.Location = new Point(12, 224);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.RowHeadersVisible = false;
-            dgvClientes.Size = new Size(683, 149);
+            dgvClientes.Size = new Size(764, 149);
             dgvClientes.TabIndex = 14;
             dgvClientes.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // Nome
-            // 
-            Nome.HeaderText = "Nome";
-            Nome.Name = "Nome";
-            Nome.Width = 160;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Email";
-            Column3.Name = "Column3";
-            Column3.Width = 130;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Cpf";
-            Column1.Name = "Column1";
-            Column1.Width = 130;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Telefone";
-            Column2.Name = "Column2";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Data de nascimento";
-            Column4.Name = "Column4";
-            Column4.Width = 160;
             // 
             // label8
             // 
@@ -250,6 +221,35 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // nome
+            // 
+            nome.HeaderText = "Id";
+            nome.Name = "nome";
+            nome.Width = 160;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Nome";
+            Column3.Name = "Column3";
+            Column3.Width = 130;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Email";
+            Column1.Name = "Column1";
+            Column1.Width = 130;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Telefone";
+            Column2.Name = "Column2";
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Data de nascimento";
+            Column4.Name = "Column4";
+            Column4.Width = 160;
+            // 
             // FormCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -294,16 +294,16 @@
         private Label label6;
         private DataGridView dgvClientes;
         private Label label8;
-        private DataGridViewTextBoxColumn Nome;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column4;
         private Button btnCadastrar;
         private TextBox txtId;
         private DateTimePicker dateDataNascimento;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private Button button1;
         private Button button2;
+        private DataGridViewTextBoxColumn nome;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column4;
     }
 }
