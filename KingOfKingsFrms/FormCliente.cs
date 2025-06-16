@@ -58,7 +58,11 @@ namespace KingOfKingsFrms
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            txtNome.ReadOnly = false;
+            txtEmail.ReadOnly = false;
+            txtCpf.ReadOnly = false;
+            txtTelefone.ReadOnly = false;
+            dateDataNascimento.Enabled = true;
         }
 
         private void FormCliente_Load(object sender, EventArgs e)
