@@ -19,7 +19,7 @@ namespace KingOfKingsClass
 
 
 
-        public Estoque() //Métodos Construtor 
+        public Estoque() { } //Métodos Construtor 
 
     
 

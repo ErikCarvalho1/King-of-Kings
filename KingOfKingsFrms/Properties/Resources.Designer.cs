@@ -133,6 +133,36 @@ namespace KingOfKingsFrms.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EditarBnt {
+            get {
+                object obj = ResourceManager.GetObject("EditarBnt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditarBntPequeno {
+            get {
+                object obj = ResourceManager.GetObject("EditarBntPequeno", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditarGbtn {
+            get {
+                object obj = ResourceManager.GetObject("EditarGbtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap exibirSenha {
             get {
                 object obj = ResourceManager.GetObject("exibirSenha", resourceCulture);
@@ -206,6 +236,16 @@ namespace KingOfKingsFrms.Properties {
         internal static System.Drawing.Bitmap kingofkings {
             get {
                 object obj = ResourceManager.GetObject("kingofkings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Leao_alter {
+            get {
+                object obj = ResourceManager.GetObject("Leao alter", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

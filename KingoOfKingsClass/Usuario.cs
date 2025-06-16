@@ -93,7 +93,7 @@ namespace KingoOfKingsClass
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "sp_usuario_altera";
+            cmd.CommandText = "sp_alterar_usuario";
 
             cmd.Parameters.AddWithValue("spid", Id);
             cmd.Parameters.AddWithValue("spnome", Nome);
@@ -145,7 +145,7 @@ namespace KingoOfKingsClass
             var cmd = Banco.Abrir();
             cmd.CommandText = $"select * from usuarios order by nome";
             var dr = cmd.ExecuteReader();
-            if (dr.Read())
+            while  (dr.Read())
             {
                 usuarios.Add(new(
                                 dr.GetInt32(0),

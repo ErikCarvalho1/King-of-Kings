@@ -1,6 +1,7 @@
 ﻿using KingoOfKingsClass;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,8 +11,10 @@ namespace KingOfKingsClass
     class Caixa
     {
         public int Id { get; set; }
+        public string Numero { get; set;  }
         public DateTime DataAbertura { get; set; }
         public decimal SaldoInicial { get; set; }
+        public DateTime DataFechamneto { get; set; }
         public int Status { get; set; }
 
         public Caixa() { }
@@ -47,6 +50,7 @@ namespace KingOfKingsClass
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.CommandText = "sp_caixa_fechar";
             cmd.Parameters.AddWithValue("spid", Id);
+            cmd.Parameters.AddWithValue("spdata_fechamento", DataFechamneto);
             cmd.ExecuteNonQuery();
         }
 
@@ -95,6 +99,13 @@ namespace KingOfKingsClass
         }
         public void Inserir()
         {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_inserir_caixa";
+            cmd.Parameters.AddWithValue("spnumero", Numero);
+            Id = Convert.ToInt32(cmd.ExecuteNonQuery());
+            cmd.Connection.Close();
+
         }
     }
 }

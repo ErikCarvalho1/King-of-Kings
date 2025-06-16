@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="historico (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\historico (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="usuario senha" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\usuario senha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,8 +127,8 @@
   <data name="king of kings login (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\king of kings login (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EditarBnt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditarBnt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dog-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dog-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,6 +148,9 @@
   <data name="bntCadastrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bntCadastrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="linha dorada (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\linha dorada (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="linha embaixo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\linha embaixo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -166,14 +166,23 @@
   <data name="ocultarSenha" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ocultarSenha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditarBntPequeno" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditarBntPequeno.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="kingofkings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kingofkings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="linha dorada" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\linha dorada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="linha dorada (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\linha dorada (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="linha em pe dorada" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\linha em pe dorada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="king of kings login (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\king of kings login (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,11 +190,11 @@
   <data name="dog" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="linha em pe dorada" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\linha em pe dorada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="LeaoLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LeaoLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bntAcessar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bntAcessar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="exibirSenha" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exibirSenha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,8 +202,11 @@
   <data name="Ajuda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ajuda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bntAcessar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bntAcessar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="historico (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\historico (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Leao alter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Leao alter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="linha dorada (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\linha dorada (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,7 +214,7 @@
   <data name="kingLeaoLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kingLeaoLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EditarGbtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditarGbtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -104,7 +104,17 @@ namespace KingOfKingsFrms
 
         private void cadastroDeCupomToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormPainel (new FormCupom());
+            FormPainel(new FormCupom());
+        }
+
+        private void panel6_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cadastroDeClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPainel(new FormCliente());
         }
     }
 }
