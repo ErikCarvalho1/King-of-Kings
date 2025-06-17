@@ -16,5 +16,12 @@ namespace KingOfKingsFrms
         {
             InitializeComponent();
         }
+
+     
+
+        private void FormEstoque_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
