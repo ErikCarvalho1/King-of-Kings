@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             txtCodBarras = new TextBox();
             txtDescricao = new TextBox();
             nudValorUnit = new NumericUpDown();
@@ -50,6 +51,7 @@
             label7 = new Label();
             ofdObterImagem = new OpenFileDialog();
             button1 = new Button();
+            contextMenuStrip1 = new ContextMenuStrip(components);
             ((System.ComponentModel.ISupportInitialize)nudValorUnit).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudEstoqueMinimo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudClasseDesconto).BeginInit();
@@ -242,6 +244,11 @@
             button1.TabIndex = 10;
             button1.Text = "&Buscar";
             // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
+            // 
             // FrmProduto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -302,8 +309,10 @@
         private Button btnSalvar;
         private OpenFileDialog ofdObterImagem;
         private Button button1;
-        
+
 
         #endregion
+
+        private ContextMenuStrip contextMenuStrip1;
     }
 }
