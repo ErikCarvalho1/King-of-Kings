@@ -42,6 +42,10 @@ namespace KingOfKingsFrms
                         MessageBox.Show("Cliente cadastrado com sucesso!");
                         //btnGravar.Enabled = false;
                     }
+                    else
+                    {
+                        MessageBox.Show("Erro ao cadastrar cliente!");
+                    }
 
                 }
 

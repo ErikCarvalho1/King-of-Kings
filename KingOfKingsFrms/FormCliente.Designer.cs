@@ -107,7 +107,6 @@
             label3.Size = new Size(61, 16);
             label3.TabIndex = 8;
             label3.Text = "Telefone";
-           
             // 
             // label4
             // 
@@ -127,7 +126,7 @@
             label5.BackColor = SystemColors.ActiveCaptionText;
             label5.Font = new Font("Microsoft Sans Serif", 9.75F);
             label5.ForeColor = Color.FromArgb(219, 179, 91);
-            label5.Location = new Point(442, 115);
+            label5.Location = new Point(442, 165);
             label5.Name = "label5";
             label5.Size = new Size(127, 16);
             label5.TabIndex = 10;
@@ -225,7 +224,7 @@
             // 
             // dateDataNascimento
             // 
-            dateDataNascimento.Location = new Point(442, 134);
+            dateDataNascimento.Location = new Point(442, 184);
             dateDataNascimento.Name = "dateDataNascimento";
             dateDataNascimento.Size = new Size(173, 23);
             dateDataNascimento.TabIndex = 48;
