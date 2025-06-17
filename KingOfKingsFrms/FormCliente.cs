@@ -1,4 +1,5 @@
-﻿using KingOfKingsClass;
+﻿using ComercialTDSClass;
+using KingOfKingsClass;
 using KingoOfKingsClass;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace KingOfKingsFrms
             if (txtId.Text == string.Empty)
             {
                 // INSERIR
-                if (txtNome.Text != string.Empty && txtCpf.Text != string.Empty && txtTelefone.Text != string.Empty && txtEmail.Text != string.Empty) ;
+                if (txtNome.Text != string.Empty && txtCpf.Text != string.Empty && txtTelefone.Text != string.Empty && txtEmail.Text != string.Empty)
                 {
 
 
@@ -42,7 +43,7 @@ namespace KingOfKingsFrms
                         MessageBox.Show("Cliente cadastrado com sucesso!");
                         //btnGravar.Enabled = false;
                     }
-                  
+
                 }
 
             }
@@ -123,9 +124,86 @@ namespace KingOfKingsFrms
 
             }
         }
+        public void limpaControles()
+        {
+            txtId.Clear();
+            txtNome.Clear();
+            txtEmail.Clear();
+            txtCpf.Clear();
+            txtTelefone.Clear();
+            dateDataNascimento.Value = DateTime.Now; // Reseta para a data atual
+
+
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btninserir_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text == string.Empty)
+            {
+                // INSERIR
+                if (txtCep.Text != string.Empty && txtLogradouro.Text != string.Empty && txtNumero.Text != string.Empty && txtComplemento.Text != string.Empty && txtCidade.Text != string.Empty)
+                {
+
+
+                    Endereco endereco = new(txtId.Text, txtCep.Text, txtLogradouro.Text, txtNumero.Text, txtComplemento.Text, txtCidade.Text, cmbTipoendereco.Text, cmbUF.Text);
+                    endereco.Inserir();
+
+                    if (endereco.Id > 0)
+                    {
+                        MessageBox.Show("Cliente cadastrado com sucesso!");
+                        //btnGravar.Enabled = false;
+                    }
+
+                }
+
+            }
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        
+   
+            
+        
+
+        private void maskCep_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        
+            maskCep.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if (txtCep.Text.Length == 8)
+            {
+                WebCEP webCEP = new(txtCep.Text);
+                txtLogradouro.Text = webCEP.TipoLagradouro + " " + webCEP.Lagradouro;
+                txtBairro.Text = webCEP.Bairro;
+                txtCidade.Text = webCEP.Cidade;
+                cmbUF.Text = webCEP.UF;
+                txtNumero.Focus();
+            }
+        }
     }
-    
 }
+
+    
+
 
      
         

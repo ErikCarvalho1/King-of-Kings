@@ -34,6 +34,7 @@ namespace KingOfKingsClass
             Telefone = telefone;
             Email = email;
             DataNascimento = dataNascimento;
+            Enderecos = enderecos;
         }
         public Cliente(int id, string nome, string cpf, string telefone, string email, DateTime dataNascimento, DateTime dataCadastro, bool ativo, List<Endereco>? enderecos)
         {
@@ -77,6 +78,7 @@ namespace KingOfKingsClass
             cmd.Parameters.AddWithValue("spcpf", Cpf);
             cmd.Parameters.AddWithValue("sptelefone", Telefone);
             cmd.Parameters.AddWithValue("spemail", Email);
+            cmd.Parameters.AddWithValue("Enderecos", Enderecos);
             cmd.Parameters.AddWithValue("spdatanasc", DataNascimento);
             Id = Convert.ToInt32(cmd.ExecuteScalar());
             cmd.Connection.Close();
@@ -89,6 +91,7 @@ namespace KingOfKingsClass
             cmd.Parameters.AddWithValue("spid", Id);
             cmd.Parameters.AddWithValue("spnome", Nome);
             cmd.Parameters.AddWithValue("sptelefone", Telefone);
+            cmd.Parameters.AddWithValue("ENderecos", Enderecos);
             cmd.Parameters.AddWithValue("spdatanasc", DataNascimento);
             return cmd.ExecuteNonQuery() > 0 ? true : false;
         }
