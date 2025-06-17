@@ -28,26 +28,8 @@ namespace KingOfKingsFrms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txtId.Text == string.Empty)
-            {
-                // INSERIR
-                if (txtNome.Text != string.Empty && txtCpf.Text != string.Empty && txtTelefone.Text != string.Empty && txtEmail.Text != string.Empty)
-                {
-
-
-                    Cliente cliente = new(txtNome.Text, txtCpf.Text, txtTelefone.Text, txtEmail.Text, DateTime.Parse(dateDataNascimento.Text));
-                    cliente.Inserir();
-
-                    if (cliente.Id > 0)
-                    {
-                        MessageBox.Show("Cliente cadastrado com sucesso!");
-                        //btnGravar.Enabled = false;
-                    }
-
-                }
-
-            }
         }
+   
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -143,32 +125,48 @@ namespace KingOfKingsFrms
         }
 
         private void btninserir_Click(object sender, EventArgs e)
+        { 
+        }
+
+        private void bntGravar_Click(object sender, EventArgs e)
+        {
+        }
+
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
         {
             if (txtId.Text == string.Empty)
             {
                 // INSERIR
-                if (txtCep.Text != string.Empty && txtLogradouro.Text != string.Empty && txtNumero.Text != string.Empty && txtComplemento.Text != string.Empty && txtCidade.Text != string.Empty)
+                if (txtNome.Text != string.Empty && txtCpf.Text != string.Empty && txtTelefone.Text != string.Empty && txtEmail.Text != string.Empty)
                 {
 
 
-                    Endereco endereco = new(txtId.Text, txtCep.Text, txtLogradouro.Text, txtNumero.Text, txtComplemento.Text, txtCidade.Text, cmbTipoendereco.Text, cmbUF.Text);
-                    endereco.Inserir();
+                    Cliente cliente = new(txtNome.Text, txtCpf.Text, txtTelefone.Text, txtEmail.Text, DateTime.Parse(dateDataNascimento.Text));
+                    cliente.Inserir();
 
-                    if (endereco.Id > 0)
+                    if (cliente.Id > 0)
                     {
-                        MessageBox.Show("Cliente cadastrado com sucesso!");
-                        //btnGravar.Enabled = false;
+                        if (maskCep.Text != string.Empty && txtLogradouro.Text != string.Empty &&
+                        txtNumero.Text != string.Empty && txtComplemento.Text != string.Empty && txtBairro.Text != string.Empty && txtCidade.Text != string.Empty && cmbUF.Text
+                        != string.Empty && cmbTipoendereco.Text != string.Empty)
+                        {
+                            Endereco endereco = new(maskCep.Text, txtLogradouro.Text, txtNumero.Text, txtComplemento.Text, txtBairro.Text, txtCidade.Text, cmbUF.Text, cmbTipoendereco.Text,cliente.Id);
+                            endereco.ClienteId = cliente.Id;
+                           
+                            if (endereco.ClienteId > 0)
+                            {
+                                MessageBox.Show($"Cliente cadastrado com sucesso");
+                                //btnGravar.Enabled = false;
+                            }
+                        }
                     }
 
                 }
 
             }
         }
-
-        private void btnCadastrar_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
@@ -189,9 +187,9 @@ namespace KingOfKingsFrms
 
         
             maskCep.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            if (txtCep.Text.Length == 8)
+            if (maskCep.Text.Length == 8)
             {
-                WebCEP webCEP = new(txtCep.Text);
+                WebCEP webCEP = new(maskCep.Text);
                 txtLogradouro.Text = webCEP.TipoLagradouro + " " + webCEP.Lagradouro;
                 txtBairro.Text = webCEP.Bairro;
                 txtCidade.Text = webCEP.Cidade;
