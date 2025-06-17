@@ -80,7 +80,8 @@ namespace KingOfKingsClass
             cmd.Connection.Close();
         }
         public bool Atualizar()
-        {
+        { 
+
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "sp_endereco_update";

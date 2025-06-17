@@ -55,8 +55,6 @@
             txtNome = new TextBox();
             tabPage2 = new TabPage();
             maskCep = new MaskedTextBox();
-            button4 = new Button();
-            btninserir = new Button();
             cmbUF = new ComboBox();
             label14 = new Label();
             label13 = new Label();
@@ -72,9 +70,9 @@
             txtBairro = new TextBox();
             txtLogradouro = new TextBox();
             txtNumero = new TextBox();
-            txtCep = new TextBox();
             mySqlCommand2 = new MySql.Data.MySqlClient.MySqlCommand();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            ClienteId = new TextBox();
             Daodo.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
@@ -336,9 +334,8 @@
             // tabPage2
             // 
             tabPage2.BackgroundImage = Properties.Resources.leaoFundo;
+            tabPage2.Controls.Add(ClienteId);
             tabPage2.Controls.Add(maskCep);
-            tabPage2.Controls.Add(button4);
-            tabPage2.Controls.Add(btninserir);
             tabPage2.Controls.Add(cmbUF);
             tabPage2.Controls.Add(label14);
             tabPage2.Controls.Add(label13);
@@ -354,7 +351,6 @@
             tabPage2.Controls.Add(txtBairro);
             tabPage2.Controls.Add(txtLogradouro);
             tabPage2.Controls.Add(txtNumero);
-            tabPage2.Controls.Add(txtCep);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
@@ -366,31 +362,12 @@
             // 
             // maskCep
             // 
-            maskCep.Location = new Point(155, 73);
+            maskCep.Location = new Point(156, 117);
             maskCep.Mask = "00000-000";
             maskCep.Name = "maskCep";
-            maskCep.Size = new Size(91, 23);
+            maskCep.Size = new Size(89, 23);
             maskCep.TabIndex = 64;
             maskCep.MaskInputRejected += maskCep_MaskInputRejected;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(544, 205);
-            button4.Name = "button4";
-            button4.Size = new Size(76, 20);
-            button4.TabIndex = 63;
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // btninserir
-            // 
-            btninserir.BackgroundImage = Properties.Resources.SalvarGbtn;
-            btninserir.FlatStyle = FlatStyle.Flat;
-            btninserir.Location = new Point(435, 197);
-            btninserir.Name = "btninserir";
-            btninserir.Size = new Size(103, 43);
-            btninserir.TabIndex = 62;
-            btninserir.UseVisualStyleBackColor = true;
-            btninserir.Click += btninserir_Click;
             // 
             // cmbUF
             // 
@@ -527,19 +504,19 @@
             txtNumero.Size = new Size(63, 23);
             txtNumero.TabIndex = 1;
             // 
-            // txtCep
-            // 
-            txtCep.Location = new Point(156, 117);
-            txtCep.Name = "txtCep";
-            txtCep.Size = new Size(261, 23);
-            txtCep.TabIndex = 0;
-            // 
             // mySqlCommand2
             // 
             mySqlCommand2.CacheAge = 0;
             mySqlCommand2.Connection = null;
             mySqlCommand2.EnableCaching = false;
             mySqlCommand2.Transaction = null;
+            // 
+            // ClienteId
+            // 
+            ClienteId.Location = new Point(34, 53);
+            ClienteId.Name = "ClienteId";
+            ClienteId.Size = new Size(112, 23);
+            ClienteId.TabIndex = 65;
             // 
             // FormCliente
             // 
@@ -586,7 +563,6 @@
         private TextBox txtBairro;
         private TextBox txtLogradouro;
         private TextBox txtNumero;
-        private TextBox txtCep;
         private Label label1;
         private Label label7;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand2;
@@ -599,8 +575,6 @@
         private TextBox txtCidade;
         private Label label14;
         private ComboBox cmbUF;
-        private Button btninserir;
-        private Button button4;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private DataGridViewTextBoxColumn nome;
         private DataGridViewTextBoxColumn Column3;
@@ -609,5 +583,6 @@
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column4;
         private MaskedTextBox maskCep;
+        private TextBox ClienteId;
     }
 }
