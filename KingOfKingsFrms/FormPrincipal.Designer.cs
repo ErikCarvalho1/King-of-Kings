@@ -130,6 +130,7 @@
             button2 = new Button();
             button1 = new Button();
             bntHistorico = new Button();
+            cadastroDeCategoriaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -177,7 +178,7 @@
             // 
             // eddeToolStripMenuItem
             // 
-            eddeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroDeProdutosToolStripMenuItem1, cadastroDeClienteToolStripMenuItem, cadastroDeFornecedoresToolStripMenuItem, cadastroDeTipoDosProdutosToolStripMenuItem, cadastroFiscaisToolStripMenuItem1, cadastroDeUsuariosEVendedoresToolStripMenuItem, cadastroDeVendedoresToolStripMenuItem, cadastroDeImformaçõesDaEmpresaToolStripMenuItem, cadastroDeCupomToolStripMenuItem });
+            eddeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroDeProdutosToolStripMenuItem1, cadastroDeClienteToolStripMenuItem, cadastroDeFornecedoresToolStripMenuItem, cadastroDeTipoDosProdutosToolStripMenuItem, cadastroFiscaisToolStripMenuItem1, cadastroDeUsuariosEVendedoresToolStripMenuItem, cadastroDeVendedoresToolStripMenuItem, cadastroDeImformaçõesDaEmpresaToolStripMenuItem, cadastroDeCupomToolStripMenuItem, cadastroDeCategoriaToolStripMenuItem });
             eddeToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
             eddeToolStripMenuItem.Name = "eddeToolStripMenuItem";
             eddeToolStripMenuItem.Size = new Size(66, 20);
@@ -662,6 +663,7 @@
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             sairToolStripMenuItem.Size = new Size(38, 20);
             sairToolStripMenuItem.Text = "Sair";
+            sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
             // cadastroDeProdutosToolStripMenuItem
             // 
@@ -967,6 +969,14 @@
             bntHistorico.TabIndex = 34;
             bntHistorico.UseVisualStyleBackColor = true;
             // 
+            // cadastroDeCategoriaToolStripMenuItem
+            // 
+            cadastroDeCategoriaToolStripMenuItem.BackColor = Color.Black;
+            cadastroDeCategoriaToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
+            cadastroDeCategoriaToolStripMenuItem.Name = "cadastroDeCategoriaToolStripMenuItem";
+            cadastroDeCategoriaToolStripMenuItem.Size = new Size(270, 22);
+            cadastroDeCategoriaToolStripMenuItem.Text = "Cadastro de Categoria";
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1114,5 +1124,6 @@
         private ToolStripMenuItem copiaERestauraçãoDeBancoDeDadosToolStripMenuItem;
         private ToolStripMenuItem manutençãoDoSistemaToolStripMenuItem;
         private ToolStripMenuItem cadastroDeCupomToolStripMenuItem;
+        private ToolStripMenuItem cadastroDeCategoriaToolStripMenuItem;
     }
 }

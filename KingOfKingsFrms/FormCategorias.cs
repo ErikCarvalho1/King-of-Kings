@@ -12,6 +12,7 @@ namespace KingOfKingsFrms
 {
     public partial class FormCategorias : Form
     {
+
         public FormCategorias()
         {
             InitializeComponent();
@@ -25,6 +26,17 @@ namespace KingOfKingsFrms
         private void label3_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

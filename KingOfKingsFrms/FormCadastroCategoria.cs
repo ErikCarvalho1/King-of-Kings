@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace KingOfKingsFrms
 {
-    public partial class FormItemPedido : Form
+    public partial class FormCadastroCategoria: Form
     {
-        public FormItemPedido()
+        public FormCadastroCategoria()
         {
             InitializeComponent();
         }
