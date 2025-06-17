@@ -42,7 +42,7 @@ namespace KingOfKingsFrms
                         MessageBox.Show("Cliente cadastrado com sucesso!");
                         //btnGravar.Enabled = false;
                     }
-                  
+
                 }
 
             }
@@ -123,9 +123,22 @@ namespace KingOfKingsFrms
 
             }
         }
-    }
-    
+            public void limpaControles()
+            {
+            txtId.Clear();
+            txtNome.Clear();
+            txtEmail.Clear();
+            txtCpf.Clear();
+            txtTelefone.Clear();
+            dateDataNascimento.Value = DateTime.Now; // Reseta para a data atual
+
+
+
+        }
+    } 
 }
+    
+
 
      
         
