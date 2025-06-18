@@ -118,5 +118,10 @@ namespace KingOfKingsFrms
         {
             Close();
         }
+
+        private void cadastroDeCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPainel(new FormCadastroCategoria());
+        }
     }
 }

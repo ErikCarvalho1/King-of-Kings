@@ -151,14 +151,14 @@ namespace KingOfKingsFrms
                         txtNumero.Text != string.Empty && txtComplemento.Text != string.Empty && txtBairro.Text != string.Empty && txtCidade.Text != string.Empty && cmbUF.Text
                         != string.Empty && cmbTipoendereco.Text != string.Empty)
                         {
-                            Endereco endereco = new(maskCep.Text, txtLogradouro.Text, txtNumero.Text, txtComplemento.Text, txtBairro.Text, txtCidade.Text, cmbUF.Text, cmbTipoendereco.Text,cliente.Id);
-                            endereco.ClienteId = cliente.Id;
+                          //  Endereco endereco = new(maskCep.Text, txtLogradouro.Text, txtNumero.Text, txtComplemento.Text, txtBairro.Text, txtCidade.Text, cmbUF.Text, cmbTipoendereco.Text,cliente.Id);
+                           // endereco.ClienteId = cliente.Id;
                            
-                            if (endereco.ClienteId > 0)
-                            {
+                          //  if (endereco.ClienteId > 0)
+                           // {
                                 MessageBox.Show($"Cliente cadastrado com sucesso");
                                 //btnGravar.Enabled = false;
-                            }
+                          //  }
                         }
                     }
 

@@ -141,11 +141,11 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Black;
-            label1.Font = new Font("Stencil", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(219, 179, 91);
             label1.Location = new Point(17, 10);
             label1.Name = "label1";
-            label1.Size = new Size(208, 34);
+            label1.Size = new Size(192, 33);
             label1.TabIndex = 2;
             label1.Text = "Novo Pedido";
             // 
@@ -153,11 +153,11 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Black;
-            label2.Font = new Font("Stencil", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(219, 179, 91);
             label2.Location = new Point(708, 6);
             label2.Name = "label2";
-            label2.Size = new Size(116, 29);
+            label2.Size = new Size(106, 29);
             label2.TabIndex = 6;
             label2.Text = "Número";
             // 
@@ -236,7 +236,7 @@
             label11.ForeColor = Color.FromArgb(219, 179, 91);
             label11.Location = new Point(710, 257);
             label11.Name = "label11";
-            label11.Size = new Size(53, 15);
+            label11.Size = new Size(52, 15);
             label11.TabIndex = 9;
             label11.Text = "SubTotal";
             // 
@@ -269,7 +269,7 @@
             label14.ForeColor = Color.FromArgb(219, 179, 91);
             label14.Location = new Point(712, 431);
             label14.Name = "label14";
-            label14.Size = new Size(36, 15);
+            label14.Size = new Size(35, 15);
             label14.TabIndex = 9;
             label14.Text = "Total ";
             // 

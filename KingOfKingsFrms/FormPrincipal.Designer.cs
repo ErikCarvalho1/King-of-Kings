@@ -32,7 +32,6 @@
             panel1 = new Panel();
             panel4 = new Panel();
             panel2 = new Panel();
-            panel3 = new Panel();
             menuStrip1 = new MenuStrip();
             eddeToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeProdutosToolStripMenuItem1 = new ToolStripMenuItem();
@@ -50,6 +49,7 @@
             cadastroDeVendedoresToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeImformaçõesDaEmpresaToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeCupomToolStripMenuItem = new ToolStripMenuItem();
+            cadastroDeCategoriaToolStripMenuItem = new ToolStripMenuItem();
             lançamentosToolStripMenuItem = new ToolStripMenuItem();
             lançamentoDePedidosDeVendaToolStripMenuItem = new ToolStripMenuItem();
             lançamentoDeContasAPagarEAReceberToolStripMenuItem = new ToolStripMenuItem();
@@ -130,8 +130,9 @@
             button2 = new Button();
             button1 = new Button();
             bntHistorico = new Button();
-            cadastroDeCategoriaToolStripMenuItem = new ToolStripMenuItem();
+            panel3 = new Panel();
             menuStrip1.SuspendLayout();
+            pnlPrincipal.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -158,21 +159,13 @@
             panel2.Size = new Size(74, 693);
             panel2.TabIndex = 3;
             // 
-            // panel3
-            // 
-            panel3.BackgroundImage = Properties.Resources.linha_em_pe_dorada;
-            panel3.Location = new Point(1308, 460);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(71, 355);
-            panel3.TabIndex = 4;
-            // 
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.Black;
             menuStrip1.Items.AddRange(new ToolStripItem[] { eddeToolStripMenuItem, lançamentosToolStripMenuItem, relatóriosToolStripMenuItem, graficoToolStripMenuItem, utilitárioToolStripMenuItem, sairToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1440, 24);
+            menuStrip1.Size = new Size(1350, 24);
             menuStrip1.TabIndex = 8;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -230,14 +223,14 @@
             // cadastroDeTransportadoraToolStripMenuItem1
             // 
             cadastroDeTransportadoraToolStripMenuItem1.Name = "cadastroDeTransportadoraToolStripMenuItem1";
-            cadastroDeTransportadoraToolStripMenuItem1.Size = new Size(220, 22);
+            cadastroDeTransportadoraToolStripMenuItem1.Size = new Size(219, 22);
             cadastroDeTransportadoraToolStripMenuItem1.Text = "Cadastro de Transportadora";
             // 
             // cadastroDeClassificaçãoFiscalToolStripMenuItem
             // 
             cadastroDeClassificaçãoFiscalToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { entradaToolStripMenuItem, saidaToolStripMenuItem, notaTransporteToolStripMenuItem });
             cadastroDeClassificaçãoFiscalToolStripMenuItem.Name = "cadastroDeClassificaçãoFiscalToolStripMenuItem";
-            cadastroDeClassificaçãoFiscalToolStripMenuItem.Size = new Size(220, 22);
+            cadastroDeClassificaçãoFiscalToolStripMenuItem.Size = new Size(219, 22);
             cadastroDeClassificaçãoFiscalToolStripMenuItem.Text = "Cadastro de nota fiscal ";
             // 
             // entradaToolStripMenuItem
@@ -261,7 +254,7 @@
             // cadastroDeAlíquotasToolStripMenuItem
             // 
             cadastroDeAlíquotasToolStripMenuItem.Name = "cadastroDeAlíquotasToolStripMenuItem";
-            cadastroDeAlíquotasToolStripMenuItem.Size = new Size(220, 22);
+            cadastroDeAlíquotasToolStripMenuItem.Size = new Size(219, 22);
             cadastroDeAlíquotasToolStripMenuItem.Text = "Cadastro de alíquotas";
             // 
             // cadastroDeUsuariosEVendedoresToolStripMenuItem
@@ -297,6 +290,15 @@
             cadastroDeCupomToolStripMenuItem.Size = new Size(270, 22);
             cadastroDeCupomToolStripMenuItem.Text = "Cadastro de Cupom";
             cadastroDeCupomToolStripMenuItem.Click += cadastroDeCupomToolStripMenuItem_Click;
+            // 
+            // cadastroDeCategoriaToolStripMenuItem
+            // 
+            cadastroDeCategoriaToolStripMenuItem.BackColor = Color.Black;
+            cadastroDeCategoriaToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
+            cadastroDeCategoriaToolStripMenuItem.Name = "cadastroDeCategoriaToolStripMenuItem";
+            cadastroDeCategoriaToolStripMenuItem.Size = new Size(270, 22);
+            cadastroDeCategoriaToolStripMenuItem.Text = "Cadastro de Categoria";
+            cadastroDeCategoriaToolStripMenuItem.Click += cadastroDeCategoriaToolStripMenuItem_Click;
             // 
             // lançamentosToolStripMenuItem
             // 
@@ -752,6 +754,7 @@
             // pnlPrincipal
             // 
             pnlPrincipal.BackgroundImage = Properties.Resources.Leao_alter;
+            pnlPrincipal.Controls.Add(panel3);
             pnlPrincipal.Location = new Point(168, 147);
             pnlPrincipal.Name = "pnlPrincipal";
             pnlPrincipal.Size = new Size(1117, 528);
@@ -813,7 +816,7 @@
             label10.ForeColor = Color.FromArgb(219, 179, 91);
             label10.Location = new Point(639, 74);
             label10.Name = "label10";
-            label10.Size = new Size(53, 15);
+            label10.Size = new Size(54, 15);
             label10.TabIndex = 50;
             label10.Text = "Cone&xão";
             // 
@@ -853,7 +856,7 @@
             label5.ForeColor = Color.FromArgb(219, 179, 91);
             label5.Location = new Point(267, 71);
             label5.Name = "label5";
-            label5.Size = new Size(69, 15);
+            label5.Size = new Size(68, 15);
             label5.TabIndex = 45;
             label5.Text = "&Em Trânsito";
             // 
@@ -969,20 +972,20 @@
             bntHistorico.TabIndex = 34;
             bntHistorico.UseVisualStyleBackColor = true;
             // 
-            // cadastroDeCategoriaToolStripMenuItem
+            // panel3
             // 
-            cadastroDeCategoriaToolStripMenuItem.BackColor = Color.Black;
-            cadastroDeCategoriaToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            cadastroDeCategoriaToolStripMenuItem.Name = "cadastroDeCategoriaToolStripMenuItem";
-            cadastroDeCategoriaToolStripMenuItem.Size = new Size(270, 22);
-            cadastroDeCategoriaToolStripMenuItem.Text = "Cadastro de Categoria";
+            panel3.BackgroundImage = Properties.Resources.linha_em_pe_dorada;
+            panel3.Location = new Point(1099, 202);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(83, 355);
+            panel3.TabIndex = 4;
             // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(1440, 880);
+            ClientSize = new Size(1350, 729);
             Controls.Add(panel4);
             Controls.Add(label2);
             Controls.Add(button8);
@@ -1006,7 +1009,6 @@
             Controls.Add(bntHistorico);
             Controls.Add(panel6);
             Controls.Add(pnlPrincipal);
-            Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(menuStrip1);
@@ -1018,6 +1020,7 @@
             Load += FormPrincipal_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            pnlPrincipal.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1025,7 +1028,6 @@
         #endregion
         private Panel panel1;
         private Panel panel2;
-        private Panel panel3;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem eddeToolStripMenuItem;
         private Panel pnlPrincipal;
@@ -1125,5 +1127,6 @@
         private ToolStripMenuItem manutençãoDoSistemaToolStripMenuItem;
         private ToolStripMenuItem cadastroDeCupomToolStripMenuItem;
         private ToolStripMenuItem cadastroDeCategoriaToolStripMenuItem;
+        private Panel panel3;
     }
 }
