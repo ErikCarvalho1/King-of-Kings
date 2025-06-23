@@ -48,7 +48,11 @@ namespace KingOfKingsFrms
             //        MessageBox.Show("Nível atualizado com sucesso!");
             //        //btnGravar.Enabled = false;
 
+<<<<<<< HEAD
+            //    }
+=======
             //   }
+>>>>>>> cf2906bdaff29fc865cf35f731d6ab1c74032502
             //}
         }
     }
