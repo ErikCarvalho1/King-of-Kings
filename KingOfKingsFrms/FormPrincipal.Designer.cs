@@ -75,6 +75,7 @@
             balançoFinanceiroToolStripMenuItem = new ToolStripMenuItem();
             históricoAcessoAoSistemaToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem2 = new ToolStripMenuItem();
+            listarProdutosToolStripMenuItem = new ToolStripMenuItem();
             graficoToolStripMenuItem = new ToolStripMenuItem();
             evoluçãoNosUltimos12MesesToolStripMenuItem = new ToolStripMenuItem();
             evoluçãoDiáriavendasRealizadasToolStripMenuItem = new ToolStripMenuItem();
@@ -109,6 +110,7 @@
             cadastroDeInformaçõesDaEmpresaToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeClientesToolStripMenuItem = new ToolStripMenuItem();
             pnlPrincipal = new Panel();
+            panel3 = new Panel();
             panel6 = new Panel();
             button8 = new Button();
             button7 = new Button();
@@ -130,7 +132,6 @@
             button2 = new Button();
             button1 = new Button();
             bntHistorico = new Button();
-            panel3 = new Panel();
             menuStrip1.SuspendLayout();
             pnlPrincipal.SuspendLayout();
             SuspendLayout();
@@ -185,6 +186,7 @@
             cadastroDeProdutosToolStripMenuItem1.Name = "cadastroDeProdutosToolStripMenuItem1";
             cadastroDeProdutosToolStripMenuItem1.Size = new Size(270, 22);
             cadastroDeProdutosToolStripMenuItem1.Text = "Cadastro de &Produtos ";
+            cadastroDeProdutosToolStripMenuItem1.Click += cadastroDeProdutosToolStripMenuItem1_Click;
             // 
             // cadastroDeClienteToolStripMenuItem
             // 
@@ -223,14 +225,14 @@
             // cadastroDeTransportadoraToolStripMenuItem1
             // 
             cadastroDeTransportadoraToolStripMenuItem1.Name = "cadastroDeTransportadoraToolStripMenuItem1";
-            cadastroDeTransportadoraToolStripMenuItem1.Size = new Size(219, 22);
+            cadastroDeTransportadoraToolStripMenuItem1.Size = new Size(220, 22);
             cadastroDeTransportadoraToolStripMenuItem1.Text = "Cadastro de Transportadora";
             // 
             // cadastroDeClassificaçãoFiscalToolStripMenuItem
             // 
             cadastroDeClassificaçãoFiscalToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { entradaToolStripMenuItem, saidaToolStripMenuItem, notaTransporteToolStripMenuItem });
             cadastroDeClassificaçãoFiscalToolStripMenuItem.Name = "cadastroDeClassificaçãoFiscalToolStripMenuItem";
-            cadastroDeClassificaçãoFiscalToolStripMenuItem.Size = new Size(219, 22);
+            cadastroDeClassificaçãoFiscalToolStripMenuItem.Size = new Size(220, 22);
             cadastroDeClassificaçãoFiscalToolStripMenuItem.Text = "Cadastro de nota fiscal ";
             // 
             // entradaToolStripMenuItem
@@ -254,7 +256,7 @@
             // cadastroDeAlíquotasToolStripMenuItem
             // 
             cadastroDeAlíquotasToolStripMenuItem.Name = "cadastroDeAlíquotasToolStripMenuItem";
-            cadastroDeAlíquotasToolStripMenuItem.Size = new Size(219, 22);
+            cadastroDeAlíquotasToolStripMenuItem.Size = new Size(220, 22);
             cadastroDeAlíquotasToolStripMenuItem.Text = "Cadastro de alíquotas";
             // 
             // cadastroDeUsuariosEVendedoresToolStripMenuItem
@@ -404,7 +406,7 @@
             // 
             // relatóriosToolStripMenuItem
             // 
-            relatóriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { historicoDeCompraDoClienteToolStripMenuItem, relatórioGERALDeMovimentaçãoEmVendasToolStripMenuItem, cálculoDeComissãoDoVendedorProdutosVendidosToolStripMenuItem, produtoEmConsignaçãoEnvioParaFornecedorToolStripMenuItem, depositoToolStripMenuItem, pagamentosPendentesdaEmpresaToolStripMenuItem, recebimentosPendentesDebitosClientesToolStripMenuItem, balançoFinanceiroToolStripMenuItem, históricoAcessoAoSistemaToolStripMenuItem, toolStripMenuItem2 });
+            relatóriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { historicoDeCompraDoClienteToolStripMenuItem, relatórioGERALDeMovimentaçãoEmVendasToolStripMenuItem, cálculoDeComissãoDoVendedorProdutosVendidosToolStripMenuItem, produtoEmConsignaçãoEnvioParaFornecedorToolStripMenuItem, depositoToolStripMenuItem, pagamentosPendentesdaEmpresaToolStripMenuItem, recebimentosPendentesDebitosClientesToolStripMenuItem, balançoFinanceiroToolStripMenuItem, históricoAcessoAoSistemaToolStripMenuItem, toolStripMenuItem2, listarProdutosToolStripMenuItem });
             relatóriosToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
             relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
             relatóriosToolStripMenuItem.Size = new Size(71, 20);
@@ -490,6 +492,15 @@
             toolStripMenuItem2.Size = new Size(358, 22);
             toolStripMenuItem2.Text = " Informações Gerais";
             toolStripMenuItem2.Click += toolStripMenuItem2_Click;
+            // 
+            // listarProdutosToolStripMenuItem
+            // 
+            listarProdutosToolStripMenuItem.BackColor = SystemColors.ActiveCaptionText;
+            listarProdutosToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
+            listarProdutosToolStripMenuItem.Name = "listarProdutosToolStripMenuItem";
+            listarProdutosToolStripMenuItem.Size = new Size(358, 22);
+            listarProdutosToolStripMenuItem.Text = "Listar produtos";
+            listarProdutosToolStripMenuItem.Click += listarProdutosToolStripMenuItem_Click;
             // 
             // graficoToolStripMenuItem
             // 
@@ -761,6 +772,14 @@
             pnlPrincipal.TabIndex = 10;
             pnlPrincipal.Paint += panel6_Paint;
             // 
+            // panel3
+            // 
+            panel3.BackgroundImage = Properties.Resources.linha_em_pe_dorada;
+            panel3.Location = new Point(1099, 202);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(83, 355);
+            panel3.TabIndex = 4;
+            // 
             // panel6
             // 
             panel6.BackgroundImage = Properties.Resources.linha_dorada__2_;
@@ -816,7 +835,7 @@
             label10.ForeColor = Color.FromArgb(219, 179, 91);
             label10.Location = new Point(639, 74);
             label10.Name = "label10";
-            label10.Size = new Size(54, 15);
+            label10.Size = new Size(53, 15);
             label10.TabIndex = 50;
             label10.Text = "Cone&xão";
             // 
@@ -856,7 +875,7 @@
             label5.ForeColor = Color.FromArgb(219, 179, 91);
             label5.Location = new Point(267, 71);
             label5.Name = "label5";
-            label5.Size = new Size(68, 15);
+            label5.Size = new Size(69, 15);
             label5.TabIndex = 45;
             label5.Text = "&Em Trânsito";
             // 
@@ -971,14 +990,6 @@
             bntHistorico.Size = new Size(62, 54);
             bntHistorico.TabIndex = 34;
             bntHistorico.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            panel3.BackgroundImage = Properties.Resources.linha_em_pe_dorada;
-            panel3.Location = new Point(1099, 202);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(83, 355);
-            panel3.TabIndex = 4;
             // 
             // FormPrincipal
             // 
@@ -1128,5 +1139,6 @@
         private ToolStripMenuItem cadastroDeCupomToolStripMenuItem;
         private ToolStripMenuItem cadastroDeCategoriaToolStripMenuItem;
         private Panel panel3;
+        private ToolStripMenuItem listarProdutosToolStripMenuItem;
     }
 }

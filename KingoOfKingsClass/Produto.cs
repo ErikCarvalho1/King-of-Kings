@@ -160,7 +160,7 @@ namespace KingOfKingsClass
                         Categoria.ObterPorId(dr.GetInt32(5)),
                         dr.GetDouble(6),
                         dr.GetDouble(7),
-                        (byte[])dr.GetValue(8),
+                        dr.IsDBNull(8) ? Array.Empty<byte>() : (byte[])dr.GetValue(8),
                         dr.GetDateTime(9),
                         dr.GetBoolean(10)
                     )

@@ -123,5 +123,15 @@ namespace KingOfKingsFrms
         {
             FormPainel(new FormCadastroCategoria());
         }
+
+        private void listarProdutosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPainel(new FormListarProduto());
+        }
+
+        private void cadastroDeProdutosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormPainel(new FrmProduto());
+        }
     }
 }

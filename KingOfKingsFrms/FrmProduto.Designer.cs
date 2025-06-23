@@ -127,6 +127,7 @@
             // 
             // picImagem
             // 
+            picImagem.BackgroundImage = Properties.Resources.bntVoltar;
             picImagem.BorderStyle = BorderStyle.FixedSingle;
             picImagem.Location = new Point(455, 12);
             picImagem.Name = "picImagem";
