@@ -28,6 +28,28 @@ namespace KingOfKingsFrms
 
         private void button1_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+            //if (txtId.Text == string.Empty)
+            //{
+            //    // INSERIR
+            //    if (txtNome.Text != string.Empty &&txtCpf.Text != string.Empty && txtTelefone.Text != string.Empty && txtEmail.Text != string.Empty)
+            //    {
+
+
+            //        Cliente cliente = new(txtNome.Text, txtCpf.Text, txtTelefone.Text, txtEmail.Text, DateTime.Parse(dtpDataNasc.Text));
+            //        cliente.Inserir();
+
+            //        if (cliente.Id > 0)
+            //        {
+            //            MessageBox.Show("Cliente cadastrado com sucesso!");
+            //            //btnGravar.Enabled = false;
+            //        }
+
+            //    }
+
+            //}
+=======
+>>>>>>> cf2906bdaff29fc865cf35f731d6ab1c74032502
         }
    
 
@@ -45,9 +67,9 @@ namespace KingOfKingsFrms
         {
             txtNome.ReadOnly = false;
             txtEmail.ReadOnly = false;
-            txtCpf.ReadOnly = false;
-            txtTelefone.ReadOnly = false;
-            dateDataNascimento.Enabled = true;
+            mxtCpf.ReadOnly = false;
+            mxtTelefone.ReadOnly = false;
+            dtpDataNasc.Enabled = true;
         }
 
         private void FormCliente_Load(object sender, EventArgs e)
@@ -72,16 +94,16 @@ namespace KingOfKingsFrms
             txtId.Text = cliente.Id.ToString();
             txtNome.Text = cliente.Nome;
             txtEmail.Text = cliente.Email;
-            txtCpf.Text = cliente.Cpf;
-            txtTelefone.Text = cliente.Telefone;
-            dateDataNascimento.Value = cliente.DataNascimento;
+            mxtCpf.Text = cliente.Cpf;
+            mxtTelefone.Text = cliente.Telefone;
+            dtpDataNasc.Value = cliente.DataNascimento;
 
             //desabilita os campos
             txtNome.ReadOnly = true;
             txtEmail.ReadOnly = true;
-            txtCpf.ReadOnly = true;
-            txtTelefone.ReadOnly = true;
-            dateDataNascimento.Enabled = false;
+            mxtCpf.ReadOnly = true;
+            mxtTelefone.ReadOnly = true;
+            dtpDataNasc.Enabled = false;
 
         }
         private void CarregaGrid()
@@ -111,9 +133,9 @@ namespace KingOfKingsFrms
             txtId.Clear();
             txtNome.Clear();
             txtEmail.Clear();
-            txtCpf.Clear();
-            txtTelefone.Clear();
-            dateDataNascimento.Value = DateTime.Now; // Reseta para a data atual
+            mxtCpf.Clear();
+            mxtTelefone.Clear();
+            dtpDataNasc.Value = DateTime.Now; // Reseta para a data atual
 
 
 
@@ -135,6 +157,26 @@ namespace KingOfKingsFrms
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+
+
+            string tipoEnd = cmbTipoEndereco.SelectedItem.ToString();
+            tipoEnd = tipoEnd.Substring(0, 3);
+            mxtCep.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            Endereco endereco = new(
+                    int.Parse(txtClienteId.Text),
+                    mxtCep.Text,
+                    txtLogradouro.Text,
+                    txtNumero.Text,
+                    txtComplemento.Text,
+                    txtBairro.Text,
+                    txtCidade.Text,
+                    cmbUF.Text,
+                    tipoEnd
+                );
+
+            endereco.Inserir();
+=======
             if (txtId.Text == string.Empty)
             {
                 // INSERIR
@@ -161,12 +203,33 @@ namespace KingOfKingsFrms
                           //  }
                         }
                     }
+>>>>>>> cf2906bdaff29fc865cf35f731d6ab1c74032502
 
-                }
-
-            }
         }
+<<<<<<< HEAD
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            mxtCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            mxtTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            Cliente cliente = new(
+                    txtNome.Text,
+                    mxtCpf.Text,
+                    mxtTelefone.Text,
+                    txtEmail.Text,
+                    dtpDataNasc.Value
+                );
+            cliente.Inserir();
+            if (cliente.Id > 0)
+            {
+                txtClienteId.Text = cliente.Id.ToString();
+                MessageBox.Show($"Cliente {cliente.GetHashCode()} cadastrado com sucesso");
+            }
+
+        }
+=======
         
+>>>>>>> cf2906bdaff29fc865cf35f731d6ab1c74032502
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
@@ -177,17 +240,23 @@ namespace KingOfKingsFrms
         {
 
         }
-        
-   
-            
-        
+
+
+
+
 
         private void maskCep_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
+<<<<<<< HEAD
+
+            mxtCep.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            if (txtCep.Text.Length == 8)
+=======
         
             maskCep.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             if (maskCep.Text.Length == 8)
+>>>>>>> cf2906bdaff29fc865cf35f731d6ab1c74032502
             {
                 WebCEP webCEP = new(maskCep.Text);
                 txtLogradouro.Text = webCEP.TipoLagradouro + " " + webCEP.Lagradouro;
@@ -196,6 +265,11 @@ namespace KingOfKingsFrms
                 cmbUF.Text = webCEP.UF;
                 txtNumero.Focus();
             }
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }
