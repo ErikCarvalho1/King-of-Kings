@@ -57,8 +57,9 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Size = new Size(403, 158);
+            dataGridView1.Size = new Size(398, 158);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // clnID
             // 
@@ -123,9 +124,9 @@
             // 
             button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
             button3.FlatStyle = FlatStyle.Popup;
-            button3.Location = new Point(379, 191);
+            button3.Location = new Point(393, 189);
             button3.Name = "button3";
-            button3.Size = new Size(100, 41);
+            button3.Size = new Size(101, 41);
             button3.TabIndex = 6;
             button3.UseVisualStyleBackColor = true;
             // 
@@ -134,7 +135,7 @@
             button4.BackgroundImage = (Image)resources.GetObject("button4.BackgroundImage");
             button4.FlatStyle = FlatStyle.Popup;
             button4.ForeColor = Color.Transparent;
-            button4.Location = new Point(277, 191);
+            button4.Location = new Point(283, 190);
             button4.Name = "button4";
             button4.Size = new Size(104, 40);
             button4.TabIndex = 7;
@@ -145,7 +146,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 22F);
             label2.ForeColor = Color.FromArgb(219, 179, 91);
-            label2.Location = new Point(248, 29);
+            label2.Location = new Point(295, 26);
             label2.Name = "label2";
             label2.Size = new Size(159, 41);
             label2.TabIndex = 8;
