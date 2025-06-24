@@ -39,6 +39,10 @@
             bntEditar = new Button();
             txtId = new TextBox();
             dateUltimoMovimento = new DateTimePicker();
+            label6 = new Label();
+            dd = new Label();
+            label1 = new Label();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvEstoque).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtAdicionarEstoque).BeginInit();
             SuspendLayout();
@@ -86,11 +90,13 @@
             // 
             // bntBuscar
             // 
-            bntBuscar.Location = new Point(560, 104);
+            bntBuscar.BackgroundImage = Properties.Resources.Buscar;
+            bntBuscar.FlatStyle = FlatStyle.Flat;
+            bntBuscar.ForeColor = SystemColors.ActiveCaptionText;
+            bntBuscar.Location = new Point(549, 92);
             bntBuscar.Name = "bntBuscar";
-            bntBuscar.Size = new Size(75, 23);
+            bntBuscar.Size = new Size(97, 35);
             bntBuscar.TabIndex = 9;
-            bntBuscar.Text = "Buscar";
             bntBuscar.UseVisualStyleBackColor = true;
             bntBuscar.Click += bntBuscar_Click;
             // 
@@ -122,10 +128,55 @@
             // 
             // dateUltimoMovimento
             // 
-            dateUltimoMovimento.Location = new Point(406, 174);
+            dateUltimoMovimento.Location = new Point(406, 189);
             dateUltimoMovimento.Name = "dateUltimoMovimento";
             dateUltimoMovimento.Size = new Size(262, 23);
             dateUltimoMovimento.TabIndex = 13;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Stencil", 21.75F, FontStyle.Bold);
+            label6.ForeColor = Color.FromArgb(219, 179, 91);
+            label6.Location = new Point(300, 29);
+            label6.Name = "label6";
+            label6.Size = new Size(146, 34);
+            label6.TabIndex = 46;
+            label6.Text = "Estoque";
+            // 
+            // dd
+            // 
+            dd.AutoSize = true;
+            dd.BackColor = SystemColors.ActiveCaptionText;
+            dd.ForeColor = Color.FromArgb(219, 179, 91);
+            dd.Location = new Point(406, 86);
+            dd.Name = "dd";
+            dd.Size = new Size(40, 15);
+            dd.TabIndex = 47;
+            dd.Text = "Nome";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = SystemColors.ActiveCaptionText;
+            label1.ForeColor = Color.FromArgb(219, 179, 91);
+            label1.Location = new Point(406, 130);
+            label1.Name = "label1";
+            label1.Size = new Size(69, 15);
+            label1.TabIndex = 48;
+            label1.Text = "Quantidade";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = SystemColors.ActiveCaptionText;
+            label2.ForeColor = Color.FromArgb(219, 179, 91);
+            label2.Location = new Point(406, 171);
+            label2.Name = "label2";
+            label2.Size = new Size(108, 15);
+            label2.TabIndex = 49;
+            label2.Text = "Ultimo movimento";
             // 
             // FormEstoque
             // 
@@ -133,6 +184,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.leaoFundo;
             ClientSize = new Size(800, 450);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(dd);
+            Controls.Add(label6);
             Controls.Add(dateUltimoMovimento);
             Controls.Add(txtId);
             Controls.Add(bntEditar);
@@ -163,5 +218,9 @@
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
+        private Label label6;
+        private Label dd;
+        private Label label1;
+        private Label label2;
     }
 }
