@@ -19,7 +19,12 @@ namespace KingOfKingsFrms
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
