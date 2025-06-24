@@ -1,7 +1,11 @@
+using KingoOfKingsClass;
+
 namespace KingOfKingsFrms
 {
     internal static class Program
     {
+        public static Usuario UsuarioLogado { get; set; } = new Usuario();
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
