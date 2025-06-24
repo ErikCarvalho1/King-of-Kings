@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KingOfKingsClass;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,18 @@ namespace KingOfKingsFrms
         public FormEstoque()
         {
             InitializeComponent();
+        }
+
+
+
+        private void FormEstoque_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bntAdicionar_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

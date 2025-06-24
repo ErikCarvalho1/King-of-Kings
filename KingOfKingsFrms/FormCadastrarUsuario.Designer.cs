@@ -79,7 +79,7 @@
             // 
             bntVoltar.BackgroundImage = Properties.Resources.bntVoltar;
             bntVoltar.FlatStyle = FlatStyle.Flat;
-            bntVoltar.Location = new Point(434, 203);
+            bntVoltar.Location = new Point(434, 204);
             bntVoltar.Name = "bntVoltar";
             bntVoltar.Size = new Size(100, 36);
             bntVoltar.TabIndex = 7;
@@ -91,7 +91,7 @@
             bntCadastrar.BackColor = SystemColors.ActiveCaption;
             bntCadastrar.BackgroundImage = Properties.Resources.bntCadastrar;
             bntCadastrar.FlatStyle = FlatStyle.Flat;
-            bntCadastrar.Location = new Point(202, 206);
+            bntCadastrar.Location = new Point(202, 204);
             bntCadastrar.Name = "bntCadastrar";
             bntCadastrar.Size = new Size(102, 33);
             bntCadastrar.TabIndex = 8;
@@ -171,7 +171,7 @@
             dgvUsuarios.BackgroundColor = SystemColors.ActiveCaptionText;
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { clnId, clnNome, clnEmail, clnTipo });
-            dgvUsuarios.Location = new Point(214, 274);
+            dgvUsuarios.Location = new Point(202, 246);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.RowHeadersVisible = false;
             dgvUsuarios.Size = new Size(303, 148);

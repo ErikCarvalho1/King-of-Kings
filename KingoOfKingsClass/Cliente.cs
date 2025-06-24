@@ -16,18 +16,17 @@ namespace KingOfKingsClass
 {
      public class Cliente
     {
-
-        public int ? Id { get; set; }
-        public string Nome { get; set; }
-        public string Cpf { get; set; }
-        public string Telefone { get; set; }
-        public string Email { get; set; }
+        public string? Nome { get; set; }
+        public int Id { get; set; }
+        public string? Cpf { get; set; }
+        public string? Telefone { get; set; }
+        public string? Email { get; set; }
         public DateTime DataNascimento { get; set; }
-        public DateTime ?DataCadastro { get; set; }
+        public DateTime DataCadastro { get; set; }
         public bool Ativo { get; set; }
         public List<Endereco>? Enderecos { get; set; }
         public Cliente() { }
-        public Cliente(string nome, string cpf, string telefone, string email, DateTime dataNascimento, DateTime dataCadastro, bool ativo, List<Endereco>? enderecos)
+        public Cliente(string nome, string cpf, string telefone, string email, DateTime dataNascimento)
         {// este é o construtor que utilizaremos para inserir o cliente
             Nome = nome;
             Cpf = cpf;
@@ -57,16 +56,6 @@ namespace KingOfKingsClass
             DataNascimento = dataNascimento;
             DataCadastro = dataCadastro;
             Ativo = ativo;
-        }
-
-
-        public Cliente(string nome, string cpf, string telefone, string email, DateTime dataNascimento)
-        {// este é o construtor que utilizaremos para inserir o cliente
-            Nome = nome;
-            Cpf = cpf;
-            Telefone = telefone;
-            Email = email;
-            DataNascimento = dataNascimento;
         }
         public void Inserir()
         {
@@ -106,9 +95,9 @@ namespace KingOfKingsClass
                             dr.GetString(2),
                             dr.GetString(3),
                             dr.GetString(4),
-                            dr.GetDateTime(4),
                             dr.GetDateTime(5),
-                            dr.GetBoolean(6),
+                            dr.GetDateTime(6),
+                            dr.GetBoolean(7),
                             Endereco.ObterListaPorClienteId(dr.GetInt32(0))
                         );
             }
@@ -124,24 +113,22 @@ namespace KingOfKingsClass
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                bool ativo = !dr.IsDBNull(7) && dr.GetBoolean(7);
                 clientes.Add(new(
-                    dr.GetInt32(0),
-                    dr.GetString(1),
-                    dr.GetString(2),
-                    dr.GetString(3),
-                    dr.GetString(4),
-                    dr.GetDateTime(5),
-                    dr.GetDateTime(6),
-                    ativo, // Use the variable here
-                    Endereco.ObterListaPorClienteId(dr.GetInt32(0))
-                ));
+                              dr.GetInt32(0),
+                            dr.GetString(1),
+                            dr.GetString(2),
+                            dr.GetString(3),
+                            dr.GetString(4),
+                            dr.GetDateTime(4),
+                            dr.GetDateTime(5),
+                            dr.GetBoolean(6),
+                            Endereco.ObterListaPorClienteId(dr.GetInt32(0))
+                        )
+                    );
             }
             dr.Close();
             cmd.Connection.Close();
             return clientes;
         }
-
-
     }
 }

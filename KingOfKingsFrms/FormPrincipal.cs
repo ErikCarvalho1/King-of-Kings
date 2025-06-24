@@ -6,31 +6,28 @@ namespace KingOfKingsFrms
 
 {
     public partial class FormPrincipal : Form
-
     {
-        private Form frmaAtivo;// guarda o form atual no paine
-        public FormPrincipal()
-        {
-            InitializeComponent();
-        }
-        private void FormPainel(Form frm) // método para abrir o form no painel
-        {
-            ActiveFormClose();
-            frmaAtivo = frm;
-            frm.TopLevel = false;
-            pnlPrincipal.Controls.Add(frm);
-            frm.BringToFront();
-            frm.Show();
-        }
-        private void ActiveFormClose() // método para fechar o form ativo
+        public void FormClose() // método para fechar o form ativo
         {
             if (frmaAtivo != null)
             {
                 frmaAtivo.Close();
             }
         }
-
-
+        public Form frmaAtivo;// guarda o form atual no painel
+        public FormPrincipal()
+        {
+            InitializeComponent();
+        }
+        public void FormPainel(Form frm) // método para abrir o form no painel
+        {
+            FormClose();
+            frmaAtivo = frm;
+            frm.TopLevel = false;
+            pnlPrincipal.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
 
@@ -114,7 +111,27 @@ namespace KingOfKingsFrms
 
         private void cadastroDeClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormPainel(new FormCliente());
+            FormPainel(new Form1());
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void cadastroDeCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPainel(new FormCadastroCategoria());
+        }
+
+        private void listarProdutosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPainel(new FormListarProduto());
+        }
+
+        private void cadastroDeProdutosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormPainel(new FrmProduto());
         }
     }
 }

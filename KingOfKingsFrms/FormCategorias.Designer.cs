@@ -76,6 +76,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(152, 23);
             textBox1.TabIndex = 41;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // pictureBox8
             // 
@@ -94,6 +95,7 @@
             pictureBox7.Size = new Size(100, 81);
             pictureBox7.TabIndex = 39;
             pictureBox7.TabStop = false;
+            pictureBox7.Click += pictureBox7_Click;
             // 
             // pictureBox6
             // 
