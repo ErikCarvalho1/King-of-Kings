@@ -116,6 +116,7 @@
             button1.Size = new Size(98, 40);
             button1.TabIndex = 19;
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
             // 
             // FormListarProduto
             // 

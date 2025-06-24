@@ -50,5 +50,44 @@ namespace KingOfKingsFrms
 
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string termo = txtProdutos.Text.Trim().ToLower();
+
+            if (string.IsNullOrWhiteSpace(termo))
+            {
+                foreach (DataGridViewRow row in dgvProduto.Rows)
+                {
+                    row.Visible = true;
+                }
+
+            }
+            else
+            {
+                foreach (DataGridViewRow row in dgvProduto.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        if (string.IsNullOrWhiteSpace(termo))
+                        {
+                            row.Visible = true;
+                        }
+                        else
+                        {
+                            row.Visible = row.Cells["column2"].Value != null &&
+                            
+                            row.Cells["column2"].Value.ToString().ToLower().Contains(termo);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
+            
+        
+    
+
+
+
