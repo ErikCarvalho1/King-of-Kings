@@ -31,6 +31,7 @@ namespace KingOfKingsFrms
                     dtpDataNasc.Value
                 );
             cliente.Inserir();
+
             if (cliente.Id > 0)
             {
                 txtClienteId.Text = cliente.Id.ToString();
@@ -82,6 +83,21 @@ namespace KingOfKingsFrms
                 txtNumero.Focus();
 
             }
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtClienteId_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

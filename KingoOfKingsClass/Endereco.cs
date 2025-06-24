@@ -65,7 +65,7 @@ namespace KingOfKingsClass
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "sp_endereco_insert";
+            cmd.CommandText = "sp_inserir_enderecos";
             cmd.Parameters.AddWithValue("spcliente_id", ClienteId);
             cmd.Parameters.AddWithValue("spcep", Cep);
             cmd.Parameters.AddWithValue("splogradouro", Logradouro);
@@ -76,7 +76,7 @@ namespace KingOfKingsClass
             cmd.Parameters.AddWithValue("spuf", Uf);
             cmd.Parameters.AddWithValue("sptipo_endereco", TipoEndereco);
 
-            Id = Convert.ToInt32(cmd.ExecuteScalar());
+             Id = Convert.ToInt32(cmd.ExecuteScalar());
             cmd.Connection.Close();
         }
         public bool Atualizar()
