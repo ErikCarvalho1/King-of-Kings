@@ -133,5 +133,10 @@ namespace KingOfKingsFrms
         {
             FormPainel(new FrmProduto());
         }
+
+        private void lIstarEstoqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPainel(new FormEstoque());
+        }
     }
 }

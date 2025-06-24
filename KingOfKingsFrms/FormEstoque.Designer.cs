@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            cnlId = new DataGridViewTextBoxColumn();
-            clnQuantidade = new DataGridViewTextBoxColumn();
-            clnUtilmoMovimento = new DataGridViewTextBoxColumn();
+            dgvEstoque = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
             txtAdicionarEstoque = new NumericUpDown();
             txtBuscar = new TextBox();
             bntBuscar = new Button();
@@ -39,34 +39,35 @@
             bntEditar = new Button();
             txtId = new TextBox();
             dateUltimoMovimento = new DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEstoque).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtAdicionarEstoque).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvEstoque
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { cnlId, clnQuantidade, clnUtilmoMovimento });
-            dataGridView1.Location = new Point(96, 104);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Size = new Size(304, 278);
-            dataGridView1.TabIndex = 0;
+            dgvEstoque.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEstoque.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
+            dgvEstoque.Location = new Point(84, 104);
+            dgvEstoque.Name = "dgvEstoque";
+            dgvEstoque.RowHeadersVisible = false;
+            dgvEstoque.Size = new Size(304, 278);
+            dgvEstoque.TabIndex = 0;
+            dgvEstoque.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // cnlId
+            // Column1
             // 
-            cnlId.HeaderText = "ID";
-            cnlId.Name = "cnlId";
+            Column1.HeaderText = "Id";
+            Column1.Name = "Column1";
             // 
-            // clnQuantidade
+            // Column2
             // 
-            clnQuantidade.HeaderText = "Quantidade";
-            clnQuantidade.Name = "clnQuantidade";
+            Column2.HeaderText = "Quantidade";
+            Column2.Name = "Column2";
             // 
-            // clnUtilmoMovimento
+            // Column3
             // 
-            clnUtilmoMovimento.HeaderText = "UltimoMovimento";
-            clnUtilmoMovimento.Name = "clnUtilmoMovimento";
+            Column3.HeaderText = "Data ";
+            Column3.Name = "Column3";
             // 
             // txtAdicionarEstoque
             // 
@@ -74,6 +75,7 @@
             txtAdicionarEstoque.Name = "txtAdicionarEstoque";
             txtAdicionarEstoque.Size = new Size(92, 23);
             txtAdicionarEstoque.TabIndex = 7;
+            txtAdicionarEstoque.ValueChanged += txtAdicionarEstoque_ValueChanged;
             // 
             // txtBuscar
             // 
@@ -90,6 +92,7 @@
             bntBuscar.TabIndex = 9;
             bntBuscar.Text = "Buscar";
             bntBuscar.UseVisualStyleBackColor = true;
+            bntBuscar.Click += bntBuscar_Click;
             // 
             // bntAdicionar
             // 
@@ -112,7 +115,7 @@
             // 
             // txtId
             // 
-            txtId.Location = new Point(52, 27);
+            txtId.Location = new Point(26, 56);
             txtId.Name = "txtId";
             txtId.Size = new Size(100, 23);
             txtId.TabIndex = 12;
@@ -137,11 +140,11 @@
             Controls.Add(bntBuscar);
             Controls.Add(txtBuscar);
             Controls.Add(txtAdicionarEstoque);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvEstoque);
             Name = "FormEstoque";
             Text = "FormEstoque";
             Load += FormEstoque_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEstoque).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtAdicionarEstoque).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -149,16 +152,16 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvEstoque;
         private NumericUpDown txtAdicionarEstoque;
         private TextBox txtBuscar;
         private Button bntBuscar;
         private Button bntAdicionar;
         private Button bntEditar;
-        private DataGridViewTextBoxColumn cnlId;
-        private DataGridViewTextBoxColumn clnQuantidade;
-        private DataGridViewTextBoxColumn clnUtilmoMovimento;
         private TextBox txtId;
         private DateTimePicker dateUltimoMovimento;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
     }
 }

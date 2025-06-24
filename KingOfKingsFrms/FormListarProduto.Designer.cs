@@ -30,8 +30,8 @@
         {
             dgvProduto = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             txtProdutos = new TextBox();
             Produtos = new Label();
@@ -44,11 +44,11 @@
             // dgvProduto
             // 
             dgvProduto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProduto.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dgvProduto.Location = new Point(144, 144);
+            dgvProduto.Columns.AddRange(new DataGridViewColumn[] { Column1, Column3, Column2, Column4 });
+            dgvProduto.Location = new Point(187, 144);
             dgvProduto.Name = "dgvProduto";
             dgvProduto.RowHeadersVisible = false;
-            dgvProduto.Size = new Size(612, 304);
+            dgvProduto.Size = new Size(481, 304);
             dgvProduto.TabIndex = 0;
             dgvProduto.CellContentClick += dgvProdutos_CellContentClick;
             // 
@@ -56,19 +56,20 @@
             // 
             Column1.HeaderText = "Id";
             Column1.Name = "Column1";
-            Column1.Width = 130;
+            Column1.Visible = false;
+            Column1.Width = 160;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Nome";
+            Column3.Name = "Column3";
+            Column3.Width = 160;
             // 
             // Column2
             // 
             Column2.HeaderText = "Codbarras";
             Column2.Name = "Column2";
             Column2.Width = 160;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Descrição";
-            Column3.Name = "Column3";
-            Column3.Width = 160;
             // 
             // Column4
             // 
@@ -147,8 +148,8 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Button button1;
         private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column4;
     }
 }

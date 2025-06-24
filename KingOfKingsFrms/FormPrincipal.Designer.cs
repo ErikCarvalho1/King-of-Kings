@@ -132,6 +132,7 @@
             button2 = new Button();
             button1 = new Button();
             bntHistorico = new Button();
+            lIstarEstoqueToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             pnlPrincipal.SuspendLayout();
             SuspendLayout();
@@ -406,7 +407,7 @@
             // 
             // relatóriosToolStripMenuItem
             // 
-            relatóriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { historicoDeCompraDoClienteToolStripMenuItem, relatórioGERALDeMovimentaçãoEmVendasToolStripMenuItem, cálculoDeComissãoDoVendedorProdutosVendidosToolStripMenuItem, produtoEmConsignaçãoEnvioParaFornecedorToolStripMenuItem, depositoToolStripMenuItem, pagamentosPendentesdaEmpresaToolStripMenuItem, recebimentosPendentesDebitosClientesToolStripMenuItem, balançoFinanceiroToolStripMenuItem, históricoAcessoAoSistemaToolStripMenuItem, toolStripMenuItem2, listarProdutosToolStripMenuItem });
+            relatóriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { historicoDeCompraDoClienteToolStripMenuItem, relatórioGERALDeMovimentaçãoEmVendasToolStripMenuItem, cálculoDeComissãoDoVendedorProdutosVendidosToolStripMenuItem, produtoEmConsignaçãoEnvioParaFornecedorToolStripMenuItem, depositoToolStripMenuItem, pagamentosPendentesdaEmpresaToolStripMenuItem, recebimentosPendentesDebitosClientesToolStripMenuItem, balançoFinanceiroToolStripMenuItem, históricoAcessoAoSistemaToolStripMenuItem, toolStripMenuItem2, listarProdutosToolStripMenuItem, lIstarEstoqueToolStripMenuItem });
             relatóriosToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
             relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
             relatóriosToolStripMenuItem.Size = new Size(71, 20);
@@ -991,6 +992,15 @@
             bntHistorico.TabIndex = 34;
             bntHistorico.UseVisualStyleBackColor = true;
             // 
+            // lIstarEstoqueToolStripMenuItem
+            // 
+            lIstarEstoqueToolStripMenuItem.BackColor = SystemColors.ActiveCaptionText;
+            lIstarEstoqueToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
+            lIstarEstoqueToolStripMenuItem.Name = "lIstarEstoqueToolStripMenuItem";
+            lIstarEstoqueToolStripMenuItem.Size = new Size(358, 22);
+            lIstarEstoqueToolStripMenuItem.Text = "LIstar Estoque";
+            lIstarEstoqueToolStripMenuItem.Click += lIstarEstoqueToolStripMenuItem_Click;
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1140,5 +1150,6 @@
         private ToolStripMenuItem cadastroDeCategoriaToolStripMenuItem;
         private Panel panel3;
         private ToolStripMenuItem listarProdutosToolStripMenuItem;
+        private ToolStripMenuItem lIstarEstoqueToolStripMenuItem;
     }
 }

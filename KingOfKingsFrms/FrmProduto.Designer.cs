@@ -65,6 +65,7 @@
             txtCodBarras.PlaceholderText = "Código de Barras";
             txtCodBarras.Size = new Size(200, 23);
             txtCodBarras.TabIndex = 0;
+            txtCodBarras.Text = "10101";
             txtCodBarras.TextChanged += txtCodBarras_TextChanged;
             // 
             // txtDescricao

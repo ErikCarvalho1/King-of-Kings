@@ -42,8 +42,9 @@ namespace KingOfKingsFrms
             {
                 dgvProduto.Rows.Add();
                 dgvProduto.Rows[linha].Cells[0].Value = item.Id;
-                dgvProduto.Rows[linha].Cells[1].Value = item.CodBarras;
-                dgvProduto.Rows[linha].Cells[2].Value = item.Descricao;
+
+                dgvProduto.Rows[linha].Cells[1].Value = item.Descricao;
+                dgvProduto.Rows[linha].Cells[2].Value = item.CodBarras;
                 dgvProduto.Rows[linha].Cells[3].Value = item.ValorUnit;
                 linha++;
             }
@@ -78,6 +79,11 @@ namespace KingOfKingsFrms
                             row.Visible = row.Cells["column2"].Value != null &&
                             
                             row.Cells["column2"].Value.ToString().ToLower().Contains(termo);
+
+                           
+                            row.Visible = row.Cells["column3"].Value != null &&
+
+                           row.Cells["column3"].Value.ToString().ToLower().Contains(termo);
                         }
                     }
                 }
