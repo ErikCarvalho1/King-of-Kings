@@ -27,33 +27,7 @@ namespace KingOfKingsFrms
 
         private void bntAdicionar_Click(object sender, EventArgs e)
         {
-            //if (txtId.Text == string.Empty)
-            //{
-            //    if (txtAdicionarEstoque.Text != string.Empty)
-            //    {
-            //        Estoque estoque = new(txtAdicionarEstoque.Text );
-            //        estoque.Inserir();
-            //        if (estoque.Id > 0)
-            //        {
-            //            MessageBox.Show($"Estoque cadastrado com sucesso");
-            //            //btnGravar.Enabled = false;
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    Nivel nivel = new(int.Parse(txtId.Text), txtNome.Text, txtSigla.Text);
-            //    if (nivel.Atualizar())
-            //    {
-            //        MessageBox.Show("Nível atualizado com sucesso!");
-            //        //btnGravar.Enabled = false;
-
-<<<<<<< HEAD
-            //    }
-=======
-            //   }
->>>>>>> cf2906bdaff29fc865cf35f731d6ab1c74032502
-            //}
+           
         }
     }
 }
