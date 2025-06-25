@@ -121,7 +121,7 @@
   <data name="btnInserePedido.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAAAoCAYAAAAIeF9DAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAADWNJREFUaEPtmnlQVGe2wN19caIm0UxiEsuZSfKyWM9kJnEUJ8loYuLGDgKyiCg6
+        vAAADrwBlbxySQAADWNJREFUaEPtmnlQVGe2wN19caIm0UxiEsuZSfKyWM9kJnEUJ8loYuLGDgKyiCg6
         cVfcgmhUEtG4GxdUFBcEFRBwA2SVfW12EZpu9t4BockrX5Kp+r26FwW0EUkyilPDH7+iOd1wz/1+nHPq
         +7i9evXqRQ9PFQaBHroXg0AP3YtBoIfuxSDQIf369WXcB2+x3cOa+AAXSq46URtjjzpuFuo4W9RxNqhj
         Z6KJtUITa4km1gJNrDmaOHO0cWZo4szQCq/jBSzQ3hCwRJsgYIU2wRpt4kx0iTZoE23RJtqhTRKYhTbJ
@@ -247,10 +247,10 @@
         RU5ErkJggg==
 </value>
   </data>
-  <data name="btnAdicionar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAdicionarItem.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAAAoCAYAAAAIeF9DAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAADvdJREFUaEPtmnlUVeXawEXRvqysbFTzq66WXr2Z3TKBzNRMEVHmQUAQRW8mKs4h
+        vAAADrwBlbxySQAADvdJREFUaEPtmnlUVeXawEXRvqysbFTzq66WXr2Z3TKBzNRMEVHmQUAQRW8mKs4h
         zqY55Zyas6mogDIqMssgMpzDJILAYT6ciUGBvuVX9671+9be5AE8gOjN8K6PP35rwbP3Ofvd7+88z3Pe
         9+wuXbp0oZOnCp1AJx2LTqCTjkUn0EnHohNoEX39boz8eBBbvKyJ8Xbldsh05JEOqKKnoYq2QxVtiyrK
         BnWUFeooS9RRFqijzFFHm6OJNkMdbYZG+DtGwALNNQFLNLECVmhirdHE2VAZZ4smzg5NnD2aeIFpaOId
@@ -317,24 +317,6 @@
         OulA/g+NLOaOay1YmwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="ClnCodBarras.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clnDrescricao.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ClnValorUnit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ClnQaunt.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clnDesconto.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ClnTotal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="ClnCodBarras.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

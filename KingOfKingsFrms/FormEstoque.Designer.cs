@@ -49,6 +49,7 @@
             // 
             // dgvEstoque
             // 
+            dgvEstoque.BackgroundColor = Color.Black;
             dgvEstoque.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvEstoque.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
             dgvEstoque.Location = new Point(84, 104);
@@ -139,7 +140,7 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Stencil", 21.75F, FontStyle.Bold);
             label6.ForeColor = Color.FromArgb(219, 179, 91);
-            label6.Location = new Point(300, 29);
+            label6.Location = new Point(232, 19);
             label6.Name = "label6";
             label6.Size = new Size(146, 34);
             label6.TabIndex = 46;
@@ -196,6 +197,7 @@
             Controls.Add(txtBuscar);
             Controls.Add(txtAdicionarEstoque);
             Controls.Add(dgvEstoque);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FormEstoque";
             Text = "FormEstoque";
             Load += FormEstoque_Load;

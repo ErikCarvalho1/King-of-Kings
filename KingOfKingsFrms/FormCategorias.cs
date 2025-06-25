@@ -13,6 +13,7 @@ namespace KingOfKingsFrms
     public partial class FormCategorias : Form
     {
 
+
         public FormCategorias()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace KingOfKingsFrms
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-
+            
 
         }
 

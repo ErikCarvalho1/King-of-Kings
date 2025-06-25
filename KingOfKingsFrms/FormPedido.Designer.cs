@@ -33,7 +33,7 @@
             button1 = new Button();
             btnInserePedido = new Button();
             txtIdCliente = new TextBox();
-            textBox3 = new TextBox();
+            txtCLiente = new TextBox();
             txtUsuario = new TextBox();
             label3 = new Label();
             label1 = new Label();
@@ -56,7 +56,7 @@
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
-            btnAdicionar = new Button();
+            btnAdicionarItem = new Button();
             txtDescontoItem = new TextBox();
             txtQuantidade = new TextBox();
             txtValorUnit = new TextBox();
@@ -65,9 +65,9 @@
             label4 = new Label();
             txtCodBarra = new TextBox();
             txtIdProd = new TextBox();
-            ItemPedido = new TabControl();
+            abaItemPedido = new TabControl();
             tabPage1 = new TabPage();
-            dataGridView2 = new DataGridView();
+            dgvItensPedido = new DataGridView();
             ClnCodBarras = new DataGridViewTextBoxColumn();
             clnDrescricao = new DataGridViewTextBoxColumn();
             ClnValorUnit = new DataGridViewTextBoxColumn();
@@ -75,13 +75,15 @@
             clnDesconto = new DataGridViewTextBoxColumn();
             ClnTotal = new DataGridViewTextBoxColumn();
             tabPage2 = new TabPage();
-            textBox8 = new TextBox();
+            txtObservacao = new TextBox();
+            txtSubTotalItens = new TextBox();
+            Label10 = new Label();
             grbIndentificacao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             grbItens.SuspendLayout();
-            ItemPedido.SuspendLayout();
+            abaItemPedido.SuspendLayout();
             tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvItensPedido).BeginInit();
             tabPage2.SuspendLayout();
             SuspendLayout();
             // 
@@ -91,12 +93,12 @@
             grbIndentificacao.Controls.Add(button1);
             grbIndentificacao.Controls.Add(btnInserePedido);
             grbIndentificacao.Controls.Add(txtIdCliente);
-            grbIndentificacao.Controls.Add(textBox3);
+            grbIndentificacao.Controls.Add(txtCLiente);
             grbIndentificacao.Controls.Add(txtUsuario);
             grbIndentificacao.Controls.Add(label3);
             grbIndentificacao.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             grbIndentificacao.ForeColor = Color.FromArgb(219, 179, 91);
-            grbIndentificacao.Location = new Point(687, 71);
+            grbIndentificacao.Location = new Point(687, 46);
             grbIndentificacao.Name = "grbIndentificacao";
             grbIndentificacao.Size = new Size(313, 184);
             grbIndentificacao.TabIndex = 0;
@@ -137,14 +139,14 @@
             txtIdCliente.Size = new Size(56, 27);
             txtIdCliente.TabIndex = 0;
             // 
-            // textBox3
+            // txtCLiente
             // 
-            textBox3.BackColor = SystemColors.ActiveBorder;
-            textBox3.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(133, 71);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(176, 27);
-            textBox3.TabIndex = 1;
+            txtCLiente.BackColor = SystemColors.ActiveBorder;
+            txtCLiente.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtCLiente.Location = new Point(133, 71);
+            txtCLiente.Name = "txtCLiente";
+            txtCLiente.Size = new Size(176, 27);
+            txtCLiente.TabIndex = 1;
             // 
             // txtUsuario
             // 
@@ -204,7 +206,7 @@
             // 
             txtTotal.BackColor = SystemColors.ActiveBorder;
             txtTotal.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtTotal.Location = new Point(712, 450);
+            txtTotal.Location = new Point(712, 427);
             txtTotal.Name = "txtTotal";
             txtTotal.ReadOnly = true;
             txtTotal.Size = new Size(274, 29);
@@ -216,7 +218,7 @@
             // 
             txtSubTotal.BackColor = SystemColors.ActiveBorder;
             txtSubTotal.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSubTotal.Location = new Point(712, 276);
+            txtSubTotal.Location = new Point(712, 253);
             txtSubTotal.Name = "txtSubTotal";
             txtSubTotal.ReadOnly = true;
             txtSubTotal.Size = new Size(274, 29);
@@ -228,7 +230,7 @@
             // 
             txtDescontoItens.BackColor = SystemColors.ActiveBorder;
             txtDescontoItens.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDescontoItens.Location = new Point(712, 339);
+            txtDescontoItens.Location = new Point(712, 316);
             txtDescontoItens.Name = "txtDescontoItens";
             txtDescontoItens.ReadOnly = true;
             txtDescontoItens.Size = new Size(274, 29);
@@ -240,7 +242,7 @@
             // 
             btnFechar.BackgroundImage = (Image)resources.GetObject("btnFechar.BackgroundImage");
             btnFechar.FlatStyle = FlatStyle.Flat;
-            btnFechar.Location = new Point(889, 481);
+            btnFechar.Location = new Point(889, 458);
             btnFechar.Name = "btnFechar";
             btnFechar.Size = new Size(100, 42);
             btnFechar.TabIndex = 3;
@@ -251,7 +253,7 @@
             // 
             txtDescontoPedido.BackColor = SystemColors.ActiveBorder;
             txtDescontoPedido.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDescontoPedido.Location = new Point(712, 393);
+            txtDescontoPedido.Location = new Point(712, 370);
             txtDescontoPedido.Name = "txtDescontoPedido";
             txtDescontoPedido.Size = new Size(274, 29);
             txtDescontoPedido.TabIndex = 8;
@@ -263,7 +265,7 @@
             label11.AutoSize = true;
             label11.BackColor = Color.Black;
             label11.ForeColor = Color.FromArgb(219, 179, 91);
-            label11.Location = new Point(710, 257);
+            label11.Location = new Point(710, 234);
             label11.Name = "label11";
             label11.Size = new Size(53, 15);
             label11.TabIndex = 9;
@@ -274,7 +276,7 @@
             label12.AutoSize = true;
             label12.BackColor = Color.Black;
             label12.ForeColor = Color.FromArgb(219, 179, 91);
-            label12.Location = new Point(710, 320);
+            label12.Location = new Point(710, 297);
             label12.Name = "label12";
             label12.Size = new Size(88, 15);
             label12.TabIndex = 9;
@@ -285,7 +287,7 @@
             label13.AutoSize = true;
             label13.BackColor = Color.Black;
             label13.ForeColor = Color.FromArgb(219, 179, 91);
-            label13.Location = new Point(712, 374);
+            label13.Location = new Point(712, 351);
             label13.Name = "label13";
             label13.Size = new Size(57, 15);
             label13.TabIndex = 9;
@@ -296,7 +298,7 @@
             label14.AutoSize = true;
             label14.BackColor = Color.Black;
             label14.ForeColor = Color.FromArgb(219, 179, 91);
-            label14.Location = new Point(712, 431);
+            label14.Location = new Point(712, 408);
             label14.Name = "label14";
             label14.Size = new Size(36, 15);
             label14.TabIndex = 9;
@@ -306,7 +308,7 @@
             // 
             dataGridView1.BackgroundColor = Color.Black;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(17, 27);
+            dataGridView1.Location = new Point(6, 29);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(662, 214);
             dataGridView1.TabIndex = 10;
@@ -320,7 +322,7 @@
             grbItens.Controls.Add(label8);
             grbItens.Controls.Add(label7);
             grbItens.Controls.Add(label6);
-            grbItens.Controls.Add(btnAdicionar);
+            grbItens.Controls.Add(btnAdicionarItem);
             grbItens.Controls.Add(txtDescontoItem);
             grbItens.Controls.Add(txtQuantidade);
             grbItens.Controls.Add(txtValorUnit);
@@ -329,7 +331,7 @@
             grbItens.Controls.Add(label4);
             grbItens.Controls.Add(txtCodBarra);
             grbItens.Controls.Add(txtIdProd);
-            grbItens.Controls.Add(ItemPedido);
+            grbItens.Controls.Add(abaItemPedido);
             grbItens.ForeColor = Color.FromArgb(219, 179, 91);
             grbItens.Location = new Point(17, 241);
             grbItens.Name = "grbItens";
@@ -343,7 +345,7 @@
             // 
             label9.AutoSize = true;
             label9.ForeColor = Color.Red;
-            label9.Location = new Point(477, 86);
+            label9.Location = new Point(478, 88);
             label9.Name = "label9";
             label9.Size = new Size(23, 15);
             label9.TabIndex = 23;
@@ -406,16 +408,16 @@
             label6.TabIndex = 18;
             label6.Text = "Valor Unit";
             // 
-            // btnAdicionar
+            // btnAdicionarItem
             // 
-            btnAdicionar.BackgroundImage = (Image)resources.GetObject("btnAdicionar.BackgroundImage");
-            btnAdicionar.FlatStyle = FlatStyle.Flat;
-            btnAdicionar.Location = new Point(551, 60);
-            btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.Size = new Size(100, 42);
-            btnAdicionar.TabIndex = 12;
-            btnAdicionar.UseVisualStyleBackColor = true;
-            btnAdicionar.Click += button2_Click;
+            btnAdicionarItem.BackgroundImage = (Image)resources.GetObject("btnAdicionarItem.BackgroundImage");
+            btnAdicionarItem.FlatStyle = FlatStyle.Flat;
+            btnAdicionarItem.Location = new Point(551, 60);
+            btnAdicionarItem.Name = "btnAdicionarItem";
+            btnAdicionarItem.Size = new Size(100, 42);
+            btnAdicionarItem.TabIndex = 12;
+            btnAdicionarItem.UseVisualStyleBackColor = true;
+            btnAdicionarItem.Click += button2_Click;
             // 
             // txtDescontoItem
             // 
@@ -504,19 +506,19 @@
             txtIdProd.Size = new Size(98, 25);
             txtIdProd.TabIndex = 4;
             // 
-            // ItemPedido
+            // abaItemPedido
             // 
-            ItemPedido.Controls.Add(tabPage1);
-            ItemPedido.Controls.Add(tabPage2);
-            ItemPedido.Location = new Point(0, 103);
-            ItemPedido.Name = "ItemPedido";
-            ItemPedido.SelectedIndex = 0;
-            ItemPedido.Size = new Size(657, 179);
-            ItemPedido.TabIndex = 0;
+            abaItemPedido.Controls.Add(tabPage1);
+            abaItemPedido.Controls.Add(tabPage2);
+            abaItemPedido.Location = new Point(0, 103);
+            abaItemPedido.Name = "abaItemPedido";
+            abaItemPedido.SelectedIndex = 0;
+            abaItemPedido.Size = new Size(657, 179);
+            abaItemPedido.TabIndex = 0;
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(dataGridView2);
+            tabPage1.Controls.Add(dgvItensPedido);
             tabPage1.ForeColor = Color.FromArgb(219, 179, 91);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
@@ -526,17 +528,17 @@
             tabPage1.Text = "Item de Pedido";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // dgvItensPedido
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { ClnCodBarras, clnDrescricao, ClnValorUnit, ClnQaunt, clnDesconto, ClnTotal });
-            dataGridView2.GridColor = Color.Black;
-            dataGridView2.Location = new Point(0, 1);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridView2.RowHeadersVisible = false;
-            dataGridView2.Size = new Size(649, 150);
-            dataGridView2.TabIndex = 0;
+            dgvItensPedido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvItensPedido.Columns.AddRange(new DataGridViewColumn[] { ClnCodBarras, clnDrescricao, ClnValorUnit, ClnQaunt, clnDesconto, ClnTotal });
+            dgvItensPedido.GridColor = Color.Black;
+            dgvItensPedido.Location = new Point(0, 1);
+            dgvItensPedido.Name = "dgvItensPedido";
+            dgvItensPedido.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvItensPedido.RowHeadersVisible = false;
+            dgvItensPedido.Size = new Size(649, 150);
+            dgvItensPedido.TabIndex = 0;
             // 
             // ClnCodBarras
             // 
@@ -572,7 +574,7 @@
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(textBox8);
+            tabPage2.Controls.Add(txtObservacao);
             tabPage2.ForeColor = Color.FromArgb(219, 179, 91);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
@@ -582,13 +584,36 @@
             tabPage2.Text = "Observação";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // textBox8
+            // txtObservacao
             // 
-            textBox8.Location = new Point(3, 3);
-            textBox8.Multiline = true;
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(644, 148);
-            textBox8.TabIndex = 0;
+            txtObservacao.Location = new Point(3, 3);
+            txtObservacao.Multiline = true;
+            txtObservacao.Name = "txtObservacao";
+            txtObservacao.Size = new Size(644, 148);
+            txtObservacao.TabIndex = 0;
+            // 
+            // txtSubTotalItens
+            // 
+            txtSubTotalItens.BackColor = SystemColors.ActiveBorder;
+            txtSubTotalItens.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtSubTotalItens.Location = new Point(680, 494);
+            txtSubTotalItens.Name = "txtSubTotalItens";
+            txtSubTotalItens.ReadOnly = true;
+            txtSubTotalItens.Size = new Size(109, 29);
+            txtSubTotalItens.TabIndex = 12;
+            txtSubTotalItens.Text = "0,00";
+            txtSubTotalItens.TextAlign = HorizontalAlignment.Right;
+            // 
+            // Label10
+            // 
+            Label10.AutoSize = true;
+            Label10.BackColor = Color.Black;
+            Label10.ForeColor = Color.FromArgb(219, 179, 91);
+            Label10.Location = new Point(680, 472);
+            Label10.Name = "Label10";
+            Label10.Size = new Size(78, 15);
+            Label10.TabIndex = 13;
+            Label10.Text = "SubTotalItens";
             // 
             // FormPedido
             // 
@@ -596,6 +621,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.leaoFundo;
             ClientSize = new Size(1005, 528);
+            Controls.Add(Label10);
+            Controls.Add(txtSubTotalItens);
             Controls.Add(grbItens);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
@@ -620,9 +647,9 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             grbItens.ResumeLayout(false);
             grbItens.PerformLayout();
-            ItemPedido.ResumeLayout(false);
+            abaItemPedido.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvItensPedido).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             ResumeLayout(false);
@@ -637,7 +664,7 @@
         private Label label2;
         private TextBox txtIdPedido;
         private TextBox txtUsuario;
-        private TextBox textBox3;
+        private TextBox txtCLiente;
         private Button btnInserePedido;
         private TextBox txtIdCliente;
         private TextBox txtTotal;
@@ -652,13 +679,13 @@
         private Button button1;
         private DataGridView dataGridView1;
         private GroupBox grbItens;
-        private TabControl ItemPedido;
+        private TabControl abaItemPedido;
         private TabPage tabPage1;
         private TabPage tabPage2;
         private TextBox txtIdProd;
         private Label label4;
         private TextBox txtCodBarra;
-        private Button btnAdicionar;
+        private Button btnAdicionarItem;
         private TextBox txtDescontoItem;
         private TextBox txtQuantidade;
         private TextBox txtValorUnit;
@@ -670,14 +697,16 @@
         private Label label7;
         private Label label6;
         private Label label9;
-        private DataGridView dataGridView2;
+        private DataGridView dgvItensPedido;
         private DataGridViewTextBoxColumn ClnCodBarras;
         private DataGridViewTextBoxColumn clnDrescricao;
         private DataGridViewTextBoxColumn ClnValorUnit;
         private DataGridViewTextBoxColumn ClnQaunt;
         private DataGridViewTextBoxColumn clnDesconto;
         private DataGridViewTextBoxColumn ClnTotal;
-        private TextBox textBox8;
+        private TextBox txtObservacao;
+        private TextBox txtSubTotalItens;
+        private Label Label10;
     }
 }
        
