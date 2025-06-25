@@ -267,7 +267,7 @@
             label11.ForeColor = Color.FromArgb(219, 179, 91);
             label11.Location = new Point(710, 234);
             label11.Name = "label11";
-            label11.Size = new Size(53, 15);
+            label11.Size = new Size(52, 15);
             label11.TabIndex = 9;
             label11.Text = "SubTotal";
             // 
@@ -300,7 +300,7 @@
             label14.ForeColor = Color.FromArgb(219, 179, 91);
             label14.Location = new Point(712, 408);
             label14.Name = "label14";
-            label14.Size = new Size(36, 15);
+            label14.Size = new Size(35, 15);
             label14.TabIndex = 9;
             label14.Text = "Total ";
             // 
@@ -611,7 +611,7 @@
             Label10.ForeColor = Color.FromArgb(219, 179, 91);
             Label10.Location = new Point(680, 472);
             Label10.Name = "Label10";
-            Label10.Size = new Size(78, 15);
+            Label10.Size = new Size(77, 15);
             Label10.TabIndex = 13;
             Label10.Text = "SubTotalItens";
             // 

@@ -61,7 +61,7 @@ namespace KingOfKingsClass
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "sp_insert_cliente";
+            cmd.CommandText = "sp_cliente_insert";
             cmd.Parameters.AddWithValue("spnome", Nome);
             cmd.Parameters.AddWithValue("spcpf", Cpf);
             cmd.Parameters.AddWithValue("sptelefone", Telefone);

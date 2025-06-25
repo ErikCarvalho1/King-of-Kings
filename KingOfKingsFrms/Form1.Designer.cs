@@ -150,6 +150,7 @@
             button2.Size = new Size(103, 38);
             button2.TabIndex = 66;
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -360,7 +361,7 @@
             label13.ForeColor = Color.FromArgb(219, 179, 91);
             label13.Location = new Point(59, 235);
             label13.Name = "label13";
-            label13.Size = new Size(83, 15);
+            label13.Size = new Size(82, 15);
             label13.TabIndex = 14;
             label13.Text = "Tipo endereço";
             // 

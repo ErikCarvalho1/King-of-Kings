@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace KingOfKingsFrms
 {
-    public partial class FormPagamento: Form
+    public partial class FormPagamento : Form
     {
         public FormPagamento()
         {
             InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
