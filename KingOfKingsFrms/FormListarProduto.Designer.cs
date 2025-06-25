@@ -29,57 +29,33 @@
         private void InitializeComponent()
         {
             dgvProduto = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             txtProdutos = new TextBox();
             Produtos = new Label();
             label2 = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             button1 = new Button();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvProduto).BeginInit();
             SuspendLayout();
             // 
             // dgvProduto
             // 
+            dgvProduto.BackgroundColor = Color.Black;
             dgvProduto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProduto.Columns.AddRange(new DataGridViewColumn[] { Column1, Column3, Column2, Column4 });
             dgvProduto.Location = new Point(187, 144);
             dgvProduto.Name = "dgvProduto";
             dgvProduto.RowHeadersVisible = false;
-            dgvProduto.Size = new Size(481, 304);
+            dgvProduto.Size = new Size(389, 304);
             dgvProduto.TabIndex = 0;
             dgvProduto.CellContentClick += dgvProdutos_CellContentClick;
             // 
-            // Column1
-            // 
-            Column1.HeaderText = "Id";
-            Column1.Name = "Column1";
-            Column1.Visible = false;
-            Column1.Width = 160;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Nome";
-            Column3.Name = "Column3";
-            Column3.Width = 160;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Codbarras";
-            Column2.Name = "Column2";
-            Column2.Width = 160;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Valor unitario";
-            Column4.Name = "Column4";
-            Column4.Width = 160;
-            // 
             // txtProdutos
             // 
-            txtProdutos.Location = new Point(224, 108);
+            txtProdutos.Location = new Point(248, 106);
             txtProdutos.Name = "txtProdutos";
             txtProdutos.Size = new Size(311, 23);
             txtProdutos.TabIndex = 2;
@@ -90,7 +66,7 @@
             Produtos.AutoSize = true;
             Produtos.BackColor = Color.Black;
             Produtos.ForeColor = Color.FromArgb(219, 179, 91);
-            Produtos.Location = new Point(224, 90);
+            Produtos.Location = new Point(187, 109);
             Produtos.Name = "Produtos";
             Produtos.Size = new Size(55, 15);
             Produtos.TabIndex = 3;
@@ -112,12 +88,35 @@
             // 
             button1.BackgroundImage = Properties.Resources.Buscar;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(541, 98);
+            button1.Location = new Point(565, 96);
             button1.Name = "button1";
             button1.Size = new Size(98, 40);
             button1.TabIndex = 19;
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click_1;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Id";
+            Column1.Name = "Column1";
+            Column1.Visible = false;
+            Column1.Width = 160;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Nome";
+            Column3.Name = "Column3";
+            Column3.Width = 185;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Codbarras";
+            Column2.Name = "Column2";
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Valor unitario";
+            Column4.Name = "Column4";
             // 
             // FormListarProduto
             // 
