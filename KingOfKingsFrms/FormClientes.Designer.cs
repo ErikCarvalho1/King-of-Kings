@@ -1,6 +1,6 @@
 ﻿namespace KingOfKingsFrms
 {
-    partial class Form1
+    partial class FormClientes
     {
         /// <summary>
         /// Required designer variable.
@@ -114,6 +114,7 @@
             tabPage1.Size = new Size(768, 376);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Dados Pessoais";
+
             // 
             // txtClienteId
             // 
@@ -361,7 +362,7 @@
             label13.ForeColor = Color.FromArgb(219, 179, 91);
             label13.Location = new Point(59, 235);
             label13.Name = "label13";
-            label13.Size = new Size(82, 15);
+            label13.Size = new Size(83, 15);
             label13.TabIndex = 14;
             label13.Text = "Tipo endereço";
             // 
@@ -489,6 +490,7 @@
             dgvEnderecos.RowHeadersVisible = false;
             dgvEnderecos.Size = new Size(602, 149);
             dgvEnderecos.TabIndex = 61;
+            dgvEnderecos.CellContentClick += dgvEnderecos_CellContentClick;
             // 
             // nome
             // 
@@ -534,7 +536,7 @@
             clnCidade.Name = "clnCidade";
             clnCidade.ReadOnly = true;
             // 
-            // Form1
+            // FormClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -543,7 +545,7 @@
             Controls.Add(Daodo);
             Controls.Add(dgvEnderecos);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form1";
+            Name = "FormClientes";
             Text = "Form1";
             Load += Form1_Load;
             Daodo.ResumeLayout(false);

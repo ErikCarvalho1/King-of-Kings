@@ -48,7 +48,7 @@
             label12 = new Label();
             label13 = new Label();
             label14 = new Label();
-            dataGridView1 = new DataGridView();
+            pnlcategoria = new DataGridView();
             grbItens = new GroupBox();
             label9 = new Label();
             radioButton2 = new RadioButton();
@@ -79,7 +79,7 @@
             txtSubTotalItens = new TextBox();
             Label10 = new Label();
             grbIndentificacao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pnlcategoria).BeginInit();
             grbItens.SuspendLayout();
             abaItemPedido.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -104,6 +104,7 @@
             grbIndentificacao.TabIndex = 0;
             grbIndentificacao.TabStop = false;
             grbIndentificacao.Text = "Identificação";
+
             // 
             // button1
             // 
@@ -138,6 +139,7 @@
             txtIdCliente.Name = "txtIdCliente";
             txtIdCliente.Size = new Size(56, 27);
             txtIdCliente.TabIndex = 0;
+ 
             // 
             // txtCLiente
             // 
@@ -145,8 +147,10 @@
             txtCLiente.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtCLiente.Location = new Point(133, 71);
             txtCLiente.Name = "txtCLiente";
+            txtCLiente.ReadOnly = true;
             txtCLiente.Size = new Size(176, 27);
             txtCLiente.TabIndex = 1;
+
             // 
             // txtUsuario
             // 
@@ -267,7 +271,7 @@
             label11.ForeColor = Color.FromArgb(219, 179, 91);
             label11.Location = new Point(710, 234);
             label11.Name = "label11";
-            label11.Size = new Size(52, 15);
+            label11.Size = new Size(53, 15);
             label11.TabIndex = 9;
             label11.Text = "SubTotal";
             // 
@@ -300,18 +304,21 @@
             label14.ForeColor = Color.FromArgb(219, 179, 91);
             label14.Location = new Point(712, 408);
             label14.Name = "label14";
-            label14.Size = new Size(35, 15);
+            label14.Size = new Size(36, 15);
             label14.TabIndex = 9;
             label14.Text = "Total ";
             // 
-            // dataGridView1
+            // pnlcategoria
             // 
-            dataGridView1.BackgroundColor = Color.Black;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 29);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(662, 214);
-            dataGridView1.TabIndex = 10;
+
+            pnlcategoria.BackgroundColor = Color.Black;
+            pnlcategoria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            pnlcategoria.Location = new Point(6, 29);
+            pnlcategoria.Name = "pnlcategoria";
+            pnlcategoria.Size = new Size(662, 214);
+            pnlcategoria.TabIndex = 10;
+            pnlcategoria.CellContentClick += dataGridView1_CellContentClick;
+
             // 
             // grbItens
             // 
@@ -611,7 +618,7 @@
             Label10.ForeColor = Color.FromArgb(219, 179, 91);
             Label10.Location = new Point(680, 472);
             Label10.Name = "Label10";
-            Label10.Size = new Size(77, 15);
+            Label10.Size = new Size(78, 15);
             Label10.TabIndex = 13;
             Label10.Text = "SubTotalItens";
             // 
@@ -625,7 +632,7 @@
             Controls.Add(txtSubTotalItens);
             Controls.Add(grbItens);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(pnlcategoria);
             Controls.Add(label14);
             Controls.Add(label13);
             Controls.Add(label12);
@@ -642,9 +649,10 @@
             Location = new Point(168, 147);
             Name = "FormPedido";
             Text = "FrmPedidoNovo";
+
             grbIndentificacao.ResumeLayout(false);
             grbIndentificacao.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pnlcategoria).EndInit();
             grbItens.ResumeLayout(false);
             grbItens.PerformLayout();
             abaItemPedido.ResumeLayout(false);
@@ -677,7 +685,7 @@
         private Label label13;
         private Label label14;
         private Button button1;
-        private DataGridView dataGridView1;
+        private DataGridView pnlcategoria;
         private GroupBox grbItens;
         private TabControl abaItemPedido;
         private TabPage tabPage1;

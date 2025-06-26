@@ -73,7 +73,7 @@
             label2.ForeColor = Color.FromArgb(219, 179, 91);
             label2.Location = new Point(166, 78);
             label2.Name = "label2";
-            label2.Size = new Size(80, 15);
+            label2.Size = new Size(82, 15);
             label2.TabIndex = 1;
             label2.Text = "TOTAL VENDA";
             // 
@@ -169,7 +169,7 @@
             label4.ForeColor = Color.FromArgb(219, 179, 91);
             label4.Location = new Point(194, 178);
             label4.Name = "label4";
-            label4.Size = new Size(53, 15);
+            label4.Size = new Size(54, 15);
             label4.TabIndex = 4;
             label4.Text = "CRÉDITO";
             // 
@@ -180,7 +180,7 @@
             label5.ForeColor = Color.FromArgb(219, 179, 91);
             label5.Location = new Point(202, 209);
             label5.Name = "label5";
-            label5.Size = new Size(45, 15);
+            label5.Size = new Size(46, 15);
             label5.TabIndex = 5;
             label5.Text = "DEBITO";
             // 
@@ -213,7 +213,7 @@
             label8.ForeColor = Color.FromArgb(219, 179, 91);
             label8.Location = new Point(173, 321);
             label8.Name = "label8";
-            label8.Size = new Size(73, 15);
+            label8.Size = new Size(75, 15);
             label8.TabIndex = 8;
             label8.Text = "TOTAL PAGO";
             // 
@@ -224,7 +224,7 @@
             label9.ForeColor = Color.FromArgb(219, 179, 91);
             label9.Location = new Point(201, 346);
             label9.Name = "label9";
-            label9.Size = new Size(46, 15);
+            label9.Size = new Size(47, 15);
             label9.TabIndex = 9;
             label9.Text = "TROCO";
             // 
@@ -241,7 +241,7 @@
             // 
             // textBox7
             // 
-            textBox7.BackColor = SystemColors.ActiveBorder;
+            textBox7.BackColor = Color.FromArgb(255, 192, 192);
             textBox7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox7.Location = new Point(0, 31);
             textBox7.Name = "textBox7";
@@ -255,7 +255,7 @@
             // 
             textBox6.BackColor = SystemColors.ActiveBorder;
             textBox6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox6.Location = new Point(0, 3);
+            textBox6.Location = new Point(0, 1);
             textBox6.Name = "textBox6";
             textBox6.ReadOnly = true;
             textBox6.Size = new Size(252, 29);
@@ -265,7 +265,7 @@
             // 
             // txtSubTotal
             // 
-            txtSubTotal.BackColor = SystemColors.ActiveBorder;
+            txtSubTotal.BackColor = Color.FromArgb(192, 255, 192);
             txtSubTotal.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSubTotal.Location = new Point(258, 70);
             txtSubTotal.Name = "txtSubTotal";
