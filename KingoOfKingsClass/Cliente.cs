@@ -17,7 +17,7 @@ namespace KingOfKingsClass
      public class Cliente
     {
         public string? Nome { get; set; }
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string? Cpf { get; set; }
         public string? Telefone { get; set; }
         public string? Email { get; set; }
@@ -90,16 +90,16 @@ namespace KingOfKingsClass
             if (dr.Read())
             {
                 cliente = new(
-                            dr.GetInt32(0),
-                            dr.GetString(1),
-                            dr.GetString(2),
-                            dr.GetString(3),
-                            dr.GetString(4),
-                            dr.GetDateTime(5),
-                            dr.GetDateTime(6),
-                            dr.GetBoolean(7),
-                            Endereco.ObterListaPorClienteId(dr.GetInt32(0))
-                        );
+       dr.GetInt32(0),
+       dr.GetString(1),
+       dr.GetString(2),
+       dr.GetString(3),
+       dr.GetString(4),
+       dr.GetDateTime(5),
+       dr.GetDateTime(6),
+       !dr.IsDBNull(7) && dr.GetBoolean(7), // Safely handle nulls  
+       Endereco.ObterListaPorClienteId(dr.GetInt32(0))
+   );
             }
             dr.Close();
             cmd.Connection.Close();

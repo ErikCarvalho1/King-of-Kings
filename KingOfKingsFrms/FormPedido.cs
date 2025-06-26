@@ -15,6 +15,25 @@ namespace KingOfKingsFrms
 
     public partial class FormPedido : Form
     {
+        private Form frmaAtivo; // Alterado de 'object' para 'Form'
+
+        private void FormClose() // método para fechar o form ativo
+        {
+            if (frmaAtivo != null)
+            {
+                frmaAtivo.Close(); // Agora 'Close()' é válido porque 'frmaAtivo' é do tipo 'Form'
+            }
+        }
+
+        private void FormPainel(Form frm) // método para abrir o form no painel
+        {
+            FormClose();
+            frmaAtivo = frm;
+            frm.TopLevel = false;
+            pnlcategoria.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
         public FormPedido()
         {
             InitializeComponent();
@@ -25,11 +44,11 @@ namespace KingOfKingsFrms
             Pedido pedido = Pedido.ObterPorId(int.Parse(txtIdPedido.Text));
             pedido.Desconto = double.Parse(txtDescontoPedido.Text);
             pedido.Status = "F";
-            
+
             if (pedido.Atualizar())
             {
                 MessageBox.Show($"Pedido {pedido.Id} foi fechado com sucesso \n");
-            
+
             }
 
             dgvItensPedido.Rows.Clear();
@@ -103,7 +122,38 @@ namespace KingOfKingsFrms
             txtTotal.Text = subTotal.ToString();
 
         }
-       
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FormPedido_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grbIndentificacao_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIdCliente_TextChanged(object sender, EventArgs e)
+        {
+            if (txtIdCliente.Text.Length > 4)
+           {
+                var cliente = Cliente.ObterPorId(int.Parse(txtIdCliente.Text));
+                if (cliente.Id > 0)
+                {
+                    txtCLiente.Text = cliente.Nome;
+                }
+
+           } 
+        }
+
+        private void txtCLiente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
