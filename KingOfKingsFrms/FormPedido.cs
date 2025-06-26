@@ -127,8 +127,7 @@ namespace KingOfKingsFrms
         {
 
         }
-<<<<<<< HEAD
-=======
+
 
         private void FormPedido_Load(object sender, EventArgs e)
         {
@@ -157,6 +156,6 @@ namespace KingOfKingsFrms
         {
 
         }
->>>>>>> ceec07ccfdfe2871956b2f5630084dbfd5698de7
+
     }
 }
