@@ -15,7 +15,11 @@ namespace KingOfKingsFrms
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+<<<<<<< HEAD
+            Application.Run(new FormPrincipal());
+=======
             Application.Run(new FormLogin());
+>>>>>>> ceec07ccfdfe2871956b2f5630084dbfd5698de7
         }
     }
 }

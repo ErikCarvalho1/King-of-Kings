@@ -310,6 +310,15 @@
             // 
             // pnlcategoria
             // 
+<<<<<<< HEAD
+            dataGridView1.BackgroundColor = Color.Black;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(6, 29);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(662, 214);
+            dataGridView1.TabIndex = 10;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+=======
             pnlcategoria.BackgroundColor = Color.Black;
             pnlcategoria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             pnlcategoria.Location = new Point(6, 29);
@@ -317,6 +326,7 @@
             pnlcategoria.Size = new Size(662, 214);
             pnlcategoria.TabIndex = 10;
             pnlcategoria.CellContentClick += dataGridView1_CellContentClick;
+>>>>>>> ceec07ccfdfe2871956b2f5630084dbfd5698de7
             // 
             // grbItens
             // 
