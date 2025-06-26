@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             dgvEstoque = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
-            txtAdicionarEstoque = new NumericUpDown();
             txtBuscar = new TextBox();
             bntBuscar = new Button();
             bntAdicionar = new Button();
@@ -43,8 +43,9 @@
             dd = new Label();
             label1 = new Label();
             label2 = new Label();
+            txtquantidade = new TextBox();
+            contextMenuStrip1 = new ContextMenuStrip(components);
             ((System.ComponentModel.ISupportInitialize)dgvEstoque).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txtAdicionarEstoque).BeginInit();
             SuspendLayout();
             // 
             // dgvEstoque
@@ -57,7 +58,6 @@
             dgvEstoque.RowHeadersVisible = false;
             dgvEstoque.Size = new Size(304, 278);
             dgvEstoque.TabIndex = 0;
-            dgvEstoque.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Column1
             // 
@@ -73,14 +73,6 @@
             // 
             Column3.HeaderText = "Data ";
             Column3.Name = "Column3";
-            // 
-            // txtAdicionarEstoque
-            // 
-            txtAdicionarEstoque.Location = new Point(406, 145);
-            txtAdicionarEstoque.Name = "txtAdicionarEstoque";
-            txtAdicionarEstoque.Size = new Size(92, 23);
-            txtAdicionarEstoque.TabIndex = 7;
-            txtAdicionarEstoque.ValueChanged += txtAdicionarEstoque_ValueChanged;
             // 
             // txtBuscar
             // 
@@ -179,12 +171,26 @@
             label2.TabIndex = 49;
             label2.Text = "Ultimo movimento";
             // 
+            // txtquantidade
+            // 
+            txtquantidade.Location = new Point(406, 145);
+            txtquantidade.Name = "txtquantidade";
+            txtquantidade.Size = new Size(92, 23);
+            txtquantidade.TabIndex = 50;
+            txtquantidade.TextChanged += textBox1_TextChanged;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
+            // 
             // FormEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.leaoFundo;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtquantidade);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(dd);
@@ -195,14 +201,12 @@
             Controls.Add(bntAdicionar);
             Controls.Add(bntBuscar);
             Controls.Add(txtBuscar);
-            Controls.Add(txtAdicionarEstoque);
             Controls.Add(dgvEstoque);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormEstoque";
             Text = "FormEstoque";
             Load += FormEstoque_Load;
             ((System.ComponentModel.ISupportInitialize)dgvEstoque).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txtAdicionarEstoque).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -210,19 +214,20 @@
         #endregion
 
         private DataGridView dgvEstoque;
-        private NumericUpDown txtAdicionarEstoque;
         private TextBox txtBuscar;
         private Button bntBuscar;
         private Button bntAdicionar;
         private Button bntEditar;
         private TextBox txtId;
         private DateTimePicker dateUltimoMovimento;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
         private Label label6;
         private Label dd;
         private Label label1;
         private Label label2;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private TextBox txtquantidade;
+        private ContextMenuStrip contextMenuStrip1;
     }
 }

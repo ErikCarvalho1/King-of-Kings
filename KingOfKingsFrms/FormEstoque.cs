@@ -24,12 +24,13 @@ namespace KingOfKingsFrms
         {
             var lista = Produto.ObterLista();
             int linha = 0;
+            dgvEstoque.AllowUserToAddRows = false;
             dgvEstoque.Rows.Clear();
             foreach (var item in lista)
             {
                 dgvEstoque.Rows.Add();
                 dgvEstoque.Rows[linha].Cells["column1"].Value = item.Id;
-            
+
 
 
                 linha++;
@@ -41,12 +42,12 @@ namespace KingOfKingsFrms
         {
 
             string id = txtId.Text.Trim();
-            string quantidade = txtAdicionarEstoque.Text.Trim();
+            string quantidade = txtquantidade.Text.Trim();
             string dateUltimoMovimento = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
 
             if (string.IsNullOrWhiteSpace(quantidade))
-               
-                
+
+
             {
                 MessageBox.Show("Digite a quantidade.");
                 return;
@@ -60,11 +61,12 @@ namespace KingOfKingsFrms
 
         }
 
-
-
         private void bntBuscar_Click(object sender, EventArgs e)
         {
+
+
             string termo = txtBuscar.Text.Trim().ToLower();
+
 
             if (string.IsNullOrWhiteSpace(termo))
             {
@@ -72,53 +74,41 @@ namespace KingOfKingsFrms
                 {
                     row.Visible = true;
                 }
-
+                return;
             }
-            else
-            {
-                foreach (DataGridViewRow row in dgvEstoque.Rows)
-                {
-                    if (!row.IsNewRow)
-                    {
-                        if (string.IsNullOrWhiteSpace(termo))
-                        {
-                            row.Visible = true;
-                        }
-                        else
-                        {
-                            row.Visible = row.Cells["column1"].Value != null &&
 
-                            row.Cells["column1"].Value.ToString().ToLower().Contains(termo);
-                        }
-                    }
-                }
-            }
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            string novaQuantidade = (string)txtquantidade.Text;
+            bool encontrou = false;
 
         }
 
         private void txtAdicionarEstoque_ValueChanged(object sender, EventArgs e)
         {
-            string idAlvo = txtId.Text.Trim(); // Pega o ID digitado
-            int novaQuantidade = (int)txtAdicionarEstoque.Value;
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string idAlvo = txtId.Text.Trim(); 
+            string novaQuantidade = txtquantidade.Text.Trim(); 
 
             foreach (DataGridViewRow row in dgvEstoque.Rows)
             {
-                if (row.Cells["column1"].Value != null &&
-                    row.Cells["column1"].Value.ToString() == idAlvo)
+                if (row.Cells["column1"].Value != null && row.Cells["column1"].Value.ToString() == idAlvo)
                 {
-                    row.Cells["Quantidade"].Value = novaQuantidade;
-                    break; // encontrou e alterou, pode parar
+                    row.Cells["column1"].Value = novaQuantidade; 
+                    break; 
                 }
             }
         }
     }
-   
 }
 
 
-    
+
+
+
+
+
+
+
+
 
