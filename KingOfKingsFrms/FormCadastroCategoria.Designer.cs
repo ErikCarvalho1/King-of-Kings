@@ -189,6 +189,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormCadastroCategoria";
             Text = "FormCadastroCategoria";
+            Load += FormCadastroCategoria_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

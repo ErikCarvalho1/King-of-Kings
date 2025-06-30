@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ComercialTDSClass
+namespace KingOfKingsClass
 {
     public class Endereco
     {
@@ -47,6 +47,19 @@ namespace ComercialTDSClass
             Uf = uf;
             TipoEndereco = tipoEndereco;
         }
+        public Endereco(string? cep, string? logradouro, string? numero, string? complemento, string? bairro, string? cidade, string? uf, string? tipoEndereco)
+        { // este construtor deve ser utilizado para inserir endereço
+
+            Cep = cep;
+            Logradouro = logradouro;
+            Numero = numero;
+            Complemento = complemento;
+            Bairro = bairro;
+            Cidade = cidade;
+            Uf = uf;
+            TipoEndereco = tipoEndereco;
+        }
+
 
         public void Inserir()
         {
@@ -63,11 +76,12 @@ namespace ComercialTDSClass
             cmd.Parameters.AddWithValue("spuf", Uf);
             cmd.Parameters.AddWithValue("sptipo_endereco", TipoEndereco);
 
-            Id = Convert.ToInt32(cmd.ExecuteScalar());
+             Id = Convert.ToInt32(cmd.ExecuteScalar());
             cmd.Connection.Close();
         }
         public bool Atualizar()
-        {
+        { 
+
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "sp_endereco_update";

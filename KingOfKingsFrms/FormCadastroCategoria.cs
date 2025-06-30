@@ -21,5 +21,10 @@ namespace KingOfKingsFrms
         {
 
         }
+
+        private void FormCadastroCategoria_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
