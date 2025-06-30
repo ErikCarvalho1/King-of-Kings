@@ -47,14 +47,6 @@
             txtNome = new TextBox();
             tabPage2 = new TabPage();
             txtUf = new TextBox();
-            dgvEnderecos = new DataGridView();
-            nome = new DataGridViewTextBoxColumn();
-            clnCep = new DataGridViewTextBoxColumn();
-            clnLogradouro = new DataGridViewTextBoxColumn();
-            clnNumero = new DataGridViewTextBoxColumn();
-            clnComplemento = new DataGridViewTextBoxColumn();
-            clnBairro = new DataGridViewTextBoxColumn();
-            clnCidade = new DataGridViewTextBoxColumn();
             mxtCep = new MaskedTextBox();
             btninserir = new Button();
             cmbUF = new ComboBox();
@@ -72,6 +64,14 @@
             txtBairro = new TextBox();
             txtLogradouro = new TextBox();
             txtNumero = new TextBox();
+            dgvEnderecos = new DataGridView();
+            nome = new DataGridViewTextBoxColumn();
+            clnCep = new DataGridViewTextBoxColumn();
+            clnLogradouro = new DataGridViewTextBoxColumn();
+            clnNumero = new DataGridViewTextBoxColumn();
+            clnComplemento = new DataGridViewTextBoxColumn();
+            clnBairro = new DataGridViewTextBoxColumn();
+            clnCidade = new DataGridViewTextBoxColumn();
             Daodo.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -86,7 +86,7 @@
             Daodo.Multiline = true;
             Daodo.Name = "Daodo";
             Daodo.SelectedIndex = 0;
-            Daodo.Size = new Size(776, 384);
+            Daodo.Size = new Size(776, 404);
             Daodo.TabIndex = 2;
             // 
             // tabPage1
@@ -111,9 +111,10 @@
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(768, 450);
+            tabPage1.Size = new Size(768, 376);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Dados Pessoais";
+
             // 
             // txtClienteId
             // 
@@ -145,7 +146,7 @@
             // 
             button2.BackgroundImage = Properties.Resources.EditarGbtn;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(356, 244);
+            button2.Location = new Point(220, 332);
             button2.Name = "button2";
             button2.Size = new Size(103, 38);
             button2.TabIndex = 66;
@@ -156,7 +157,7 @@
             // 
             button1.BackgroundImage = Properties.Resources.bntVoltar;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(142, 247);
+            button1.Location = new Point(6, 335);
             button1.Name = "button1";
             button1.Size = new Size(102, 35);
             button1.TabIndex = 65;
@@ -187,7 +188,7 @@
             // 
             btnCadastrar.BackgroundImage = Properties.Resources.bntCadastrar;
             btnCadastrar.FlatStyle = FlatStyle.Flat;
-            btnCadastrar.Location = new Point(251, 247);
+            btnCadastrar.Location = new Point(115, 335);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(99, 38);
             btnCadastrar.TabIndex = 60;
@@ -297,7 +298,7 @@
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(768, 356);
+            tabPage2.Size = new Size(768, 376);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Endereço";
             tabPage2.UseVisualStyleBackColor = true;
@@ -310,66 +311,6 @@
             txtUf.Name = "txtUf";
             txtUf.Size = new Size(100, 23);
             txtUf.TabIndex = 66;
-            // 
-            // dgvEnderecos
-            // 
-            dgvEnderecos.AllowUserToAddRows = false;
-            dgvEnderecos.AllowUserToDeleteRows = false;
-            dgvEnderecos.BackgroundColor = Color.Black;
-            dgvEnderecos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEnderecos.Columns.AddRange(new DataGridViewColumn[] { nome, clnCep, clnLogradouro, clnNumero, clnComplemento, clnBairro, clnCidade });
-            dgvEnderecos.GridColor = SystemColors.InactiveCaptionText;
-            dgvEnderecos.Location = new Point(90, 430);
-            dgvEnderecos.Name = "dgvEnderecos";
-            dgvEnderecos.ReadOnly = true;
-            dgvEnderecos.RowHeadersVisible = false;
-            dgvEnderecos.Size = new Size(602, 149);
-            dgvEnderecos.TabIndex = 61;
-            dgvEnderecos.CellContentClick += dgvEnderecos_CellContentClick;
-            // 
-            // nome
-            // 
-            nome.HeaderText = "Id";
-            nome.Name = "nome";
-            nome.ReadOnly = true;
-            nome.Visible = false;
-            nome.Width = 160;
-            // 
-            // clnCep
-            // 
-            clnCep.HeaderText = "cep";
-            clnCep.Name = "clnCep";
-            clnCep.ReadOnly = true;
-            // 
-            // clnLogradouro
-            // 
-            clnLogradouro.HeaderText = "Logradouro";
-            clnLogradouro.Name = "clnLogradouro";
-            clnLogradouro.ReadOnly = true;
-            // 
-            // clnNumero
-            // 
-            clnNumero.HeaderText = "Numero";
-            clnNumero.Name = "clnNumero";
-            clnNumero.ReadOnly = true;
-            // 
-            // clnComplemento
-            // 
-            clnComplemento.HeaderText = "Complemento";
-            clnComplemento.Name = "clnComplemento";
-            clnComplemento.ReadOnly = true;
-            // 
-            // clnBairro
-            // 
-            clnBairro.HeaderText = "Bairro";
-            clnBairro.Name = "clnBairro";
-            clnBairro.ReadOnly = true;
-            // 
-            // clnCidade
-            // 
-            clnCidade.HeaderText = "Cidade";
-            clnCidade.Name = "clnCidade";
-            clnCidade.ReadOnly = true;
             // 
             // mxtCep
             // 
@@ -386,7 +327,7 @@
             // 
             btninserir.BackgroundImage = Properties.Resources.SalvarGbtn;
             btninserir.FlatStyle = FlatStyle.Flat;
-            btninserir.Location = new Point(435, 221);
+            btninserir.Location = new Point(435, 312);
             btninserir.Name = "btninserir";
             btninserir.Size = new Size(103, 43);
             btninserir.TabIndex = 62;
@@ -534,6 +475,66 @@
             txtNumero.Name = "txtNumero";
             txtNumero.Size = new Size(63, 23);
             txtNumero.TabIndex = 1;
+            // 
+            // dgvEnderecos
+            // 
+            dgvEnderecos.AllowUserToAddRows = false;
+            dgvEnderecos.AllowUserToDeleteRows = false;
+            dgvEnderecos.BackgroundColor = Color.Black;
+            dgvEnderecos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEnderecos.Columns.AddRange(new DataGridViewColumn[] { nome, clnCep, clnLogradouro, clnNumero, clnComplemento, clnBairro, clnCidade });
+            dgvEnderecos.GridColor = SystemColors.InactiveCaptionText;
+            dgvEnderecos.Location = new Point(114, 442);
+            dgvEnderecos.Name = "dgvEnderecos";
+            dgvEnderecos.ReadOnly = true;
+            dgvEnderecos.RowHeadersVisible = false;
+            dgvEnderecos.Size = new Size(602, 149);
+            dgvEnderecos.TabIndex = 61;
+            dgvEnderecos.CellContentClick += dgvEnderecos_CellContentClick;
+            // 
+            // nome
+            // 
+            nome.HeaderText = "Id";
+            nome.Name = "nome";
+            nome.ReadOnly = true;
+            nome.Visible = false;
+            nome.Width = 160;
+            // 
+            // clnCep
+            // 
+            clnCep.HeaderText = "cep";
+            clnCep.Name = "clnCep";
+            clnCep.ReadOnly = true;
+            // 
+            // clnLogradouro
+            // 
+            clnLogradouro.HeaderText = "Logradouro";
+            clnLogradouro.Name = "clnLogradouro";
+            clnLogradouro.ReadOnly = true;
+            // 
+            // clnNumero
+            // 
+            clnNumero.HeaderText = "Numero";
+            clnNumero.Name = "clnNumero";
+            clnNumero.ReadOnly = true;
+            // 
+            // clnComplemento
+            // 
+            clnComplemento.HeaderText = "Complemento";
+            clnComplemento.Name = "clnComplemento";
+            clnComplemento.ReadOnly = true;
+            // 
+            // clnBairro
+            // 
+            clnBairro.HeaderText = "Bairro";
+            clnBairro.Name = "clnBairro";
+            clnBairro.ReadOnly = true;
+            // 
+            // clnCidade
+            // 
+            clnCidade.HeaderText = "Cidade";
+            clnCidade.Name = "clnCidade";
+            clnCidade.ReadOnly = true;
             // 
             // FormClientes
             // 
