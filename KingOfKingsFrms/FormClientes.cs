@@ -1,5 +1,7 @@
 ﻿using ComercialTDSClass;
 using KingOfKingsClass;
+using KingoOfKingsClass;
+using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +19,8 @@ namespace KingOfKingsFrms
         public FormClientes()
         {
             InitializeComponent();
+            
+           
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -30,6 +34,7 @@ namespace KingOfKingsFrms
                     txtEmail.Text,
                     dtpDataNasc.Value
                 );
+           
             cliente.Inserir();
 
             if (cliente.Id > 0)
@@ -46,7 +51,7 @@ namespace KingOfKingsFrms
             tipoEnd = tipoEnd.Substring(0, 3);
             mxtCep.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             Endereco endereco = new(
-                    int.Parse(txtClienteId.Text),
+                    Convert.ToInt32(txtClienteId.Text),
                     mxtCep.Text,
                     txtLogradouro.Text,
                     txtNumero.Text,
@@ -56,15 +61,17 @@ namespace KingOfKingsFrms
                     txtUf.Text,
                     tipoEnd
                 );
-
+            
             endereco.Inserir();
             CarregaGrid(int.Parse(txtClienteId.Text));
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            CarregaGrid(int.Parse(txtClienteId.Text));
         }
+
+    
 
         private void mxtCep_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
@@ -93,16 +100,22 @@ namespace KingOfKingsFrms
             dgvEnderecos.Rows.Clear();
             foreach (var endereco in listaEnderecos)
             {
-                int rowIndex = dgvEnderecos.Rows.Add();
-                dgvEnderecos.Rows[count].Cells[0].Value = endereco.Cep;
-                dgvEnderecos.Rows[count].Cells[1].Value = endereco.Logradouro;
-                dgvEnderecos.Rows[count].Cells[2].Value = endereco.Numero;
-                dgvEnderecos.Rows[count].Cells[3].Value = endereco.Complemento;
-                dgvEnderecos.Rows[count].Cells[4].Value = endereco.Bairro;
-                dgvEnderecos.Rows[count].Cells[5].Value = endereco.Cidade;
-                dgvEnderecos.Rows[count].Cells[6].Value = endereco.Uf;
-                dgvEnderecos.Rows[count].Cells[7].Value = endereco.TipoEndereco;
-                count++;
+                {
+                    int rowIndex = dgvEnderecos.Rows.Add(); // Adiciona uma nova linha e retorna o índice
+                    dgvEnderecos.Rows[rowIndex].Cells[0].Value = endereco.Id;
+                    dgvEnderecos.Rows[rowIndex].Cells[1].Value = endereco.Cep;
+                    dgvEnderecos.Rows[rowIndex].Cells[2].Value = endereco.Logradouro;
+                    dgvEnderecos.Rows[rowIndex].Cells[3].Value = endereco.Numero;
+                    dgvEnderecos.Rows[rowIndex].Cells[4].Value = endereco.Complemento;
+                    dgvEnderecos.Rows[rowIndex].Cells[5].Value = endereco.Bairro;
+                    dgvEnderecos.Rows[rowIndex].Cells[6].Value = endereco.Cidade;
+                    while (dgvEnderecos.Columns.Count < 9)
+                    {
+                        dgvEnderecos.Columns.Add(new DataGridViewTextBoxColumn());
+                    }
+                    dgvEnderecos.Rows[rowIndex].Cells[7].Value = endereco.Uf;
+                    dgvEnderecos.Rows[rowIndex].Cells[8].Value = endereco.TipoEndereco;
+                }
             }
         }
         private void tabPage2_Click(object sender, EventArgs e)
@@ -127,7 +140,8 @@ namespace KingOfKingsFrms
 
         private void dgvEnderecos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
+            
         }
     }
 }
