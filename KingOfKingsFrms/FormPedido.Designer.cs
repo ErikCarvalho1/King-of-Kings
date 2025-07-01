@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPedido));
             grbIndentificacao = new GroupBox();
+            txtUsuario = new TextBox();
             button1 = new Button();
             btnInserePedido = new Button();
             txtIdCliente = new TextBox();
             txtCLiente = new TextBox();
-            txtUsuario = new TextBox();
             label3 = new Label();
             label1 = new Label();
             label2 = new Label();
@@ -48,7 +48,6 @@
             label12 = new Label();
             label13 = new Label();
             label14 = new Label();
-            pnlcategoria = new DataGridView();
             grbItens = new GroupBox();
             label9 = new Label();
             radioButton2 = new RadioButton();
@@ -78,23 +77,41 @@
             txtObservacao = new TextBox();
             txtSubTotalItens = new TextBox();
             Label10 = new Label();
+            pnlcategoria = new Panel();
+            label15 = new Label();
+            pictureBoxshortsfem = new PictureBox();
+            pictureBoxBone = new PictureBox();
+            pictureBoxshortsmasc = new PictureBox();
+            pictureBoxkit = new PictureBox();
+            pictureBoxcropeed = new PictureBox();
+            pictureBoxCamMasc = new PictureBox();
+            pictureBoxChinelo = new PictureBox();
+            pictureBoxMoletom = new PictureBox();
             grbIndentificacao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pnlcategoria).BeginInit();
             grbItens.SuspendLayout();
             abaItemPedido.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvItensPedido).BeginInit();
             tabPage2.SuspendLayout();
+            pnlcategoria.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxshortsfem).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBone).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxshortsmasc).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxkit).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxcropeed).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCamMasc).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxChinelo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMoletom).BeginInit();
             SuspendLayout();
             // 
             // grbIndentificacao
             // 
             grbIndentificacao.BackColor = Color.Black;
+            grbIndentificacao.Controls.Add(txtUsuario);
             grbIndentificacao.Controls.Add(button1);
             grbIndentificacao.Controls.Add(btnInserePedido);
             grbIndentificacao.Controls.Add(txtIdCliente);
             grbIndentificacao.Controls.Add(txtCLiente);
-            grbIndentificacao.Controls.Add(txtUsuario);
             grbIndentificacao.Controls.Add(label3);
             grbIndentificacao.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             grbIndentificacao.ForeColor = Color.FromArgb(219, 179, 91);
@@ -104,7 +121,13 @@
             grbIndentificacao.TabIndex = 0;
             grbIndentificacao.TabStop = false;
             grbIndentificacao.Text = "Identificação";
-
+            // 
+            // txtUsuario
+            // 
+            txtUsuario.Location = new Point(108, 31);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(100, 25);
+            txtUsuario.TabIndex = 4;
             // 
             // button1
             // 
@@ -139,7 +162,6 @@
             txtIdCliente.Name = "txtIdCliente";
             txtIdCliente.Size = new Size(56, 27);
             txtIdCliente.TabIndex = 0;
- 
             // 
             // txtCLiente
             // 
@@ -150,17 +172,6 @@
             txtCLiente.ReadOnly = true;
             txtCLiente.Size = new Size(176, 27);
             txtCLiente.TabIndex = 1;
-
-            // 
-            // txtUsuario
-            // 
-            txtUsuario.BackColor = SystemColors.ActiveBorder;
-            txtUsuario.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtUsuario.Location = new Point(70, 21);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.ReadOnly = true;
-            txtUsuario.Size = new Size(239, 27);
-            txtUsuario.TabIndex = 1;
             // 
             // label3
             // 
@@ -271,7 +282,7 @@
             label11.ForeColor = Color.FromArgb(219, 179, 91);
             label11.Location = new Point(710, 234);
             label11.Name = "label11";
-            label11.Size = new Size(53, 15);
+            label11.Size = new Size(52, 15);
             label11.TabIndex = 9;
             label11.Text = "SubTotal";
             // 
@@ -304,21 +315,9 @@
             label14.ForeColor = Color.FromArgb(219, 179, 91);
             label14.Location = new Point(712, 408);
             label14.Name = "label14";
-            label14.Size = new Size(36, 15);
+            label14.Size = new Size(35, 15);
             label14.TabIndex = 9;
             label14.Text = "Total ";
-            // 
-            // pnlcategoria
-            // 
-
-            pnlcategoria.BackgroundColor = Color.Black;
-            pnlcategoria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            pnlcategoria.Location = new Point(6, 29);
-            pnlcategoria.Name = "pnlcategoria";
-            pnlcategoria.Size = new Size(662, 214);
-            pnlcategoria.TabIndex = 10;
-            pnlcategoria.CellContentClick += dataGridView1_CellContentClick;
-
             // 
             // grbItens
             // 
@@ -618,9 +617,111 @@
             Label10.ForeColor = Color.FromArgb(219, 179, 91);
             Label10.Location = new Point(680, 472);
             Label10.Name = "Label10";
-            Label10.Size = new Size(78, 15);
+            Label10.Size = new Size(77, 15);
             Label10.TabIndex = 13;
             Label10.Text = "SubTotalItens";
+            // 
+            // pnlcategoria
+            // 
+            pnlcategoria.Controls.Add(label15);
+            pnlcategoria.Controls.Add(pictureBoxshortsfem);
+            pnlcategoria.Controls.Add(pictureBoxBone);
+            pnlcategoria.Controls.Add(pictureBoxshortsmasc);
+            pnlcategoria.Controls.Add(pictureBoxkit);
+            pnlcategoria.Controls.Add(pictureBoxcropeed);
+            pnlcategoria.Controls.Add(pictureBoxCamMasc);
+            pnlcategoria.Controls.Add(pictureBoxChinelo);
+            pnlcategoria.Controls.Add(pictureBoxMoletom);
+            pnlcategoria.Location = new Point(27, 46);
+            pnlcategoria.Name = "pnlcategoria";
+            pnlcategoria.Size = new Size(641, 197);
+            pnlcategoria.TabIndex = 14;
+            pnlcategoria.Paint += panel1_Paint;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.BackColor = Color.Transparent;
+            label15.Font = new Font("Stencil", 21.75F, FontStyle.Bold);
+            label15.ForeColor = Color.FromArgb(219, 179, 91);
+            label15.Location = new Point(153, -54);
+            label15.Name = "label15";
+            label15.Size = new Size(195, 34);
+            label15.TabIndex = 54;
+            label15.Text = "Categorias";
+            // 
+            // pictureBoxshortsfem
+            // 
+            pictureBoxshortsfem.BackgroundImage = (Image)resources.GetObject("pictureBoxshortsfem.BackgroundImage");
+            pictureBoxshortsfem.Location = new Point(236, 88);
+            pictureBoxshortsfem.Name = "pictureBoxshortsfem";
+            pictureBoxshortsfem.Size = new Size(100, 81);
+            pictureBoxshortsfem.TabIndex = 53;
+            pictureBoxshortsfem.TabStop = false;
+            // 
+            // pictureBoxBone
+            // 
+            pictureBoxBone.BackgroundImage = (Image)resources.GetObject("pictureBoxBone.BackgroundImage");
+            pictureBoxBone.Location = new Point(3, 1);
+            pictureBoxBone.Name = "pictureBoxBone";
+            pictureBoxBone.Size = new Size(100, 81);
+            pictureBoxBone.TabIndex = 52;
+            pictureBoxBone.TabStop = false;
+            pictureBoxBone.Click += pictureBoxBone_Click;
+            // 
+            // pictureBoxshortsmasc
+            // 
+            pictureBoxshortsmasc.BackgroundImage = (Image)resources.GetObject("pictureBoxshortsmasc.BackgroundImage");
+            pictureBoxshortsmasc.Location = new Point(354, 88);
+            pictureBoxshortsmasc.Name = "pictureBoxshortsmasc";
+            pictureBoxshortsmasc.Size = new Size(100, 81);
+            pictureBoxshortsmasc.TabIndex = 51;
+            pictureBoxshortsmasc.TabStop = false;
+            // 
+            // pictureBoxkit
+            // 
+            pictureBoxkit.BackgroundImage = (Image)resources.GetObject("pictureBoxkit.BackgroundImage");
+            pictureBoxkit.Location = new Point(130, 88);
+            pictureBoxkit.Name = "pictureBoxkit";
+            pictureBoxkit.Size = new Size(100, 81);
+            pictureBoxkit.TabIndex = 50;
+            pictureBoxkit.TabStop = false;
+            // 
+            // pictureBoxcropeed
+            // 
+            pictureBoxcropeed.BackgroundImage = (Image)resources.GetObject("pictureBoxcropeed.BackgroundImage");
+            pictureBoxcropeed.Location = new Point(19, 100);
+            pictureBoxcropeed.Name = "pictureBoxcropeed";
+            pictureBoxcropeed.Size = new Size(100, 81);
+            pictureBoxcropeed.TabIndex = 49;
+            pictureBoxcropeed.TabStop = false;
+            // 
+            // pictureBoxCamMasc
+            // 
+            pictureBoxCamMasc.BackgroundImage = (Image)resources.GetObject("pictureBoxCamMasc.BackgroundImage");
+            pictureBoxCamMasc.Location = new Point(354, 3);
+            pictureBoxCamMasc.Name = "pictureBoxCamMasc";
+            pictureBoxCamMasc.Size = new Size(100, 81);
+            pictureBoxCamMasc.TabIndex = 48;
+            pictureBoxCamMasc.TabStop = false;
+            // 
+            // pictureBoxChinelo
+            // 
+            pictureBoxChinelo.BackgroundImage = (Image)resources.GetObject("pictureBoxChinelo.BackgroundImage");
+            pictureBoxChinelo.Location = new Point(248, 1);
+            pictureBoxChinelo.Name = "pictureBoxChinelo";
+            pictureBoxChinelo.Size = new Size(100, 81);
+            pictureBoxChinelo.TabIndex = 47;
+            pictureBoxChinelo.TabStop = false;
+            // 
+            // pictureBoxMoletom
+            // 
+            pictureBoxMoletom.BackgroundImage = (Image)resources.GetObject("pictureBoxMoletom.BackgroundImage");
+            pictureBoxMoletom.Location = new Point(127, 1);
+            pictureBoxMoletom.Name = "pictureBoxMoletom";
+            pictureBoxMoletom.Size = new Size(100, 81);
+            pictureBoxMoletom.TabIndex = 46;
+            pictureBoxMoletom.TabStop = false;
             // 
             // FormPedido
             // 
@@ -628,11 +729,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.leaoFundo;
             ClientSize = new Size(1005, 528);
+            Controls.Add(pnlcategoria);
             Controls.Add(Label10);
             Controls.Add(txtSubTotalItens);
             Controls.Add(grbItens);
             Controls.Add(label1);
-            Controls.Add(pnlcategoria);
             Controls.Add(label14);
             Controls.Add(label13);
             Controls.Add(label12);
@@ -649,10 +750,9 @@
             Location = new Point(168, 147);
             Name = "FormPedido";
             Text = "FrmPedidoNovo";
-
+            Load += FormPedido_Load_1;
             grbIndentificacao.ResumeLayout(false);
             grbIndentificacao.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pnlcategoria).EndInit();
             grbItens.ResumeLayout(false);
             grbItens.PerformLayout();
             abaItemPedido.ResumeLayout(false);
@@ -660,6 +760,16 @@
             ((System.ComponentModel.ISupportInitialize)dgvItensPedido).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            pnlcategoria.ResumeLayout(false);
+            pnlcategoria.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxshortsfem).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBone).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxshortsmasc).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxkit).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxcropeed).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCamMasc).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxChinelo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMoletom).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -671,7 +781,6 @@
         private Label label1;
         private Label label2;
         private TextBox txtIdPedido;
-        private TextBox txtUsuario;
         private TextBox txtCLiente;
         private Button btnInserePedido;
         private TextBox txtIdCliente;
@@ -685,7 +794,6 @@
         private Label label13;
         private Label label14;
         private Button button1;
-        private DataGridView pnlcategoria;
         private GroupBox grbItens;
         private TabControl abaItemPedido;
         private TabPage tabPage1;
@@ -715,6 +823,17 @@
         private TextBox txtObservacao;
         private TextBox txtSubTotalItens;
         private Label Label10;
+        private TextBox txtUsuario;
+        private Panel pnlcategoria;
+        private Label label15;
+        private PictureBox pictureBoxshortsfem;
+        private PictureBox pictureBoxBone;
+        private PictureBox pictureBoxshortsmasc;
+        private PictureBox pictureBoxkit;
+        private PictureBox pictureBoxcropeed;
+        private PictureBox pictureBoxCamMasc;
+        private PictureBox pictureBoxChinelo;
+        private PictureBox pictureBoxMoletom;
     }
 }
        

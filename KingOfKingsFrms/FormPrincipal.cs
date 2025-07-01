@@ -138,5 +138,10 @@ namespace KingOfKingsFrms
         {
             FormPainel(new FormEstoque());
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            FormPainel(new FormPedido());
+        }
     }
 }

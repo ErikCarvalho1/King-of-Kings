@@ -142,14 +142,14 @@ namespace KingOfKingsFrms
         private void txtIdCliente_TextChanged(object sender, EventArgs e)
         {
             if (txtIdCliente.Text.Length > 4)
-           {
+            {
                 var cliente = Cliente.ObterPorId(int.Parse(txtIdCliente.Text));
                 if (cliente.Id > 0)
                 {
                     txtCLiente.Text = cliente.Nome;
                 }
 
-           } 
+            }
         }
 
         private void txtCLiente_TextChanged(object sender, EventArgs e)
@@ -157,5 +157,24 @@ namespace KingOfKingsFrms
 
         }
 
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FormPedido_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxBone_Click(object sender, EventArgs e)
+        {
+            FormPainel(new FormRegistroAcesso());
+        }
     }
 }

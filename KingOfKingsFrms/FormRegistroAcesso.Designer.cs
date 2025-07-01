@@ -35,7 +35,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.leaoFundo;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(641, 197);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormRegistroAcesso";
             Text = "FormRegistroAcesso";
