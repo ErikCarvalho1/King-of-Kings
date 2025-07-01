@@ -50,7 +50,6 @@ namespace KingOfKingsFrms
 
         private void btnCarregarImagem_Click(object sender, EventArgs e)
         {
-
             ofdObterImagem.Filter = "Imagens (*.jpg;*.png)|*.jpg;*.png";
             if (ofdObterImagem.ShowDialog() == DialogResult.OK)
             {
