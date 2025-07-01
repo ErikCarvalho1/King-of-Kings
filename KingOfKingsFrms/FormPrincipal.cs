@@ -111,7 +111,7 @@ namespace KingOfKingsFrms
 
         private void cadastroDeClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormPainel(new Form1());
+            FormPainel(new FormClientes());
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -132,6 +132,16 @@ namespace KingOfKingsFrms
         private void cadastroDeProdutosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FormPainel(new FrmProduto());
+        }
+
+        private void lIstarEstoqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPainel(new FormEstoque());
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            FormPainel(new FormPedido());
         }
     }
 }

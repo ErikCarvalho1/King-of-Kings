@@ -32,24 +32,24 @@
             label2 = new Label();
             label1 = new Label();
             textBox1 = new TextBox();
-            pictureBox8 = new PictureBox();
-            pictureBox7 = new PictureBox();
-            pictureBox6 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
+            pictureBoxshortsfem = new PictureBox();
+            pictureBoxBone = new PictureBox();
+            pictureBoxshortsmasc = new PictureBox();
+            pictureBoxkit = new PictureBox();
+            pictureBoxcropeed = new PictureBox();
+            pictureBoxCamMasc = new PictureBox();
+            pictureBoxChinelo = new PictureBox();
+            pictureBoxMoletom = new PictureBox();
             label3 = new Label();
             label6 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxshortsfem).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBone).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxshortsmasc).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxkit).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxcropeed).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCamMasc).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxChinelo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMoletom).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -78,78 +78,78 @@
             textBox1.TabIndex = 41;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
-            // pictureBox8
+            // pictureBoxshortsfem
             // 
-            pictureBox8.BackgroundImage = (Image)resources.GetObject("pictureBox8.BackgroundImage");
-            pictureBox8.Location = new Point(221, 300);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(100, 81);
-            pictureBox8.TabIndex = 40;
-            pictureBox8.TabStop = false;
+            pictureBoxshortsfem.BackgroundImage = (Image)resources.GetObject("pictureBoxshortsfem.BackgroundImage");
+            pictureBoxshortsfem.Location = new Point(221, 300);
+            pictureBoxshortsfem.Name = "pictureBoxshortsfem";
+            pictureBoxshortsfem.Size = new Size(100, 81);
+            pictureBoxshortsfem.TabIndex = 40;
+            pictureBoxshortsfem.TabStop = false;
             // 
-            // pictureBox7
+            // pictureBoxBone
             // 
-            pictureBox7.BackgroundImage = (Image)resources.GetObject("pictureBox7.BackgroundImage");
-            pictureBox7.Location = new Point(97, 74);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(100, 81);
-            pictureBox7.TabIndex = 39;
-            pictureBox7.TabStop = false;
-            pictureBox7.Click += pictureBox7_Click;
+            pictureBoxBone.BackgroundImage = (Image)resources.GetObject("pictureBoxBone.BackgroundImage");
+            pictureBoxBone.Location = new Point(97, 74);
+            pictureBoxBone.Name = "pictureBoxBone";
+            pictureBoxBone.Size = new Size(100, 81);
+            pictureBoxBone.TabIndex = 39;
+            pictureBoxBone.TabStop = false;
+            pictureBoxBone.Click += pictureBox7_Click;
             // 
-            // pictureBox6
+            // pictureBoxshortsmasc
             // 
-            pictureBox6.BackgroundImage = (Image)resources.GetObject("pictureBox6.BackgroundImage");
-            pictureBox6.Location = new Point(97, 300);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(100, 81);
-            pictureBox6.TabIndex = 38;
-            pictureBox6.TabStop = false;
+            pictureBoxshortsmasc.BackgroundImage = (Image)resources.GetObject("pictureBoxshortsmasc.BackgroundImage");
+            pictureBoxshortsmasc.Location = new Point(97, 300);
+            pictureBoxshortsmasc.Name = "pictureBoxshortsmasc";
+            pictureBoxshortsmasc.Size = new Size(100, 81);
+            pictureBoxshortsmasc.TabIndex = 38;
+            pictureBoxshortsmasc.TabStop = false;
             // 
-            // pictureBox5
+            // pictureBoxkit
             // 
-            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
-            pictureBox5.Location = new Point(342, 186);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(100, 81);
-            pictureBox5.TabIndex = 37;
-            pictureBox5.TabStop = false;
+            pictureBoxkit.BackgroundImage = (Image)resources.GetObject("pictureBoxkit.BackgroundImage");
+            pictureBoxkit.Location = new Point(342, 186);
+            pictureBoxkit.Name = "pictureBoxkit";
+            pictureBoxkit.Size = new Size(100, 81);
+            pictureBoxkit.TabIndex = 37;
+            pictureBoxkit.TabStop = false;
             // 
-            // pictureBox4
+            // pictureBoxcropeed
             // 
-            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
-            pictureBox4.Location = new Point(221, 186);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(100, 81);
-            pictureBox4.TabIndex = 36;
-            pictureBox4.TabStop = false;
+            pictureBoxcropeed.BackgroundImage = (Image)resources.GetObject("pictureBoxcropeed.BackgroundImage");
+            pictureBoxcropeed.Location = new Point(221, 186);
+            pictureBoxcropeed.Name = "pictureBoxcropeed";
+            pictureBoxcropeed.Size = new Size(100, 81);
+            pictureBoxcropeed.TabIndex = 36;
+            pictureBoxcropeed.TabStop = false;
             // 
-            // pictureBox3
+            // pictureBoxCamMasc
             // 
-            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
-            pictureBox3.Location = new Point(97, 186);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(100, 81);
-            pictureBox3.TabIndex = 35;
-            pictureBox3.TabStop = false;
+            pictureBoxCamMasc.BackgroundImage = (Image)resources.GetObject("pictureBoxCamMasc.BackgroundImage");
+            pictureBoxCamMasc.Location = new Point(97, 186);
+            pictureBoxCamMasc.Name = "pictureBoxCamMasc";
+            pictureBoxCamMasc.Size = new Size(100, 81);
+            pictureBoxCamMasc.TabIndex = 35;
+            pictureBoxCamMasc.TabStop = false;
             // 
-            // pictureBox2
+            // pictureBoxChinelo
             // 
-            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
-            pictureBox2.Location = new Point(342, 74);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(100, 81);
-            pictureBox2.TabIndex = 34;
-            pictureBox2.TabStop = false;
+            pictureBoxChinelo.BackgroundImage = (Image)resources.GetObject("pictureBoxChinelo.BackgroundImage");
+            pictureBoxChinelo.Location = new Point(342, 74);
+            pictureBoxChinelo.Name = "pictureBoxChinelo";
+            pictureBoxChinelo.Size = new Size(100, 81);
+            pictureBoxChinelo.TabIndex = 34;
+            pictureBoxChinelo.TabStop = false;
             // 
-            // pictureBox1
+            // pictureBoxMoletom
             // 
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.Location = new Point(221, 74);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(100, 81);
-            pictureBox1.TabIndex = 33;
-            pictureBox1.TabStop = false;
+            pictureBoxMoletom.BackgroundImage = (Image)resources.GetObject("pictureBoxMoletom.BackgroundImage");
+            pictureBoxMoletom.Location = new Point(221, 74);
+            pictureBoxMoletom.Name = "pictureBoxMoletom";
+            pictureBoxMoletom.Size = new Size(100, 81);
+            pictureBoxMoletom.TabIndex = 33;
+            pictureBoxMoletom.TabStop = false;
             // 
             // label3
             // 
@@ -186,26 +186,26 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(textBox1);
-            Controls.Add(pictureBox8);
-            Controls.Add(pictureBox7);
-            Controls.Add(pictureBox6);
-            Controls.Add(pictureBox5);
-            Controls.Add(pictureBox4);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
+            Controls.Add(pictureBoxshortsfem);
+            Controls.Add(pictureBoxBone);
+            Controls.Add(pictureBoxshortsmasc);
+            Controls.Add(pictureBoxkit);
+            Controls.Add(pictureBoxcropeed);
+            Controls.Add(pictureBoxCamMasc);
+            Controls.Add(pictureBoxChinelo);
+            Controls.Add(pictureBoxMoletom);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormCategorias";
             Text = "FormCategorias";
             Load += FormCategorias_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxshortsfem).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBone).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxshortsmasc).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxkit).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxcropeed).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCamMasc).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxChinelo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMoletom).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -215,14 +215,14 @@
         private Label label2;
         private Label label1;
         private TextBox textBox1;
-        private PictureBox pictureBox8;
-        private PictureBox pictureBox7;
-        private PictureBox pictureBox6;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox1;
+        private PictureBox pictureBoxshortsfem;
+        private PictureBox pictureBoxBone;
+        private PictureBox pictureBoxshortsmasc;
+        private PictureBox pictureBoxkit;
+        private PictureBox pictureBoxcropeed;
+        private PictureBox pictureBoxCamMasc;
+        private PictureBox pictureBoxChinelo;
+        private PictureBox pictureBoxMoletom;
         private Label label3;
         private Label label6;
     }

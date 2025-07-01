@@ -65,7 +65,7 @@ namespace KingOfKingsClass
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "sp_inserir_enderecos";
+            cmd.CommandText = "sp_endereco_insert";
             cmd.Parameters.AddWithValue("spcliente_id", ClienteId);
             cmd.Parameters.AddWithValue("spcep", Cep);
             cmd.Parameters.AddWithValue("splogradouro", Logradouro);

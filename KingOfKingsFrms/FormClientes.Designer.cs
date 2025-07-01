@@ -1,6 +1,6 @@
 ﻿namespace KingOfKingsFrms
 {
-    partial class Form1
+    partial class FormClientes
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@
         {
             Daodo = new TabControl();
             tabPage1 = new TabPage();
+            txtClienteId = new TextBox();
             mxtTelefone = new MaskedTextBox();
             mxtCpf = new MaskedTextBox();
             button2 = new Button();
@@ -71,7 +72,6 @@
             clnComplemento = new DataGridViewTextBoxColumn();
             clnBairro = new DataGridViewTextBoxColumn();
             clnCidade = new DataGridViewTextBoxColumn();
-            txtClienteId = new TextBox();
             Daodo.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -114,17 +114,30 @@
             tabPage1.Size = new Size(768, 376);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Dados Pessoais";
+
+            // 
+            // txtClienteId
+            // 
+            txtClienteId.BackColor = SystemColors.ActiveBorder;
+            txtClienteId.Location = new Point(177, 205);
+            txtClienteId.Name = "txtClienteId";
+            txtClienteId.Size = new Size(100, 23);
+            txtClienteId.TabIndex = 62;
+            txtClienteId.Text = "0";
+            txtClienteId.Visible = false;
             // 
             // mxtTelefone
             // 
-            mxtTelefone.Location = new Point(138, 154);
+            mxtTelefone.BackColor = SystemColors.ActiveBorder;
+            mxtTelefone.Location = new Point(177, 118);
             mxtTelefone.Name = "mxtTelefone";
             mxtTelefone.Size = new Size(100, 23);
             mxtTelefone.TabIndex = 68;
             // 
             // mxtCpf
             // 
-            mxtCpf.Location = new Point(141, 112);
+            mxtCpf.BackColor = SystemColors.ActiveBorder;
+            mxtCpf.Location = new Point(177, 89);
             mxtCpf.Name = "mxtCpf";
             mxtCpf.Size = new Size(100, 23);
             mxtCpf.TabIndex = 67;
@@ -133,25 +146,27 @@
             // 
             button2.BackgroundImage = Properties.Resources.EditarGbtn;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(623, 343);
+            button2.Location = new Point(220, 332);
             button2.Name = "button2";
             button2.Size = new Size(103, 38);
             button2.TabIndex = 66;
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
             button1.BackgroundImage = Properties.Resources.bntVoltar;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(41, 346);
+            button1.Location = new Point(6, 335);
             button1.Name = "button1";
-            button1.Size = new Size(102, 38);
+            button1.Size = new Size(102, 35);
             button1.TabIndex = 65;
             button1.UseVisualStyleBackColor = true;
             // 
             // dtpDataNasc
             // 
-            dtpDataNasc.Location = new Point(440, 109);
+            dtpDataNasc.CalendarMonthBackground = SystemColors.ActiveBorder;
+            dtpDataNasc.Location = new Point(177, 176);
             dtpDataNasc.Name = "dtpDataNasc";
             dtpDataNasc.Size = new Size(173, 23);
             dtpDataNasc.TabIndex = 64;
@@ -163,7 +178,7 @@
             label8.FlatStyle = FlatStyle.Popup;
             label8.Font = new Font("Microsoft Sans Serif", 9.75F);
             label8.ForeColor = Color.FromArgb(219, 179, 91);
-            label8.Location = new Point(144, 51);
+            label8.Location = new Point(127, 64);
             label8.Name = "label8";
             label8.Size = new Size(44, 16);
             label8.TabIndex = 62;
@@ -173,9 +188,9 @@
             // 
             btnCadastrar.BackgroundImage = Properties.Resources.bntCadastrar;
             btnCadastrar.FlatStyle = FlatStyle.Flat;
-            btnCadastrar.Location = new Point(518, 343);
+            btnCadastrar.Location = new Point(115, 335);
             btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(99, 44);
+            btnCadastrar.Size = new Size(99, 38);
             btnCadastrar.TabIndex = 60;
             btnCadastrar.Text = " ";
             btnCadastrar.UseVisualStyleBackColor = true;
@@ -199,7 +214,7 @@
             label5.BackColor = SystemColors.ActiveCaptionText;
             label5.Font = new Font("Microsoft Sans Serif", 9.75F);
             label5.ForeColor = Color.FromArgb(219, 179, 91);
-            label5.Location = new Point(446, 96);
+            label5.Location = new Point(44, 176);
             label5.Name = "label5";
             label5.Size = new Size(127, 16);
             label5.TabIndex = 58;
@@ -211,7 +226,7 @@
             label4.BackColor = SystemColors.ActiveCaptionText;
             label4.Font = new Font("Microsoft Sans Serif", 9.75F);
             label4.ForeColor = Color.FromArgb(219, 179, 91);
-            label4.Location = new Point(446, 51);
+            label4.Location = new Point(127, 154);
             label4.Name = "label4";
             label4.Size = new Size(41, 16);
             label4.TabIndex = 57;
@@ -225,7 +240,7 @@
             label3.Font = new Font("Microsoft Sans Serif", 9.75F);
             label3.ForeColor = Color.FromArgb(219, 179, 91);
             label3.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Assertive;
-            label3.Location = new Point(144, 141);
+            label3.Location = new Point(110, 120);
             label3.Name = "label3";
             label3.Size = new Size(61, 16);
             label3.TabIndex = 56;
@@ -237,7 +252,7 @@
             label2.BackColor = SystemColors.ActiveCaptionText;
             label2.Font = new Font("Microsoft Sans Serif", 9.75F);
             label2.ForeColor = Color.FromArgb(219, 179, 91);
-            label2.Location = new Point(144, 96);
+            label2.Location = new Point(144, 91);
             label2.Name = "label2";
             label2.Size = new Size(27, 16);
             label2.TabIndex = 55;
@@ -245,14 +260,16 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(440, 64);
+            txtEmail.BackColor = SystemColors.ActiveBorder;
+            txtEmail.Location = new Point(177, 147);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(174, 23);
             txtEmail.TabIndex = 54;
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(138, 64);
+            txtNome.BackColor = SystemColors.ActiveBorder;
+            txtNome.Location = new Point(177, 64);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(174, 23);
             txtNome.TabIndex = 51;
@@ -289,14 +306,16 @@
             // 
             // txtUf
             // 
-            txtUf.Location = new Point(472, 253);
+            txtUf.BackColor = SystemColors.ActiveBorder;
+            txtUf.Location = new Point(316, 232);
             txtUf.Name = "txtUf";
             txtUf.Size = new Size(100, 23);
             txtUf.TabIndex = 66;
             // 
             // mxtCep
             // 
-            mxtCep.Location = new Point(150, 117);
+            mxtCep.BackColor = SystemColors.ActiveBorder;
+            mxtCep.Location = new Point(155, 86);
             mxtCep.Mask = "00000-000";
             mxtCep.Name = "mxtCep";
             mxtCep.Size = new Size(91, 23);
@@ -308,7 +327,7 @@
             // 
             btninserir.BackgroundImage = Properties.Resources.SalvarGbtn;
             btninserir.FlatStyle = FlatStyle.Flat;
-            btninserir.Location = new Point(435, 197);
+            btninserir.Location = new Point(435, 312);
             btninserir.Name = "btninserir";
             btninserir.Size = new Size(103, 43);
             btninserir.TabIndex = 62;
@@ -317,9 +336,10 @@
             // 
             // cmbUF
             // 
+            cmbUF.BackColor = SystemColors.ActiveBorder;
             cmbUF.FormattingEnabled = true;
             cmbUF.Items.AddRange(new object[] { "AC", "AL", "AP ", "AM", "BA ", "CE ", "DF ", "ES ", "GO", "MA ", "MT ", "MS ", "MG ", "PA", "PB", "PR", "PE", "PI ", "RJ", "RN ", "RS ", "RO ", "RR ", "SC", "SP", "SE", "TO" });
-            cmbUF.Location = new Point(561, 161);
+            cmbUF.Location = new Point(290, 146);
             cmbUF.Name = "cmbUF";
             cmbUF.Size = new Size(46, 23);
             cmbUF.TabIndex = 61;
@@ -340,7 +360,7 @@
             // 
             label13.AutoSize = true;
             label13.ForeColor = Color.FromArgb(219, 179, 91);
-            label13.Location = new Point(158, 279);
+            label13.Location = new Point(59, 235);
             label13.Name = "label13";
             label13.Size = new Size(83, 15);
             label13.TabIndex = 14;
@@ -348,9 +368,10 @@
             // 
             // cmbTipoEndereco
             // 
+            cmbTipoEndereco.BackColor = SystemColors.ActiveBorder;
             cmbTipoEndereco.FormattingEnabled = true;
             cmbTipoEndereco.Items.AddRange(new object[] { "RESIDENCIAL", "COMERCIAL" });
-            cmbTipoEndereco.Location = new Point(155, 294);
+            cmbTipoEndereco.Location = new Point(155, 232);
             cmbTipoEndereco.Name = "cmbTipoEndereco";
             cmbTipoEndereco.Size = new Size(136, 23);
             cmbTipoEndereco.TabIndex = 13;
@@ -359,7 +380,7 @@
             // 
             label12.AutoSize = true;
             label12.ForeColor = Color.FromArgb(219, 179, 91);
-            label12.Location = new Point(438, 146);
+            label12.Location = new Point(98, 149);
             label12.Name = "label12";
             label12.Size = new Size(44, 15);
             label12.TabIndex = 12;
@@ -367,7 +388,8 @@
             // 
             // txtCidade
             // 
-            txtCidade.Location = new Point(435, 161);
+            txtCidade.BackColor = SystemColors.ActiveBorder;
+            txtCidade.Location = new Point(155, 146);
             txtCidade.Name = "txtCidade";
             txtCidade.Size = new Size(120, 23);
             txtCidade.TabIndex = 11;
@@ -376,17 +398,17 @@
             // 
             label11.AutoSize = true;
             label11.ForeColor = Color.FromArgb(219, 179, 91);
-            label11.Location = new Point(438, 102);
+            label11.Location = new Point(435, 117);
             label11.Name = "label11";
-            label11.Size = new Size(51, 15);
+            label11.Size = new Size(21, 15);
             label11.TabIndex = 10;
-            label11.Text = "Número";
+            label11.Text = "N°";
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.ForeColor = Color.FromArgb(219, 179, 91);
-            label10.Location = new Point(159, 234);
+            label10.Location = new Point(58, 206);
             label10.Name = "label10";
             label10.Size = new Size(84, 15);
             label10.TabIndex = 9;
@@ -396,7 +418,7 @@
             // 
             label9.AutoSize = true;
             label9.ForeColor = Color.FromArgb(219, 179, 91);
-            label9.Location = new Point(159, 190);
+            label9.Location = new Point(104, 175);
             label9.Name = "label9";
             label9.Size = new Size(38, 15);
             label9.TabIndex = 8;
@@ -406,7 +428,7 @@
             // 
             label7.AutoSize = true;
             label7.ForeColor = Color.FromArgb(219, 179, 91);
-            label7.Location = new Point(159, 146);
+            label7.Location = new Point(74, 114);
             label7.Name = "label7";
             label7.Size = new Size(69, 15);
             label7.TabIndex = 7;
@@ -416,7 +438,7 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = Color.FromArgb(219, 179, 91);
-            label1.Location = new Point(159, 102);
+            label1.Location = new Point(114, 86);
             label1.Name = "label1";
             label1.Size = new Size(28, 15);
             label1.TabIndex = 6;
@@ -424,28 +446,32 @@
             // 
             // txtComplemento
             // 
-            txtComplemento.Location = new Point(156, 249);
+            txtComplemento.BackColor = SystemColors.ActiveBorder;
+            txtComplemento.Location = new Point(155, 203);
             txtComplemento.Name = "txtComplemento";
             txtComplemento.Size = new Size(261, 23);
             txtComplemento.TabIndex = 5;
             // 
             // txtBairro
             // 
-            txtBairro.Location = new Point(156, 205);
+            txtBairro.BackColor = SystemColors.ActiveBorder;
+            txtBairro.Location = new Point(155, 175);
             txtBairro.Name = "txtBairro";
             txtBairro.Size = new Size(261, 23);
             txtBairro.TabIndex = 4;
             // 
             // txtLogradouro
             // 
-            txtLogradouro.Location = new Point(156, 161);
+            txtLogradouro.BackColor = SystemColors.ActiveBorder;
+            txtLogradouro.Location = new Point(155, 117);
             txtLogradouro.Name = "txtLogradouro";
             txtLogradouro.Size = new Size(261, 23);
             txtLogradouro.TabIndex = 2;
             // 
             // txtNumero
             // 
-            txtNumero.Location = new Point(435, 117);
+            txtNumero.BackColor = SystemColors.ActiveBorder;
+            txtNumero.Location = new Point(462, 114);
             txtNumero.Name = "txtNumero";
             txtNumero.Size = new Size(63, 23);
             txtNumero.TabIndex = 1;
@@ -458,12 +484,13 @@
             dgvEnderecos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvEnderecos.Columns.AddRange(new DataGridViewColumn[] { nome, clnCep, clnLogradouro, clnNumero, clnComplemento, clnBairro, clnCidade });
             dgvEnderecos.GridColor = SystemColors.InactiveCaptionText;
-            dgvEnderecos.Location = new Point(131, 427);
+            dgvEnderecos.Location = new Point(114, 442);
             dgvEnderecos.Name = "dgvEnderecos";
             dgvEnderecos.ReadOnly = true;
             dgvEnderecos.RowHeadersVisible = false;
             dgvEnderecos.Size = new Size(602, 149);
             dgvEnderecos.TabIndex = 61;
+            dgvEnderecos.CellContentClick += dgvEnderecos_CellContentClick;
             // 
             // nome
             // 
@@ -509,23 +536,16 @@
             clnCidade.Name = "clnCidade";
             clnCidade.ReadOnly = true;
             // 
-            // txtClienteId
-            // 
-            txtClienteId.Location = new Point(446, 154);
-            txtClienteId.Name = "txtClienteId";
-            txtClienteId.Size = new Size(100, 23);
-            txtClienteId.TabIndex = 62;
-            txtClienteId.Text = "0";
-            txtClienteId.Visible = false;
-            // 
-            // Form1
+            // FormClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Black;
             ClientSize = new Size(800, 631);
             Controls.Add(Daodo);
             Controls.Add(dgvEnderecos);
-            Name = "Form1";
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "FormClientes";
             Text = "Form1";
             Load += Form1_Load;
             Daodo.ResumeLayout(false);

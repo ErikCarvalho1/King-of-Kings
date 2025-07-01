@@ -28,72 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            cnlId = new DataGridViewTextBoxColumn();
-            clnQuantidade = new DataGridViewTextBoxColumn();
-            clnUtilmoMovimento = new DataGridViewTextBoxColumn();
-            txtAdicionarEstoque = new NumericUpDown();
-            txtBuscar = new TextBox();
+            components = new System.ComponentModel.Container();
+            dgvEstoque = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            txtNome = new TextBox();
             bntBuscar = new Button();
             bntAdicionar = new Button();
             bntEditar = new Button();
-            txtId = new TextBox();
+            produtoId = new TextBox();
             dateUltimoMovimento = new DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txtAdicionarEstoque).BeginInit();
+            label6 = new Label();
+            dd = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            txtquantidade = new TextBox();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            button1 = new Button();
+            mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
+            ((System.ComponentModel.ISupportInitialize)dgvEstoque).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvEstoque
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { cnlId, clnQuantidade, clnUtilmoMovimento });
-            dataGridView1.Location = new Point(96, 104);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Size = new Size(304, 278);
-            dataGridView1.TabIndex = 0;
+            dgvEstoque.BackgroundColor = Color.Black;
+            dgvEstoque.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEstoque.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
+            dgvEstoque.Location = new Point(191, 182);
+            dgvEstoque.Name = "dgvEstoque";
+            dgvEstoque.RowHeadersVisible = false;
+            dgvEstoque.Size = new Size(401, 217);
+            dgvEstoque.TabIndex = 0;
+            dgvEstoque.CellContentClick += dgvEstoque_CellContentClick;
             // 
-            // cnlId
+            // Column1
             // 
-            cnlId.HeaderText = "ID";
-            cnlId.Name = "cnlId";
+            Column1.HeaderText = "Id";
+            Column1.Name = "Column1";
             // 
-            // clnQuantidade
+            // Column2
             // 
-            clnQuantidade.HeaderText = "Quantidade";
-            clnQuantidade.Name = "clnQuantidade";
+            Column2.HeaderText = "Nome";
+            Column2.Name = "Column2";
             // 
-            // clnUtilmoMovimento
+            // Column3
             // 
-            clnUtilmoMovimento.HeaderText = "UltimoMovimento";
-            clnUtilmoMovimento.Name = "clnUtilmoMovimento";
+            Column3.HeaderText = "Quantidade";
+            Column3.Name = "Column3";
             // 
-            // txtAdicionarEstoque
+            // Column4
             // 
-            txtAdicionarEstoque.Location = new Point(406, 145);
-            txtAdicionarEstoque.Name = "txtAdicionarEstoque";
-            txtAdicionarEstoque.Size = new Size(92, 23);
-            txtAdicionarEstoque.TabIndex = 7;
+            Column4.HeaderText = "Data ";
+            Column4.Name = "Column4";
             // 
-            // txtBuscar
+            // txtNome
             // 
-            txtBuscar.Location = new Point(406, 104);
-            txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(137, 23);
-            txtBuscar.TabIndex = 8;
+            txtNome.Location = new Point(173, 95);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(137, 23);
+            txtNome.TabIndex = 8;
+            txtNome.TextChanged += txtBuscar_TextChanged;
             // 
             // bntBuscar
             // 
-            bntBuscar.Location = new Point(560, 104);
+            bntBuscar.BackgroundImage = Properties.Resources.Buscar;
+            bntBuscar.FlatStyle = FlatStyle.Flat;
+            bntBuscar.ForeColor = SystemColors.ActiveCaptionText;
+            bntBuscar.Location = new Point(427, 88);
             bntBuscar.Name = "bntBuscar";
-            bntBuscar.Size = new Size(75, 23);
+            bntBuscar.Size = new Size(97, 35);
             bntBuscar.TabIndex = 9;
-            bntBuscar.Text = "Buscar";
             bntBuscar.UseVisualStyleBackColor = true;
+            bntBuscar.Click += bntBuscar_Click;
             // 
             // bntAdicionar
             // 
-            bntAdicionar.Location = new Point(504, 145);
+            bntAdicionar.Location = new Point(539, 136);
             bntAdicionar.Name = "bntAdicionar";
             bntAdicionar.Size = new Size(75, 23);
             bntAdicionar.TabIndex = 10;
@@ -103,26 +115,103 @@
             // 
             // bntEditar
             // 
-            bntEditar.Location = new Point(585, 145);
+            bntEditar.Location = new Point(539, 95);
             bntEditar.Name = "bntEditar";
             bntEditar.Size = new Size(75, 23);
             bntEditar.TabIndex = 11;
             bntEditar.Text = "Editar";
             bntEditar.UseVisualStyleBackColor = true;
             // 
-            // txtId
+            // produtoId
             // 
-            txtId.Location = new Point(52, 27);
-            txtId.Name = "txtId";
-            txtId.Size = new Size(100, 23);
-            txtId.TabIndex = 12;
+            produtoId.Enabled = false;
+            produtoId.Location = new Point(64, 29);
+            produtoId.Name = "produtoId";
+            produtoId.Size = new Size(34, 23);
+            produtoId.TabIndex = 12;
+            produtoId.Visible = false;
             // 
             // dateUltimoMovimento
             // 
-            dateUltimoMovimento.Location = new Point(406, 174);
+            dateUltimoMovimento.Location = new Point(173, 136);
             dateUltimoMovimento.Name = "dateUltimoMovimento";
-            dateUltimoMovimento.Size = new Size(262, 23);
+            dateUltimoMovimento.Size = new Size(248, 23);
             dateUltimoMovimento.TabIndex = 13;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Stencil", 21.75F, FontStyle.Bold);
+            label6.ForeColor = Color.FromArgb(219, 179, 91);
+            label6.Location = new Point(329, 18);
+            label6.Name = "label6";
+            label6.Size = new Size(146, 34);
+            label6.TabIndex = 46;
+            label6.Text = "Estoque";
+            // 
+            // dd
+            // 
+            dd.AutoSize = true;
+            dd.BackColor = SystemColors.ActiveCaptionText;
+            dd.ForeColor = Color.FromArgb(219, 179, 91);
+            dd.Location = new Point(173, 75);
+            dd.Name = "dd";
+            dd.Size = new Size(40, 15);
+            dd.TabIndex = 47;
+            dd.Text = "Nome";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = SystemColors.ActiveCaptionText;
+            label1.ForeColor = Color.FromArgb(219, 179, 91);
+            label1.Location = new Point(329, 77);
+            label1.Name = "label1";
+            label1.Size = new Size(69, 15);
+            label1.TabIndex = 48;
+            label1.Text = "Quantidade";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = SystemColors.ActiveCaptionText;
+            label2.ForeColor = Color.FromArgb(219, 179, 91);
+            label2.Location = new Point(173, 118);
+            label2.Name = "label2";
+            label2.Size = new Size(108, 15);
+            label2.TabIndex = 49;
+            label2.Text = "Ultimo movimento";
+            // 
+            // txtquantidade
+            // 
+            txtquantidade.Location = new Point(329, 95);
+            txtquantidade.Name = "txtquantidade";
+            txtquantidade.Size = new Size(92, 23);
+            txtquantidade.TabIndex = 50;
+            txtquantidade.TextChanged += textBox1_TextChanged;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
+            // 
+            // button1
+            // 
+            button1.Location = new Point(438, 136);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 51;
+            button1.Text = "Cadastrar";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // mySqlCommand1
+            // 
+            mySqlCommand1.CacheAge = 0;
+            mySqlCommand1.Connection = null;
+            mySqlCommand1.EnableCaching = false;
+            mySqlCommand1.Transaction = null;
             // 
             // FormEstoque
             // 
@@ -130,35 +219,48 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.leaoFundo;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
+            Controls.Add(txtquantidade);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(dd);
+            Controls.Add(label6);
             Controls.Add(dateUltimoMovimento);
-            Controls.Add(txtId);
+            Controls.Add(produtoId);
             Controls.Add(bntEditar);
             Controls.Add(bntAdicionar);
             Controls.Add(bntBuscar);
-            Controls.Add(txtBuscar);
-            Controls.Add(txtAdicionarEstoque);
-            Controls.Add(dataGridView1);
+            Controls.Add(txtNome);
+            Controls.Add(dgvEstoque);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FormEstoque";
             Text = "FormEstoque";
             Load += FormEstoque_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txtAdicionarEstoque).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEstoque).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private NumericUpDown txtAdicionarEstoque;
-        private TextBox txtBuscar;
+        private DataGridView dgvEstoque;
+        private TextBox txtNome;
         private Button bntBuscar;
         private Button bntAdicionar;
         private Button bntEditar;
-        private DataGridViewTextBoxColumn cnlId;
-        private DataGridViewTextBoxColumn clnQuantidade;
-        private DataGridViewTextBoxColumn clnUtilmoMovimento;
-        private TextBox txtId;
+        private TextBox produtoId;
         private DateTimePicker dateUltimoMovimento;
+        private Label label6;
+        private Label dd;
+        private Label label1;
+        private Label label2;
+        private TextBox txtquantidade;
+        private ContextMenuStrip contextMenuStrip1;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private Button button1;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
     }
 }

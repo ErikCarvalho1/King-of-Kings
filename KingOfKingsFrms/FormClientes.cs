@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace KingOfKingsFrms
 {
-    public partial class Form1 : Form
+    public partial class FormClientes : Form
     {
-        public Form1()
+        public FormClientes()
         {
             InitializeComponent();
         }
@@ -58,6 +58,7 @@ namespace KingOfKingsFrms
                 );
 
             endereco.Inserir();
+            CarregaGrid(int.Parse(txtClienteId.Text));
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -84,7 +85,26 @@ namespace KingOfKingsFrms
 
             }
         }
-
+        private void CarregaGrid(int clienteId)
+        {
+            var listaEnderecos = Endereco.ObterListaPorClienteId(clienteId);
+            int count = 0;
+            // Preenche o DataGridView com todos os endereços
+            dgvEnderecos.Rows.Clear();
+            foreach (var endereco in listaEnderecos)
+            {
+                int rowIndex = dgvEnderecos.Rows.Add();
+                dgvEnderecos.Rows[count].Cells[0].Value = endereco.Cep;
+                dgvEnderecos.Rows[count].Cells[1].Value = endereco.Logradouro;
+                dgvEnderecos.Rows[count].Cells[2].Value = endereco.Numero;
+                dgvEnderecos.Rows[count].Cells[3].Value = endereco.Complemento;
+                dgvEnderecos.Rows[count].Cells[4].Value = endereco.Bairro;
+                dgvEnderecos.Rows[count].Cells[5].Value = endereco.Cidade;
+                dgvEnderecos.Rows[count].Cells[6].Value = endereco.Uf;
+                dgvEnderecos.Rows[count].Cells[7].Value = endereco.TipoEndereco;
+                count++;
+            }
+        }
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
@@ -96,6 +116,16 @@ namespace KingOfKingsFrms
         }
 
         private void txtClienteId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvEnderecos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

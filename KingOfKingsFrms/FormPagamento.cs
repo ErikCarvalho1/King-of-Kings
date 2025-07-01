@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace KingOfKingsFrms
 {
-    public partial class FormCadastroCategoria : Form
+    public partial class FormPagamento : Form
     {
-        public FormCadastroCategoria()
+        public FormPagamento()
         {
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void FormCadastroCategoria_Load(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }
