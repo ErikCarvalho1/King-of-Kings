@@ -34,6 +34,23 @@ namespace KingOfKingsClass
             Email = email;
             DataNascimento = dataNascimento;
         }
+        public Cliente(string nome, string cpf, string telefone, DateTime dataNascimento)
+        {// este é o construtor que utilizaremos para inserir o cliente
+            Nome = nome;
+            Cpf = cpf;
+            Telefone = telefone;
+           
+            DataNascimento = dataNascimento;
+        }
+        public Cliente(int id, string nome, string cpf, string telefone, string email, DateTime dataNasc)
+        {
+            Id = id;
+            Nome = nome;
+            Cpf = cpf;
+            Telefone = telefone;
+            Email = email;
+            DataNascimento = dataNasc;
+        }
         public Cliente(int id, string nome, string cpf, string telefone, string email, DateTime dataNascimento, DateTime dataCadastro, bool ativo, List<Endereco>? enderecos)
         {
             Id = id;
@@ -97,7 +114,7 @@ namespace KingOfKingsClass
        dr.GetString(4),
        dr.GetDateTime(5),
        dr.GetDateTime(6),
-       !dr.IsDBNull(7) && dr.GetBoolean(7), // Safely handle nulls  
+       !dr.IsDBNull(7) && dr.GetBoolean(7), 
        Endereco.ObterListaPorClienteId(dr.GetInt32(0))
    );
             }
@@ -129,6 +146,30 @@ namespace KingOfKingsClass
             dr.Close();
             cmd.Connection.Close();
             return clientes;
+        }
+        public static Cliente ObterPorCpf(string cpf)
+        {
+            Cliente cliente = new();
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select * from clientes where cpf = {cpf}";
+            var dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                cliente = new(
+       dr.GetInt32(0),
+       dr.GetString(1),
+       dr.GetString(2),
+       dr.GetString(3),
+       dr.GetString(4),
+       dr.GetDateTime(5),
+       dr.GetDateTime(6),
+       !dr.IsDBNull(7) && dr.GetBoolean(7),
+       Endereco.ObterListaPorClienteId(dr.GetInt32(0))
+   );
+            }
+            dr.Close();
+            cmd.Connection.Close();
+            return cliente;
         }
     }
 }

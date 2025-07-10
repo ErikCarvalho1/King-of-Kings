@@ -120,14 +120,66 @@ namespace KingOfKingsFrms
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void dgvEnderecos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtClienteId.Text))
+            {
+                MessageBox.Show("Selecione um cliente para editar.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                mxtCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                mxtTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+
+                Cliente cliente = new Cliente(
+                    int.Parse(txtClienteId.Text),
+                    txtNome.Text,
+                    mxtCpf.Text,
+                    mxtTelefone.Text,
+                    txtEmail.Text,
+                    dtpDataNasc.Value
+                );
+
+                cliente.Atualizar(); // Supondo que esse método atualize o cliente no banco
+
+                MessageBox.Show("Cliente atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao editar cliente: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void bntBuscar_Click(object sender, EventArgs e)
+        {
+            mxtCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string cpf = mxtCpf.Text;
+
+            var cliente = Cliente.ObterPorCpf(cpf);
+            if (cliente != null)
+            {
+                txtClienteId.Text = cliente.Id.ToString();
+                txtNome.Text = cliente.Nome;
+                mxtTelefone.Text = cliente.Telefone;
+                txtEmail.Text = cliente.Email;
+                dtpDataNasc.Value = cliente.DataNascimento;
+
+                // Carregar endereços no grid
+               
+            }
+            else
+            {
+                MessageBox.Show("Cliente não encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
