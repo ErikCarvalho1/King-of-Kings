@@ -129,7 +129,6 @@
             produtoId.Name = "produtoId";
             produtoId.Size = new Size(34, 23);
             produtoId.TabIndex = 12;
-            produtoId.Visible = false;
             // 
             // dateUltimoMovimento
             // 

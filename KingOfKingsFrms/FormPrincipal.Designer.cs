@@ -134,6 +134,7 @@
             button1 = new Button();
             bntHistorico = new Button();
             button10 = new Button();
+            button11 = new Button();
             menuStrip1.SuspendLayout();
             pnlPrincipal.SuspendLayout();
             SuspendLayout();
@@ -1012,12 +1013,23 @@
             button10.UseVisualStyleBackColor = true;
             button10.Click += button10_Click;
             // 
+            // button11
+            // 
+            button11.Location = new Point(720, 51);
+            button11.Name = "button11";
+            button11.Size = new Size(75, 23);
+            button11.TabIndex = 55;
+            button11.Text = "button11";
+            button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1350, 729);
+            Controls.Add(button11);
             Controls.Add(button10);
             Controls.Add(panel4);
             Controls.Add(label2);
@@ -1164,5 +1176,6 @@
         private ToolStripMenuItem listarProdutosToolStripMenuItem;
         private ToolStripMenuItem lIstarEstoqueToolStripMenuItem;
         private Button button10;
+        private Button button11;
     }
 }

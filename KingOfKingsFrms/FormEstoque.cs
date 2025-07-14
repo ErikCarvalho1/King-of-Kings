@@ -168,35 +168,27 @@ namespace KingOfKingsFrms
         private void button1_Click(object sender, EventArgs e)
         {
             string nome = txtNome.Text.Trim();
-            string quantidadeTexto = txtquantidade.Text.Trim();
-            string dataTexto = dateUltimoMovimento.Text.Trim(); // ou dateUltimoMovimento.SelectedDate se for DatePicker
+            string txtQtd = txtquantidade.Text.Trim();
 
-            if (!string.IsNullOrWhiteSpace(nome) &&
-                !string.IsNullOrWhiteSpace(quantidadeTexto) &&
-                !string.IsNullOrWhiteSpace(dataTexto))
+            if (double.TryParse(txtQtd, out double quantidade) && quantidade > 0)
             {
-                if (double.TryParse(quantidadeTexto, out double quantidade) &&
-                    quantidade > 0 &&
-                    DateTime.TryParse(dataTexto, out DateTime data))
+                DateTime data = dateUltimoMovimento.Value;   // DateTimePicker
+
+                // Agora só o nome já basta:
+                var estoque = new Estoque(nome, quantidade, data);
+
+                try
                 {
-                    Estoque estoque = new Estoque
-                    {
-
-                        Quantidade = quantidade,
-                        DataUltimoMovimento = data
-                    };
-
-                    estoque.Inserir(); // salva no banco ou lista
-
-                    if (estoque.Id > 0) // ou outro critério de sucesso
-                    {
-                        MessageBox.Show("Produto inserido com sucesso!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Erro ao inserir o produto.");
-                    }
-
+                    estoque.Inserir();
+                    MessageBox.Show("Produto inserido com sucesso!");
+                }
+                catch (InvalidOperationException ex) // produto não encontrado
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (Exception ex)                // outros erros
+                {
+                    MessageBox.Show("Erro: " + ex.Message);
                 }
             }
         }
