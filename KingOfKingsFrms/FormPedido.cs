@@ -146,7 +146,7 @@ namespace KingOfKingsFrms
                 var cliente = Cliente.ObterPorId(int.Parse(txtIdCliente.Text));
                 if (cliente.Id > 0)
                 {
-                    txtCLiente.Text = cliente.Nome;
+                    txtNomeCLiente.Text = cliente.Nome;
                 }
 
             }
@@ -175,6 +175,18 @@ namespace KingOfKingsFrms
         private void pictureBoxBone_Click(object sender, EventArgs e)
         {
             FormPainel(new FormRegistroAcesso());
+        }
+
+        private void btnInserePedido_Click_1(object sender, EventArgs e)
+        {
+            Pedido pedido = new(Program.UsuarioLogado, Cliente.ObterPorId(int.Parse(txtIdCliente.Text)));
+            pedido.Inserir();
+            if (pedido.Id > 0)
+            {
+                txtIdPedido.Text = pedido.Id.ToString();
+                grbIndentificacao.Enabled = false;
+                grbItens.Enabled = true;
+            }
         }
     }
 }

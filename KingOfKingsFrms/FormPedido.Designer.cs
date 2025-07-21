@@ -34,7 +34,7 @@
             button1 = new Button();
             btnInserePedido = new Button();
             txtIdCliente = new TextBox();
-            txtCLiente = new TextBox();
+            txtNomeCLiente = new TextBox();
             label3 = new Label();
             label1 = new Label();
             label2 = new Label();
@@ -60,9 +60,9 @@
             txtQuantidade = new TextBox();
             txtValorUnit = new TextBox();
             label5 = new Label();
-            txtDrescricao = new TextBox();
+            txtDescricao = new TextBox();
             label4 = new Label();
-            txtCodBarra = new TextBox();
+            txtCodBar = new TextBox();
             txtIdProd = new TextBox();
             abaItemPedido = new TabControl();
             tabPage1 = new TabPage();
@@ -111,7 +111,7 @@
             grbIndentificacao.Controls.Add(button1);
             grbIndentificacao.Controls.Add(btnInserePedido);
             grbIndentificacao.Controls.Add(txtIdCliente);
-            grbIndentificacao.Controls.Add(txtCLiente);
+            grbIndentificacao.Controls.Add(txtNomeCLiente);
             grbIndentificacao.Controls.Add(label3);
             grbIndentificacao.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             grbIndentificacao.ForeColor = Color.FromArgb(219, 179, 91);
@@ -152,7 +152,7 @@
             btnInserePedido.Size = new Size(103, 39);
             btnInserePedido.TabIndex = 1;
             btnInserePedido.UseVisualStyleBackColor = true;
-            btnInserePedido.Click += btnInserePedido_Click;
+            btnInserePedido.Click += btnInserePedido_Click_1;
             // 
             // txtIdCliente
             // 
@@ -162,16 +162,17 @@
             txtIdCliente.Name = "txtIdCliente";
             txtIdCliente.Size = new Size(56, 27);
             txtIdCliente.TabIndex = 0;
+            txtIdCliente.TextChanged += txtIdCliente_TextChanged;
             // 
-            // txtCLiente
+            // txtNomeCLiente
             // 
-            txtCLiente.BackColor = SystemColors.ActiveBorder;
-            txtCLiente.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCLiente.Location = new Point(133, 71);
-            txtCLiente.Name = "txtCLiente";
-            txtCLiente.ReadOnly = true;
-            txtCLiente.Size = new Size(176, 27);
-            txtCLiente.TabIndex = 1;
+            txtNomeCLiente.BackColor = SystemColors.ActiveBorder;
+            txtNomeCLiente.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNomeCLiente.Location = new Point(133, 71);
+            txtNomeCLiente.Name = "txtNomeCLiente";
+            txtNomeCLiente.ReadOnly = true;
+            txtNomeCLiente.Size = new Size(176, 27);
+            txtNomeCLiente.TabIndex = 1;
             // 
             // label3
             // 
@@ -262,7 +263,6 @@
             btnFechar.Size = new Size(100, 42);
             btnFechar.TabIndex = 3;
             btnFechar.UseVisualStyleBackColor = true;
-            btnFechar.Click += btnFechar_Click;
             // 
             // txtDescontoPedido
             // 
@@ -333,9 +333,9 @@
             grbItens.Controls.Add(txtQuantidade);
             grbItens.Controls.Add(txtValorUnit);
             grbItens.Controls.Add(label5);
-            grbItens.Controls.Add(txtDrescricao);
+            grbItens.Controls.Add(txtDescricao);
             grbItens.Controls.Add(label4);
-            grbItens.Controls.Add(txtCodBarra);
+            grbItens.Controls.Add(txtCodBar);
             grbItens.Controls.Add(txtIdProd);
             grbItens.Controls.Add(abaItemPedido);
             grbItens.ForeColor = Color.FromArgb(219, 179, 91);
@@ -345,7 +345,6 @@
             grbItens.TabIndex = 11;
             grbItens.TabStop = false;
             grbItens.Text = "Item de pedido";
-            grbItens.Enter += groupBox1_Enter;
             // 
             // label9
             // 
@@ -423,7 +422,6 @@
             btnAdicionarItem.Size = new Size(100, 42);
             btnAdicionarItem.TabIndex = 12;
             btnAdicionarItem.UseVisualStyleBackColor = true;
-            btnAdicionarItem.Click += button2_Click;
             // 
             // txtDescontoItem
             // 
@@ -470,15 +468,15 @@
             label5.TabIndex = 14;
             label5.Text = "Descrição";
             // 
-            // txtDrescricao
+            // txtDescricao
             // 
-            txtDrescricao.BackColor = SystemColors.ActiveBorder;
-            txtDrescricao.Font = new Font("Segoe UI", 10F);
-            txtDrescricao.Location = new Point(135, 60);
-            txtDrescricao.Name = "txtDrescricao";
-            txtDrescricao.ReadOnly = true;
-            txtDrescricao.Size = new Size(171, 25);
-            txtDrescricao.TabIndex = 13;
+            txtDescricao.BackColor = SystemColors.ActiveBorder;
+            txtDescricao.Font = new Font("Segoe UI", 10F);
+            txtDescricao.Location = new Point(135, 60);
+            txtDescricao.Name = "txtDescricao";
+            txtDescricao.ReadOnly = true;
+            txtDescricao.Size = new Size(171, 25);
+            txtDescricao.TabIndex = 13;
             // 
             // label4
             // 
@@ -491,16 +489,15 @@
             label4.TabIndex = 12;
             label4.Text = "Codigo de Barras";
             // 
-            // txtCodBarra
+            // txtCodBar
             // 
-            txtCodBarra.BackColor = SystemColors.ActiveBorder;
-            txtCodBarra.Font = new Font("Segoe UI", 10F);
-            txtCodBarra.Location = new Point(7, 60);
-            txtCodBarra.Name = "txtCodBarra";
-            txtCodBarra.ReadOnly = true;
-            txtCodBarra.Size = new Size(122, 25);
-            txtCodBarra.TabIndex = 5;
-            txtCodBarra.TextChanged += textBox2_TextChanged;
+            txtCodBar.BackColor = SystemColors.ActiveBorder;
+            txtCodBar.Font = new Font("Segoe UI", 10F);
+            txtCodBar.Location = new Point(7, 60);
+            txtCodBar.Name = "txtCodBar";
+            txtCodBar.ReadOnly = true;
+            txtCodBar.Size = new Size(122, 25);
+            txtCodBar.TabIndex = 5;
             // 
             // txtIdProd
             // 
@@ -636,7 +633,6 @@
             pnlcategoria.Name = "pnlcategoria";
             pnlcategoria.Size = new Size(641, 197);
             pnlcategoria.TabIndex = 14;
-            pnlcategoria.Paint += panel1_Paint;
             // 
             // label15
             // 
@@ -750,7 +746,7 @@
             Location = new Point(168, 147);
             Name = "FormPedido";
             Text = "FrmPedidoNovo";
-            Load += FormPedido_Load_1;
+            Load += FormPedido_Load;
             grbIndentificacao.ResumeLayout(false);
             grbIndentificacao.PerformLayout();
             grbItens.ResumeLayout(false);
@@ -781,7 +777,7 @@
         private Label label1;
         private Label label2;
         private TextBox txtIdPedido;
-        private TextBox txtCLiente;
+        private TextBox txtNomeCLiente;
         private Button btnInserePedido;
         private TextBox txtIdCliente;
         private TextBox txtTotal;
@@ -800,13 +796,13 @@
         private TabPage tabPage2;
         private TextBox txtIdProd;
         private Label label4;
-        private TextBox txtCodBarra;
+        private TextBox txtCodBar;
         private Button btnAdicionarItem;
         private TextBox txtDescontoItem;
         private TextBox txtQuantidade;
         private TextBox txtValorUnit;
         private Label label5;
-        private TextBox txtDrescricao;
+        private TextBox txtDescricao;
         private RadioButton radioButton2;
         private RadioButton radioButton1;
         private Label label8;

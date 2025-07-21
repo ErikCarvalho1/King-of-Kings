@@ -86,12 +86,12 @@ namespace KingOfKingsFrms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormPainel(new FormCategorias());
+            FormPainel(new FormPedido());
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            FormPainel(new FormCategorias());
+
         }
 
         private void cadastroDeUsuariosEVendedoresToolStripMenuItem_Click(object sender, EventArgs e)

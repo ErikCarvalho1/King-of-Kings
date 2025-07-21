@@ -62,7 +62,7 @@ namespace ComercialTDSClass
             var cmd = Banco.Abrir();
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.CommandText = "sp_pedido_insert";
-            cmd.Parameters.AddWithValue("spusario_id", Usuario.Id);
+            cmd.Parameters.AddWithValue("spusuario_id", Usuario.Id);
             cmd.Parameters.AddWithValue("spcliente_id", Cliente.Id);
             Id = Convert.ToInt32(cmd.ExecuteScalar());
             cmd.Connection.Close();
