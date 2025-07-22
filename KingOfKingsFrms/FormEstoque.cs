@@ -50,8 +50,8 @@ namespace KingOfKingsFrms
         private void bntAdicionar_Click(object sender, EventArgs e)
         {
 
-            string id = produtoId.Text.Trim();
-            string quantidade = txtquantidade.Text.Trim();
+            string id = txtProdutoId.Text.Trim();
+            string quantidade = txtQuantidade.Text.Trim();
             string dataAtual = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
 
             if (string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(quantidade))
@@ -100,7 +100,7 @@ namespace KingOfKingsFrms
                 return;
             }
 
-            string novaQuantidade = txtquantidade.Text.Trim();
+            string novaQuantidade = txtQuantidade.Text.Trim();
             bool encontrou = false;
 
             foreach (DataGridViewRow row in dgvEstoque.Rows)
@@ -136,8 +136,8 @@ namespace KingOfKingsFrms
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            string idAlvo = produtoId.Text.Trim();
-            string novaQuantidade = txtquantidade.Text.Trim();
+            string idAlvo = txtProdutoId.Text.Trim();
+            string novaQuantidade = txtQuantidade.Text.Trim();
 
             foreach (DataGridViewRow row in dgvEstoque.Rows)
             {
@@ -162,7 +162,7 @@ namespace KingOfKingsFrms
         private void button1_Click(object sender, EventArgs e)
         {
             string nome = txtNome.Text.Trim();
-            string txtQtd = txtquantidade.Text.Trim();
+            string txtQtd = txtQuantidade.Text.Trim();
 
             if (double.TryParse(txtQtd, out double quantidade) && quantidade > 0)
             {
@@ -189,6 +189,31 @@ namespace KingOfKingsFrms
 
         private void bntEditar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtEstoqueId.Text))
+            {
+                MessageBox.Show("Selecione um lançamento de estoque para editar.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                // Cria um objeto Estoque com os dados do formulário
+                Estoque estoque = new Estoque(
+                    id: int.Parse(txtEstoqueId.Text), // ID do lançamento (chave primária)
+                    produtoId: int.Parse(txtProdutoId.Text), // ID do produto (FK)
+                    quantidade: Convert.ToDouble(txtQuantidade.Text), // Quantidade
+                    dataUltimoMovimento:dateUltimoMovimento.Value // Data do movimento
+                );
+
+                // Chama o método Atualizar() da classe Estoque, que executa a stored procedure
+                estoque.Atualizar();
+
+                MessageBox.Show("Estoque atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao editar estoque: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }
