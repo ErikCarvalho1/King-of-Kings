@@ -121,6 +121,7 @@
             bntEditar.TabIndex = 11;
             bntEditar.Text = "Editar";
             bntEditar.UseVisualStyleBackColor = true;
+            bntEditar.Click += bntEditar_Click;
             // 
             // produtoId
             // 

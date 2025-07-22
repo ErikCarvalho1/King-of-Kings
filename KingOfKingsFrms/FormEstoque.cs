@@ -23,7 +23,7 @@ namespace KingOfKingsFrms
 
         private void FormEstoque_Load(object sender, EventArgs e)
         {
-            var lista = Produto.ObterLista();
+            var lista = Estoque.ObterLista();
             int linha = 0;
             dgvEstoque.AllowUserToAddRows = false;
             dgvEstoque.Rows.Clear();
@@ -31,12 +31,19 @@ namespace KingOfKingsFrms
             {
                 dgvEstoque.Rows.Add();
                 dgvEstoque.Rows[linha].Cells["column1"].Value = item.Id;
-                dgvEstoque.Rows[linha].Cells["column2"].Value = item.Descricao;
+                dgvEstoque.Rows[linha].Cells["column2"].Value = item.NomeProduto;
+                dgvEstoque.Rows[linha].Cells["column3"].Value = item.Quantidade;
+                dgvEstoque.Rows[linha].Cells["column4"].Value = item.DataUltimoMovimento;
+
+
 
 
 
                 linha++;
             }
+
+
+
 
         }
 
@@ -76,13 +83,6 @@ namespace KingOfKingsFrms
             {
                 MessageBox.Show("Produto com esse ID não foi encontrado.");
             }
-
-
-
-
-
-
-
         }
 
         private void bntBuscar_Click(object sender, EventArgs e)
@@ -103,8 +103,6 @@ namespace KingOfKingsFrms
             string novaQuantidade = txtquantidade.Text.Trim();
             bool encontrou = false;
 
-
-
             foreach (DataGridViewRow row in dgvEstoque.Rows)
             {
                 if (row.IsNewRow) continue; // Pula a linha vazia de inserção
@@ -116,10 +114,6 @@ namespace KingOfKingsFrms
                     {
                         row.Visible = true;
                         encontrou = true;
-
-                        // Exemplo: altera uma célula "Quantidade" se você quiser fazer isso
-                        // row.Cells["Quantidade"].Value = novaQuantidade;
-
                         break;
                     }
                     else
@@ -174,7 +168,7 @@ namespace KingOfKingsFrms
             {
                 DateTime data = dateUltimoMovimento.Value;   // DateTimePicker
 
-                // Agora só o nome já basta:
+        
                 var estoque = new Estoque(nome, quantidade, data);
 
                 try
@@ -191,6 +185,11 @@ namespace KingOfKingsFrms
                     MessageBox.Show("Erro: " + ex.Message);
                 }
             }
+        }
+
+        private void bntEditar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

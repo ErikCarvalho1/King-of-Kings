@@ -42,7 +42,6 @@ namespace KingOfKingsFrms
             {
                 dgvProduto.Rows.Add();
                 dgvProduto.Rows[linha].Cells[0].Value = item.Id;
-
                 dgvProduto.Rows[linha].Cells[1].Value = item.Descricao;
                 dgvProduto.Rows[linha].Cells[2].Value = item.CodBarras;
                 dgvProduto.Rows[linha].Cells[3].Value = item.ValorUnit;

@@ -1,4 +1,5 @@
-﻿using KingoOfKingsClass;
+﻿using ComercialTDSClass;
+using KingoOfKingsClass;
 using MySql.Data.MySqlClient;
 using System;
 
@@ -14,16 +15,9 @@ namespace KingOfKingsClass
         // =============================
         public int Id { get; set; }
 
-        /// <summary>
-        /// FK para a tabela produtos.  
-        /// Se o valor não for atribuído diretamente, você pode preencher <see cref="NomeProduto"/> e o Id será buscado automaticamente.
-        /// </summary>
         public int ProdutoId { get; set; }
 
-        /// <summary>
-        /// Nome do produto – opcional.  
-        /// Preencha quando quiser que a classe descubra o <see cref="ProdutoId"/> sozinha.
-        /// </summary>
+
         public string NomeProduto { get; set; }
 
         public double Quantidade { get; set; }
@@ -111,11 +105,35 @@ namespace KingOfKingsClass
             cmd.CommandText = "SELECT id FROM produtos WHERE descricao = @nome LIMIT 1";
             cmd.Parameters.AddWithValue("@nome", nome);
             object result = cmd.ExecuteScalar();
-
-            // Libera a conexão criada por Banco.Abrir() – evita leak de conexões.
             cmd.Connection?.Close();
 
             return result != null ? Convert.ToInt32(result) : 0;
+        }
+        public static List<Estoque> ObterLista()
+        {
+            List<Estoque> lista = new List<Estoque>();
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "sp_estoque_listar";
+            var dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                Estoque estoque = new Estoque
+                {
+                    Id = Convert.ToInt32(dr["produto_id"]),
+                    ProdutoId = Convert.ToInt32(dr["produto_id"]),
+                    NomeProduto = dr["nome_produto"].ToString(),
+                    Quantidade = Convert.ToDouble(dr["quantidade"]),
+                    DataUltimoMovimento = Convert.ToDateTime(dr["data_ultimo_movimento"])
+                };
+
+                lista.Add(estoque);
+            }
+
+            dr.Close();
+            cmd.Connection.Close();
+            return lista;
         }
     }
 }
