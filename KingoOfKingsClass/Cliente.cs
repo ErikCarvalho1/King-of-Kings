@@ -115,7 +115,7 @@ namespace KingOfKingsClass
        dr.GetDateTime(5),
        dr.GetDateTime(6),
        !dr.IsDBNull(7) && dr.GetBoolean(7), 
-       Endereco.ObterListaPorClienteId(dr.GetInt32(0))
+       Endereco.ObterListaPorClienteId(dr.GetInt32(0)) 
    );
             }
             dr.Close();
