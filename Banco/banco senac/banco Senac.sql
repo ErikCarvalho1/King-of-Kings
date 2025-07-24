@@ -474,6 +474,28 @@ END$$
 DELIMITER ;
 
 -- -----------------------------------------------------
+-- procedure sp_estoque_listar
+-- -----------------------------------------------------
+
+DELIMITER $$
+USE `kings`$$
+CREATE DEFINER=`root`@`%` PROCEDURE `sp_estoque_listar`()
+BEGIN
+   
+         SELECT 
+       e.produto_id, 
+       e.produto_id, 
+       p.descricao AS nome_produto, 
+       e.quantidade, 
+       e.data_ultimo_movimento
+   FROM estoques e
+   INNER JOIN produtos p ON p.id = e.produto_id
+   ORDER BY e.data_ultimo_movimento DESC;
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
 -- procedure sp_itempedido_delete
 -- -----------------------------------------------------
 
@@ -627,6 +649,19 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_usuario_insert`(spnome varchar(6
 BEGIN
     INSERT INTO usuarios VALUES (0, spnome, spemail, MD5(spsenha), spnivel, DEFAULT);
     SELECT * FROM usuarios WHERE id = LAST_INSERT_ID();
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
+-- procedure sp_usuario_update
+-- -----------------------------------------------------
+
+DELIMITER $$
+USE `kings`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_usuario_update`(spid int, spnome varchar(60), spsenha varchar(32), spnivel int)
+BEGIN
+    UPDATE usuarios SET nome = spnome, senha = MD5(spsenha), nivel_id = spnivel WHERE id = spid;
 END$$
 
 DELIMITER ;
