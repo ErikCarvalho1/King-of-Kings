@@ -207,7 +207,7 @@
             // txtEstoqueId
             // 
             txtEstoqueId.Enabled = false;
-            txtEstoqueId.Location = new Point(85, 218);
+            txtEstoqueId.Location = new Point(64, 67);
             txtEstoqueId.Name = "txtEstoqueId";
             txtEstoqueId.Size = new Size(34, 23);
             txtEstoqueId.TabIndex = 52;

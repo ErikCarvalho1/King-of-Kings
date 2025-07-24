@@ -151,7 +151,26 @@ namespace KingOfKingsFrms
 
         private void dgvEstoque_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int linha = dgvEstoque.CurrentRow.Index;
 
+            // Recupera o ID do estoque a partir da coluna oculta (0)
+            int id = Convert.ToInt32(dgvEstoque.Rows[linha].Cells[0].Value);
+
+            // Busca o objeto Estoque pelo ID
+            var estoque = Estoque.ObterPorId(id);
+
+            // Preenche os campos com os dados do estoque
+            txtEstoqueId.Text = estoque.Id.ToString();
+            txtProdutoId.Text = estoque.ProdutoId.ToString();
+            txtQuantidade.Text = estoque.Quantidade.ToString();
+
+            dateUltimoMovimento.Value = estoque.DataUltimoMovimento;
+
+            // Desabilita os campos, se necessário
+            txtProdutoId.ReadOnly = true;
+            txtQuantidade.Enabled = false;
+            dateUltimoMovimento.Enabled = false;
+            bntEditar.Enabled = true;
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -189,31 +208,10 @@ namespace KingOfKingsFrms
 
         private void bntEditar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtEstoqueId.Text))
-            {
-                MessageBox.Show("Selecione um lançamento de estoque para editar.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            try
-            {
-                // Cria um objeto Estoque com os dados do formulário
-                Estoque estoque = new Estoque(
-                    id: int.Parse(txtEstoqueId.Text), // ID do lançamento (chave primária)
-                    produtoId: int.Parse(txtProdutoId.Text), // ID do produto (FK)
-                    quantidade: Convert.ToDouble(txtQuantidade.Text), // Quantidade
-                    dataUltimoMovimento:dateUltimoMovimento.Value // Data do movimento
-                );
-
-                // Chama o método Atualizar() da classe Estoque, que executa a stored procedure
-                estoque.Atualizar();
-
-                MessageBox.Show("Estoque atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao editar estoque: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            txtNome.ReadOnly = false;
+            txtQuantidade.ReadOnly =  false;
+            bntEditar.Enabled = false;
+            bntEditar.Enabled = true;
 
         }
     }

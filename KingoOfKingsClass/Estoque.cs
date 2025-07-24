@@ -14,10 +14,7 @@ namespace KingOfKingsClass
         // Propriedades
         // =============================
         public int Id { get; set; }
-
         public int ProdutoId { get; set; }
-
-
         public string NomeProduto { get; set; }
 
         public double Quantidade { get; set; }
@@ -35,13 +32,14 @@ namespace KingOfKingsClass
             Quantidade = quantidade;
             DataUltimoMovimento = dataUltimoMovimento;
         }
-
-        public Estoque(int produtoId, double quantidade, DateTime dataUltimoMovimento)
+        public Estoque( int produtoId, double quantidade, DateTime dataUltimoMovimento)
         {
+           
             ProdutoId = produtoId;
             Quantidade = quantidade;
             DataUltimoMovimento = dataUltimoMovimento;
         }
+  
 
         public Estoque(string nomeProduto, double quantidade, DateTime dataUltimoMovimento)
         {
@@ -135,5 +133,29 @@ namespace KingOfKingsClass
             cmd.Connection.Close();
             return lista;
         }
+        public static Estoque ObterPorId(int produtoid)
+        {
+        Estoque estoque = null;
+    var cmd = Banco.Abrir();
+    cmd.CommandText = "SELECT * FROM estoques WHERE produto_id = @id";
+    cmd.Parameters.AddWithValue("@id", produtoid);
+    var dr = cmd.ExecuteReader();
+
+    if (dr.Read())
+    {
+        estoque = new Estoque
+        {
+            Id = dr.GetInt32(0),
+            ProdutoId = dr.GetInt32(1),
+            Quantidade = dr.GetDouble(2),
+            DataUltimoMovimento = dr.GetDateTime(3)
+        };
+    }
+
+    dr.Close();
+    cmd.Connection.Close();
+    return estoque;
+        }
+        
     }
 }
