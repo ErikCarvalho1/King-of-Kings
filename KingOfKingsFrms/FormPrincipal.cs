@@ -141,7 +141,7 @@ namespace KingOfKingsFrms
 
         private void button10_Click(object sender, EventArgs e)
         {
-            FormPainel(new FormPedido());
+            FormPainel(new formPedido());
         }
 
         private void button11_Click(object sender, EventArgs e)

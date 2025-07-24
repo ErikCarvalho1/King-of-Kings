@@ -12,91 +12,76 @@ using System.Windows.Forms;
 
 namespace KingOfKingsFrms
 {
-
-    public partial class FormPedido : Form
+    public partial class formPedido : Form
     {
-        private Form frmaAtivo; // Alterado de 'object' para 'Form'
-
-        private void FormClose() // método para fechar o form ativo
-        {
-            if (frmaAtivo != null)
-            {
-                frmaAtivo.Close(); // Agora 'Close()' é válido porque 'frmaAtivo' é do tipo 'Form'
-            }
-        }
-
-        private void FormPainel(Form frm) // método para abrir o form no painel
-        {
-            FormClose();
-            frmaAtivo = frm;
-            frm.TopLevel = false;
-            pnlcategoria.Controls.Add(frm);
-            frm.BringToFront();
-            frm.Show();
-        }
-        public FormPedido()
+        public formPedido()
         {
             InitializeComponent();
         }
 
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            Pedido pedido = Pedido.ObterPorId(int.Parse(txtIdPedido.Text));
-            pedido.Desconto = double.Parse(txtDescontoPedido.Text);
-            pedido.Status = "F";
+        private void formPedido_Load(object sender, EventArgs e)
 
-            if (pedido.Atualizar())
+        {
+            if (Program.UsuarioLogado != null)
             {
-                MessageBox.Show($"Pedido {pedido.Id} foi fechado com sucesso \n");
-
+                MessageBox.Show($"Usuário logado: {Program.UsuarioLogado.Nome}");
+                txtUsuario.Text = Program.UsuarioLogado.Nome;
+                txtUsuario.ReadOnly = true;
             }
-
-            dgvItensPedido.Rows.Clear();
-            txtIdPedido.Clear();
-            txtIdPedido.Focus();
-            // Limpar todos
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
+            else
+            {
+                MessageBox.Show("Nenhum usuário logado!");
+            }
         }
 
         private void btnInserePedido_Click(object sender, EventArgs e)
         {
-            Pedido pedido = new(Program.UsuarioLogado, Cliente.ObterPorId(int.Parse(txtIdCliente.Text)));
-            pedido.Inserir();
-            if (pedido.Id > 0)
+            if (txtIdCliente.Text.Length > 4)
             {
-                txtIdPedido.Text = pedido.Id.ToString();
-                grbIndentificacao.Enabled = false;
-                grbItens.Enabled = true;
+                var cliente = Cliente.ObterPorId(int.Parse(txtIdCliente.Text));
+                if (cliente.Id > 0)
+                {
+                    txtNomeCliente.Text = cliente.Nome;
+                }
+
             }
-
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void txtCodBar_TextChanged(object sender, EventArgs e)
         {
+            if (txtCodBar.Text.Length > 6)
+            {
+                var produto = Produto.ObterPorCodBar(txtCodBar.Text);
+                if (produto.Id == 0)
+                {
+                    produto = Produto.ObterPorId(int.Parse(txtCodBar.Text));
 
+                }
+                txtIdProd.Text = produto.Id.ToString();
+                txtDescricao.Text = produto.Descricao;
+                txtValorUnit.Text = produto.ValorUnit.ToString("R$##.00");
+                label4.Text = $"R$ {produto.ValorUnit * produto.ClasseDesconto}";
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnAddItem_Click(object sender, EventArgs e)
         {
-            ItemPedido Items = new(
-                int.Parse(txtIdPedido.Text),
-                Produto.ObterPorId(int.Parse(txtIdProd.Text)),
-                double.Parse(txtQuantidade.Text),
-                double.Parse(txtDescontoItem.Text)
-                );
-            Items.inserir();
-            if (Items.Id > 0)
+            ItemPedido itemPedido = new(
+            int.Parse(txtIdPedido.Text),
+            Produto.ObterPorId(int.Parse(txtIdProd.Text)),
+            double.Parse(txtQuantidade.Text),
+            double.Parse(txtDescontoItem.Text)
+       );
+            itemPedido.inserir();
+            if (itemPedido.Id > 0)
             {
                 CarregarItens(int.Parse(txtIdPedido.Text));
             }
+
         }
-        private void CarregarItens(int PedidoId)
+        private void CarregarItens(int pedidoId)
         {
-            var itens = ItemPedido.ObterlistaPorPedidoId(PedidoId);
+            var itens = ItemPedido.ObterlistaPorPedidoId(pedidoId);
             dgvItensPedido.Rows.Clear();
             int linha = 0;
             double subTotal = 0;
@@ -116,77 +101,82 @@ namespace KingOfKingsFrms
                 subTotal += totalItem; // subtotal = subtotal + totalitem
                 linha++;
             }
-            Label10.Text = subTotal.ToString();
+            txtSubTotalItens.Text = subTotal.ToString();
             txtSubTotal.Text = (subTotal + descontos).ToString();
             txtDescontoItens.Text = descontos.ToString();
             txtTotal.Text = subTotal.ToString();
-
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void txtIdPedido_TextChanged(object sender, KeyEventArgs e)
         {
-
-        }
-
-
-        private void FormPedido_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grbIndentificacao_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtIdCliente_TextChanged(object sender, EventArgs e)
-        {
-            if (txtIdCliente.Text.Length > 4)
+            if (e.KeyCode == Keys.Enter)
             {
-                var cliente = Cliente.ObterPorId(int.Parse(txtIdCliente.Text));
-                if (cliente.Id > 0)
+                var pedido = Pedido.ObterPorId(int.Parse(txtIdPedido.Text));
+                if (pedido.Id > 0)
                 {
-                    txtNomeCLiente.Text = cliente.Nome;
-                }
+                    if (pedido.Status == "A")
+                    {
+                        grbIndentificacao.Enabled = false;
+                        txtNomeCliente.Text = $"{pedido.Cliente.Id} - {pedido.Cliente.Nome}";
+                        txtUsuario.Text = $"{pedido.Usuario.Id} - {pedido.Usuario.Nome}";
+                        grbItens.Enabled = true;
+                        CarregarItens(pedido.Id);
+                    }
+                    else if (pedido.Status == "F")
+                    {
+                        var resposta = MessageBox.Show(
+                            "O pedido está fechado.\nDeseja Reabrir? ", // texto da mensagem 
+                            "Pedido", MessageBoxButtons.YesNo, // botões da mensagem 
+                            MessageBoxIcon.Question, //ícone da mensagem
+                            MessageBoxDefaultButton.Button2 // define qual botão aparecerá ativo na caixa
+                            );
+                        if (resposta == DialogResult.Yes)
+                        {
+                            pedido.Status = "A";
+                            pedido.Atualizar();
+                        }
 
+                    }
+                }
             }
         }
 
-        private void txtCLiente_TextChanged(object sender, EventArgs e)
+        private void txtDescontoPedido_TextChanged(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtTotal.Text = (double.Parse(txtSubTotalItens.Text) - double.Parse(txtDescontoPedido.Text)).ToString("##.00");
+            }
+        }
 
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Pedido pedido = Pedido.ObterPorId(int.Parse(txtIdPedido.Text));
+            pedido.Desconto = double.Parse(txtDescontoPedido.Text);
+            pedido.Status = "F";
+            if (pedido.Atualizar())
+            {
+                MessageBox.Show($"Pedido {pedido.Id} foi Fechado com sucesso.\n");
+
+                dgvItensPedido.Rows.Clear();
+                txtIdPedido.Clear();
+                txtIdPedido.Focus();
+                //.... limpar todos
+            }
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void FormPedido_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBoxBone_Click(object sender, EventArgs e)
-        {
-            FormPainel(new FormRegistroAcesso());
-        }
-
-        private void btnInserePedido_Click_1(object sender, EventArgs e)
-        {
-            Pedido pedido = new(Program.UsuarioLogado, Cliente.ObterPorId(int.Parse(txtIdCliente.Text)));
-            pedido.Inserir();
-            if (pedido.Id > 0)
             {
-                txtIdPedido.Text = pedido.Id.ToString();
-                grbIndentificacao.Enabled = false;
-                grbItens.Enabled = true;
+
             }
+        }
+
+        private void txtIdPedido_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
+

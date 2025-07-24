@@ -66,6 +66,7 @@ namespace KingOfKingsFrms
              //  registroDeAcesso.RegistrarAcesso();
                 if (usuario.Ativo)
                 {
+                    Program.UsuarioLogado = usuario; 
                     FormPrincipal formPrincipal = new FormPrincipal();
                     formPrincipal.Show();
                     this.Hide();
