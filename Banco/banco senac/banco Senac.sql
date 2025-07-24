@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `kings`.`niveis` (
   `sigla` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 2
+AUTO_INCREMENT = 8
 DEFAULT CHARACTER SET = utf8mb4;
 
 
@@ -49,7 +49,8 @@ CREATE TABLE IF NOT EXISTS `kings`.`usuarios` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 1006;
+AUTO_INCREMENT = 1017
+DEFAULT CHARACTER SET = utf8mb4;
 
 
 -- -----------------------------------------------------
@@ -68,7 +69,8 @@ CREATE TABLE IF NOT EXISTS `kings`.`caixas` (
     REFERENCES `kings`.`usuarios` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4;
 
 
 -- -----------------------------------------------------
@@ -80,7 +82,8 @@ CREATE TABLE IF NOT EXISTS `kings`.`categorias` (
   `sigla` CHAR(3) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 2;
+AUTO_INCREMENT = 3
+DEFAULT CHARACTER SET = utf8mb4;
 
 
 -- -----------------------------------------------------
@@ -94,12 +97,13 @@ CREATE TABLE IF NOT EXISTS `kings`.`clientes` (
   `email` VARCHAR(60) NOT NULL,
   `data_nasc` DATE NULL DEFAULT NULL,
   `data_cad` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
-  `ativo` BIT(1) NULL DEFAULT NULL,
+  `ativo` BIT(1) NOT NULL DEFAULT b'1',
   PRIMARY KEY (`id`),
   UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) VISIBLE,
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)
 ENGINE = InnoDB
-AUTO_INCREMENT = 10090;
+AUTO_INCREMENT = 10018
+DEFAULT CHARACTER SET = utf8mb4;
 
 
 -- -----------------------------------------------------
@@ -126,7 +130,8 @@ CREATE TABLE IF NOT EXISTS `kings`.`pedidos` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 100001;
+AUTO_INCREMENT = 100019
+DEFAULT CHARACTER SET = utf8mb4;
 
 
 -- -----------------------------------------------------
@@ -142,7 +147,8 @@ CREATE TABLE IF NOT EXISTS `kings`.`revendedores` (
   PRIMARY KEY (`id`),
   UNIQUE INDEX `cpf_cnpj_UNIQUE` (`cpf_cnpj` ASC) VISIBLE,
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4;
 
 
 -- -----------------------------------------------------
@@ -184,7 +190,8 @@ CREATE TABLE IF NOT EXISTS `kings`.`cupons` (
     REFERENCES `kings`.`revendedores` (`id`)
     ON DELETE SET NULL
     ON UPDATE CASCADE)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4;
 
 
 -- -----------------------------------------------------
@@ -209,7 +216,8 @@ CREATE TABLE IF NOT EXISTS `kings`.`enderecos` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 55;
+AUTO_INCREMENT = 6
+DEFAULT CHARACTER SET = utf8mb4;
 
 
 -- -----------------------------------------------------
@@ -237,7 +245,8 @@ CREATE TABLE IF NOT EXISTS `kings`.`produtos` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 7400007;
+AUTO_INCREMENT = 7400007
+DEFAULT CHARACTER SET = utf8mb4;
 
 
 -- -----------------------------------------------------
@@ -253,7 +262,8 @@ CREATE TABLE IF NOT EXISTS `kings`.`estoques` (
     REFERENCES `kings`.`produtos` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4;
 
 
 -- -----------------------------------------------------
@@ -269,7 +279,8 @@ CREATE TABLE IF NOT EXISTS `kings`.`fornecedores` (
   `email` VARCHAR(60) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `cnpj_UNIQUE` (`cnpj` ASC) VISIBLE)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4;
 
 
 -- -----------------------------------------------------
@@ -277,12 +288,11 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `kings`.`itempedido` (
   `id` INT(4) NOT NULL AUTO_INCREMENT,
-  `quantidade` DECIMAL(10,3) NOT NULL,
-  `desconto` DECIMAL(10,2) NOT NULL,
-  `valor_unit` DECIMAL(10,2) NOT NULL,
-  `Observacao` VARCHAR(200) NOT NULL,
   `pedido_id` INT(11) NOT NULL,
   `produto_id` INT(11) NOT NULL,
+  `valor_unit` DECIMAL(10,2) NOT NULL,
+  `quantidade` DECIMAL(10,3) NOT NULL,
+  `desconto` DECIMAL(10,2) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_ItemPedido_Pedido1_idx` (`pedido_id` ASC) VISIBLE,
   INDEX `fk_ItemPedido_Produto1_idx` (`produto_id` ASC) VISIBLE,
@@ -296,19 +306,6 @@ CREATE TABLE IF NOT EXISTS `kings`.`itempedido` (
     REFERENCES `kings`.`produtos` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `kings`.`mesas`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `kings`.`mesas` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `numero` CHAR(50) NOT NULL,
-  `status` ENUM('livre', 'ocupada', 'inativa') NOT NULL DEFAULT 'livre',
-  `setor` INT(32) NULL DEFAULT NULL,
-  `audio` VARCHAR(32) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
@@ -332,122 +329,10 @@ CREATE TABLE IF NOT EXISTS `kings`.`produtofornecedor` (
     REFERENCES `kings`.`produtos` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4;
 
 USE `kings` ;
-
--- -----------------------------------------------------
--- procedure sp_alterar_usuario
--- -----------------------------------------------------
-
-DELIMITER $$
-USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_alterar_usuario`(
--- parâmetros da procedure
-spid int, spnome varchar(60), spsenha varchar(32), spnivel int)
-begin
-	update usuarios 
-	set nome = spnome, senha = md5(spsenha), nivel_id = spnivel where id = spid;
-end$$
-
-DELIMITER ;
-
--- -----------------------------------------------------
--- procedure sp_atualizar_cupom
--- -----------------------------------------------------
-
-DELIMITER $$
-USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_atualizar_cupom`(
-    spid INT,
-    sptitulo VARCHAR(255),
-    spcodigo VARCHAR(100),
-    spcupomtipo VARCHAR(100),
-    spdatacriacao DATETIME,
-    spdatavalidade DATETIME,
-    spvalorpedidominimo DECIMAL(18, 2),
-    spvalormaximodesconto DECIMAL(18, 2),
-    spvalormaximopedido DECIMAL(18, 2),
-    spvalordesconto DECIMAL(18, 2),
-    spdescricao VARCHAR(100),
-    sptipodesconto FLOAT,
-    spclienteid INT,
-    sppedidoid INT,
-    sprevendedorid INT)
-BEGIN
-    UPDATE Cupons
-    SET
-        Titulo = sptitulo,
-        Codigo = spcodigo,
-        CupomTipo = spcupomtipo,
-        DataCriacao = spdatacriacao,
-        DataValidade = spdatavalidade,
-        ValorPedidoMinimo = spvalorpedidominimo,
-        ValorMaximoDeDesconto = spvalormaximodesconto,
-        ValorMaximoPedido = spvalormaximopedido,
-        ValorDesconto = spvalordesconto,
-        Descricao = spdescricao,
-        TpoDesconto = sptipodesconto,
-        ClienteId = spclienteid,
-        PedidoId = sppedidoid,
-        RevendedorId = sprevendedorid
-    WHERE Id = spid;
-
-    SELECT ROW_COUNT() AS RegistrosAtualizados;
-END$$
-
-DELIMITER ;
-
--- -----------------------------------------------------
--- procedure sp_atualizar_fornecedores
--- -----------------------------------------------------
-
-DELIMITER $$
-USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_atualizar_fornecedores`( 
-    IN sp_id INT,
-    IN sp_razao_social VARCHAR(100),
-    IN sp_fantasia VARCHAR(40),
-    IN sp_cnpj CHAR(14),
-    IN sp_contato VARCHAR(60),
-    IN sp_telefone VARCHAR(45),
-    IN sp_email VARCHAR(60)
-)
-BEGIN
-    UPDATE fornecedores
-    SET
-        razao_social = sp_razao_social,
-        fantasia     = sp_fantasia,
-        cnpj         = sp_cnpj,
-        contato      = sp_contato,
-        telefone     = sp_telefone,
-        email        = sp_email
-    WHERE id = sp_id;
-
-    SELECT ROW_COUNT() AS RegistrosAtualizados;
-END$$
-
-DELIMITER ;
-
--- -----------------------------------------------------
--- procedure sp_atualizar_nivel
--- -----------------------------------------------------
-
-DELIMITER $$
-USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_atualizar_nivel`(
-    IN spid INT,
-    IN spnome VARCHAR(45),
-    IN spsigla VARCHAR(45)
-)
-BEGIN
-    UPDATE nivel
-    SET nome = spnome,
-        sigla = spsigla
-    WHERE id = spid;
-END$$
-
-DELIMITER ;
 
 -- -----------------------------------------------------
 -- procedure sp_categoria_delete
@@ -495,161 +380,37 @@ DELIMITER ;
 
 DELIMITER $$
 USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_cliente_insert`(
-spnome varchar(100), 
-spcpf char(11), 
-sptelefone char(14), 
-spemail varchar(60), 
-spdatanasc date
-)
-begin 
-	insert into clientes 
-    values (0,spnome, spcpf, sptelefone, spemail, spdatanasc,default,1);
-    select  last_insert_id();
-end$$
-
-DELIMITER ;
-
--- -----------------------------------------------------
--- procedure sp_clientes_delete
--- -----------------------------------------------------
-
-DELIMITER $$
-USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_clientes_delete`(IN p_id INT)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_cliente_insert`(
+    spnome varchar(100), spcpf char(11), sptelefone char(14), spemail varchar(60), spdatanasc date)
 BEGIN
-    DELETE FROM clientes WHERE id = p_id;
+    INSERT INTO clientes VALUES (0, spnome, spcpf, sptelefone, spemail, spdatanasc, DEFAULT, 1);
+    SELECT LAST_INSERT_ID();
 END$$
 
 DELIMITER ;
 
 -- -----------------------------------------------------
--- procedure sp_clientes_insert
+-- procedure sp_cliente_update
 -- -----------------------------------------------------
 
 DELIMITER $$
 USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_clientes_insert`(
-spnome varchar(100), 
-spcpf char(11), 
-sptelefone char(14), 
-spemail varchar(60), 
-spda_tanasc date
-)
-begin 
-	insert into clientes 
-    values (0,spnome, spcpf, sptelefone, spemail, spdata_nasc,default,1);
-    select  last_insert_id();
-end$$
-
-DELIMITER ;
-
--- -----------------------------------------------------
--- procedure sp_clientes_select_all
--- -----------------------------------------------------
-
-DELIMITER $$
-USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_clientes_select_all`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_cliente_update`(spid int, spnome varchar(100), sptelefone char(14), spdatanasc date)
 BEGIN
-    SELECT * FROM clientes;
+    UPDATE clientes SET nome = spnome, telefone = sptelefone, data_nasc = spdatanasc WHERE id = spid;
 END$$
 
 DELIMITER ;
 
 -- -----------------------------------------------------
--- procedure sp_clientes_select_by_id
+-- procedure sp_endereco_delete
 -- -----------------------------------------------------
 
 DELIMITER $$
 USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_clientes_select_by_id`(IN p_id INT)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_endereco_delete`(spid int)
 BEGIN
-    SELECT * FROM clientes WHERE id = p_id;
-END$$
-
-DELIMITER ;
-
--- -----------------------------------------------------
--- procedure sp_clientes_update
--- -----------------------------------------------------
-
-DELIMITER $$
-USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_clientes_update`(
-    IN p_id INT,
-    IN p_nome VARCHAR(100),
-    IN p_cpf CHAR(11),
-    IN p_telefone CHAR(14),
-    IN p_email VARCHAR(60),
-    IN p_data_nasc DATE,
-    IN p_ativo BIT(1)
-)
-BEGIN
-    UPDATE clientes
-    SET nome = p_nome,
-        cpf = p_cpf,
-        telefone = p_telefone,
-        email = p_email,
-        data_nasc = p_data_nasc,
-        ativo = p_ativo
-    WHERE id = p_id;
-END$$
-
-DELIMITER ;
-
--- -----------------------------------------------------
--- procedure sp_deletar_cupom
--- -----------------------------------------------------
-
-DELIMITER $$
-USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_deletar_cupom`(
-    IN spid INT
-)
-BEGIN
-    DELETE FROM Cupons
-    WHERE Id = spid;
-
-    SELECT ROW_COUNT() AS RegistrosDeletados;
-END$$
-
-DELIMITER ;
-
--- -----------------------------------------------------
--- procedure sp_deletar_nivel
--- -----------------------------------------------------
-
-DELIMITER $$
-USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_deletar_nivel`(
-    IN spid INT
-)
-BEGIN
-    DELETE FROM nivel
-    WHERE id = spid;
-
-    SELECT ROW_COUNT() AS RegistrosDeletados;
-END$$
-
-DELIMITER ;
-
--- -----------------------------------------------------
--- procedure sp_editar_nivel
--- -----------------------------------------------------
-
-DELIMITER $$
-USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_editar_nivel`(
-    IN spid INT,
-    IN spnome VARCHAR(45),
-    IN spsigla VARCHAR(45)
-)
-BEGIN
-    UPDATE nivel
-    SET nome = spnome,
-        sigla = spsigla
-    WHERE id = spid;
+    DELETE FROM enderecos WHERE id = spid;
 END$$
 
 DELIMITER ;
@@ -660,255 +421,143 @@ DELIMITER ;
 
 DELIMITER $$
 USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_endereco_insert`(
-     spcliente_id int, 
-    spcep char(8), 
-    splogradouro varchar(100),
-    spnumero varchar(40),
-    spcomplemento varchar(60),
-    spbairro varchar(60),
-    spcidade varchar(60),
-    spuf char(2),
-    sptipo_endereco char(3)
-    )
-begin
-		insert into enderecos 
-        values (0,spcliente_id, spcep, splogradouro, spnumero, spcomplemento, spbairro, spcidade, spuf, sptipo_endereco);
-        select @@identity as id;
-    end$$
-
-DELIMITER ;
-
--- -----------------------------------------------------
--- procedure sp_enderecos_delete
--- -----------------------------------------------------
-
-DELIMITER $$
-USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_enderecos_delete`(IN p_id INT)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_endereco_insert`(
+    spcliente_id int, spcep char(8), splogradouro varchar(100),
+    spnumero varchar(40), spcomplemento varchar(60),
+    spbairro varchar(60), spcidade varchar(60), spuf char(2), sptipo_endereco char(3))
 BEGIN
-    DELETE FROM enderecos WHERE id = p_id;
+    INSERT INTO enderecos VALUES (0, spcliente_id, spcep, splogradouro, spnumero, spcomplemento, spbairro, spcidade, spuf, sptipo_endereco);
+    SELECT @@IDENTITY AS id;
 END$$
 
 DELIMITER ;
 
 -- -----------------------------------------------------
--- procedure sp_enderecos_insert
+-- procedure sp_endereco_update
 -- -----------------------------------------------------
 
 DELIMITER $$
 USE `kings`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_enderecos_insert`(
- spcliente_id int, 
-    spcep char(8), 
-    splogradouro varchar(100),
-    spnumero varchar(40),
-    spcomplemento varchar(60),
-    spbairro varchar(60),
-    spcidade varchar(60),
-    spuf char(2),
-    sptipo_endereco char(3)
-    )
-begin
-		insert into enderecos 
-        values (0,spcliente_id, spcep, splogradouro, spnumero, spcomplemento, spbairro, spcidade, spuf, sptipo_endereco);
-        select @@identity as id;
-    end$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_endereco_update`(
+    spid int, spcep char(8), splogradouro varchar(100),
+    spnumero varchar(40), spcomplemento varchar(60),
+    spbairro varchar(60), spcidade varchar(60), spuf char(2), sptipo_endereco char(3))
+BEGIN
+    UPDATE enderecos SET cep = spcep, logradouro = splogradouro, numero = spnumero, complemento = spcomplemento,
+    bairro = spbairro, cidade = spcidade, uf = spuf, tipo_endereco = sptipo_endereco WHERE id = spid;
+END$$
 
 DELIMITER ;
 
 -- -----------------------------------------------------
--- procedure sp_enderecos_update
+-- procedure sp_estoque_insert
 -- -----------------------------------------------------
 
 DELIMITER $$
 USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_enderecos_update`(
-    IN p_id INT,
-    IN p_cliente_id INT,
-    IN p_cep CHAR(8),
-    IN p_logradouro VARCHAR(100),
-    IN p_numero VARCHAR(40),
-    IN p_complemento VARCHAR(60),
-    IN p_bairro VARCHAR(60),
-    IN p_cidade VARCHAR(60),
-    IN p_uf CHAR(2),
-    IN p_tipo_endereco CHAR(3)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_estoque_insert`(
+    IN spproduto_id INT,
+    IN spquantidade DECIMAL(10,2),
+    IN spdata_ultimo_movimento TIMESTAMP
 )
 BEGIN
-    UPDATE enderecos
-    SET cliente_id = p_cliente_id,
-        cep = p_cep,
-        logradouro = p_logradouro,
-        numero = p_numero,
-        complemento = p_complemento,
-        bairro = p_bairro,
-        cidade = p_cidade,
-        uf = p_uf,
-        tipo_endereco = p_tipo_endereco
-    WHERE id = p_id;
+    -- Verifica se o produto existe antes de inserir
+    IF EXISTS (SELECT 1 FROM produtos WHERE id = spproduto_id) THEN
+        INSERT INTO estoques (produto_id, quantidade, data_ultimo_movimento)
+        VALUES (spproduto_id, spquantidade, spdata_ultimo_movimento);
+    ELSE
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Produto informado não existe na tabela produtos.';
+    END IF;
 END$$
 
 DELIMITER ;
 
 -- -----------------------------------------------------
--- procedure sp_inserir_cupom
+-- procedure sp_estoque_listar
 -- -----------------------------------------------------
 
 DELIMITER $$
 USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_inserir_cupom`(
-    spid INT,
-    sptitulo VARCHAR(255),
-    spcodigo VARCHAR(100),
-    spcupomtipo VARCHAR(100),
-    spdatacriacao DATETIME,
-    spdatavalidade DATETIME,
-    spvalorpedidominimo DECIMAL(18, 2),
-    spvalormaximodesconto DECIMAL(18, 2),
-    spvalormaximopedido DECIMAL(18, 2),
-    spvalordesconto DECIMAL(18, 2),
-    spdescricao VARCHAR(100),
-    sptipodesconto Float,
-    spclienteid INT,
-    sppedidoid INT,
-    sprevendedorid INT)
+CREATE DEFINER=`root`@`%` PROCEDURE `sp_estoque_listar`()
 BEGIN
    
-    INSERT INTO Cupons (
-        Id,
-        Titulo,
-        Codigo,
-        CupomTipo,
-        DataCriacao,
-        DataValidade,
-        ValorPedidoMinimo,
-        ValorMaximoDeDesconto,
-        ValorMaximoPedido,
-        ValorDesconto,
-        Descricao,
-        TpoDesconto,
-        ClienteId,
-        PedidoId,
-        RevendedorId
-    )
-    VALUES (
-        spid,
-        sptitulo,
-        spcodigo,
-        spcupomtipo,
-        spdatacriacao,
-        spdatavalidade,
-        spvalorpedidominimo,
-        spvalormaximodesconto,
-        spvalormaximopedido,
-        spvalordesconto,
-        spdescricao,
-        sptipodesconto,
-        spclienteid,
-        sppedidoid,
-        sprevendedorid
-    );
-
-    -- Retorna o ID inserido, se necessário (opcional)
-    SELECT SCOPE_IDENTITY() AS NovoCupomId;
+         SELECT 
+       e.produto_id, 
+       e.produto_id, 
+       p.descricao AS nome_produto, 
+       e.quantidade, 
+       e.data_ultimo_movimento
+   FROM estoques e
+   INNER JOIN produtos p ON p.id = e.produto_id
+   ORDER BY e.data_ultimo_movimento DESC;
 END$$
 
 DELIMITER ;
 
 -- -----------------------------------------------------
--- procedure sp_inserir_enderecos
+-- procedure sp_itempedido_delete
 -- -----------------------------------------------------
 
 DELIMITER $$
 USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_inserir_enderecos`(
--- parâmetros da procedure
-    spcliente_id int, 
-    spcep char(8), 
-    splogradouro varchar(100),
-    spnumero varchar(40),
-    spcomplemento varchar(60),
-    spbairro varchar(60),
-    spcidade varchar(60),
-    spuf char(2),
-    sptipo_endereco char(3)
-    )
-begin
-		insert into enderecos 
-        values (0,spcliente_id, spcep, splogradouro, spnumero, spcomplemento, spbairro, spcidade, spuf, sptipo_endereco);
-        select @@identity as id;
-    end$$
-
-DELIMITER ;
-
--- -----------------------------------------------------
--- procedure sp_inserir_usuario
--- -----------------------------------------------------
-
-DELIMITER $$
-USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_inserir_usuario`(
--- parâmetros da procedure
-spnome varchar(60), spemail varchar(60), spsenha varchar(32), spnivel int)
-begin
-	insert into usuarios 
-	values (0,spnome, spemail, md5(spsenha), spnivel, default);
-    select * from usuarios where id = last_insert_id();
-end$$
-
-DELIMITER ;
-
--- -----------------------------------------------------
--- procedure sp_insert_fornecedores
--- -----------------------------------------------------
-
-DELIMITER $$
-USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_insert_fornecedores`(
-    IN sp_razao_social VARCHAR(100),
-    IN sp_fantasia VARCHAR(40),
-    IN sp_cnpj CHAR(14),
-    IN sp_contato VARCHAR(60),
-    IN sp_telefone VARCHAR(45),
-    IN sp_email VARCHAR(60)
-)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_itempedido_delete`(spid int)
 BEGIN
-    INSERT INTO fornecedores (
-        razao_social,
-        fantasia,
-        cnpj,
-        contato,
-        telefone,
-        email
-    )
-    VALUES (
-        sp_razao_social,
-        sp_fantasia,
-        sp_cnpj,
-        sp_contato,
-        sp_telefone,
-        sp_email
-    );
-    
-    SELECT LAST_INSERT_ID() AS NovoFornecedorId;
+    DELETE FROM itempedido WHERE id = spid;
 END$$
 
 DELIMITER ;
 
 -- -----------------------------------------------------
--- procedure sp_insert_nivel
+-- procedure sp_itempedido_insert
 -- -----------------------------------------------------
 
 DELIMITER $$
 USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_insert_nivel`(
-    IN spnome VARCHAR(45),
-    IN spsigla VARCHAR(45)
-)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_itempedido_insert`(sppedido_id int, spproduto_id int, spquantidade decimal(10,3), spdesconto decimal(10,2))
 BEGIN
-    INSERT INTO nivel (nome, sigla)
-    VALUES (spnome, spsigla);
+    INSERT INTO itempedido VALUES (0, sppedido_id, spproduto_id, (SELECT valor_unit FROM produtos WHERE id = spproduto_id), spquantidade, spdesconto);
+    SELECT LAST_INSERT_ID();
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
+-- procedure sp_itempedido_update
+-- -----------------------------------------------------
+
+DELIMITER $$
+USE `kings`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_itempedido_update`(spid int, spquantidade decimal(10,3), spdesconto decimal(10,2))
+BEGIN
+    UPDATE itempedido SET quantidade = spquantidade, desconto = spdesconto WHERE id = spid;
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
+-- procedure sp_nivel_insert
+-- -----------------------------------------------------
+
+DELIMITER $$
+USE `kings`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_nivel_insert`(spnome varchar(45), spsigla varchar(45))
+BEGIN
+    INSERT INTO niveis(nome, sigla) VALUES (spnome, spsigla);
+    SELECT * FROM niveis WHERE id = LAST_INSERT_ID();
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
+-- procedure sp_nivel_update
+-- -----------------------------------------------------
+
+DELIMITER $$
+USE `kings`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_nivel_update`(spid int, spnome varchar(45), spsigla varchar(45))
+BEGIN
+    UPDATE niveis SET nome = spnome, sigla = spsigla WHERE id = spid;
 END$$
 
 DELIMITER ;
@@ -919,27 +568,10 @@ DELIMITER ;
 
 DELIMITER $$
 USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_pedido_insert`(
-    IN sp_usuario_id INT,
-    IN sp_cliente_id INT,
-    IN sp_data TIMESTAMP,
-    IN sp_status CHAR(1),
-    IN sp_desconto DECIMAL(10,2)
-)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_pedido_insert`(spusuario_id int, spcliente_id int)
 BEGIN
-    INSERT INTO pedido (
-        usuario_id,
-        cliente_id,
-        data,
-        status,
-        desconto
-    ) VALUES (
-        sp_usuario_id,
-        sp_cliente_id,
-        sp_data,
-        sp_status,
-        sp_desconto
-    );
+    INSERT INTO pedidos VALUES(0, spusuario_id, spcliente_id, DEFAULT, 'A', 0);
+    SELECT LAST_INSERT_ID();
 END$$
 
 DELIMITER ;
@@ -950,23 +582,9 @@ DELIMITER ;
 
 DELIMITER $$
 USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_pedido_update`(
-    IN sp_id INT,
-    IN sp_usuario_id INT,
-    IN sp_cliente_id INT,
-    IN sp_data TIMESTAMP,
-    IN sp_status CHAR(1),
-    IN sp_desconto DECIMAL(10,2)
-)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_pedido_update`(spid int, spstatus char(1), spdesconto decimal(10,2))
 BEGIN
-    UPDATE pedido
-    SET
-        usuario_id = sp_usuario_id,
-        cliente_id = sp_cliente_id,
-        data = sp_data,
-        status = sp_status,
-        desconto = sp_desconto
-    WHERE id = sp_id;
+    UPDATE pedidos SET status = spstatus, desconto = spdesconto WHERE id = spid;
 END$$
 
 DELIMITER ;
@@ -978,29 +596,46 @@ DELIMITER ;
 DELIMITER $$
 USE `kings`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_produto_insert`(
-spcod_barras varchar(60), 
-spdescricao varchar(60),
-spvalor_unit decimal(10,2),
-spunidade_venda varchar(12),
-spcategoria_id int,
-spestoque_minimo decimal(10,2),
-spclasse_desconto decimal(10,2))
-begin
-	insert into produtos
-    values(
-    0,
-    spcod_barras, 
-    spdescricao, 
-    spvalor_unit, 
-    spunidade_venda,
-    spcategoria_id, 
-    spestoque_minimo,
-    spclasse_desconto,
-    null,
-    default, 
-    default);
-    select last_insert_id();
-end$$
+    spcod_barras varchar(60), spdescricao varchar(60), spvalor_unit decimal(10,2),
+    spunidade_venda varchar(12), spcategoria_id int, spestoque_minimo decimal(10,3),
+    spclasse_desconto decimal(10,4), spimagem blob)
+BEGIN
+    INSERT INTO produtos VALUES (
+        0, spcod_barras, spdescricao, spvalor_unit, spunidade_venda, spcategoria_id,
+        spestoque_minimo, (spclasse_desconto/100), spimagem, DEFAULT, DEFAULT);
+    SELECT LAST_INSERT_ID();
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
+-- procedure sp_produto_update
+-- -----------------------------------------------------
+
+DELIMITER $$
+USE `kings`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_produto_update`(
+    spid int, spcod_barras varchar(60), spdescricao varchar(60), spvalor_unit decimal(10,2),
+    spunidade_venda varchar(12), spcategoria_id int, spestoque_minimo decimal(10,3),
+    spclasse_desconto decimal(10,4), spimagem blob, spdescontinuado bit(1))
+BEGIN
+    UPDATE produtos SET cod_barras = spcod_barras, descricao = spdescricao, valor_unit = spvalor_unit,
+    unidade_venda = spunidade_venda, categoria_id = spcategoria_id, estoque_minimo = spestoque_minimo,
+    classe_desconto = (spclasse_desconto/100), imagem = spimagem, descontinuado = spdescontinuado WHERE id = spid;
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
+-- procedure sp_usuario_altera
+-- -----------------------------------------------------
+
+DELIMITER $$
+USE `kings`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_usuario_altera`(spid int, spnome varchar(60), spsenha varchar(32), spnivel int)
+BEGIN
+    UPDATE usuarios SET nome = spnome, senha = MD5(spsenha), nivel_id = spnivel WHERE id = spid;
+END$$
 
 DELIMITER ;
 
@@ -1010,15 +645,10 @@ DELIMITER ;
 
 DELIMITER $$
 USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_usuario_insert`(
-  spnome VARCHAR(100),
-  spemail VARCHAR(240),
-  sp_id_nivel int,
-  spsenha VARCHAR(32)
-)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_usuario_insert`(spnome varchar(60), spemail varchar(60), spsenha varchar(32), spnivel int)
 BEGIN
-   INSERT INTO usuarios (nome,  email, id_nivel ,senha)
-    VALUES (spnome, spemail, sp_id_nivel,  MD5(spsenha));
+    INSERT INTO usuarios VALUES (0, spnome, spemail, MD5(spsenha), spnivel, DEFAULT);
+    SELECT * FROM usuarios WHERE id = LAST_INSERT_ID();
 END$$
 
 DELIMITER ;
@@ -1029,19 +659,57 @@ DELIMITER ;
 
 DELIMITER $$
 USE `kings`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sp_usuario_update`(
-	sp_id INT,
-	sp_nome VARCHAR(100),
-	sp_id_nivel INT,
-    sp_ativo BOOLEAN
-)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_usuario_update`(spid int, spnome varchar(60), spsenha varchar(32), spnivel int)
 BEGIN
-    UPDATE usuarios
-    SET nome = sp_nome,
-		id_nivel = sp_id_nivel,
-        ativo = sp_ativo
-    WHERE id = sp_id;
+    UPDATE usuarios SET nome = spnome, senha = MD5(spsenha), nivel_id = spnivel WHERE id = spid;
 END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
+-- procedure sp_venda_terminal
+-- -----------------------------------------------------
+
+DELIMITER $$
+USE `kings`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_venda_terminal`(spusuario_id int, spcpf char(11), spcodbar varchar(60))
+BEGIN
+    INSERT INTO pedidos VALUES(0, spusuario_id, (SELECT id FROM clientes WHERE cpf = spcpf), DEFAULT, 'A', 0);
+    INSERT INTO itempedido VALUES (
+        0,
+        LAST_INSERT_ID(),
+        (SELECT id FROM produtos WHERE cod_barras = spcodbar),
+        (SELECT valor_unit FROM produtos WHERE cod_barras = spcodbar),
+        1,
+        0);
+    SELECT * FROM itempedido WHERE id = LAST_INSERT_ID();
+END$$
+
+DELIMITER ;
+USE `kings`;
+
+DELIMITER $$
+USE `kings`$$
+CREATE
+DEFINER=`root`@`localhost`
+TRIGGER `kings`.`trigger_gera_estoque`
+AFTER INSERT ON `kings`.`produtos`
+FOR EACH ROW
+BEGIN
+    INSERT INTO estoques VALUES(NEW.id, 0, CURRENT_DATE());
+END$$
+
+USE `kings`$$
+CREATE
+DEFINER=`root`@`localhost`
+TRIGGER `kings`.`trigger_baixa_estoque`
+AFTER INSERT ON `kings`.`itempedido`
+FOR EACH ROW
+BEGIN
+    UPDATE estoques SET quantidade = quantidade - NEW.quantidade, data_ultimo_movimento = CURRENT_DATE()
+    WHERE produto_id = NEW.produto_id;
+END$$
+
 
 DELIMITER ;
 
