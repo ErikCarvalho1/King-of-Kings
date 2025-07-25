@@ -146,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `kings`.`revendedores` (
   `ativo` BIT(1) NULL DEFAULT b'1',
   PRIMARY KEY (`id`),
   UNIQUE INDEX `cpf_cnpj_UNIQUE` (`cpf_cnpj` ASC) ,
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
@@ -171,10 +171,10 @@ CREATE TABLE IF NOT EXISTS `kings`.`cupons` (
   `pedido_id` INT(11) NULL DEFAULT NULL,
   `revendedor_id` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `codigo` (`codigo` ASC) VISIBLE,
-  INDEX `fk_cupons_clientes_idx` (`cliente_id` ASC) VISIBLE,
-  INDEX `fk_cupons_pedidos_idx` (`pedido_id` ASC) VISIBLE,
-  INDEX `fk_cupons_revendedores_idx` (`revendedor_id` ASC) VISIBLE,
+  UNIQUE INDEX `codigo` (`codigo` ASC),
+  INDEX `fk_cupons_clientes_idx` (`cliente_id` ASC) ,
+  INDEX `fk_cupons_pedidos_idx` (`pedido_id` ASC) ,
+  INDEX `fk_cupons_revendedores_idx` (`revendedor_id` ASC) ,
   CONSTRAINT `fk_cupons_clientes`
     FOREIGN KEY (`cliente_id`)
     REFERENCES `kings`.`clientes` (`id`)
@@ -237,8 +237,8 @@ CREATE TABLE IF NOT EXISTS `kings`.`produtos` (
   `descontinuado` BIT(1) NOT NULL DEFAULT b'0',
   PRIMARY KEY (`id`),
   UNIQUE INDEX `idProduto_UNIQUE` (`id` ASC) ,
-  UNIQUE INDEX `Produtocol_UNIQUE` (`cod_barras` ASC) VISIBLE,
-  INDEX `fk_Produto_Categorias1_idx` (`categoria_id` ASC) VISIBLE,
+  UNIQUE INDEX `Produtocol_UNIQUE` (`cod_barras` ASC) ,
+  INDEX `fk_Produto_Categorias1_idx` (`categoria_id` ASC) ,
   CONSTRAINT `fk_Produto_Categorias1`
     FOREIGN KEY (`categoria_id`)
     REFERENCES `kings`.`categorias` (`id`)
