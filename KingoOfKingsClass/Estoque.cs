@@ -54,12 +54,7 @@ namespace KingOfKingsClass
         public void Inserir()
         {
             // Se o Id do produto não foi definido, tenta buscar pelo nome.
-            if (ProdutoId == 0 && !string.IsNullOrWhiteSpace(NomeProduto))
-            {
-                ProdutoId = BuscarIdProdutoPorNome(NomeProduto);
-                if (ProdutoId == 0)
-                    throw new InvalidOperationException("Produto não encontrado na tabela produtos.");
-            }
+          
 
             var cmd = Banco.Abrir();
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -100,11 +95,9 @@ namespace KingOfKingsClass
         private static int BuscarIdProdutoPorNome(string nome)
         {
             var cmd = Banco.Abrir();
-            cmd.CommandText = "SELECT id FROM produtos WHERE descricao = @nome LIMIT 1";
+            cmd.CommandText = "SELECT id FROM produtos WHERE nome = @nome LIMIT 1";
             cmd.Parameters.AddWithValue("@nome", nome);
-            object result = cmd.ExecuteScalar();
-            cmd.Connection?.Close();
-
+            var result = cmd.ExecuteScalar();
             return result != null ? Convert.ToInt32(result) : 0;
         }
         public static List<Estoque> ObterLista()
@@ -156,6 +149,8 @@ namespace KingOfKingsClass
     cmd.Connection.Close();
     return estoque;
         }
+
         
+
     }
 }

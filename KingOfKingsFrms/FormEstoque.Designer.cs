@@ -30,14 +30,13 @@
         {
             components = new System.ComponentModel.Container();
             dgvEstoque = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
+            clnId = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             txtNome = new TextBox();
             bntBuscar = new Button();
             bntEditar = new Button();
-            txtProdutoId = new TextBox();
             dateUltimoMovimento = new DateTimePicker();
             label6 = new Label();
             dd = new Label();
@@ -48,6 +47,7 @@
             button1 = new Button();
             mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             txtEstoqueId = new TextBox();
+            txtProdutoId = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvEstoque).BeginInit();
             SuspendLayout();
             // 
@@ -55,7 +55,7 @@
             // 
             dgvEstoque.BackgroundColor = Color.Black;
             dgvEstoque.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEstoque.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
+            dgvEstoque.Columns.AddRange(new DataGridViewColumn[] { clnId, Column2, Column3, Column4 });
             dgvEstoque.Location = new Point(173, 167);
             dgvEstoque.Name = "dgvEstoque";
             dgvEstoque.RowHeadersVisible = false;
@@ -63,10 +63,10 @@
             dgvEstoque.TabIndex = 0;
             dgvEstoque.CellContentClick += dgvEstoque_CellContentClick;
             // 
-            // Column1
+            // clnId
             // 
-            Column1.HeaderText = "Id";
-            Column1.Name = "Column1";
+            clnId.HeaderText = "Id";
+            clnId.Name = "clnId";
             // 
             // Column2
             // 
@@ -106,21 +106,13 @@
             // 
             // bntEditar
             // 
-            bntEditar.Location = new Point(530, 95);
+            bntEditar.Location = new Point(530, 94);
             bntEditar.Name = "bntEditar";
             bntEditar.Size = new Size(75, 23);
             bntEditar.TabIndex = 11;
             bntEditar.Text = "Editar";
             bntEditar.UseVisualStyleBackColor = true;
             bntEditar.Click += bntEditar_Click;
-            // 
-            // txtProdutoId
-            // 
-            txtProdutoId.Enabled = false;
-            txtProdutoId.Location = new Point(64, 29);
-            txtProdutoId.Name = "txtProdutoId";
-            txtProdutoId.Size = new Size(34, 23);
-            txtProdutoId.TabIndex = 12;
             // 
             // dateUltimoMovimento
             // 
@@ -212,12 +204,20 @@
             txtEstoqueId.Size = new Size(34, 23);
             txtEstoqueId.TabIndex = 52;
             // 
+            // txtProdutoId
+            // 
+            txtProdutoId.Location = new Point(64, 18);
+            txtProdutoId.Name = "txtProdutoId";
+            txtProdutoId.Size = new Size(100, 23);
+            txtProdutoId.TabIndex = 53;
+            // 
             // FormEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.leaoFundo;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtProdutoId);
             Controls.Add(txtEstoqueId);
             Controls.Add(button1);
             Controls.Add(txtQuantidade);
@@ -226,7 +226,6 @@
             Controls.Add(dd);
             Controls.Add(label6);
             Controls.Add(dateUltimoMovimento);
-            Controls.Add(txtProdutoId);
             Controls.Add(bntEditar);
             Controls.Add(bntBuscar);
             Controls.Add(txtNome);
@@ -246,7 +245,6 @@
         private TextBox txtNome;
         private Button bntBuscar;
         private Button bntEditar;
-        private TextBox txtProdutoId;
         private DateTimePicker dateUltimoMovimento;
         private Label label6;
         private Label dd;
@@ -254,12 +252,13 @@
         private Label label2;
         private TextBox txtQuantidade;
         private ContextMenuStrip contextMenuStrip1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
         private Button button1;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private TextBox txtEstoqueId;
+        private DataGridViewTextBoxColumn clnId;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private TextBox txtProdutoId;
     }
 }

@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `kings`.`niveis` (
   `sigla` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 6
+AUTO_INCREMENT = 7
 DEFAULT CHARACTER SET = utf8mb4;
 
 
@@ -41,16 +41,15 @@ CREATE TABLE IF NOT EXISTS `kings`.`usuarios` (
   `nivel_id` INT(11) NOT NULL,
   `ativo` BIT(1) NOT NULL DEFAULT b'1',
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC),
-  INDEX `fk_usuarios_niveis1_idx` (`nivel_id` ASC) ,
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
+  INDEX `fk_usuarios_niveis1_idx` (`nivel_id` ASC) VISIBLE,
   CONSTRAINT `fk_usuarios_niveis1`
     FOREIGN KEY (`nivel_id`)
     REFERENCES `kings`.`niveis` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 1005
-DEFAULT CHARACTER SET = utf8;
+AUTO_INCREMENT = 1006;
 
 
 -- -----------------------------------------------------
@@ -63,14 +62,13 @@ CREATE TABLE IF NOT EXISTS `kings`.`caixas` (
   `saldo_inicial` DECIMAL(10,2) NOT NULL,
   `status` CHAR(1) NOT NULL DEFAULT 'A',
   PRIMARY KEY (`id`),
-  INDEX `fk_Caixa_Usuarios1_idx` (`usuario_id` ASC) ,
+  INDEX `fk_Caixa_Usuarios1_idx` (`usuario_id` ASC) VISIBLE,
   CONSTRAINT `fk_Caixa_Usuarios1`
     FOREIGN KEY (`usuario_id`)
     REFERENCES `kings`.`usuarios` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -82,8 +80,7 @@ CREATE TABLE IF NOT EXISTS `kings`.`categorias` (
   `sigla` CHAR(3) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 2
-DEFAULT CHARACTER SET = utf8;
+AUTO_INCREMENT = 3;
 
 
 -- -----------------------------------------------------
@@ -99,11 +96,10 @@ CREATE TABLE IF NOT EXISTS `kings`.`clientes` (
   `data_cad` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
   `ativo` BIT(1) NOT NULL DEFAULT b'1',
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) ,
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC) )
+  UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) VISIBLE,
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)
 ENGINE = InnoDB
-AUTO_INCREMENT = 10015
-DEFAULT CHARACTER SET = utf8;
+AUTO_INCREMENT = 10016;
 
 
 -- -----------------------------------------------------
@@ -117,8 +113,8 @@ CREATE TABLE IF NOT EXISTS `kings`.`pedidos` (
   `status` CHAR(1) NOT NULL DEFAULT 'A',
   `desconto` DECIMAL(10,2) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_Pedido_Usuarios1_idx` (`usuario_id` ASC) ,
-  INDEX `fk_Pedido_Clientes1_idx` (`cliente_id` ASC) ,
+  INDEX `fk_Pedido_Usuarios1_idx` (`usuario_id` ASC) VISIBLE,
+  INDEX `fk_Pedido_Clientes1_idx` (`cliente_id` ASC) VISIBLE,
   CONSTRAINT `fk_Pedido_Clientes1`
     FOREIGN KEY (`cliente_id`)
     REFERENCES `kings`.`clientes` (`id`)
@@ -130,8 +126,7 @@ CREATE TABLE IF NOT EXISTS `kings`.`pedidos` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 100001
-DEFAULT CHARACTER SET = utf8;
+AUTO_INCREMENT = 100001;
 
 
 -- -----------------------------------------------------
@@ -145,10 +140,9 @@ CREATE TABLE IF NOT EXISTS `kings`.`revendedores` (
   `email` VARCHAR(100) NULL DEFAULT NULL,
   `ativo` BIT(1) NULL DEFAULT b'1',
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `cpf_cnpj_UNIQUE` (`cpf_cnpj` ASC) ,
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC) )
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+  UNIQUE INDEX `cpf_cnpj_UNIQUE` (`cpf_cnpj` ASC) VISIBLE,
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -171,10 +165,10 @@ CREATE TABLE IF NOT EXISTS `kings`.`cupons` (
   `pedido_id` INT(11) NULL DEFAULT NULL,
   `revendedor_id` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `codigo` (`codigo` ASC),
-  INDEX `fk_cupons_clientes_idx` (`cliente_id` ASC) ,
-  INDEX `fk_cupons_pedidos_idx` (`pedido_id` ASC) ,
-  INDEX `fk_cupons_revendedores_idx` (`revendedor_id` ASC) ,
+  UNIQUE INDEX `codigo` (`codigo` ASC) VISIBLE,
+  INDEX `fk_cupons_clientes_idx` (`cliente_id` ASC) VISIBLE,
+  INDEX `fk_cupons_pedidos_idx` (`pedido_id` ASC) VISIBLE,
+  INDEX `fk_cupons_revendedores_idx` (`revendedor_id` ASC) VISIBLE,
   CONSTRAINT `fk_cupons_clientes`
     FOREIGN KEY (`cliente_id`)
     REFERENCES `kings`.`clientes` (`id`)
@@ -190,8 +184,7 @@ CREATE TABLE IF NOT EXISTS `kings`.`cupons` (
     REFERENCES `kings`.`revendedores` (`id`)
     ON DELETE SET NULL
     ON UPDATE CASCADE)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -209,15 +202,14 @@ CREATE TABLE IF NOT EXISTS `kings`.`enderecos` (
   `uf` CHAR(2) NOT NULL,
   `tipo_endereco` CHAR(3) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_table1_clientes_idx` (`cliente_id` ASC) ,
+  INDEX `fk_table1_clientes_idx` (`cliente_id` ASC) VISIBLE,
   CONSTRAINT `fk_table1_clientes`
     FOREIGN KEY (`cliente_id`)
     REFERENCES `kings`.`clientes` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 3
-DEFAULT CHARACTER SET = utf8;
+AUTO_INCREMENT = 3;
 
 
 -- -----------------------------------------------------
@@ -236,17 +228,16 @@ CREATE TABLE IF NOT EXISTS `kings`.`produtos` (
   `data_cad` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
   `descontinuado` BIT(1) NOT NULL DEFAULT b'0',
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `idProduto_UNIQUE` (`id` ASC) ,
-  UNIQUE INDEX `Produtocol_UNIQUE` (`cod_barras` ASC) ,
-  INDEX `fk_Produto_Categorias1_idx` (`categoria_id` ASC) ,
+  UNIQUE INDEX `idProduto_UNIQUE` (`id` ASC) VISIBLE,
+  UNIQUE INDEX `Produtocol_UNIQUE` (`cod_barras` ASC) VISIBLE,
+  INDEX `fk_Produto_Categorias1_idx` (`categoria_id` ASC) VISIBLE,
   CONSTRAINT `fk_Produto_Categorias1`
     FOREIGN KEY (`categoria_id`)
     REFERENCES `kings`.`categorias` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 7400004
-DEFAULT CHARACTER SET = utf8;
+AUTO_INCREMENT = 7400005;
 
 
 -- -----------------------------------------------------
@@ -256,14 +247,13 @@ CREATE TABLE IF NOT EXISTS `kings`.`estoques` (
   `produto_id` INT(4) NOT NULL,
   `quantidade` DECIMAL(10,2) NOT NULL,
   `data_ultimo_movimento` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP(),
-  INDEX `fk_Estoque_Produto1_idx` (`produto_id` ASC),
+  INDEX `fk_Estoque_Produto1_idx` (`produto_id` ASC) VISIBLE,
   CONSTRAINT `fk_Estoque_Produto1`
     FOREIGN KEY (`produto_id`)
     REFERENCES `kings`.`produtos` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -278,9 +268,8 @@ CREATE TABLE IF NOT EXISTS `kings`.`fornecedores` (
   `telefone` VARCHAR(45) NULL DEFAULT NULL,
   `email` VARCHAR(60) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `cnpj_UNIQUE` (`cnpj` ASC) )
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+  UNIQUE INDEX `cnpj_UNIQUE` (`cnpj` ASC) VISIBLE)
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -294,8 +283,8 @@ CREATE TABLE IF NOT EXISTS `kings`.`itempedido` (
   `quantidade` DECIMAL(10,3) NOT NULL,
   `desconto` DECIMAL(10,2) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_ItemPedido_Pedido1_idx` (`pedido_id` ASC) ,
-  INDEX `fk_ItemPedido_Produto1_idx` (`produto_id` ASC) ,
+  INDEX `fk_ItemPedido_Pedido1_idx` (`pedido_id` ASC) VISIBLE,
+  INDEX `fk_ItemPedido_Produto1_idx` (`produto_id` ASC) VISIBLE,
   CONSTRAINT `fk_ItemPedido_Pedido1`
     FOREIGN KEY (`pedido_id`)
     REFERENCES `kings`.`pedidos` (`id`)
@@ -306,8 +295,7 @@ CREATE TABLE IF NOT EXISTS `kings`.`itempedido` (
     REFERENCES `kings`.`produtos` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -317,8 +305,8 @@ CREATE TABLE IF NOT EXISTS `kings`.`produtofornecedor` (
   `produto_id` INT(4) NOT NULL,
   `fornecedores_id` INT(4) NOT NULL,
   PRIMARY KEY (`produto_id`, `fornecedores_id`),
-  INDEX `fk_Produto_has_Fornecedores_Fornecedores1_idx` (`fornecedores_id` ASC),
-  INDEX `fk_Produto_has_Fornecedores_Produto1_idx` (`produto_id` ASC) ,
+  INDEX `fk_Produto_has_Fornecedores_Fornecedores1_idx` (`fornecedores_id` ASC) VISIBLE,
+  INDEX `fk_Produto_has_Fornecedores_Produto1_idx` (`produto_id` ASC) VISIBLE,
   CONSTRAINT `fk_Produto_has_Fornecedores_Fornecedores1`
     FOREIGN KEY (`fornecedores_id`)
     REFERENCES `kings`.`fornecedores` (`id`)
@@ -329,8 +317,7 @@ CREATE TABLE IF NOT EXISTS `kings`.`produtofornecedor` (
     REFERENCES `kings`.`produtos` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+ENGINE = InnoDB;
 
 USE `kings` ;
 
@@ -433,23 +420,6 @@ END$$
 DELIMITER ;
 
 -- -----------------------------------------------------
--- procedure sp_endereco_update
--- -----------------------------------------------------
-
-DELIMITER $$
-USE `kings`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_endereco_update`(
-    spid int, spcep char(8), splogradouro varchar(100),
-    spnumero varchar(40), spcomplemento varchar(60),
-    spbairro varchar(60), spcidade varchar(60), spuf char(2), sptipo_endereco char(3))
-BEGIN
-    UPDATE enderecos SET cep = spcep, logradouro = splogradouro, numero = spnumero, complemento = spcomplemento,
-    bairro = spbairro, cidade = spcidade, uf = spuf, tipo_endereco = sptipo_endereco WHERE id = spid;
-END$$
-
-DELIMITER ;
-
--- -----------------------------------------------------
 -- procedure sp_estoque_insert
 -- -----------------------------------------------------
 
@@ -491,6 +461,28 @@ BEGIN
    FROM estoques e
    INNER JOIN produtos p ON p.id = e.produto_id
    ORDER BY e.data_ultimo_movimento DESC;
+END$$
+
+DELIMITER ;
+
+-- -----------------------------------------------------
+-- procedure sp_estoque_update
+-- -----------------------------------------------------
+
+DELIMITER $$
+USE `kings`$$
+CREATE DEFINER=`root`@`%` PROCEDURE `sp_estoque_update`(
+    IN spid INT,
+    IN spproduto_id INT,
+    IN spquantidade DECIMAL(10,2),
+    IN spdata_ultimo_movimento TIMESTAMP
+)
+BEGIN
+     UPDATE estoques
+    SET 
+        quantidade = spquantidade,
+        data_ultimo_movimento = spdata_ultimo_movimento
+    WHERE produto_id = spproduto_id;
 END$$
 
 DELIMITER ;
