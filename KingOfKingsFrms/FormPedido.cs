@@ -24,14 +24,21 @@ namespace KingOfKingsFrms
         {
             if (Program.UsuarioLogado != null)
             {
-                MessageBox.Show($"Usuário logado: {Program.UsuarioLogado.Nome}");
+               
                 txtUsuario.Text = Program.UsuarioLogado.Nome;
                 txtUsuario.ReadOnly = true;
             }
-            else
+            if (Program.CLientelogado != null)
             {
-                MessageBox.Show("Nenhum usuário logado!");
+
+                txtNomeCliente.Text = Program.CLientelogado.Nome;
+                txtNomeCliente.ReadOnly = true;
+
+                txtIdCliente.Text = Program.CLientelogado.Id.ToString();
+                txtIdCliente.ReadOnly = true;
             }
+
+           
         }
 
         private void btnInserePedido_Click(object sender, EventArgs e)
@@ -168,12 +175,22 @@ namespace KingOfKingsFrms
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
 
-            {
+            
 
-            }
+            
         }
 
         private void txtIdPedido_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIdCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNomeCliente_TextChanged(object sender, EventArgs e)
         {
 
         }

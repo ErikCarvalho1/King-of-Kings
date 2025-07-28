@@ -476,14 +476,16 @@
             txtIdCliente.Name = "txtIdCliente";
             txtIdCliente.Size = new Size(78, 27);
             txtIdCliente.TabIndex = 0;
+            txtIdCliente.TextChanged += txtIdCliente_TextChanged;
             // 
             // txtNomeCliente
             // 
             txtNomeCliente.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNomeCliente.Location = new Point(209, 93);
+            txtNomeCliente.Location = new Point(211, 93);
             txtNomeCliente.Name = "txtNomeCliente";
             txtNomeCliente.Size = new Size(255, 27);
             txtNomeCliente.TabIndex = 1;
+            txtNomeCliente.TextChanged += txtNomeCliente_TextChanged;
             // 
             // txtUsuario
             // 
