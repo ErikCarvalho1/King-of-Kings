@@ -33,7 +33,7 @@
             txtClienteId = new TextBox();
             mxtTelefone = new MaskedTextBox();
             mxtCpf = new MaskedTextBox();
-            button2 = new Button();
+            btnEditar = new Button();
             button1 = new Button();
             dtpDataNasc = new DateTimePicker();
             label8 = new Label();
@@ -72,6 +72,7 @@
             clnComplemento = new DataGridViewTextBoxColumn();
             clnBairro = new DataGridViewTextBoxColumn();
             clnCidade = new DataGridViewTextBoxColumn();
+            bntBuscar = new Button();
             Daodo.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -93,10 +94,11 @@
             // 
             tabPage1.BackColor = Color.Black;
             tabPage1.BackgroundImage = Properties.Resources.leaoFundo;
+            tabPage1.Controls.Add(bntBuscar);
             tabPage1.Controls.Add(txtClienteId);
             tabPage1.Controls.Add(mxtTelefone);
             tabPage1.Controls.Add(mxtCpf);
-            tabPage1.Controls.Add(button2);
+            tabPage1.Controls.Add(btnEditar);
             tabPage1.Controls.Add(button1);
             tabPage1.Controls.Add(dtpDataNasc);
             tabPage1.Controls.Add(label8);
@@ -114,50 +116,50 @@
             tabPage1.Size = new Size(768, 376);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Dados Pessoais";
-
             // 
             // txtClienteId
             // 
             txtClienteId.BackColor = SystemColors.ActiveBorder;
-            txtClienteId.Location = new Point(177, 205);
+            txtClienteId.Location = new Point(653, 347);
             txtClienteId.Name = "txtClienteId";
             txtClienteId.Size = new Size(100, 23);
             txtClienteId.TabIndex = 62;
             txtClienteId.Text = "0";
-            txtClienteId.Visible = false;
             // 
             // mxtTelefone
             // 
             mxtTelefone.BackColor = SystemColors.ActiveBorder;
-            mxtTelefone.Location = new Point(177, 118);
+            mxtTelefone.Location = new Point(176, 128);
+            mxtTelefone.Mask = "(99) 00000-0000";
             mxtTelefone.Name = "mxtTelefone";
-            mxtTelefone.Size = new Size(100, 23);
+            mxtTelefone.Size = new Size(173, 23);
             mxtTelefone.TabIndex = 68;
             // 
             // mxtCpf
             // 
             mxtCpf.BackColor = SystemColors.ActiveBorder;
-            mxtCpf.Location = new Point(177, 89);
+            mxtCpf.Location = new Point(355, 128);
+            mxtCpf.Mask = "000.000.000-00";
             mxtCpf.Name = "mxtCpf";
-            mxtCpf.Size = new Size(100, 23);
+            mxtCpf.Size = new Size(107, 23);
             mxtCpf.TabIndex = 67;
             // 
-            // button2
+            // btnEditar
             // 
-            button2.BackgroundImage = Properties.Resources.EditarGbtn;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(220, 332);
-            button2.Name = "button2";
-            button2.Size = new Size(103, 38);
-            button2.TabIndex = 66;
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btnEditar.BackgroundImage = Properties.Resources.EditarGbtn;
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.Location = new Point(296, 212);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(103, 38);
+            btnEditar.TabIndex = 66;
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // button1
             // 
             button1.BackgroundImage = Properties.Resources.bntVoltar;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(6, 335);
+            button1.Location = new Point(176, 214);
             button1.Name = "button1";
             button1.Size = new Size(102, 35);
             button1.TabIndex = 65;
@@ -166,7 +168,7 @@
             // dtpDataNasc
             // 
             dtpDataNasc.CalendarMonthBackground = SystemColors.ActiveBorder;
-            dtpDataNasc.Location = new Point(177, 176);
+            dtpDataNasc.Location = new Point(176, 173);
             dtpDataNasc.Name = "dtpDataNasc";
             dtpDataNasc.Size = new Size(173, 23);
             dtpDataNasc.TabIndex = 64;
@@ -178,7 +180,7 @@
             label8.FlatStyle = FlatStyle.Popup;
             label8.Font = new Font("Microsoft Sans Serif", 9.75F);
             label8.ForeColor = Color.FromArgb(219, 179, 91);
-            label8.Location = new Point(127, 64);
+            label8.Location = new Point(176, 66);
             label8.Name = "label8";
             label8.Size = new Size(44, 16);
             label8.TabIndex = 62;
@@ -188,7 +190,7 @@
             // 
             btnCadastrar.BackgroundImage = Properties.Resources.bntCadastrar;
             btnCadastrar.FlatStyle = FlatStyle.Flat;
-            btnCadastrar.Location = new Point(115, 335);
+            btnCadastrar.Location = new Point(421, 211);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(99, 38);
             btnCadastrar.TabIndex = 60;
@@ -214,7 +216,7 @@
             label5.BackColor = SystemColors.ActiveCaptionText;
             label5.Font = new Font("Microsoft Sans Serif", 9.75F);
             label5.ForeColor = Color.FromArgb(219, 179, 91);
-            label5.Location = new Point(44, 176);
+            label5.Location = new Point(176, 154);
             label5.Name = "label5";
             label5.Size = new Size(127, 16);
             label5.TabIndex = 58;
@@ -226,7 +228,7 @@
             label4.BackColor = SystemColors.ActiveCaptionText;
             label4.Font = new Font("Microsoft Sans Serif", 9.75F);
             label4.ForeColor = Color.FromArgb(219, 179, 91);
-            label4.Location = new Point(127, 154);
+            label4.Location = new Point(358, 64);
             label4.Name = "label4";
             label4.Size = new Size(41, 16);
             label4.TabIndex = 57;
@@ -240,7 +242,7 @@
             label3.Font = new Font("Microsoft Sans Serif", 9.75F);
             label3.ForeColor = Color.FromArgb(219, 179, 91);
             label3.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Assertive;
-            label3.Location = new Point(110, 120);
+            label3.Location = new Point(176, 109);
             label3.Name = "label3";
             label3.Size = new Size(61, 16);
             label3.TabIndex = 56;
@@ -252,7 +254,7 @@
             label2.BackColor = SystemColors.ActiveCaptionText;
             label2.Font = new Font("Microsoft Sans Serif", 9.75F);
             label2.ForeColor = Color.FromArgb(219, 179, 91);
-            label2.Location = new Point(144, 91);
+            label2.Location = new Point(353, 111);
             label2.Name = "label2";
             label2.Size = new Size(27, 16);
             label2.TabIndex = 55;
@@ -261,15 +263,15 @@
             // txtEmail
             // 
             txtEmail.BackColor = SystemColors.ActiveBorder;
-            txtEmail.Location = new Point(177, 147);
+            txtEmail.Location = new Point(356, 83);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(174, 23);
+            txtEmail.Size = new Size(134, 23);
             txtEmail.TabIndex = 54;
             // 
             // txtNome
             // 
             txtNome.BackColor = SystemColors.ActiveBorder;
-            txtNome.Location = new Point(177, 64);
+            txtNome.Location = new Point(176, 83);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(174, 23);
             txtNome.TabIndex = 51;
@@ -362,7 +364,7 @@
             label13.ForeColor = Color.FromArgb(219, 179, 91);
             label13.Location = new Point(59, 235);
             label13.Name = "label13";
-            label13.Size = new Size(83, 15);
+            label13.Size = new Size(82, 15);
             label13.TabIndex = 14;
             label13.Text = "Tipo endereço";
             // 
@@ -536,6 +538,16 @@
             clnCidade.Name = "clnCidade";
             clnCidade.ReadOnly = true;
             // 
+            // bntBuscar
+            // 
+            bntBuscar.Location = new Point(506, 84);
+            bntBuscar.Name = "bntBuscar";
+            bntBuscar.Size = new Size(75, 23);
+            bntBuscar.TabIndex = 69;
+            bntBuscar.Text = "button2";
+            bntBuscar.UseVisualStyleBackColor = true;
+            bntBuscar.Click += bntBuscar_Click;
+            // 
             // FormClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -563,7 +575,7 @@
         private TabPage tabPage1;
         private MaskedTextBox mxtTelefone;
         private MaskedTextBox mxtCpf;
-        private Button button2;
+        private Button btnEditar;
         private Button button1;
         private DateTimePicker dtpDataNasc;
         private Label label8;
@@ -603,5 +615,6 @@
         private DataGridViewTextBoxColumn clnBairro;
         private DataGridViewTextBoxColumn clnCidade;
         private TextBox txtClienteId;
+        private Button bntBuscar;
     }
 }

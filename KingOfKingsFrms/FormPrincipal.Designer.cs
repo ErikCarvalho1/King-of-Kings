@@ -38,60 +38,18 @@
             cadastroDeClienteToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeFornecedoresToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeTipoDosProdutosToolStripMenuItem = new ToolStripMenuItem();
-            cadastroFiscaisToolStripMenuItem1 = new ToolStripMenuItem();
-            cadastroDeTransportadoraToolStripMenuItem1 = new ToolStripMenuItem();
-            cadastroDeClassificaçãoFiscalToolStripMenuItem = new ToolStripMenuItem();
-            entradaToolStripMenuItem = new ToolStripMenuItem();
-            saidaToolStripMenuItem = new ToolStripMenuItem();
-            notaTransporteToolStripMenuItem = new ToolStripMenuItem();
-            cadastroDeAlíquotasToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeUsuariosEVendedoresToolStripMenuItem = new ToolStripMenuItem();
-            cadastroDeVendedoresToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeImformaçõesDaEmpresaToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeCupomToolStripMenuItem = new ToolStripMenuItem();
             cadastroDeCategoriaToolStripMenuItem = new ToolStripMenuItem();
             lançamentosToolStripMenuItem = new ToolStripMenuItem();
-            lançamentoDePedidosDeVendaToolStripMenuItem = new ToolStripMenuItem();
-            lançamentoDeContasAPagarEAReceberToolStripMenuItem = new ToolStripMenuItem();
-            lançamentosDiversosNoCaixaDoDiaToolStripMenuItem = new ToolStripMenuItem();
-            pagamentosDiversosToolStripMenuItem = new ToolStripMenuItem();
-            recebimentosDiverToolStripMenuItem = new ToolStripMenuItem();
             emitirNotaFiscalDeSaidaToolStripMenuItem = new ToolStripMenuItem();
             imprimir2ViaReciboVendaToolStripMenuItem = new ToolStripMenuItem();
             cancelarVendaRealizadaToolStripMenuItem = new ToolStripMenuItem();
-            movimentaçãoDeCaixaToolStripMenuItem = new ToolStripMenuItem();
-            realizarAberturaDeTurnoToolStripMenuItem = new ToolStripMenuItem();
-            realizarFechamentoDeTurnoToolStripMenuItem = new ToolStripMenuItem();
-            realizarReaberturaDoÚltimoTurnoFechadoToolStripMenuItem = new ToolStripMenuItem();
-            imprimir2ºviaDeFechamentoDeTurnoToolStripMenuItem = new ToolStripMenuItem();
             relatóriosToolStripMenuItem = new ToolStripMenuItem();
-            historicoDeCompraDoClienteToolStripMenuItem = new ToolStripMenuItem();
-            relatórioGERALDeMovimentaçãoEmVendasToolStripMenuItem = new ToolStripMenuItem();
-            cálculoDeComissãoDoVendedorProdutosVendidosToolStripMenuItem = new ToolStripMenuItem();
-            produtoEmConsignaçãoEnvioParaFornecedorToolStripMenuItem = new ToolStripMenuItem();
-            depositoToolStripMenuItem = new ToolStripMenuItem();
-            pagamentosPendentesdaEmpresaToolStripMenuItem = new ToolStripMenuItem();
-            recebimentosPendentesDebitosClientesToolStripMenuItem = new ToolStripMenuItem();
-            balançoFinanceiroToolStripMenuItem = new ToolStripMenuItem();
-            históricoAcessoAoSistemaToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem2 = new ToolStripMenuItem();
             listarProdutosToolStripMenuItem = new ToolStripMenuItem();
             lIstarEstoqueToolStripMenuItem = new ToolStripMenuItem();
-            graficoToolStripMenuItem = new ToolStripMenuItem();
-            evoluçãoNosUltimos12MesesToolStripMenuItem = new ToolStripMenuItem();
-            evoluçãoDiáriavendasRealizadasToolStripMenuItem = new ToolStripMenuItem();
-            evoluçãoDiáriavalorMédioDoTicketToolStripMenuItem = new ToolStripMenuItem();
-            evoluçãoDiáriafaturamentoToolStripMenuItem = new ToolStripMenuItem();
-            situaçãoDasReceitasprovenientesDeVendasToolStripMenuItem = new ToolStripMenuItem();
-            faturamentoPorFormaDePagamentoToolStripMenuItem = new ToolStripMenuItem();
-            inadimplênciaPorFormaDePagamentoToolStripMenuItem = new ToolStripMenuItem();
-            os1ToolStripMenuItem = new ToolStripMenuItem();
-            os9MelhoresClientesToolStripMenuItem = new ToolStripMenuItem();
-            os5MelhoresProdutosToolStripMenuItem = new ToolStripMenuItem();
-            os1ToolStripMenuItem1 = new ToolStripMenuItem();
-            faturamentoNosUltímos12MesesPorTrimestreToolStripMenuItem = new ToolStripMenuItem();
-            informaçãoGeraisToolStripMenuItem = new ToolStripMenuItem();
-            painelDeControleToolStripMenuItem = new ToolStripMenuItem();
             utilitárioToolStripMenuItem = new ToolStripMenuItem();
             buscaRápidpDeClienteEProdutosToolStripMenuItem = new ToolStripMenuItem();
             centralDeMaladiretaParaEmissãoDeEtiquetasEEnvioDeEmailEmMassaToolStripMenuItem = new ToolStripMenuItem();
@@ -134,6 +92,7 @@
             button1 = new Button();
             bntHistorico = new Button();
             button10 = new Button();
+            button11 = new Button();
             menuStrip1.SuspendLayout();
             pnlPrincipal.SuspendLayout();
             SuspendLayout();
@@ -165,7 +124,7 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.Black;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { eddeToolStripMenuItem, lançamentosToolStripMenuItem, relatóriosToolStripMenuItem, graficoToolStripMenuItem, utilitárioToolStripMenuItem, sairToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { eddeToolStripMenuItem, lançamentosToolStripMenuItem, relatóriosToolStripMenuItem, utilitárioToolStripMenuItem, sairToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1350, 24);
@@ -174,7 +133,7 @@
             // 
             // eddeToolStripMenuItem
             // 
-            eddeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroDeProdutosToolStripMenuItem1, cadastroDeClienteToolStripMenuItem, cadastroDeFornecedoresToolStripMenuItem, cadastroDeTipoDosProdutosToolStripMenuItem, cadastroFiscaisToolStripMenuItem1, cadastroDeUsuariosEVendedoresToolStripMenuItem, cadastroDeVendedoresToolStripMenuItem, cadastroDeImformaçõesDaEmpresaToolStripMenuItem, cadastroDeCupomToolStripMenuItem, cadastroDeCategoriaToolStripMenuItem });
+            eddeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastroDeProdutosToolStripMenuItem1, cadastroDeClienteToolStripMenuItem, cadastroDeFornecedoresToolStripMenuItem, cadastroDeTipoDosProdutosToolStripMenuItem, cadastroDeUsuariosEVendedoresToolStripMenuItem, cadastroDeImformaçõesDaEmpresaToolStripMenuItem, cadastroDeCupomToolStripMenuItem, cadastroDeCategoriaToolStripMenuItem });
             eddeToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
             eddeToolStripMenuItem.Name = "eddeToolStripMenuItem";
             eddeToolStripMenuItem.Size = new Size(66, 20);
@@ -215,52 +174,6 @@
             cadastroDeTipoDosProdutosToolStripMenuItem.Size = new Size(270, 22);
             cadastroDeTipoDosProdutosToolStripMenuItem.Text = "Cadastro de tipo dos produtos";
             // 
-            // cadastroFiscaisToolStripMenuItem1
-            // 
-            cadastroFiscaisToolStripMenuItem1.BackColor = Color.Black;
-            cadastroFiscaisToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { cadastroDeTransportadoraToolStripMenuItem1, cadastroDeClassificaçãoFiscalToolStripMenuItem, cadastroDeAlíquotasToolStripMenuItem });
-            cadastroFiscaisToolStripMenuItem1.ForeColor = Color.FromArgb(219, 179, 91);
-            cadastroFiscaisToolStripMenuItem1.Name = "cadastroFiscaisToolStripMenuItem1";
-            cadastroFiscaisToolStripMenuItem1.Size = new Size(270, 22);
-            cadastroFiscaisToolStripMenuItem1.Text = "Cadastro Fiscais ";
-            // 
-            // cadastroDeTransportadoraToolStripMenuItem1
-            // 
-            cadastroDeTransportadoraToolStripMenuItem1.Name = "cadastroDeTransportadoraToolStripMenuItem1";
-            cadastroDeTransportadoraToolStripMenuItem1.Size = new Size(219, 22);
-            cadastroDeTransportadoraToolStripMenuItem1.Text = "Cadastro de Transportadora";
-            // 
-            // cadastroDeClassificaçãoFiscalToolStripMenuItem
-            // 
-            cadastroDeClassificaçãoFiscalToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { entradaToolStripMenuItem, saidaToolStripMenuItem, notaTransporteToolStripMenuItem });
-            cadastroDeClassificaçãoFiscalToolStripMenuItem.Name = "cadastroDeClassificaçãoFiscalToolStripMenuItem";
-            cadastroDeClassificaçãoFiscalToolStripMenuItem.Size = new Size(219, 22);
-            cadastroDeClassificaçãoFiscalToolStripMenuItem.Text = "Cadastro de nota fiscal ";
-            // 
-            // entradaToolStripMenuItem
-            // 
-            entradaToolStripMenuItem.Name = "entradaToolStripMenuItem";
-            entradaToolStripMenuItem.Size = new Size(162, 22);
-            entradaToolStripMenuItem.Text = "Nota de Entrada ";
-            // 
-            // saidaToolStripMenuItem
-            // 
-            saidaToolStripMenuItem.Name = "saidaToolStripMenuItem";
-            saidaToolStripMenuItem.Size = new Size(162, 22);
-            saidaToolStripMenuItem.Text = "Nota de Saida";
-            // 
-            // notaTransporteToolStripMenuItem
-            // 
-            notaTransporteToolStripMenuItem.Name = "notaTransporteToolStripMenuItem";
-            notaTransporteToolStripMenuItem.Size = new Size(162, 22);
-            notaTransporteToolStripMenuItem.Text = "Nota Transporte";
-            // 
-            // cadastroDeAlíquotasToolStripMenuItem
-            // 
-            cadastroDeAlíquotasToolStripMenuItem.Name = "cadastroDeAlíquotasToolStripMenuItem";
-            cadastroDeAlíquotasToolStripMenuItem.Size = new Size(219, 22);
-            cadastroDeAlíquotasToolStripMenuItem.Text = "Cadastro de alíquotas";
-            // 
             // cadastroDeUsuariosEVendedoresToolStripMenuItem
             // 
             cadastroDeUsuariosEVendedoresToolStripMenuItem.BackColor = Color.Black;
@@ -269,14 +182,6 @@
             cadastroDeUsuariosEVendedoresToolStripMenuItem.Size = new Size(270, 22);
             cadastroDeUsuariosEVendedoresToolStripMenuItem.Text = "Cadastro de Usuarios";
             cadastroDeUsuariosEVendedoresToolStripMenuItem.Click += cadastroDeUsuariosEVendedoresToolStripMenuItem_Click;
-            // 
-            // cadastroDeVendedoresToolStripMenuItem
-            // 
-            cadastroDeVendedoresToolStripMenuItem.BackColor = Color.Black;
-            cadastroDeVendedoresToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            cadastroDeVendedoresToolStripMenuItem.Name = "cadastroDeVendedoresToolStripMenuItem";
-            cadastroDeVendedoresToolStripMenuItem.Size = new Size(270, 22);
-            cadastroDeVendedoresToolStripMenuItem.Text = "Cadastro de Vendedores";
             // 
             // cadastroDeImformaçõesDaEmpresaToolStripMenuItem
             // 
@@ -306,55 +211,18 @@
             // 
             // lançamentosToolStripMenuItem
             // 
-            lançamentosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { lançamentoDePedidosDeVendaToolStripMenuItem, lançamentoDeContasAPagarEAReceberToolStripMenuItem, lançamentosDiversosNoCaixaDoDiaToolStripMenuItem, emitirNotaFiscalDeSaidaToolStripMenuItem, imprimir2ViaReciboVendaToolStripMenuItem, cancelarVendaRealizadaToolStripMenuItem, movimentaçãoDeCaixaToolStripMenuItem });
+            lançamentosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { emitirNotaFiscalDeSaidaToolStripMenuItem, imprimir2ViaReciboVendaToolStripMenuItem, cancelarVendaRealizadaToolStripMenuItem });
             lançamentosToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
             lançamentosToolStripMenuItem.Name = "lançamentosToolStripMenuItem";
             lançamentosToolStripMenuItem.Size = new Size(90, 20);
             lançamentosToolStripMenuItem.Text = "Lançamentos";
-            // 
-            // lançamentoDePedidosDeVendaToolStripMenuItem
-            // 
-            lançamentoDePedidosDeVendaToolStripMenuItem.BackColor = Color.Black;
-            lançamentoDePedidosDeVendaToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            lançamentoDePedidosDeVendaToolStripMenuItem.Name = "lançamentoDePedidosDeVendaToolStripMenuItem";
-            lançamentoDePedidosDeVendaToolStripMenuItem.Size = new Size(298, 22);
-            lançamentoDePedidosDeVendaToolStripMenuItem.Text = "Lançamento de pedidos de venda";
-            // 
-            // lançamentoDeContasAPagarEAReceberToolStripMenuItem
-            // 
-            lançamentoDeContasAPagarEAReceberToolStripMenuItem.BackColor = Color.Black;
-            lançamentoDeContasAPagarEAReceberToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            lançamentoDeContasAPagarEAReceberToolStripMenuItem.Name = "lançamentoDeContasAPagarEAReceberToolStripMenuItem";
-            lançamentoDeContasAPagarEAReceberToolStripMenuItem.Size = new Size(298, 22);
-            lançamentoDeContasAPagarEAReceberToolStripMenuItem.Text = "Lançamento de Contas a pagar e a receber";
-            // 
-            // lançamentosDiversosNoCaixaDoDiaToolStripMenuItem
-            // 
-            lançamentosDiversosNoCaixaDoDiaToolStripMenuItem.BackColor = Color.Black;
-            lançamentosDiversosNoCaixaDoDiaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { pagamentosDiversosToolStripMenuItem, recebimentosDiverToolStripMenuItem });
-            lançamentosDiversosNoCaixaDoDiaToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            lançamentosDiversosNoCaixaDoDiaToolStripMenuItem.Name = "lançamentosDiversosNoCaixaDoDiaToolStripMenuItem";
-            lançamentosDiversosNoCaixaDoDiaToolStripMenuItem.Size = new Size(298, 22);
-            lançamentosDiversosNoCaixaDoDiaToolStripMenuItem.Text = "Lançamentos diversos no caixa do dia";
-            // 
-            // pagamentosDiversosToolStripMenuItem
-            // 
-            pagamentosDiversosToolStripMenuItem.Name = "pagamentosDiversosToolStripMenuItem";
-            pagamentosDiversosToolStripMenuItem.Size = new Size(195, 22);
-            pagamentosDiversosToolStripMenuItem.Text = "Pagamentos diversos";
-            // 
-            // recebimentosDiverToolStripMenuItem
-            // 
-            recebimentosDiverToolStripMenuItem.Name = "recebimentosDiverToolStripMenuItem";
-            recebimentosDiverToolStripMenuItem.Size = new Size(195, 22);
-            recebimentosDiverToolStripMenuItem.Text = "Recebimentos diversos";
             // 
             // emitirNotaFiscalDeSaidaToolStripMenuItem
             // 
             emitirNotaFiscalDeSaidaToolStripMenuItem.BackColor = Color.Black;
             emitirNotaFiscalDeSaidaToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
             emitirNotaFiscalDeSaidaToolStripMenuItem.Name = "emitirNotaFiscalDeSaidaToolStripMenuItem";
-            emitirNotaFiscalDeSaidaToolStripMenuItem.Size = new Size(298, 22);
+            emitirNotaFiscalDeSaidaToolStripMenuItem.Size = new Size(231, 22);
             emitirNotaFiscalDeSaidaToolStripMenuItem.Text = "Emitir nota fiscal de saida";
             // 
             // imprimir2ViaReciboVendaToolStripMenuItem
@@ -362,7 +230,7 @@
             imprimir2ViaReciboVendaToolStripMenuItem.BackColor = Color.Black;
             imprimir2ViaReciboVendaToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
             imprimir2ViaReciboVendaToolStripMenuItem.Name = "imprimir2ViaReciboVendaToolStripMenuItem";
-            imprimir2ViaReciboVendaToolStripMenuItem.Size = new Size(298, 22);
+            imprimir2ViaReciboVendaToolStripMenuItem.Size = new Size(231, 22);
             imprimir2ViaReciboVendaToolStripMenuItem.Text = "Imprimir 2° via - recibo venda";
             // 
             // cancelarVendaRealizadaToolStripMenuItem
@@ -370,128 +238,23 @@
             cancelarVendaRealizadaToolStripMenuItem.BackColor = Color.Black;
             cancelarVendaRealizadaToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
             cancelarVendaRealizadaToolStripMenuItem.Name = "cancelarVendaRealizadaToolStripMenuItem";
-            cancelarVendaRealizadaToolStripMenuItem.Size = new Size(298, 22);
+            cancelarVendaRealizadaToolStripMenuItem.Size = new Size(231, 22);
             cancelarVendaRealizadaToolStripMenuItem.Text = "Cancelar venda realizada";
-            // 
-            // movimentaçãoDeCaixaToolStripMenuItem
-            // 
-            movimentaçãoDeCaixaToolStripMenuItem.BackColor = Color.Black;
-            movimentaçãoDeCaixaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { realizarAberturaDeTurnoToolStripMenuItem, realizarFechamentoDeTurnoToolStripMenuItem, realizarReaberturaDoÚltimoTurnoFechadoToolStripMenuItem, imprimir2ºviaDeFechamentoDeTurnoToolStripMenuItem });
-            movimentaçãoDeCaixaToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            movimentaçãoDeCaixaToolStripMenuItem.Name = "movimentaçãoDeCaixaToolStripMenuItem";
-            movimentaçãoDeCaixaToolStripMenuItem.Size = new Size(298, 22);
-            movimentaçãoDeCaixaToolStripMenuItem.Text = "Movimentação de caixa";
-            // 
-            // realizarAberturaDeTurnoToolStripMenuItem
-            // 
-            realizarAberturaDeTurnoToolStripMenuItem.Name = "realizarAberturaDeTurnoToolStripMenuItem";
-            realizarAberturaDeTurnoToolStripMenuItem.Size = new Size(307, 22);
-            realizarAberturaDeTurnoToolStripMenuItem.Text = "Realizar abertura de turno";
-            // 
-            // realizarFechamentoDeTurnoToolStripMenuItem
-            // 
-            realizarFechamentoDeTurnoToolStripMenuItem.Name = "realizarFechamentoDeTurnoToolStripMenuItem";
-            realizarFechamentoDeTurnoToolStripMenuItem.Size = new Size(307, 22);
-            realizarFechamentoDeTurnoToolStripMenuItem.Text = "Realizar fechamento de turno ";
-            // 
-            // realizarReaberturaDoÚltimoTurnoFechadoToolStripMenuItem
-            // 
-            realizarReaberturaDoÚltimoTurnoFechadoToolStripMenuItem.Name = "realizarReaberturaDoÚltimoTurnoFechadoToolStripMenuItem";
-            realizarReaberturaDoÚltimoTurnoFechadoToolStripMenuItem.Size = new Size(307, 22);
-            realizarReaberturaDoÚltimoTurnoFechadoToolStripMenuItem.Text = "Realizar reabertura do último turno fechado ";
-            // 
-            // imprimir2ºviaDeFechamentoDeTurnoToolStripMenuItem
-            // 
-            imprimir2ºviaDeFechamentoDeTurnoToolStripMenuItem.Name = "imprimir2ºviaDeFechamentoDeTurnoToolStripMenuItem";
-            imprimir2ºviaDeFechamentoDeTurnoToolStripMenuItem.Size = new Size(307, 22);
-            imprimir2ºviaDeFechamentoDeTurnoToolStripMenuItem.Text = "Imprimir 2ºvia de fechamento de turno ";
             // 
             // relatóriosToolStripMenuItem
             // 
-            relatóriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { historicoDeCompraDoClienteToolStripMenuItem, relatórioGERALDeMovimentaçãoEmVendasToolStripMenuItem, cálculoDeComissãoDoVendedorProdutosVendidosToolStripMenuItem, produtoEmConsignaçãoEnvioParaFornecedorToolStripMenuItem, depositoToolStripMenuItem, pagamentosPendentesdaEmpresaToolStripMenuItem, recebimentosPendentesDebitosClientesToolStripMenuItem, balançoFinanceiroToolStripMenuItem, históricoAcessoAoSistemaToolStripMenuItem, toolStripMenuItem2, listarProdutosToolStripMenuItem, lIstarEstoqueToolStripMenuItem });
+            relatóriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem2, listarProdutosToolStripMenuItem, lIstarEstoqueToolStripMenuItem });
             relatóriosToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
             relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
             relatóriosToolStripMenuItem.Size = new Size(71, 20);
             relatóriosToolStripMenuItem.Text = "Relatórios";
-            // 
-            // historicoDeCompraDoClienteToolStripMenuItem
-            // 
-            historicoDeCompraDoClienteToolStripMenuItem.BackColor = Color.Black;
-            historicoDeCompraDoClienteToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            historicoDeCompraDoClienteToolStripMenuItem.Name = "historicoDeCompraDoClienteToolStripMenuItem";
-            historicoDeCompraDoClienteToolStripMenuItem.Size = new Size(358, 22);
-            historicoDeCompraDoClienteToolStripMenuItem.Text = "Historico de compra do cliente";
-            // 
-            // relatórioGERALDeMovimentaçãoEmVendasToolStripMenuItem
-            // 
-            relatórioGERALDeMovimentaçãoEmVendasToolStripMenuItem.BackColor = Color.Black;
-            relatórioGERALDeMovimentaçãoEmVendasToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            relatórioGERALDeMovimentaçãoEmVendasToolStripMenuItem.Name = "relatórioGERALDeMovimentaçãoEmVendasToolStripMenuItem";
-            relatórioGERALDeMovimentaçãoEmVendasToolStripMenuItem.Size = new Size(358, 22);
-            relatórioGERALDeMovimentaçãoEmVendasToolStripMenuItem.Text = "Relatório GERAL de movimentação em vendas";
-            // 
-            // cálculoDeComissãoDoVendedorProdutosVendidosToolStripMenuItem
-            // 
-            cálculoDeComissãoDoVendedorProdutosVendidosToolStripMenuItem.BackColor = Color.Black;
-            cálculoDeComissãoDoVendedorProdutosVendidosToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            cálculoDeComissãoDoVendedorProdutosVendidosToolStripMenuItem.Name = "cálculoDeComissãoDoVendedorProdutosVendidosToolStripMenuItem";
-            cálculoDeComissãoDoVendedorProdutosVendidosToolStripMenuItem.Size = new Size(358, 22);
-            cálculoDeComissãoDoVendedorProdutosVendidosToolStripMenuItem.Text = "Cálculo de comissão do vendedor, produtos vendidos";
-            // 
-            // produtoEmConsignaçãoEnvioParaFornecedorToolStripMenuItem
-            // 
-            produtoEmConsignaçãoEnvioParaFornecedorToolStripMenuItem.BackColor = Color.Black;
-            produtoEmConsignaçãoEnvioParaFornecedorToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            produtoEmConsignaçãoEnvioParaFornecedorToolStripMenuItem.Name = "produtoEmConsignaçãoEnvioParaFornecedorToolStripMenuItem";
-            produtoEmConsignaçãoEnvioParaFornecedorToolStripMenuItem.Size = new Size(358, 22);
-            produtoEmConsignaçãoEnvioParaFornecedorToolStripMenuItem.Text = "Produto em consignação, envio para fornecedor";
-            // 
-            // depositoToolStripMenuItem
-            // 
-            depositoToolStripMenuItem.BackColor = Color.Black;
-            depositoToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            depositoToolStripMenuItem.Name = "depositoToolStripMenuItem";
-            depositoToolStripMenuItem.Size = new Size(358, 22);
-            depositoToolStripMenuItem.Text = "deposito de moeda";
-            // 
-            // pagamentosPendentesdaEmpresaToolStripMenuItem
-            // 
-            pagamentosPendentesdaEmpresaToolStripMenuItem.BackColor = Color.Black;
-            pagamentosPendentesdaEmpresaToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            pagamentosPendentesdaEmpresaToolStripMenuItem.Name = "pagamentosPendentesdaEmpresaToolStripMenuItem";
-            pagamentosPendentesdaEmpresaToolStripMenuItem.Size = new Size(358, 22);
-            pagamentosPendentesdaEmpresaToolStripMenuItem.Text = "Pagamentos pendentes (da empresa)";
-            // 
-            // recebimentosPendentesDebitosClientesToolStripMenuItem
-            // 
-            recebimentosPendentesDebitosClientesToolStripMenuItem.BackColor = Color.Black;
-            recebimentosPendentesDebitosClientesToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            recebimentosPendentesDebitosClientesToolStripMenuItem.Name = "recebimentosPendentesDebitosClientesToolStripMenuItem";
-            recebimentosPendentesDebitosClientesToolStripMenuItem.Size = new Size(358, 22);
-            recebimentosPendentesDebitosClientesToolStripMenuItem.Text = "Recebimentos pendentes (Debitos clientes)";
-            // 
-            // balançoFinanceiroToolStripMenuItem
-            // 
-            balançoFinanceiroToolStripMenuItem.BackColor = Color.Black;
-            balançoFinanceiroToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            balançoFinanceiroToolStripMenuItem.Name = "balançoFinanceiroToolStripMenuItem";
-            balançoFinanceiroToolStripMenuItem.Size = new Size(358, 22);
-            balançoFinanceiroToolStripMenuItem.Text = "Balanço financeiro";
-            // 
-            // históricoAcessoAoSistemaToolStripMenuItem
-            // 
-            históricoAcessoAoSistemaToolStripMenuItem.BackColor = Color.Black;
-            históricoAcessoAoSistemaToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            históricoAcessoAoSistemaToolStripMenuItem.Name = "históricoAcessoAoSistemaToolStripMenuItem";
-            históricoAcessoAoSistemaToolStripMenuItem.Size = new Size(358, 22);
-            históricoAcessoAoSistemaToolStripMenuItem.Text = "Histórico acesso ao sistema";
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.BackColor = Color.Black;
             toolStripMenuItem2.ForeColor = Color.FromArgb(219, 179, 91);
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(358, 22);
+            toolStripMenuItem2.Size = new Size(178, 22);
             toolStripMenuItem2.Text = " Informações Gerais";
             toolStripMenuItem2.Click += toolStripMenuItem2_Click;
             // 
@@ -500,7 +263,7 @@
             listarProdutosToolStripMenuItem.BackColor = SystemColors.ActiveCaptionText;
             listarProdutosToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
             listarProdutosToolStripMenuItem.Name = "listarProdutosToolStripMenuItem";
-            listarProdutosToolStripMenuItem.Size = new Size(358, 22);
+            listarProdutosToolStripMenuItem.Size = new Size(178, 22);
             listarProdutosToolStripMenuItem.Text = "Listar produtos";
             listarProdutosToolStripMenuItem.Click += listarProdutosToolStripMenuItem_Click;
             // 
@@ -509,129 +272,9 @@
             lIstarEstoqueToolStripMenuItem.BackColor = SystemColors.ActiveCaptionText;
             lIstarEstoqueToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
             lIstarEstoqueToolStripMenuItem.Name = "lIstarEstoqueToolStripMenuItem";
-            lIstarEstoqueToolStripMenuItem.Size = new Size(358, 22);
+            lIstarEstoqueToolStripMenuItem.Size = new Size(178, 22);
             lIstarEstoqueToolStripMenuItem.Text = "LIstar Estoque";
             lIstarEstoqueToolStripMenuItem.Click += lIstarEstoqueToolStripMenuItem_Click;
-            // 
-            // graficoToolStripMenuItem
-            // 
-            graficoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { evoluçãoNosUltimos12MesesToolStripMenuItem, evoluçãoDiáriavendasRealizadasToolStripMenuItem, evoluçãoDiáriavalorMédioDoTicketToolStripMenuItem, evoluçãoDiáriafaturamentoToolStripMenuItem, situaçãoDasReceitasprovenientesDeVendasToolStripMenuItem, faturamentoPorFormaDePagamentoToolStripMenuItem, inadimplênciaPorFormaDePagamentoToolStripMenuItem, os1ToolStripMenuItem, os9MelhoresClientesToolStripMenuItem, os5MelhoresProdutosToolStripMenuItem, os1ToolStripMenuItem1, faturamentoNosUltímos12MesesPorTrimestreToolStripMenuItem, informaçãoGeraisToolStripMenuItem, painelDeControleToolStripMenuItem });
-            graficoToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            graficoToolStripMenuItem.Name = "graficoToolStripMenuItem";
-            graficoToolStripMenuItem.Size = new Size(57, 20);
-            graficoToolStripMenuItem.Text = "Grafico";
-            // 
-            // evoluçãoNosUltimos12MesesToolStripMenuItem
-            // 
-            evoluçãoNosUltimos12MesesToolStripMenuItem.BackColor = Color.Black;
-            evoluçãoNosUltimos12MesesToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            evoluçãoNosUltimos12MesesToolStripMenuItem.Name = "evoluçãoNosUltimos12MesesToolStripMenuItem";
-            evoluçãoNosUltimos12MesesToolStripMenuItem.Size = new Size(337, 22);
-            evoluçãoNosUltimos12MesesToolStripMenuItem.Text = "Evolução nos ultimos 12 meses";
-            // 
-            // evoluçãoDiáriavendasRealizadasToolStripMenuItem
-            // 
-            evoluçãoDiáriavendasRealizadasToolStripMenuItem.BackColor = Color.Black;
-            evoluçãoDiáriavendasRealizadasToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            evoluçãoDiáriavendasRealizadasToolStripMenuItem.Name = "evoluçãoDiáriavendasRealizadasToolStripMenuItem";
-            evoluçãoDiáriavendasRealizadasToolStripMenuItem.Size = new Size(337, 22);
-            evoluçãoDiáriavendasRealizadasToolStripMenuItem.Text = "Evolução diária [vendas realizadas]";
-            // 
-            // evoluçãoDiáriavalorMédioDoTicketToolStripMenuItem
-            // 
-            evoluçãoDiáriavalorMédioDoTicketToolStripMenuItem.BackColor = Color.Black;
-            evoluçãoDiáriavalorMédioDoTicketToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            evoluçãoDiáriavalorMédioDoTicketToolStripMenuItem.Name = "evoluçãoDiáriavalorMédioDoTicketToolStripMenuItem";
-            evoluçãoDiáriavalorMédioDoTicketToolStripMenuItem.Size = new Size(337, 22);
-            evoluçãoDiáriavalorMédioDoTicketToolStripMenuItem.Text = "Evolução diária [valor médio do ticket]";
-            // 
-            // evoluçãoDiáriafaturamentoToolStripMenuItem
-            // 
-            evoluçãoDiáriafaturamentoToolStripMenuItem.BackColor = Color.Black;
-            evoluçãoDiáriafaturamentoToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            evoluçãoDiáriafaturamentoToolStripMenuItem.Name = "evoluçãoDiáriafaturamentoToolStripMenuItem";
-            evoluçãoDiáriafaturamentoToolStripMenuItem.Size = new Size(337, 22);
-            evoluçãoDiáriafaturamentoToolStripMenuItem.Text = "Evolução diária [faturamento]";
-            // 
-            // situaçãoDasReceitasprovenientesDeVendasToolStripMenuItem
-            // 
-            situaçãoDasReceitasprovenientesDeVendasToolStripMenuItem.BackColor = Color.Black;
-            situaçãoDasReceitasprovenientesDeVendasToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            situaçãoDasReceitasprovenientesDeVendasToolStripMenuItem.Name = "situaçãoDasReceitasprovenientesDeVendasToolStripMenuItem";
-            situaçãoDasReceitasprovenientesDeVendasToolStripMenuItem.Size = new Size(337, 22);
-            situaçãoDasReceitasprovenientesDeVendasToolStripMenuItem.Text = "Situação das receitas [provenientes de vendas ]";
-            // 
-            // faturamentoPorFormaDePagamentoToolStripMenuItem
-            // 
-            faturamentoPorFormaDePagamentoToolStripMenuItem.BackColor = Color.Black;
-            faturamentoPorFormaDePagamentoToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            faturamentoPorFormaDePagamentoToolStripMenuItem.Name = "faturamentoPorFormaDePagamentoToolStripMenuItem";
-            faturamentoPorFormaDePagamentoToolStripMenuItem.Size = new Size(337, 22);
-            faturamentoPorFormaDePagamentoToolStripMenuItem.Text = "faturamento por forma de pagamento";
-            // 
-            // inadimplênciaPorFormaDePagamentoToolStripMenuItem
-            // 
-            inadimplênciaPorFormaDePagamentoToolStripMenuItem.BackColor = Color.Black;
-            inadimplênciaPorFormaDePagamentoToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            inadimplênciaPorFormaDePagamentoToolStripMenuItem.Name = "inadimplênciaPorFormaDePagamentoToolStripMenuItem";
-            inadimplênciaPorFormaDePagamentoToolStripMenuItem.Size = new Size(337, 22);
-            inadimplênciaPorFormaDePagamentoToolStripMenuItem.Text = "Inadimplência por forma de pagamento ";
-            // 
-            // os1ToolStripMenuItem
-            // 
-            os1ToolStripMenuItem.BackColor = Color.Black;
-            os1ToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            os1ToolStripMenuItem.Name = "os1ToolStripMenuItem";
-            os1ToolStripMenuItem.Size = new Size(337, 22);
-            os1ToolStripMenuItem.Text = "Os 10 melhores vendedores ";
-            // 
-            // os9MelhoresClientesToolStripMenuItem
-            // 
-            os9MelhoresClientesToolStripMenuItem.BackColor = Color.Black;
-            os9MelhoresClientesToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            os9MelhoresClientesToolStripMenuItem.Name = "os9MelhoresClientesToolStripMenuItem";
-            os9MelhoresClientesToolStripMenuItem.Size = new Size(337, 22);
-            os9MelhoresClientesToolStripMenuItem.Text = "Os 9 melhores clientes ";
-            // 
-            // os5MelhoresProdutosToolStripMenuItem
-            // 
-            os5MelhoresProdutosToolStripMenuItem.BackColor = Color.Black;
-            os5MelhoresProdutosToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            os5MelhoresProdutosToolStripMenuItem.Name = "os5MelhoresProdutosToolStripMenuItem";
-            os5MelhoresProdutosToolStripMenuItem.Size = new Size(337, 22);
-            os5MelhoresProdutosToolStripMenuItem.Text = "Os 5 melhores produtos ";
-            // 
-            // os1ToolStripMenuItem1
-            // 
-            os1ToolStripMenuItem1.BackColor = Color.Black;
-            os1ToolStripMenuItem1.ForeColor = Color.FromArgb(219, 179, 91);
-            os1ToolStripMenuItem1.Name = "os1ToolStripMenuItem1";
-            os1ToolStripMenuItem1.Size = new Size(337, 22);
-            os1ToolStripMenuItem1.Text = "Os 10 itens sem saida há mais tempo";
-            // 
-            // faturamentoNosUltímos12MesesPorTrimestreToolStripMenuItem
-            // 
-            faturamentoNosUltímos12MesesPorTrimestreToolStripMenuItem.BackColor = Color.Black;
-            faturamentoNosUltímos12MesesPorTrimestreToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            faturamentoNosUltímos12MesesPorTrimestreToolStripMenuItem.Name = "faturamentoNosUltímos12MesesPorTrimestreToolStripMenuItem";
-            faturamentoNosUltímos12MesesPorTrimestreToolStripMenuItem.Size = new Size(337, 22);
-            faturamentoNosUltímos12MesesPorTrimestreToolStripMenuItem.Text = "Faturamento nos ultímos 12 meses[ por trimestre]";
-            // 
-            // informaçãoGeraisToolStripMenuItem
-            // 
-            informaçãoGeraisToolStripMenuItem.BackColor = Color.Black;
-            informaçãoGeraisToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            informaçãoGeraisToolStripMenuItem.Name = "informaçãoGeraisToolStripMenuItem";
-            informaçãoGeraisToolStripMenuItem.Size = new Size(337, 22);
-            informaçãoGeraisToolStripMenuItem.Text = "Informação gerais ";
-            // 
-            // painelDeControleToolStripMenuItem
-            // 
-            painelDeControleToolStripMenuItem.BackColor = Color.Black;
-            painelDeControleToolStripMenuItem.ForeColor = Color.FromArgb(219, 179, 91);
-            painelDeControleToolStripMenuItem.Name = "painelDeControleToolStripMenuItem";
-            painelDeControleToolStripMenuItem.Size = new Size(337, 22);
-            painelDeControleToolStripMenuItem.Text = "Painel de controle";
             // 
             // utilitárioToolStripMenuItem
             // 
@@ -846,7 +489,7 @@
             label10.ForeColor = Color.FromArgb(219, 179, 91);
             label10.Location = new Point(639, 74);
             label10.Name = "label10";
-            label10.Size = new Size(54, 15);
+            label10.Size = new Size(53, 15);
             label10.TabIndex = 50;
             label10.Text = "Cone&xão";
             // 
@@ -886,7 +529,7 @@
             label5.ForeColor = Color.FromArgb(219, 179, 91);
             label5.Location = new Point(267, 71);
             label5.Name = "label5";
-            label5.Size = new Size(68, 15);
+            label5.Size = new Size(69, 15);
             label5.TabIndex = 45;
             label5.Text = "&Em Trânsito";
             // 
@@ -996,7 +639,7 @@
             // 
             bntHistorico.BackgroundImage = (Image)resources.GetObject("bntHistorico.BackgroundImage");
             bntHistorico.FlatStyle = FlatStyle.Popup;
-            bntHistorico.Location = new Point(139, 28);
+            bntHistorico.Location = new Point(142, 27);
             bntHistorico.Name = "bntHistorico";
             bntHistorico.Size = new Size(62, 54);
             bntHistorico.TabIndex = 34;
@@ -1004,7 +647,7 @@
             // 
             // button10
             // 
-            button10.Location = new Point(912, 23);
+            button10.Location = new Point(909, 59);
             button10.Name = "button10";
             button10.Size = new Size(75, 23);
             button10.TabIndex = 54;
@@ -1012,12 +655,23 @@
             button10.UseVisualStyleBackColor = true;
             button10.Click += button10_Click;
             // 
+            // button11
+            // 
+            button11.Location = new Point(740, 54);
+            button11.Name = "button11";
+            button11.Size = new Size(75, 23);
+            button11.TabIndex = 55;
+            button11.Text = "button11";
+            button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1350, 729);
+            Controls.Add(button11);
             Controls.Add(button10);
             Controls.Add(panel4);
             Controls.Add(label2);
@@ -1097,62 +751,20 @@
         private ToolStripMenuItem lançamentosToolStripMenuItem;
         private ToolStripMenuItem cadastroDeUsuáriosEVendedoresToolStripMenuItem;
         private ToolStripMenuItem cadastroDeInformaçõesDaEmpresaToolStripMenuItem;
-        private ToolStripMenuItem lançamentoDePedidosDeVendaToolStripMenuItem;
-        private ToolStripMenuItem lançamentoDeContasAPagarEAReceberToolStripMenuItem;
-        private ToolStripMenuItem lançamentosDiversosNoCaixaDoDiaToolStripMenuItem;
         private ToolStripMenuItem emitirNotaFiscalDeSaidaToolStripMenuItem;
         private ToolStripMenuItem imprimir2ViaReciboVendaToolStripMenuItem;
         private ToolStripMenuItem cancelarVendaRealizadaToolStripMenuItem;
-        private ToolStripMenuItem movimentaçãoDeCaixaToolStripMenuItem;
         private ToolStripMenuItem relatóriosToolStripMenuItem;
-        private ToolStripMenuItem historicoDeCompraDoClienteToolStripMenuItem;
-        private ToolStripMenuItem relatórioGERALDeMovimentaçãoEmVendasToolStripMenuItem;
-        private ToolStripMenuItem cálculoDeComissãoDoVendedorProdutosVendidosToolStripMenuItem;
-        private ToolStripMenuItem produtoEmConsignaçãoEnvioParaFornecedorToolStripMenuItem;
-        private ToolStripMenuItem depositoToolStripMenuItem;
-        private ToolStripMenuItem pagamentosPendentesdaEmpresaToolStripMenuItem;
-        private ToolStripMenuItem recebimentosPendentesDebitosClientesToolStripMenuItem;
-        private ToolStripMenuItem balançoFinanceiroToolStripMenuItem;
-        private ToolStripMenuItem históricoAcessoAoSistemaToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem2;
         private ToolStripMenuItem cadastroDeTransportadoraToolStripMenuItem;
         private ToolStripMenuItem cadastroDeProdutosToolStripMenuItem1;
         private ToolStripMenuItem cadastroDeClienteToolStripMenuItem;
         private ToolStripMenuItem cadastroDeFornecedoresToolStripMenuItem;
         private ToolStripMenuItem cadastroDeTipoDosProdutosToolStripMenuItem;
-        private ToolStripMenuItem cadastroFiscaisToolStripMenuItem1;
         private ToolStripMenuItem cadastroDeUsuariosEVendedoresToolStripMenuItem;
-        private ToolStripMenuItem cadastroDeVendedoresToolStripMenuItem;
         private ToolStripMenuItem cadastroDeImformaçõesDaEmpresaToolStripMenuItem;
-        private ToolStripMenuItem cadastroDeTransportadoraToolStripMenuItem1;
-        private ToolStripMenuItem cadastroDeClassificaçãoFiscalToolStripMenuItem;
-        private ToolStripMenuItem entradaToolStripMenuItem;
-        private ToolStripMenuItem saidaToolStripMenuItem;
-        private ToolStripMenuItem notaTransporteToolStripMenuItem;
-        private ToolStripMenuItem cadastroDeAlíquotasToolStripMenuItem;
-        private ToolStripMenuItem pagamentosDiversosToolStripMenuItem;
-        private ToolStripMenuItem recebimentosDiverToolStripMenuItem;
-        private ToolStripMenuItem realizarAberturaDeTurnoToolStripMenuItem;
-        private ToolStripMenuItem realizarFechamentoDeTurnoToolStripMenuItem;
-        private ToolStripMenuItem realizarReaberturaDoÚltimoTurnoFechadoToolStripMenuItem;
-        private ToolStripMenuItem imprimir2ºviaDeFechamentoDeTurnoToolStripMenuItem;
-        private ToolStripMenuItem graficoToolStripMenuItem;
         private ToolStripMenuItem utilitárioToolStripMenuItem;
         private ToolStripMenuItem sairToolStripMenuItem;
-        private ToolStripMenuItem evoluçãoNosUltimos12MesesToolStripMenuItem;
-        private ToolStripMenuItem evoluçãoDiáriavendasRealizadasToolStripMenuItem;
-        private ToolStripMenuItem evoluçãoDiáriavalorMédioDoTicketToolStripMenuItem;
-        private ToolStripMenuItem evoluçãoDiáriafaturamentoToolStripMenuItem;
-        private ToolStripMenuItem situaçãoDasReceitasprovenientesDeVendasToolStripMenuItem;
-        private ToolStripMenuItem faturamentoPorFormaDePagamentoToolStripMenuItem;
-        private ToolStripMenuItem inadimplênciaPorFormaDePagamentoToolStripMenuItem;
-        private ToolStripMenuItem os1ToolStripMenuItem;
-        private ToolStripMenuItem os9MelhoresClientesToolStripMenuItem;
-        private ToolStripMenuItem os5MelhoresProdutosToolStripMenuItem;
-        private ToolStripMenuItem os1ToolStripMenuItem1;
-        private ToolStripMenuItem faturamentoNosUltímos12MesesPorTrimestreToolStripMenuItem;
-        private ToolStripMenuItem informaçãoGeraisToolStripMenuItem;
-        private ToolStripMenuItem painelDeControleToolStripMenuItem;
         private ToolStripMenuItem buscaRápidpDeClienteEProdutosToolStripMenuItem;
         private ToolStripMenuItem centralDeMaladiretaParaEmissãoDeEtiquetasEEnvioDeEmailEmMassaToolStripMenuItem;
         private ToolStripMenuItem informaçãoEAvisosaniversáriossugestõesDePromoçãoEstoqueERecebimentosToolStripMenuItem;
@@ -1164,5 +776,6 @@
         private ToolStripMenuItem listarProdutosToolStripMenuItem;
         private ToolStripMenuItem lIstarEstoqueToolStripMenuItem;
         private Button button10;
+        private Button button11;
     }
 }
