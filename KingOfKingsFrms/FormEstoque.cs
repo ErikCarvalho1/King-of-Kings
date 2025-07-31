@@ -35,17 +35,8 @@ namespace KingOfKingsFrms
                 dgvEstoque.Rows[linha].Cells[2].Value = item.NomeProduto;
                 dgvEstoque.Rows[linha].Cells[3].Value = item.Quantidade;
                 dgvEstoque.Rows[linha].Cells[4].Value = item.DataUltimoMovimento;
-
-
-
-
-
                 linha++;
             }
-
-
-
-
         }
 
         private void bntAdicionar_Click(object sender, EventArgs e)
@@ -67,7 +58,7 @@ namespace KingOfKingsFrms
             {
                 if (row.IsNewRow) continue;
 
-                // Compara o valor da célula da coluna "Id" com o ID digitado
+                
                 var cellId = row.Cells["Id"].Value;
 
                 if (cellId != null && cellId.ToString() == id)
@@ -106,7 +97,7 @@ namespace KingOfKingsFrms
 
             foreach (DataGridViewRow row in dgvEstoque.Rows)
             {
-                if (row.IsNewRow) continue; // Pula a linha vazia de inserção
+                if (row.IsNewRow) continue;
 
 
                 foreach (DataGridViewCell cell in row.Cells)
@@ -154,40 +145,7 @@ namespace KingOfKingsFrms
         {
 
 
-
-
-            //if (e.RowIndex >= 0)
-            //{
-            //    DataGridViewRow row = dgvEstoque.Rows[e.RowIndex];
-
-            //    txtEstoqueId.Text = row.Cells[0].Value.ToString();
-            //    txtProdutoId.Text = row.Cells[1].Value.ToString();
-            //    txtQuantidade.Text = row.Cells[2].Value.ToString();
-            //    dateUltimoMovimento.Value = Convert.ToDateTime(row.Cells[3].Value);
-            //}
-
-
-
-            //int linha = dgvEstoque.CurrentRow.Index;
-
-            //// Recupera o ID do estoque a partir da coluna oculta (0)
-            //int id = Convert.ToInt32(dgvEstoque.Rows[linha].Cells[0].Value);
-
-            //// Busca o objeto Estoque pelo ID
-            //var estoque = Estoque.ObterPorId(id);
-
-            //// Preenche os campos com os dados do estoque
-            //txtEstoqueId.Text = estoque.Id.ToString();
-            //txtProdutoId.Text = estoque.ProdutoId.ToString();
-            //txtQuantidade.Text = estoque.Quantidade.ToString();
-
-            //dateUltimoMovimento.Value = estoque.DataUltimoMovimento;
-
-            //// Desabilita os campos, se necessário
-            //txtProdutoId.ReadOnly = true;
-            //txtQuantidade.Enabled = false;
-            //dateUltimoMovimento.Enabled = false;
-            //bntEditar.Enabled = true;
+          
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -207,7 +165,7 @@ namespace KingOfKingsFrms
                 return;
             }
 
-            // Validação dos dados antes de converter
+         
             if (!int.TryParse(txtEstoqueId.Text, out int estoqueId))
             {
                 MessageBox.Show("ID do estoque inválido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -236,7 +194,7 @@ namespace KingOfKingsFrms
                     DataUltimoMovimento = dateUltimoMovimento.Value
                 };
 
-                estoque.Atualizar(); // Método que atualiza no banco
+                estoque.Atualizar(); 
 
                 MessageBox.Show("Estoque atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
