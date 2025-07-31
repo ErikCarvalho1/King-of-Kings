@@ -6,7 +6,7 @@ namespace KingOfKingsFrms
     internal static class Program
     {
         public static Usuario UsuarioLogado { get; set; } = new Usuario();
-        public static Cliente CLientelogado { get; set; } = new Cliente();
+        public static Cliente CLientelogado { get; set; } = null;
 
 
         public class Cliente

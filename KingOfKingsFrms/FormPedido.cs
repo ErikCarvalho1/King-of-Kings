@@ -24,35 +24,26 @@ namespace KingOfKingsFrms
         {
             if (Program.UsuarioLogado != null)
             {
-               
+
                 txtUsuario.Text = Program.UsuarioLogado.Nome;
                 txtUsuario.ReadOnly = true;
+
             }
-            if (Program.CLientelogado != null)
-            {
-
-                txtNomeCliente.Text = Program.CLientelogado.Nome;
-                txtNomeCliente.ReadOnly = true;
-
-                txtIdCliente.Text = Program.CLientelogado.Id.ToString();
-                txtIdCliente.ReadOnly = true;
-            }
-
-           
         }
 
         private void btnInserePedido_Click(object sender, EventArgs e)
         {
-            if (txtIdCliente.Text.Length > 4)
+            Pedido pedido = new(Program.UsuarioLogado, Cliente.ObterPorId(int.Parse(txtIdCliente.Text)));
+            pedido.Inserir();
+            if (pedido.Id > 0)
             {
-                var cliente = Cliente.ObterPorId(int.Parse(txtIdCliente.Text));
-                if (cliente.Id > 0)
-                {
-                    txtNomeCliente.Text = cliente.Nome;
-                }
-
+                txtIdPedido.Text = pedido.Id.ToString();
+                grbIndentificacao.Enabled = false;
+                grbItens.Enabled = true;
             }
+
         }
+
 
         private void txtCodBar_TextChanged(object sender, EventArgs e)
         {
@@ -73,19 +64,24 @@ namespace KingOfKingsFrms
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            ItemPedido itemPedido = new(
-            int.Parse(txtIdPedido.Text),
-            Produto.ObterPorId(int.Parse(txtIdProd.Text)),
-            double.Parse(txtQuantidade.Text),
-            double.Parse(txtDescontoItem.Text)
-       );
-            itemPedido.inserir();
-            if (itemPedido.Id > 0)
+            if (int.TryParse(txtIdPedido.Text, out int idPedido) &&
+                int.TryParse(txtIdProd.Text, out int idProd) &&
+                double.TryParse(txtQuantidade.Text, out double quantidade) &&
+                double.TryParse(txtDescontoItem.Text, out double desconto))
             {
-                CarregarItens(int.Parse(txtIdPedido.Text));
+                ItemPedido itemPedido = new(idPedido, Produto.ObterPorId(idProd), quantidade, desconto);
+                itemPedido.inserir();
+                if (itemPedido.Id > 0)
+                {
+                    CarregarItens(idPedido);
+                }
             }
-
+            else
+            {
+                MessageBox.Show("Preencha todos os campos com valores numéricos válidos.");
+            }
         }
+        
         private void CarregarItens(int pedidoId)
         {
             var itens = ItemPedido.ObterlistaPorPedidoId(pedidoId);
@@ -172,24 +168,19 @@ namespace KingOfKingsFrms
             }
         }
 
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-            
-
-            
-        }
-
-        private void txtIdPedido_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtIdCliente_TextChanged(object sender, EventArgs e)
+
         {
+            if (txtIdCliente.Text.Length > 4)
+            {
+                var cliente = Cliente.ObterPorId(int.Parse(txtIdCliente.Text));
+                if (cliente.Id > 0)
+                {
+                    txtNomeCliente.Text = cliente.Nome;
+                }
 
+            }
         }
-
         private void txtNomeCliente_TextChanged(object sender, EventArgs e)
         {
 

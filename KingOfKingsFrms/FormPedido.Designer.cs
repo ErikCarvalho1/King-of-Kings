@@ -110,7 +110,6 @@
             txtIdPedido.Name = "txtIdPedido";
             txtIdPedido.Size = new Size(181, 43);
             txtIdPedido.TabIndex = 14;
-            txtIdPedido.TextChanged += txtIdPedido_TextChanged;
             // 
             // label2
             // 
@@ -128,7 +127,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.RoyalBlue;
-            label1.Location = new Point(159, 17);
+            label1.Location = new Point(188, 17);
             label1.Name = "label1";
             label1.Size = new Size(169, 31);
             label1.TabIndex = 12;
@@ -401,6 +400,7 @@
             dgvItensPedido.RowHeadersVisible = false;
             dgvItensPedido.Size = new Size(620, 173);
             dgvItensPedido.TabIndex = 0;
+           
             // 
             // clnDescricao
             // 
@@ -495,7 +495,6 @@
             txtUsuario.ReadOnly = true;
             txtUsuario.Size = new Size(372, 27);
             txtUsuario.TabIndex = 1;
-            txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
             // label3
             // 
