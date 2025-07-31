@@ -31,9 +31,10 @@ namespace KingOfKingsFrms
             {
                 dgvEstoque.Rows.Add();
                 dgvEstoque.Rows[linha].Cells[0].Value = item.Id;
-                dgvEstoque.Rows[linha].Cells[1].Value = item.NomeProduto;
-                dgvEstoque.Rows[linha].Cells[2].Value = item.Quantidade;
-                dgvEstoque.Rows[linha].Cells[3].Value = item.DataUltimoMovimento;
+                dgvEstoque.Rows[linha].Cells[1].Value = item.ProdutoId;
+                dgvEstoque.Rows[linha].Cells[2].Value = item.NomeProduto;
+                dgvEstoque.Rows[linha].Cells[3].Value = item.Quantidade;
+                dgvEstoque.Rows[linha].Cells[4].Value = item.DataUltimoMovimento;
 
 
 
@@ -107,7 +108,7 @@ namespace KingOfKingsFrms
             {
                 if (row.IsNewRow) continue; // Pula a linha vazia de inserção
 
-                // Verifica se alguma célula da linha contém o termo buscado
+
                 foreach (DataGridViewCell cell in row.Cells)
                 {
                     if (cell.Value != null && cell.Value.ToString().ToLower().Contains(termo))
@@ -154,17 +155,17 @@ namespace KingOfKingsFrms
 
 
 
-        
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgvEstoque.Rows[e.RowIndex];
 
-                txtEstoqueId.Text = row.Cells[0].Value.ToString();
-                txtProdutoId.Text = row.Cells[1].Value.ToString();
-                txtQuantidade.Text =row.Cells[2].Value.ToString();
-                dateUltimoMovimento.Value = Convert.ToDateTime(row.Cells[3].Value);
-            }
-        
+            //if (e.RowIndex >= 0)
+            //{
+            //    DataGridViewRow row = dgvEstoque.Rows[e.RowIndex];
+
+            //    txtEstoqueId.Text = row.Cells[0].Value.ToString();
+            //    txtProdutoId.Text = row.Cells[1].Value.ToString();
+            //    txtQuantidade.Text = row.Cells[2].Value.ToString();
+            //    dateUltimoMovimento.Value = Convert.ToDateTime(row.Cells[3].Value);
+            //}
+
 
 
             //int linha = dgvEstoque.CurrentRow.Index;
@@ -196,64 +197,6 @@ namespace KingOfKingsFrms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txtEstoqueId.Text == string.Empty)
-            {
-                if (txtNome.Text != string.Empty && txtQuantidade.Text != string.Empty && dateUltimoMovimento.Text != string.Empty)
-                {
-                    Estoque estoque = new(
-                    txtNome.Text,
-                    double.Parse(txtQuantidade.Text),
-                    dateUltimoMovimento.Value);
-                    estoque.Inserir();
-
-                    if (estoque.Id > 0)
-                    {
-                        MessageBox.Show("Estoque Cadastrado");
-                    }
-
-                }
-
-            }
-            //else
-            //{
-            //        Estoque estoque = new(
-            //        txtNome.Text,
-            //        double.Parse(txtQuantidade.Text),
-            //        dateUltimoMovimento.Value);
-            //        estoque.Atualizar();
-            //    MessageBox.Show("Usuário atualizado com sucesso!");
-
-
-
-
-            //}
-
-
-
-            //string nome = txtNome.Text.Trim();
-            //string txtQtd = txtQuantidade.Text.Trim();
-
-            //if (double.TryParse(txtQtd, out double quantidade) && quantidade > 0)
-            //{
-            //    DateTime data = dateUltimoMovimento.Value;   // DateTimePicker
-
-
-            //    var estoque = new Estoque(nome, quantidade, data);
-
-            //    try
-            //    {
-            //        estoque.Inserir();
-            //        MessageBox.Show("Produto inserido com sucesso!");
-            //    }
-            //    catch (InvalidOperationException ex) // produto não encontrado
-            //    {
-            //        MessageBox.Show(ex.Message);
-            //    }
-            //    catch (Exception ex)                // outros erros
-            //    {
-            //        MessageBox.Show("Erro: " + ex.Message);
-            //    }
-            // }
         }
 
         private void bntEditar_Click(object sender, EventArgs e)
@@ -306,6 +249,29 @@ namespace KingOfKingsFrms
         private void txtProdutoId_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+     
+        private void dgvEstoque_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvEstoque.Rows[e.RowIndex];
+                txtEstoqueId.Text = row.Cells[0].Value != null ? row.Cells[0].Value.ToString() : string.Empty;
+                txtProdutoId.Text = row.Cells[1].Value != null ? row.Cells[1].Value.ToString() : string.Empty;
+                txtNome.Text = row.Cells[2].Value != null ? row.Cells[2].Value.ToString() : string.Empty;
+                txtQuantidade.Text = row.Cells[3].Value != null ? row.Cells[3].Value.ToString() : string.Empty;
+
+                if (row.Cells[4].Value != null && DateTime.TryParse(row.Cells[4].Value.ToString(), out DateTime data))
+                {
+                    dateUltimoMovimento.Value = data;
+                }
+                else
+                {
+                    dateUltimoMovimento.Value = DateTime.Now;
+                }
+            }
         }
     }
 
