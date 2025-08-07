@@ -5,16 +5,7 @@ namespace KingOfKingsFrms
 {
     internal static class Program
     {
-        public static Usuario UsuarioLogado { get; set; } = new Usuario();
-        public static Cliente CLientelogado { get; set; } = null;
-
-
-        public class Cliente
-        {
-            public int Id { get; set; }
-            public string Nome { get; set; }
-        }
-    
+        public static Usuario UsuarioLogado { get; set; } = new();
 
         /// <summary>
         ///  The main entry point for the application.
