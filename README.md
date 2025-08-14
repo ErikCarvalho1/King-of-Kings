@@ -1,1 +1,1 @@
-**`Sistema comercial de venda e gerenciamneot`**
+**`Sistema comercial de venda e gerenciamneto`**
